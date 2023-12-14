@@ -1,5 +1,16 @@
 @charset "utf-8";
 
+.simplebar-scrollbar:before {
+  width: 5px;
+  opacity: 0.2;
+}
+.simplebar-track.simplebar-vertical .simplebar-scrollbar:before {
+  top: 5px;
+  left: 4px;
+  bottom: 5px;
+  background: #333;
+}
+
 .scroll_area {
   overflow: auto;
 }

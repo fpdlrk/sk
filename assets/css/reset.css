@@ -104,7 +104,7 @@ h4,
 h5,
 h6 {
   font-size: 16px;
-  color: #191919;
+  color: var(--color01);
 }
 ol,
 ul {
@@ -150,7 +150,7 @@ input.radio {
   vertical-align: middle;
   font-weight: 700;
   font-size: 13px;
-  color: #333;
+  color: var(--color01);
 }
 
 input.text,
@@ -194,7 +194,7 @@ button {
   cursor: pointer;
   border: 1px solid transparent;
   background: none;
-  color: #333;
+  color: var(--color01);
   padding: 0;
   margin: 0;
 }
@@ -204,12 +204,12 @@ button:focus {
 
 a:link,
 a:visited {
-  color: #333;
+  color: var(--color01);
   text-decoration: none;
 }
 a:hover,
 a:active {
-  color: #333;
+  color: var(--color01);
   text-decoration: none;
 }
 

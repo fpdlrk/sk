@@ -1,17 +1,21 @@
 @charset "UTF-8";
-.wrap,
-.wrap_container {
+.wrap {
   height: 100%;
   min-height: 100%;
-  /* min-width: 1440px; */
+  min-width: 1200px;
+}
+.container {
+  height: calc(100% - 88px);
+  display: flex;
 }
 .contents {
   padding: 40px;
+  flex: 1;
 }
 
 /*///// header_area /////*/
 header {
-  border-bottom: 1px solid var(--line01);
+  /* border-bottom: 1px solid var(--line01); */
   background-color: var(--white);
 }
 
@@ -190,7 +194,7 @@ header .top_util .group.pages_wrap .pages > button {
 }
 
 header .top_util .group button {
-  width: 40px;
+  width: 44px;
   height: inherit;
 }
 
@@ -203,111 +207,88 @@ header .top_util .group button._pgLast {
 }
 
 header .top_util .group button._pgCreate {
-  padding: 0 10px;
+  padding: 0 3px;
 }
 
 /*///// lnb /////*/
-.menu_area {
-  width: 300px;
-  background: var(--color06);
+.lnb_wrap {
+  width: 210px;
+  background-color: var(--white);
   border-right: 1px solid var(--line01);
-  position: relative;
-  flex-shrink: 0;
 }
-.menu_area .btn_create_wrap {
-}
-.menu_area .btn_create_wrap .btn {
-  border-radius: 0;
-}
-.menu_area h2.tit {
-  padding: 0 0 0 15px;
-  font-size: 12px;
-  color: #999;
-}
-.menu_area .afa_area {
-  padding: 15px;
-  justify-content: start;
-  background: none;
-  position: relative;
-}
-.menu_area .afa_area:hover {
-  background-color: #eee;
-}
-/* .lnb_outer {width:300px;} */
-.lnb > .item {
-  padding: 20px 0;
-  position: relative;
-}
-.lnb > .item.hide ul {
-  display: none;
-}
-.lnb > .item + .item {
-  border-top: 1px solid #ddd;
-}
-.lnb > .item ul {
-  line-height: 1.8;
-}
-.lnb > .item ul li a {
-  padding: 10px 15px;
+.lnb_wrap .lnb_header {
+  height: 40px;
+  padding: 0 10px;
   display: flex;
   align-items: center;
+  border-bottom: 1px solid var(--line01);
+}
+.lnb_body .lnb_item_group .item_group_header {
+  width: 100%;
+  height: 40px;
+  /* padding: 0 10px; */
   position: relative;
-}
-.lnb > .item ul li ul li a {
-  padding-left: 30px;
-}
-.lnb > .item ul li a .ico {
-  margin-right: 5px;
-}
-.lnb > .item ul li a .labelText {
-  padding: 5px 7px; /* position: relative; */
-  right: 15px; /* left: 0; */
-  border-radius: 50%;
-}
-.lnb > .item ul li a.selected {
+  display: flex;
+  align-items: center;
   font-weight: 500;
-  text-decoration: underline;
-  color: var(--main);
+  color: var(--sub01);
 }
-.lnb > .item ul li a.selected .ico {
+.lnb_body {
+  overflow: auto;
 }
-.lnb > .item ul li a:hover {
-  text-decoration: underline;
+.lnb_body .lnb_item_group {
+  padding: 0 10px;
 }
-.lnb > .item ul li ul {
-  line-height: 1.8;
+.lnb_body .lnb_item_group .item {
+  width: 100%;
+  height: 36px;
+  padding: 0 5px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  border-radius: 30px;
 }
-.lnb > .item ul li a:hover,
-.lnb > .item ul li ul li a:hover {
-  background: #eee;
+
+.lnb_body .lnb_item_group .item::before {
+  width: 18px;
+  height: 18px;
+  margin: 0 10px 0 0;
+  content: "";
+  display: block;
 }
-.lnb > .item .toggle {
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  background: url("../../assets/img/select_arrow_down.png") no-repeat 50% 50%;
-  background-size: 45%;
-  font-size: 0;
-  transform: translateY(-50%);
+
+.lnb_body .lnb_item_group .item._pollId:before {
 }
-.lnb > .item .toggle:hover {
-  background-color: #eee;
-  border-radius: 10px;
+
+.lnb_body .lnb_item_group .item:hover,
+.lnb_body .lnb_item_group .item.active {
+  background-color: var(--color07);
 }
-.lnb_btm {
-  width: 180px;
-  padding: 7px 12px;
-  border-radius: 6px;
-  margin: 0 0 0 30px;
+
+.mdu_pannel {
+  width: 350px;
+  background-color: var(--white);
+  border-right: 1px solid var(--line01);
 }
-.lnb_btm:hover {
-  background: #eee;
+.pannel_header {
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color06);
 }
-.lnb_btm .afa_area {
-  background: none;
-  font-size: 12px;
+
+.pannel_body {
+}
+.pannel_body .item_group_header {
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pannel_body .item {
+  padding: 15px;
 }
 
 .location_area {

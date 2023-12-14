@@ -7,8 +7,8 @@ label.btn {
   height: 42px;
   position: relative;
   padding: 0 20px;
-  border: 1px solid #ccc;
-  background: #fff;
+  border: 1px solid var(--color04);
+  background: var(--white);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -21,12 +21,15 @@ label.btn {
   color: #333;
   font-weight: 500;
 }
+.btn:hover {
+  background: var(--color06);
+}
 .btn._bdno {
   border: none;
 }
 .btn:disabled {
-  background: #dbdbdb;
-  color: #fff !important;
+  background: var(--color06);
+  color: var(--white) !important;
   border: none !important;
   cursor: default;
 }
@@ -66,11 +69,11 @@ label.btn {
 }
 .btn_red {
   background: var(--main);
-  color: #fff !important;
+  color: var(--white) !important;
   border: 1px solid var(--main);
 }
 .btn_black {
-  color: #fff !important;
+  color: var(--white) !important;
   border: 1px solid #333;
   background: #333;
 }
@@ -80,24 +83,24 @@ label.btn {
   background: #f4f4f4;
 }
 .btn_gray {
-  color: #fff !important;
+  color: var(--white) !important;
   border: 1px solid #9d9d9d;
   background: #9d9d9d;
 }
 .btn_purple {
-  color: #fff !important;
+  color: var(--white) !important;
   border: 1px solid var(--sub);
   background: var(--sub);
 }
 .btn_blue_t01 {
-  color: #fff !important;
+  color: var(--white) !important;
   border: 1px solid #607d97;
   background: #607d97;
 }
 
 .btn_red_line {
   background: var(--main);
-  color: #fff !important;
+  color: var(--white) !important;
   border: 1px solid var(--main);
 }
 .btn_green_line {
@@ -129,22 +132,6 @@ label.btn {
   display: none;
 }
 
-.svg_icon_group {
-  display: flex;
-  flex-wrap: wrap;
-}
-.svg_icon_group > .item {
-  width: 80px;
-  height: 80px;
-  border: 1px solid #ddd;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.svg_icon_group > .item .ico:before {
-  width: 50px;
-  height: 50px;
-}
 .btn .ico {
   font-size: 0;
   line-height: 0;
