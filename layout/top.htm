@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입</title>
+    <link type="text/css" href="../assets/css/import.css" rel="stylesheet" />
+    <link type="text/css" href="../assets/css/simplebar.css" rel="stylesheet" />
+    <script type="text/javascript" src="../assets/js/jquery-2.2.4.js"></script>
+    <script type="text/javascript" src="../assets/js/simplebar.min.js"></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <!--S: header의 상단 -->
+        <div class="top">
+          <div class="col_L">
+            <a href="#" class="logo">Tsurvey</a>
+            <div class="next_prev">
+              <button type="button" class="btn _bdno _ico_ly">
+                <i class="ico _hisBack"></i>
+                <span class="txt">이전</span>
+              </button>
+              <button type="button" class="btn _bdno _ico_ly" disabled>
+                <i class="ico _hisFw"></i>
+                <span class="txt">다음</span>
+              </button>
+            </div>
+          </div>
+          <div class="col_C fllow">
+            <span class="active">설문편집</span>
+            <span class="active">답변수집</span>
+            <span>결과확인</span>
+            <span>답변보상</span>
+          </div>
+          <div class="col_R">
+            <div class="user">
+              <span class="ico">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 25 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9.37651 11C11.6777 11 13.5432 9.20914 13.5432 7C13.5432 4.79086 11.6777 3 9.37651 3C7.07532 3 5.20984 4.79086 5.20984 7C5.20984 9.20914 7.07532 11 9.37651 11Z"
+                    stroke="#7C8A9F"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M3.125 21V19C3.125 17.9391 3.56399 16.9217 4.34539 16.1716C5.12679 15.4214 6.1866 15 7.29167 15H11.4583C12.5634 15 13.6232 15.4214 14.4046 16.1716C15.186 16.9217 15.625 17.9391 15.625 19V21"
+                    stroke="#7C8A9F"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M16.6656 11L18.749 13L22.9156 9"
+                    stroke="#7C8A9F"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              <span class="txt">사용자명</span>
+            </div>
+            <button class="btn _bdno _ico_ly menu">
+              <i class="ico _menu"></i>
+              <span class="txt">메뉴</span>
+            </button>
+          </div>
+        </div>
+        <!--E: header의 상단 -->
+
+        <!--S: header의 상단 유틸메뉴 -->
+        <div class="top_util">
+          <div class="col_L">
+            <div class="group">
+              <button class="btn _bdno _auto _pgCreate" id="pageCreate">
+                <i class="ico _pageCreate"></i>
+                <span class="txt">만들기</span>
+              </button>
+            </div>
+
+            <div class="group">
+              <button class="btn _bdno _ico_ly">
+                <i class="ico _style"></i>
+                <span class="txt">스타일</span>
+              </button>
+
+              <button class="btn _bdno _ico_ly">
+                <i class="ico _valid"></i>
+                <span class="txt">변수</span>
+              </button>
+
+              <button class="btn _bdno _ico_ly">
+                <i class="ico _logic"></i>
+                <span class="txt">로직</span>
+              </button>
+
+              <button class="btn _bdno _ico_ly">
+                <i class="ico _his"></i>
+                <span class="txt">이력</span>
+              </button>
+
+              <button class="btn _bdno _ico_ly">
+                <i class="ico _setting"></i>
+                <span class="txt">설정</span>
+              </button>
+            </div>
+
+            <div class="group">
+              <button class="btn _bdno _ico_ly">
+                <i class="ico _pageAdd"></i>
+                <span class="txt">페이지 추가</span>
+              </button>
+
+              <button class="btn _bdno _ico_ly">
+                <i class="ico _pageCopy"></i>
+                <span class="txt">페이지 복사</span>
+              </button>
+
+              <button class="btn _bdno _ico_ly">
+                <i class="ico _pageDel"></i>
+                <span class="txt">페이지 삭제</span>
+              </button>
+            </div>
+
+            <div class="group pages_wrap">
+              <button class="btn _bdno tp_txt _auto">
+                <span class="txt">소개글</span>
+              </button>
+
+              <button class="btn _bdno _ico_ly _pgFirst">
+                <i class="ico _pageFirst"></i>
+                <span class="txt">처음으로</span>
+              </button>
+
+              <button class="btn _bdno _ico_ly _pgPrev">
+                <i class="ico _pagePrev"></i>
+                <span class="txt">이전페이지</span>
+              </button>
+
+              <div class="pages">
+                <button class="btn _bdno">
+                  <span class="txt">P1</span>
+                </button>
+              </div>
+
+              <button class="btn _bdno _ico_ly _pgNext">
+                <i class="ico _pageNext"></i>
+                <span class="txt">다음페이지</span>
+              </button>
+
+              <button class="btn _bdno _ico_ly _pgLast">
+                <i class="ico _pageLast"></i>
+                <span class="txt">마지막 페이지</span>
+              </button>
+
+              <button class="btn _bdno tp_txt _auto">
+                <span class="txt">맺음말</span>
+              </button>
+            </div>
+          </div>
+          <div class="col_R">
+            <button class="btn _bdno tp_txt _auto">
+              <i class="ico _prevView"></i>
+              <span class="txt">미리보기</span>
+            </button>
+          </div>
+        </div>
+        <!--E: header의 상단 유틸메뉴 -->
+      </header>
+    </div>
+
+    <!--S: 팝업 -->
+    <div id="sharePopup" class="commPopup tp_popup sharePopup">
+      <div class="pop_header">
+        <h2 id="popTitle"></h2>
+      </div>
+      <div class="pop_body">
+        <div class="form_group">
+          <div class="form_group">
+            <div class="form_item">
+              <div class="flex_box">
+                <input
+                  type="text"
+                  class="comm_input tp_lg"
+                  placeholder="Email address or name"
+                />
+                <button type="button" class="btn btn_purple w100 mgl5" id="">
+                  Share
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="labelText">
+          You have <em class="f_bold">full access</em> to this workspace
+        </div>
+        <div class="labelText _warning">
+          You have <em class="f_bold">edit access</em> to this workspace
+        </div>
+
+        <p class="access_text">People with access this project</p>
+        <div class="workspace_box _sm">
+          <!-- 참여중인 workspace Area -->
+          <div class="item">
+            <div class="afa_area">
+              <div class="label_item">
+                <span class="FirstName_label comm_label">L</span>
+                <span class="labelFirstName"
+                  >서창호
+                  <em class="members">chseo@mindpro.co.kr</em>
+                </span>
+              </div>
+            </div>
+            <div class="btn_area">
+              <button type="button" class="btn btn_black btn_mini wide">
+                Member
+              </button>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="afa_area">
+              <div class="label_item">
+                <span class="FirstName_label comm_label">O</span>
+                <span class="labelFirstName"
+                  >주현후
+                  <em class="members">chseo@mindpro.co.kr</em>
+                </span>
+              </div>
+            </div>
+            <div class="btn_area">
+              <button type="button" class="btn btn_black btn_mini wide">
+                Member
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="popup_footer ar">
+        <button type="button" class="btn btn_small btnCancle">Cancel</button>
+        <button
+          type="button"
+          class="btn btn_small btn_purple"
+          data-id="workSpaceCreateStep2"
+        >
+          Continue
+        </button>
+      </div>
+    </div>
+    <!--E: 팝업 -->
+
+    <script src="../assets/js/commjs.js"></script>
+    <script src="../assets/js/modal.js"></script>
+    <script src="../assets/js/popup.js"></script>
+    <script src="../assets/js/loading.js"></script>
+    <script src="../assets/js/dropDown.js"></script>
+
+    <script>
+      let btnShares = document.querySelectorAll('[data-id="btnShare"]'); // 버튼
+      for (let btnShare of btnShares) {
+        btnShare.addEventListener("click", function () {
+          let pop = document.querySelector("#sharePopup"); // 팝업 아이템
+          pop.open({
+            headerTitle: "Share project",
+            data: null,
+            width: 600,
+            height: null,
+            callBack: null,
+          });
+        });
+      }
+    </script>
+  </body>
+</html>

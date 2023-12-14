@@ -1,0 +1,231 @@
+@charset "UTF-8";
+
+label.btn {
+  line-height: 3;
+}
+.btn {
+  height: 42px;
+  position: relative;
+  padding: 0 20px;
+  border: 1px solid #ccc;
+  background: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* letter-spacing:-1px; */
+  vertical-align: middle;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 13px;
+  line-height: 2.5;
+  color: #333;
+  font-weight: 500;
+}
+.btn._bdno {
+  border: none;
+}
+.btn:disabled {
+  background: #dbdbdb;
+  color: #fff !important;
+  border: none !important;
+  cursor: default;
+}
+.btn_mini {
+  padding: 0 15px;
+  height: 24px;
+  font-size: 12px;
+  line-height: 1.2;
+}
+.btn_small {
+  padding: 0 15px;
+  height: 30px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.btn_middle {
+  padding: 0 15px;
+  height: 38px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.btn_lager {
+  padding: 0 15px;
+  height: 52px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.btn_trans {
+  background: transparent;
+  color: #666 !important;
+  border: 1px solid transparent;
+  transition: all 0.5s ease-out;
+}
+.btn_trans:hover {
+  background: #eee;
+}
+.btn_red {
+  background: var(--main);
+  color: #fff !important;
+  border: 1px solid var(--main);
+}
+.btn_black {
+  color: #fff !important;
+  border: 1px solid #333;
+  background: #333;
+}
+.btn_light_gray {
+  color: #191919 !important;
+  border: 1px solid #dbdbdb;
+  background: #f4f4f4;
+}
+.btn_gray {
+  color: #fff !important;
+  border: 1px solid #9d9d9d;
+  background: #9d9d9d;
+}
+.btn_purple {
+  color: #fff !important;
+  border: 1px solid var(--sub);
+  background: var(--sub);
+}
+.btn_blue_t01 {
+  color: #fff !important;
+  border: 1px solid #607d97;
+  background: #607d97;
+}
+
+.btn_red_line {
+  background: var(--main);
+  color: #fff !important;
+  border: 1px solid var(--main);
+}
+.btn_green_line {
+  background: #fff;
+  color: #4aa76c !important;
+  border: 1px solid #4aa76c;
+}
+.btn_gray_line {
+  color: #191919 !important;
+  border: 1px solid #dbdbdb;
+  background: #fcfcfc;
+}
+.btn_black_line {
+  color: #191919 !important;
+  border: 1px solid #191919;
+}
+
+.btn .ico {
+  margin-right: 5px;
+}
+.btn ._ic_front {
+  position: absolute;
+  left: 20px;
+}
+.btn._ico_ly .ico {
+  margin-right: 0px;
+}
+.btn._ico_ly .txt {
+  display: none;
+}
+
+.svg_icon_group {
+  display: flex;
+  flex-wrap: wrap;
+}
+.svg_icon_group > .item {
+  width: 80px;
+  height: 80px;
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.svg_icon_group > .item .ico:before {
+  width: 50px;
+  height: 50px;
+}
+.btn .ico {
+  font-size: 0;
+  line-height: 0;
+}
+.btn .ico:before {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  content: "";
+  font-size: 0;
+  line-height: 0;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.btn .ico._ic_lager:before {
+  width: 30px;
+  height: 30px;
+}
+.btn .ico._ic_middle:before {
+  width: 18px;
+  height: 18px;
+}
+.btn .ico._ic_small:before {
+  width: 16px;
+  height: 16px;
+}
+.btn .ico._ic_mini:before {
+  width: 14px;
+  height: 14px;
+}
+
+.btn .ico._hisBack:before {
+  background-image: url("../../assets/img/ico/d/prev.svg");
+}
+.btn .ico._hisFw:before {
+  background-image: url("../../assets/img/ico/d/next.svg");
+}
+.btn .ico._menu:before {
+  background-image: url("../../assets/img/ico/d/menu.svg");
+}
+.btn .ico._style:before {
+  background-image: url("../../assets/img/ico/d/deselect.svg");
+}
+
+.btn .ico._valid:before {
+  background-image: url("../../assets/img/ico/d/calculate.svg");
+}
+.btn .ico._pageCreate:before {
+  background-image: url("../../assets/img/ico/d/create.svg");
+}
+.btn .ico._logic:before {
+  background-image: url("../../assets/img/ico/d/webhook.svg");
+}
+.btn .ico._his:before {
+  background-image: url("../../assets/img/ico/d/watch_later.svg");
+}
+.btn .ico._setting:before {
+  background-image: url("../../assets/img/ico/d/brightness_7.svg");
+}
+.btn .ico._pageAdd:before {
+  background-image: url("../../assets/img/ico/d/Group 127.svg");
+}
+.btn .ico._pageCopy:before {
+  background-image: url("../../assets/img/ico/d/file_copy.svg");
+}
+.btn .ico._pageDel:before {
+  background-image: url("../../assets/img/ico/d/Group 126.svg");
+}
+.btn .ico._pageFirst:before {
+  background-image: url("../../assets/img/ico/d/pg_first.svg");
+}
+.btn .ico._pageLast:before {
+  background-image: url("../../assets/img/ico/d/pg_last.svg");
+}
+.btn .ico._pageNext:before {
+  background-image: url("../../assets/img/ico/d/pg_next.svg");
+}
+.btn .ico._pagePrev:before {
+  background-image: url("../../assets/img/ico/d/pg_prev.svg");
+}
+.btn .ico._prevView:before {
+  background-image: url("../../assets/img/ico/d/pinch.svg");
+}

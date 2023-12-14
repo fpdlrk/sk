@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+:root {
+  --main01: #3617ce;
+  --main02: #ff404e;
+  --main03: #f7b753;
+  --main04: #897fea;
+
+  --sub01: #443085;
+  --sub02: #df1384;
+  --sub03: #fce0eb;
+
+  --bg: #e8efff;
+
+  --fntMain: #373f57;
+  --fntTit01: #1a2217;
+  --fntTxt01: #3c4766;
+
+  --color01: #373f57;
+  --color02: #1a2217;
+  --color03: #3c4766;
+  --color04: #e2e8f0;
+  --color05: #7c8a9f;
+  --color06: #f6f9ff;
+
+  --tbIco: #e2e8f0;
+  --cell: #f6f9ff;
+  --bar: #aabfe4;
+
+  --line01: #cbd5e1;
+  --line02: #7c8a9f;
+
+  --black1: #000;
+  --black2: #222;
+  --black3: #333;
+
+  --white: #fff;
+
+  --good: #6e00ff;
+  --warning: #ff0000;
+  --safe: #11c90a;
+}
