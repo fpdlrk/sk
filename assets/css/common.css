@@ -109,6 +109,9 @@
 ._auto {
   width: auto !important;
 }
+._auto_h {
+  height: auto !important;
+}
 .h .w100 {
   width: 100px !important;
 }

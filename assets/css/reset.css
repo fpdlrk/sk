@@ -222,7 +222,7 @@ a:active {
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
   font-size: 13px;
-  color: #d1d0d0;
+  color: var(--color05);
   font-weight: 400;
 }
 textarea::-webkit-input-placeholder {
@@ -232,7 +232,7 @@ textarea::-webkit-input-placeholder {
 input:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
   font-size: 13px;
-  color: #d1d0d0;
+  color: var(--color05);
   font-weight: 400;
 }
 textarea:-ms-input-placeholder {

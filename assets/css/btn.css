@@ -4,17 +4,17 @@ label.btn {
   line-height: 3;
 }
 .btn {
-  height: 42px;
+  height: 36px;
   position: relative;
-  padding: 0 20px;
-  border: 1px solid var(--color04);
+  padding: 0 10px;
+  border: 1px solid var(--line01);
   background: var(--white);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   /* letter-spacing:-1px; */
   vertical-align: middle;
-  border-radius: 4px;
+  border-radius: 6px;
   text-align: center;
   font-size: 13px;
   line-height: 2.5;
@@ -215,4 +215,13 @@ label.btn {
 }
 .btn .ico._prevView:before {
   background-image: url("../../assets/img/ico/d/pinch.svg");
+}
+.btn .ico._menuol:before {
+  background-image: url("../../assets/img/ico/d/ico_menuArrow.svg");
+}
+.btn .ico._pannelRefresh:before {
+  background-image: url("../../assets/img/ico/d/ico_refresh.svg");
+}
+.btn .ico._pannelClose:before {
+  background-image: url("../../assets/img/ico/d/ico_close.svg");
 }

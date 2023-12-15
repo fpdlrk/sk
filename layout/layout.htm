@@ -179,7 +179,13 @@
       <div class="container">
         <!--S: 좌측메뉴 -->
         <div class="lnb_wrap">
-          <div class="lnb_header"><span class="txt">메뉴</span></div>
+          <div class="lnb_header">
+            <span class="txt">메뉴</span>
+            <button class="btn _bdno _ico_ly _auto_h">
+              <i class="ico _menuol"></i>
+              <span class="txt">메뉴설정</span>
+            </button>
+          </div>
           <div class="lnb_body" data-simplebar="init">
             <div class="lnb_item_group">
               <button class="item_group_header">
@@ -309,16 +315,6 @@
                     <span class="txt">구분선</span>
                   </button>
                 </li>
-                <li>
-                  <button class="item _idForm">
-                    <span class="txt">ID</span>
-                  </button>
-                </li>
-                <li>
-                  <button class="item _infoForm">
-                    <span class="txt">정보</span>
-                  </button>
-                </li>
               </ul>
             </div>
           </div>
@@ -331,7 +327,7 @@
             <h2 class="tit">스타일</h2>
             <div class="util">
               <button class="btn _bdno _ico_ly">
-                <i class="ico _pannelReset"></i>
+                <i class="ico _pannelRefresh"></i>
                 <span class="txt">리셋</span>
               </button>
               <button class="btn _bdno _ico_ly">
@@ -341,10 +337,68 @@
             </div>
           </div>
           <div class="pannel_body">
-            <button class="item_group_header">배경화면</button>
-            <div class="item comp_colorInsert">
-              <h2 class="_tit">기본 배경 칼라</h2>
+            <!--S: selectBox형 -->
+            <div class="item_group">
+              <button class="item_group_header">항목번호형식</button>
+              <div class="item">
+                <div class="_comp comp_select">
+                  <span class="_tit">번호형식</span>
+                  <div class="_body _selectWrap">
+                    <button class="_header">
+                      <span class="_selectText">1,2,3</span>
+                    </button>
+                    <ul class="_list">
+                      <li><a class="_item _selected">1,2,3</a></li>
+                      <li><a class="_item">Q1,Q2,Q3</a></li>
+                      <li><a class="_item">번호없음</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
+            <!--E: selectBox형 -->
+
+            <!--S: input + button형 -->
+            <div class="item_group">
+              <button class="item_group_header">항목번호형식</button>
+              <div class="item">
+                <div class="_comp comp_inputAndButton _wide">
+                  <span class="_tit">설문 ID 입력</span>
+                  <div class="_body _inputAndButtonWrap">
+                    <input
+                      type="text"
+                      class="comm_input"
+                      placeholder="ID를 입력하세요."
+                    />
+                    <button class="btn _header">
+                      <span class="_txt">중복확인</span>
+                    </button>
+                  </div>
+                  <p class="_sbt01 ar">
+                    영문, 숫자 조합으로 12글자 입력 가능합니다
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!--E: input + button형 -->
+
+            <!--S: textarea형 -->
+            <div class="item_group">
+              <button class="item_group_header">항목번호형식</button>
+              <div class="item">
+                <div class="_comp comp_textarea _wide">
+                  <span class="_tit">설문 ID 입력</span>
+                  <div class="_body _comp_textareaWrap">
+                    <textarea
+                      class="comm_input"
+                      placeholder="내용을 입력하세요."
+                    ></textarea>
+                  </div>
+                  <p class="_sbt01 ar">80글자 입력 가능합니다</p>
+                </div>
+              </div>
+            </div>
+            <!--E: textarea형 -->
           </div>
         </div>
         <!--E: 스타일 -->

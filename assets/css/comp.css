@@ -1,4 +1,37 @@
 @charset "UTF-8";
+._comp {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+._comp._wide {
+  display: block !important;
+}
+._comp._wide ._body {
+  width: 100%;
+}
+
+._comp ._body {
+  flex-shrink: 0;
+  width: 60%;
+  position: relative;
+}
+
+._comp ._tit {
+  padding: 5px 0 5px 0;
+  display: block;
+  font-size: 14px;
+  color: var(--color05);
+  flex: 0 0 auto;
+}
+._comp ._sbt01 {
+  padding: 3px 0 0 0;
+  font-size: 12px;
+  color: var(--color05);
+}
 /* 컬러입력 */
 .comp_colorInsert {
 }
@@ -13,4 +46,108 @@
 
 /* 흐림효과 조절 */
 .comp_blur {
+}
+
+/* 셀렉트 */
+/* .comp_select {
+  height: 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+} */
+/* .comp_select ._tit {
+  flex: 0 0 auto;
+} */
+.comp_select ._selectWrap {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: var(--color06);
+  border: 1px solid var(--line01);
+  border-radius: 6px;
+  z-index: 100;
+}
+.comp_select ._selectWrap > ._header {
+  width: 100%;
+  height: inherit;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: var(--color06); */
+  /* border: 1px solid var(--line01); */
+  /* border-radius: 6px; */
+}
+.comp_select ._selectWrap > ._header ._selectText {
+  flex: 1;
+  text-align: left;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-break: break-all;
+}
+.comp_select ._selectWrap > ._header:after {
+  width: 24px;
+  height: 24px;
+  content: "";
+  display: block;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-image: url("../../assets/img/ico/d/arrow_drop_down_b.svg");
+}
+.comp_select ._selectWrap > ._list {
+  width: 100%;
+  /* position: absolute; */
+  /* left: 0; */
+  display: none;
+  /* background-color: var(--white); */
+}
+.comp_select ._selectWrap._active > ._list {
+  display: block;
+}
+.comp_select ._selectWrap > ._list ._item {
+  padding: 2px 10px;
+  display: block;
+  cursor: pointer;
+}
+.comp_select ._selectWrap > ._list ._item:hover,
+.comp_select ._selectWrap > ._list ._item:focus {
+  background-color: var(--color07);
+}
+
+.comp_select ._selectWrap > ._list ._item._selected {
+  background-color: var(--color09);
+  color: var(--white);
+}
+
+/* input + button형 */
+.comp_inputAndButton {
+}
+
+.comp_inputAndButton ._inputAndButtonWrap {
+  display: flex;
+  justify-content: space-between;
+}
+.comp_inputAndButton ._inputAndButtonWrap .comm_input {
+  flex-basis: 75%;
+}
+.comp_inputAndButton ._inputAndButtonWrap .btn {
+  flex-basis: 24%;
+}
+
+/* textarea형 */
+.comp_textarea {
+}
+.comp_textarea ._comp_textareaWrap {
+  display: flex;
+  justify-content: space-between;
+}
+.comp_textarea ._comp_textareaWrap .comm_input {
+  height: 90px;
+  padding: 15px;
+  flex-basis: 100%;
+}
+.comp_textarea ._comp_textareaWrap .btn {
+  flex-basis: 29%;
 }
