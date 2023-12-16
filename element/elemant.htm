@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ELEMENT</title>
+    <link type="text/css" href="../../assets/css/import.css" rel="stylesheet" />
+    <link
+      type="text/css"
+      href="../../assets/css/simplebar.css"
+      rel="stylesheet"
+    />
+    <script src="../../assets/js/jquery-2.2.4.js"></script>
+    <script src="../../assets/js/jquery-ui.js"></script>
+    <script src="../../assets/js/simplebar.min.js"></script>
+
+    <style>
+      body {
+      }
+      .rect_wrap {
+        padding: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+      .rect_wrap .rect_item {
+        width: 32%;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        margin: 0 0 1.5% 0;
+      }
+      .rect_wrap .rect_item > h2 {
+        padding: 15px;
+        font-size: 12px;
+        border-bottom: 1px solid #ddd;
+      }
+      .rect_wrap .rect_item > .rect_body {
+        padding: 15px;
+      }
+      .rect_wrap .rect_item > .rect_btm {
+      }
+    </style>
+  </head>
+  <body>
+    <div class="rect_wrap">
+      <div class="rect_item">
+        <h2>selectBox 형</h2>
+        <div class="rect_body">
+          <!--S: selectBox형 -->
+          <div class="_comp comp_select">
+            <span class="_tit">번호형식</span>
+            <div class="_body">
+              <div class="_selectWrap">
+                <button class="_header">
+                  <span class="_selectText">1,2,3</span>
+                </button>
+                <ul class="_list">
+                  <li><a class="_item _selected">1,2,3</a></li>
+                  <li><a class="_item">Q1,Q2,Q3</a></li>
+                  <li><a class="_item">번호없음</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!--E: selectBox형 -->
+        </div>
+        <div class="rect_btm"></div>
+      </div>
+
+      <div class="rect_item">
+        <h2>input + button 형</h2>
+        <div class="rect_body">
+          <!--S: input + button형 -->
+          <div class="_comp comp_inputAndButton _wide">
+            <span class="_tit">설문 ID 입력</span>
+            <div class="_body _inputAndButtonWrap">
+              <input
+                type="text"
+                class="comm_input"
+                placeholder="ID를 입력하세요."
+              />
+              <button class="btn _header">
+                <span class="_txt">중복확인</span>
+              </button>
+            </div>
+            <p class="_sbt01 ar">영문, 숫자 조합으로 12글자 입력 가능합니다</p>
+          </div>
+          <!--E: input + button형 -->
+        </div>
+        <div class="rect_btm">
+          <p class="noti"></p>
+        </div>
+      </div>
+
+      <div class="rect_item">
+        <h2>textarea 형</h2>
+        <div class="rect_body">
+          <!--S: textarea형 -->
+          <div class="_comp comp_textarea _wide">
+            <span class="_tit">설문제목</span>
+            <div class="_body _comp_textareaWrap">
+              <textarea
+                class="comm_input"
+                placeholder="내용을 입력하세요."
+              ></textarea>
+            </div>
+            <p class="_sbt01 ar">80글자 입력 가능합니다</p>
+          </div>
+          <!--E: textarea형 -->
+        </div>
+        <div class="rect_btm"></div>
+      </div>
+
+      <div class="rect_item">
+        <h2>Slider 형</h2>
+        <div class="rect_body">
+          <!--S: Slider 형 -->
+          <div class="comp_rangeSliderWrap">
+            <div class="_rangeSlider" id="sliderTarget">
+              <div class="_rangeSlider_handle" id="rangeSlider_handle"></div>
+            </div>
+            <script>
+              $(function () {
+                var handle = $("#rangeSlider_handle");
+                // console.log(handleRail);
+                $("#sliderTarget").slider({
+                  create: function () {
+                    //handle.text($(this).slider("value"));
+                    handle.next().text($(this).slider("value"));
+                  },
+                  slide: function (event, ui) {
+                    //handle.text(ui.value);
+                    handle.css("width", ui.value + "%");
+                    handle.next().text(ui.value);
+                  },
+                });
+              });
+            </script>
+          </div>
+          <!--E: Slider 형 -->
+        </div>
+        <div class="rect_btm"></div>
+      </div>
+
+      <div class="rect_item">
+        <h2>단순 텍스트 입력형</h2>
+        <div class="rect_body">
+          <!--S: 단순 텍스트 입력형 -->
+          <div class="comp_textTyppingArea">
+            <h2 class="_tit" contenteditable="true">설문정보 텍스트 영역</h2>
+            <div class="_typping" contenteditable="true">
+              설문정보 내용 영역
+            </div>
+          </div>
+          <!--E: 단순 텍스트 입력형 -->
+        </div>
+        <div class="rect_btm"></div>
+      </div>
+
+      <div class="rect_item">
+        <h2>상태/액션이 있는 텍스트 입력형</h2>
+        <div class="rect_body">
+          <!--S: 상태/액션이 있는 텍스트 입력형 -->
+          <div class="comp_questArea">
+            <h2 class="_tit" contenteditable="true">설문정보 텍스트 영역</h2>
+            <div class="_typping" contenteditable="true">
+              설문정보 내용 영역
+            </div>
+            <span class="_label _status _edit">편집중</span>
+            <div class="_actions">
+              <button class="btn _bdno _ico_ly">
+                <i class="ico _questReplay_w"></i>
+                <span class="txt">초기화</span>
+              </button>
+
+              <button class="btn _bdno _ico_ly">
+                <i class="ico _questCopy_w"></i>
+                <span class="txt">복사</span>
+              </button>
+
+              <button class="btn _bdno _ico_ly">
+                <i class="ico _questDel_w"></i>
+                <span class="txt">삭제</span>
+              </button>
+            </div>
+          </div>
+          <!--E: 상태/액션이 있는 텍스트 입력형 -->
+        </div>
+        <div class="rect_btm"></div>
+      </div>
+
+      <div class="rect_item">
+        <h2>리스트형태</h2>
+        <div class="rect_body">
+          <!--S: 리스트형태 -->
+          <div class="_itemListWrap">
+            <div class="comp_itemList">
+              <div class="_item">
+                <button class="_itemClick">Jump to</button>
+              </div>
+              <div class="_item">
+                <button class="_itemClick">End survey</button>
+              </div>
+              <div class="_item">
+                <button class="_itemClick">Show /Hide</button>
+              </div>
+            </div>
+          </div>
+          <!--E: 리스트형태 -->
+        </div>
+        <div class="rect_btm"></div>
+      </div>
+
+      <div class="rect_item">
+        <h2>버튼이있는 리스트형태</h2>
+        <div class="rect_body">
+          <!--E: 버튼이있는 리스트형태 -->
+          <div class="_itemListWrap">
+            <div class="comp_itemList">
+              <div class="_item _inAction">
+                <div class="_itemArea">
+                  Jump to
+                  <div class="_actions">
+                    <button class="btn _bdno _ico_ly _pgPrev">
+                      <i class="ico _qCopy"></i>
+                      <span class="txt">복사</span>
+                    </button>
+
+                    <button class="btn _bdno _ico_ly _pgPrev">
+                      <i class="ico _qDel"></i>
+                      <span class="txt">삭제</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="_item _inAction">
+                <div class="_itemArea">
+                  Jump to
+                  <div class="_actions">
+                    <button class="btn _bdno _ico_ly _pgPrev">
+                      <i class="ico _qCopy"></i>
+                      <span class="txt">복사</span>
+                    </button>
+
+                    <button class="btn _bdno _ico_ly _pgPrev">
+                      <i class="ico _qDel"></i>
+                      <span class="txt">삭제</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="_item _inAction">
+                <div class="_itemArea">
+                  Jump to
+                  <div class="_actions">
+                    <button class="btn _bdno _ico_ly _pgPrev">
+                      <i class="ico _qCopy"></i>
+                      <span class="txt">복사</span>
+                    </button>
+
+                    <button class="btn _bdno _ico_ly _pgPrev">
+                      <i class="ico _qDel"></i>
+                      <span class="txt">삭제</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--E: 버튼이있는 리스트형태 -->
+        </div>
+        <div class="rect_btm"></div>
+      </div>
+
+      <div class="rect_item">
+        <h2>아이템 추가</h2>
+        <div class="rect_body">
+          <div class="comp_itemAddDelWrap">
+            <div class="_itemAddDelBody">
+              <div class="_first">
+                <div class="_comp comp_select _wide">
+                  <div class="_body">
+                    <div class="_selectWrap">
+                      <button class="_header">
+                        <span class="_selectText">대상을 선택하세요</span>
+                      </button>
+                      <ul class="_list">
+                        <li><a class="_item _selected">1,2,3</a></li>
+                        <li><a class="_item">Q1,Q2,Q3</a></li>
+                        <li><a class="_item">번호없음</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="comp_fluid _col_4_6 mgt5">
+                  <div class="_item">
+                    <div class="_comp comp_select _wide">
+                      <div class="_body">
+                        <div class="_selectWrap _left">
+                          <button class="_header">
+                            <span class="_selectText">조건을 선택하세요</span>
+                          </button>
+                          <ul class="_list">
+                            <li><a class="_item _selected">is</a></li>
+                            <li><a class="_item">Q1,Q2,Q3</a></li>
+                            <li><a class="_item">번호없음</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="_item">
+                    <div class="_comp comp_select _wide">
+                      <div class="_body">
+                        <div class="_selectWrap _left">
+                          <button class="_header">
+                            <span class="_selectText">C2(답변 텍스트)</span>
+                          </button>
+                          <ul class="_list">
+                            <li>
+                              <a class="_item _selected">C2(답변 텍스트)</a>
+                            </li>
+                            <li><a class="_item">Q1,Q2,Q3</a></li>
+                            <li><a class="_item">번호없음</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="_btn_g">
+                <div class="_col_l">
+                  <button class="btn _bdno _ico_ly">
+                    <i class="ico _addItem"></i>
+                    <span class="txt">추가</span>
+                  </button>
+                </div>
+                <div class="_col_r">
+                  <button class="btn _bdno _ico_ly">
+                    <i class="ico _delItem"></i>
+                    <span class="txt">삭제</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="_itemAddDelBody">
+              <div class="_first">
+                <div class="_comp comp_select _wide">
+                  <div class="_body">
+                    <div class="_selectWrap">
+                      <button class="_header">
+                        <span class="_selectText">대상을 선택하세요</span>
+                      </button>
+                      <ul class="_list">
+                        <li><a class="_item _selected">1,2,3</a></li>
+                        <li><a class="_item">Q1,Q2,Q3</a></li>
+                        <li><a class="_item">번호없음</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="comp_fluid _col_4_6 mgt5">
+                  <div class="_item">
+                    <div class="_comp comp_select _wide">
+                      <div class="_body">
+                        <div class="_selectWrap _left">
+                          <button class="_header">
+                            <span class="_selectText">조건을 선택하세요</span>
+                          </button>
+                          <ul class="_list">
+                            <li><a class="_item _selected">is</a></li>
+                            <li><a class="_item">Q1,Q2,Q3</a></li>
+                            <li><a class="_item">번호없음</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="_item">
+                    <div class="_comp comp_select _wide">
+                      <div class="_body">
+                        <div class="_selectWrap _left">
+                          <button class="_header">
+                            <span class="_selectText">C2(답변 텍스트)</span>
+                          </button>
+                          <ul class="_list">
+                            <li>
+                              <a class="_item _selected">C2(답변 텍스트)</a>
+                            </li>
+                            <li><a class="_item">Q1,Q2,Q3</a></li>
+                            <li><a class="_item">번호없음</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="_btn_g">
+                <div class="_col_l">
+                  <button class="btn _bdno _ico_ly">
+                    <i class="ico _addItem"></i>
+                    <span class="txt">추가</span>
+                  </button>
+                </div>
+                <div class="_col_r">
+                  <button class="btn _bdno _ico_ly">
+                    <i class="ico _delItem"></i>
+                    <span class="txt">삭제</span>
+                  </button>
+                </div>
+              </div>
+
+              <span class="_label _good _condiStatus">AND</span>
+            </div>
+          </div>
+        </div>
+        <div class="rect_btm"></div>
+      </div>
+
+      <div class="rect_item">
+        <h2>subject</h2>
+        <div class="rect_body"></div>
+        <div class="rect_btm"></div>
+      </div>
+
+      <div class="rect_item">
+        <h2>subject</h2>
+        <div class="rect_body"></div>
+        <div class="rect_btm"></div>
+      </div>
+
+      <div class="rect_item">
+        <h2>subject</h2>
+        <div class="rect_body"></div>
+        <div class="rect_btm"></div>
+      </div>
+
+      <div class="rect_item">
+        <h2>subject</h2>
+        <div class="rect_body"></div>
+        <div class="rect_btm"></div>
+      </div>
+
+      <div class="rect_item">
+        <h2>subject</h2>
+        <div class="rect_body"></div>
+        <div class="rect_btm"></div>
+      </div>
+
+      <div class="rect_item">
+        <h2>subject</h2>
+        <div class="rect_body"></div>
+        <div class="rect_btm"></div>
+      </div>
+
+      <div class="rect_item">
+        <h2>subject</h2>
+        <div class="rect_body"></div>
+        <div class="rect_btm"></div>
+      </div>
+
+      <div class="rect_item">
+        <h2>subject</h2>
+        <div class="rect_body"></div>
+        <div class="rect_btm"></div>
+      </div>
+
+      <div class="rect_item">
+        <h2>subject</h2>
+        <div class="rect_body"></div>
+        <div class="rect_btm"></div>
+      </div>
+
+      <div class="rect_item">
+        <h2>subject</h2>
+        <div class="rect_body"></div>
+        <div class="rect_btm"></div>
+      </div>
+
+      <div class="rect_item">
+        <h2>subject</h2>
+        <div class="rect_body"></div>
+        <div class="rect_btm"></div>
+      </div>
+
+      <div class="rect_item">
+        <h2>subject</h2>
+        <div class="rect_body"></div>
+        <div class="rect_btm"></div>
+      </div>
+
+      <div class="rect_item">
+        <h2>subject</h2>
+        <div class="rect_body"></div>
+        <div class="rect_btm"></div>
+      </div>
+    </div>
+  </body>
+</html>

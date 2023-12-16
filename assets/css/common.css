@@ -11,6 +11,26 @@
   background: #333;
 }
 
+._label {
+  padding: 5px 10px;
+  font-size: 12px;
+  color: var(--white);
+  background-color: var(--black1);
+  border-radius: 30px;
+}
+._label._good {
+  background-color: var(--good);
+}
+._label._danger {
+  background-color: var(--danger);
+}
+._label._edit {
+  background-color: var(--edit);
+}
+._label._safe {
+  background-color: var(--safe);
+}
+
 .scroll_area {
   overflow: auto;
 }

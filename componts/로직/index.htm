@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>로직</title>
+    <link type="text/css" href="../../assets/css/import.css" rel="stylesheet" />
+    <link
+      type="text/css"
+      href="../../assets/css/simplebar.css"
+      rel="stylesheet"
+    />
+    <script src="../../assets/js/jquery-2.2.4.js"></script>
+    <script src="../../assets/js/jquery-ui.js"></script>
+    <script src="../../assets/js/simplebar.min.js"></script>
+  </head>
+  <body>
+    <!--S: 스타일 -->
+    <div class="mdu_pannel mdu_pannel_form scroll_area">
+      <div class="pannel_header">
+        <h2 class="tit">로직</h2>
+        <div class="util">
+          <button class="btn _bdno _ico_ly">
+            <i class="ico _pannelRefresh"></i>
+            <span class="txt">리셋</span>
+          </button>
+          <button class="btn _bdno _ico_ly">
+            <i class="ico _pannelClose"></i>
+            <span class="txt">닫기</span>
+          </button>
+        </div>
+      </div>
+      <div class="pannel_body">
+        <div class="item_group">
+          <button class="item_group_header _icoNew">새 로직 만들기</button>
+
+          <!--S: 리스트형태 -->
+          <div class="_itemListWrap">
+            <div class="comp_itemList">
+              <div class="_item">
+                <button class="_itemClick">Jump to</button>
+              </div>
+              <div class="_item">
+                <button class="_itemClick">End survey</button>
+              </div>
+              <div class="_item">
+                <button class="_itemClick">Show /Hide</button>
+              </div>
+            </div>
+          </div>
+          <!--E: 리스트형태 -->
+
+          <!--E: 버튼이있는 리스트형태 -->
+          <div class="_itemListWrap">
+            <div class="comp_itemList">
+              <div class="_item _inAction _logic">
+                <div class="_itemArea">
+                  Jump to
+                  <div class="_actions">
+                    <button class="btn _bdno _ico_ly _pgPrev">
+                      <i class="ico _qCopy"></i>
+                      <span class="txt">복사</span>
+                    </button>
+
+                    <button class="btn _bdno _ico_ly _pgPrev">
+                      <i class="ico _qDel"></i>
+                      <span class="txt">삭제</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="_item _inAction _logic">
+                <div class="_itemArea">
+                  End survey
+                  <div class="_actions">
+                    <button class="btn _bdno _ico_ly _pgPrev">
+                      <i class="ico _qCopy"></i>
+                      <span class="txt">복사</span>
+                    </button>
+
+                    <button class="btn _bdno _ico_ly _pgPrev">
+                      <i class="ico _qDel"></i>
+                      <span class="txt">삭제</span>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="setting_preView_wrap">
+                  <div class="item_list">
+                    <div class="item">
+                      <h2>IF</h2>
+                      <span>[P1]is[C2]</span>
+                      <span class="end">+1 conditions</span>
+                    </div>
+                    <div class="item">
+                      <h2>Then</h2>
+                      <span>[P1]is[C2]</span>
+                      <span class="end">+1 conditions</span>
+                    </div>
+                    <div class="item">
+                      <h2>When</h2>
+                      <span>[P1]is[C2]</span>
+                      <span class="end">+1 conditions</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="_item _inAction _logic">
+                <div class="_itemArea">
+                  Show /Hide
+                  <div class="_actions">
+                    <button class="btn _bdno _ico_ly _pgPrev">
+                      <i class="ico _qCopy"></i>
+                      <span class="txt">복사</span>
+                    </button>
+
+                    <button class="btn _bdno _ico_ly _pgPrev">
+                      <i class="ico _qDel"></i>
+                      <span class="txt">삭제</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--E: 버튼이있는 리스트형태 -->
+        </div>
+      </div>
+    </div>
+    <!--E: 스타일 -->
+
+    <script src="../../assets/js/commjs.js"></script>
+    <script src="../../assets/js/modal.js"></script>
+    <script src="../../assets/js/popup.js"></script>
+    <script src="../../assets/js/loading.js"></script>
+    <script src="../../assets/js/dropDown.js"></script>
+  </body>
+</html>

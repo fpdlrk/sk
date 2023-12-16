@@ -27,6 +27,14 @@ label.btn {
 .btn._bdno {
   border: none;
 }
+.btn_rud30 {
+  border-radius: 30px;
+}
+
+.btn_rud100 {
+  border-radius: 50%;
+}
+
 .btn:disabled {
   background: var(--color06);
   color: var(--white) !important;
@@ -53,9 +61,14 @@ label.btn {
 }
 .btn_lager {
   padding: 0 15px;
-  height: 52px;
+  height: 47px;
   font-size: 16px;
   line-height: 1.5;
+}
+
+.btn_fix.btn_lager {
+  width: 47px;
+  height: 47px;
 }
 
 .btn_trans {
@@ -66,6 +79,13 @@ label.btn {
 }
 .btn_trans:hover {
   background: #eee;
+}
+.btn_praimary {
+  background: var(--main01);
+  color: var(--white) !important;
+}
+.btn_praimary:hover {
+  background: var(--main01Over);
 }
 .btn_red {
   background: var(--main);
@@ -224,4 +244,38 @@ label.btn {
 }
 .btn .ico._pannelClose:before {
   background-image: url("../../assets/img/ico/d/ico_close.svg");
+}
+.btn .ico._add:before {
+  background-image: url("../../assets/img/ico/d/add_circle_outline.svg");
+}
+
+.btn .ico._qCopy:before {
+  background-image: url("../../assets/img/ico/d/ico_copy02.svg");
+}
+.btn .ico._qDel:before {
+  background-image: url("../../assets/img/ico/d/ico_delete02.svg");
+}
+
+.btn .ico._addItem:before {
+  background-image: url("../../assets/img/ico/d/add_circle_outline.svg");
+}
+.btn .ico._delItem:before {
+  background-image: url("../../assets/img/ico/d/remove_circle_outline.svg");
+}
+
+/* white icon */
+.btn .ico._questReplay_w:before {
+  background-image: url("../../assets/img/ico/w/ico_reply.svg");
+}
+.btn .ico._questCopy_w:before {
+  background-image: url("../../assets/img/ico/w/ico_copy.svg");
+}
+.btn .ico._questDel_w:before {
+  background-image: url("../../assets/img/ico/w/ico_delete.svg");
+}
+.btn .ico._more_w:before {
+  background-image: url("../../assets/img/ico/w/ico_more.svg");
+}
+.btn .ico._next01_w:before {
+  background-image: url("../../assets/img/ico/w/ico_next01.svg");
 }

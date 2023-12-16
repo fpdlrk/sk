@@ -2,6 +2,7 @@
 
 :root {
   --main01: #3617ce;
+  --main01Over: #401fe1;
   --main02: #ff404e;
   --main03: #f7b753;
   --main04: #897fea;
@@ -25,6 +26,7 @@
   --color07: #e8efff;
   --color08: #f6f9ff;
   --color09: #3617ce;
+  --color10: #fafcff;
 
   --tbIco: #e2e8f0;
   --cell: #f6f9ff;
@@ -39,7 +41,8 @@
 
   --white: #fff;
 
-  --good: #6e00ff;
-  --warning: #ff0000;
-  --safe: #11c90a;
+  --good: #3617ce;
+  --danger: #ff404e;
+  --edit: #ff404e;
+  --safe: #f7b753;
 }

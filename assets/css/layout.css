@@ -120,8 +120,8 @@ header .top .fllow > span + span {
 }
 header .top .fllow > span:before,
 header .top .fllow > span + span:after {
-  width: 17px;
-  height: 17px;
+  width: 18px;
+  height: 18px;
   content: "";
   display: block;
 }
@@ -135,6 +135,8 @@ header .top .fllow > span:nth-child(4):before {
   color: var(--white);
   border-radius: 50%;
   text-align: center;
+  padding: 0 2px 0 0;
+  line-height: 1.8;
 }
 header .top .fllow > span:nth-child(1):before {
   content: "1";
@@ -373,16 +375,16 @@ header .top_util .group button._pgCreate {
   border-bottom: 1px solid var(--line01);
   line-height: 1;
 }
-.mdu_pannel .pannel_header .btn {
+.mdu_pannel .pannel_header .util > .btn {
   height: auto;
   padding: 0;
   background-color: transparent;
   margin: 0 0 0 5px;
 }
-.mdu_pannel .pannel_header .btn ._pannelRefresh {
+.mdu_pannel .pannel_header .util > .btn ._pannelRefresh {
   margin-top: -2px;
 }
-.mdu_pannel .pannel_header h2.tit {
+.mdu_pannel .pannel_header > h2.tit {
   font-size: 14px;
   font-weight: 700;
 }
@@ -414,6 +416,9 @@ header .top_util .group button._pgCreate {
   background-repeat: no-repeat;
   background-image: url("../../assets/img/ico/d/chevron_right.svg");
 }
+.mdu_pannel .pannel_body .item_group .item_group_header._icoNew:after {
+  background-image: url("../../assets/img/ico/d/add_circle_outline.svg");
+}
 
 .mdu_pannel .pannel_body .item_group .item {
   padding: 15px;
@@ -423,6 +428,82 @@ header .top_util .group button._pgCreate {
   font-size: 14px;
   color: var(--color05);
 } */
+
+.view_round {
+  padding: 15px;
+  border: 1px solid var(--line01);
+  background-color: var(--white);
+  border-radius: 10px;
+}
+.view_round .lrSpace {
+  padding: 0 15px;
+}
+.view_round ._tp_full {
+  margin: 0 -15px;
+}
+.view_round .view_round_header {
+  padding: 0px 0 5px 0;
+}
+.view_round .view_round_header > .tit {
+  font-size: 16px;
+  color: var(--black1);
+}
+.view_round .view_round_body {
+  min-height: 450px;
+}
+.view_round .view_round_body .subject {
+  padding: 5px 0;
+  font-size: 20px;
+  color: var(--black1);
+}
+.view_round .view_round_btm {
+  padding: 10px 0 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--line01);
+}
+.view_round .view_round_btm .tp_next {
+  width: 130px;
+  font-size: 12px;
+}
+
+.view_round .view_round_btm .tp_next .ico {
+  margin: 0 0 0 15px;
+}
+._extra_area {
+}
+
+._logic_g_wrap {
+}
+._logic_g_wrap ._logic_g_tit {
+  padding: 5px 15px;
+  background-color: var(--color08);
+  display: flex;
+  align-items: center;
+  color: var(--black1);
+}
+._logic_g_wrap ._logic_g_tit > h2 {
+}
+._logic_g_wrap ._logic_g_tit > .st {
+  padding: 0 0 0 15px;
+  color: var(--color05);
+  font-weight: 400;
+}
+._logic_g_wrap ._logic_g_body {
+  padding: 15px 0 15px 40px;
+}
+
+._logic_g_wrap ._logic_g_body ._itemAddDelBody + ._itemAddDelBody {
+  margin-top: 15px;
+}
+._logic_g_wrap ._logic_g_body ._itemAddDelBody ._condiStatus {
+  position: absolute;
+  left: -50px;
+  top: 0;
+}
+
+/*------이전 작성 CSS------------------------------------------------------------------------------------------*/
 
 .location_area {
   height: 30px;
