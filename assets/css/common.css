@@ -90,6 +90,9 @@
   overflow: hidden;
   white-space: nowrap;
 }
+.f_main {
+  color: var(--main01) !important;
+}
 .f_black {
   color: #000 !important;
 }

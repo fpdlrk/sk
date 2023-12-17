@@ -61,8 +61,8 @@ label.btn {
 }
 .btn_lager {
   padding: 0 15px;
-  height: 47px;
-  font-size: 16px;
+  height: 50px;
+  font-size: 20px;
   line-height: 1.5;
 }
 
@@ -87,11 +87,16 @@ label.btn {
 .btn_praimary:hover {
   background: var(--main01Over);
 }
-.btn_red {
-  background: var(--main);
+.btn_color01 {
+  background: var(--color01);
   color: var(--white) !important;
-  border: 1px solid var(--main);
+  border: 1px solid var(--color01);
 }
+.btn_color01:hover {
+  background: var(--color01Over);
+  border: 1px solid var(--color01Over);
+}
+
 .btn_black {
   color: var(--white) !important;
   border: 1px solid #333;
@@ -261,6 +266,9 @@ label.btn {
 }
 .btn .ico._delItem:before {
   background-image: url("../../assets/img/ico/d/remove_circle_outline.svg");
+}
+.btn .ico._ic_pwShowHide:before {
+  background-image: url("../../assets/img/ico/d/Ico_sh.svg");
 }
 
 /* white icon */

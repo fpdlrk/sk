@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>로직</title>
+    <link type="text/css" href="../../assets/css/import.css" rel="stylesheet" />
+    <link
+      type="text/css"
+      href="../../assets/css/simplebar.css"
+      rel="stylesheet"
+    />
+    <script src="../../assets/js/jquery-2.2.4.js"></script>
+    <script src="../../assets/js/jquery-ui.js"></script>
+    <script src="../../assets/js/simplebar.min.js"></script>
+  </head>
+  <body>
+    <div class="pageContentPreview">
+      <div class="pollSettingArea">
+        <!--S: 스타일 -->
+        <div class="mdu_pannel mdu_pannel_form scroll_area">
+          <div class="pannel_header">
+            <h2 class="tit">로직</h2>
+            <div class="util">
+              <button class="btn _bdno _ico_ly">
+                <i class="ico _pannelRefresh"></i>
+                <span class="txt">리셋</span>
+              </button>
+              <button class="btn _bdno _ico_ly">
+                <i class="ico _pannelClose"></i>
+                <span class="txt">닫기</span>
+              </button>
+            </div>
+          </div>
+          <div class="pannel_body">
+            <div class="item_group">
+              <button class="item_group_header _ico _icoNew">
+                새 로직 만들기
+              </button>
+
+              <!--S: 리스트형태 -->
+              <div class="_itemListWrap">
+                <div class="comp_itemList">
+                  <div class="_item">
+                    <button class="_itemClick">Jump to</button>
+                  </div>
+                  <div class="_item">
+                    <button class="_itemClick">End survey</button>
+                  </div>
+                  <div class="_item">
+                    <button class="_itemClick">Show /Hide</button>
+                  </div>
+                </div>
+              </div>
+              <!--E: 리스트형태 -->
+
+              <!--E: 버튼이있는 리스트형태 -->
+              <div class="_itemListWrap">
+                <div class="comp_itemList">
+                  <div class="_item _inAction _logic">
+                    <div class="_itemArea">
+                      Jump to
+                      <div class="_actions">
+                        <button class="btn _bdno _ico_ly _pgPrev">
+                          <i class="ico _qCopy"></i>
+                          <span class="txt">복사</span>
+                        </button>
+
+                        <button class="btn _bdno _ico_ly _pgPrev">
+                          <i class="ico _qDel"></i>
+                          <span class="txt">삭제</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="_item _inAction _logic">
+                    <div class="_itemArea">
+                      End survey
+                      <div class="_actions">
+                        <button class="btn _bdno _ico_ly _pgPrev">
+                          <i class="ico _qCopy"></i>
+                          <span class="txt">복사</span>
+                        </button>
+
+                        <button class="btn _bdno _ico_ly _pgPrev">
+                          <i class="ico _qDel"></i>
+                          <span class="txt">삭제</span>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="setting_preView_wrap">
+                      <div class="item_list">
+                        <div class="item">
+                          <h2>IF</h2>
+                          <span>[P1]is[C2]</span>
+                          <span class="end">+1 conditions</span>
+                        </div>
+                        <div class="item">
+                          <h2>Then</h2>
+                          <span>[P1]is[C2]</span>
+                          <span class="end">+1 conditions</span>
+                        </div>
+                        <div class="item">
+                          <h2>When</h2>
+                          <span>[P1]is[C2]</span>
+                          <span class="end">+1 conditions</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="_item _inAction _logic">
+                    <div class="_itemArea">
+                      Show /Hide
+                      <div class="_actions">
+                        <button class="btn _bdno _ico_ly _pgPrev">
+                          <i class="ico _qCopy"></i>
+                          <span class="txt">복사</span>
+                        </button>
+
+                        <button class="btn _bdno _ico_ly _pgPrev">
+                          <i class="ico _qDel"></i>
+                          <span class="txt">삭제</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--E: 버튼이있는 리스트형태 -->
+            </div>
+          </div>
+        </div>
+        <!--E: 스타일 -->
+      </div>
+      <div class="pollPreviewArea">
+        <div class="view_round _tp_logic" style="width: 560px">
+          <div class="view_round_header">
+            <h2 class="tit">설문 ID 영역</h2>
+          </div>
+          <div class="view_round_body">
+            <div class="_logic_g_wrap">
+              <div class="_logic_g_tit _tp_full">
+                <h2>IF</h2>
+                <span class="st">아래 조건을 만족하면</span>
+              </div>
+              <div class="_logic_g_body">
+                <div class="comp_itemAddDelWrap">
+                  <div class="_itemAddDelBody">
+                    <div class="_first">
+                      <div class="_comp comp_select _wide">
+                        <div class="_body">
+                          <div class="_selectOuter">
+                            <div class="_selectWrap">
+                              <button class="_header">
+                                <span class="_selectText"
+                                  >대상을 선택하세요</span
+                                >
+                              </button>
+                              <ul class="_list">
+                                <li><a class="_item _selected">1,2,3</a></li>
+                                <li><a class="_item">Q1,Q2,Q3</a></li>
+                                <li><a class="_item">번호없음</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="comp_fluid _col_4_6 mgt5">
+                        <div class="_item">
+                          <div class="_comp comp_select _wide">
+                            <div class="_body">
+                              <div class="_selectOuter">
+                                <div class="_selectWrap _left">
+                                  <button class="_header">
+                                    <span class="_selectText"
+                                      >조건을 선택하세요</span
+                                    >
+                                  </button>
+                                  <ul class="_list">
+                                    <li><a class="_item _selected">is</a></li>
+                                    <li><a class="_item">Q1,Q2,Q3</a></li>
+                                    <li><a class="_item">번호없음</a></li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="_item">
+                          <div class="_comp comp_select _wide">
+                            <div class="_body">
+                              <div class="_selectOuter">
+                                <div class="_selectWrap _left">
+                                  <button class="_header">
+                                    <span class="_selectText"
+                                      >C2(답변 텍스트)</span
+                                    >
+                                  </button>
+                                  <ul class="_list">
+                                    <li>
+                                      <a class="_item _selected"
+                                        >C2(답변 텍스트)</a
+                                      >
+                                    </li>
+                                    <li><a class="_item">Q1,Q2,Q3</a></li>
+                                    <li><a class="_item">번호없음</a></li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="_btn_g">
+                      <div class="_col_l">
+                        <button class="btn _bdno _ico_ly">
+                          <i class="ico _addItem"></i>
+                          <span class="txt">추가</span>
+                        </button>
+                      </div>
+                      <div class="_col_r">
+                        <button class="btn _bdno _ico_ly">
+                          <i class="ico _delItem"></i>
+                          <span class="txt">삭제</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="_itemAddDelBody">
+                    <div class="_first">
+                      <div class="_comp comp_select _wide">
+                        <div class="_body">
+                          <div class="_selectOuter">
+                            <div class="_selectWrap">
+                              <button class="_header">
+                                <span class="_selectText"
+                                  >대상을 선택하세요</span
+                                >
+                              </button>
+                              <ul class="_list">
+                                <li><a class="_item _selected">1,2,3</a></li>
+                                <li><a class="_item">Q1,Q2,Q3</a></li>
+                                <li><a class="_item">번호없음</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="comp_fluid _col_4_6 mgt5">
+                        <div class="_item">
+                          <div class="_comp comp_select _wide">
+                            <div class="_body">
+                              <div class="_selectOuter">
+                                <div class="_selectWrap _left">
+                                  <button class="_header">
+                                    <span class="_selectText"
+                                      >조건을 선택하세요</span
+                                    >
+                                  </button>
+                                  <ul class="_list">
+                                    <li><a class="_item _selected">is</a></li>
+                                    <li><a class="_item">Q1,Q2,Q3</a></li>
+                                    <li><a class="_item">번호없음</a></li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="_item">
+                          <div class="_comp comp_select _wide">
+                            <div class="_body">
+                              <div class="_selectOuter">
+                                <div class="_selectWrap _left">
+                                  <button class="_header">
+                                    <span class="_selectText"
+                                      >C2(답변 텍스트)</span
+                                    >
+                                  </button>
+                                  <ul class="_list">
+                                    <li>
+                                      <a class="_item _selected"
+                                        >C2(답변 텍스트)</a
+                                      >
+                                    </li>
+                                    <li><a class="_item">Q1,Q2,Q3</a></li>
+                                    <li><a class="_item">번호없음</a></li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="_btn_g">
+                      <div class="_col_l">
+                        <button class="btn _bdno _ico_ly">
+                          <i class="ico _addItem"></i>
+                          <span class="txt">추가</span>
+                        </button>
+                      </div>
+                      <div class="_col_r">
+                        <button class="btn _bdno _ico_ly">
+                          <i class="ico _delItem"></i>
+                          <span class="txt">삭제</span>
+                        </button>
+                      </div>
+                    </div>
+
+                    <span class="_label _good _condiStatus">AND</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="_logic_g_wrap">
+              <div class="_logic_g_tit _tp_full">
+                <h2>Then</h2>
+                <span class="st">아래 동작을 합니다.</span>
+              </div>
+              <div class="_logic_g_body">
+                <div class="comp_itemAddDelWrap">
+                  <div class="_itemAddDelBody">
+                    <div class="_comp comp_select _first">
+                      <span class="_tit _color01">Jump to</span>
+
+                      <div class="_body _fix9">
+                        <div class="_selectOuter">
+                          <div class="_selectWrap">
+                            <button class="_header">
+                              <span class="_selectText">P1 </span>
+                            </button>
+                            <ul class="_list">
+                              <li><a class="_item _selected">1,2,3</a></li>
+                              <li><a class="_item">Q1,Q2,Q3</a></li>
+                              <li><a class="_item">번호없음</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="_logic_g_wrap">
+              <div class="_logic_g_tit _tp_full">
+                <h2>When</h2>
+                <span class="st"
+                  >아래 시점을 만족하면 위 로직을 수행합니다.</span
+                >
+              </div>
+              <div class="_logic_g_body">
+                IF 조건문과 THEN 액션문을 완성하면 자동으로 로직 수행 시점이
+                설정합니다.
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="view_round_btm">
+            <div class="_col_l">
+              <button
+                class="btn btn_praimary btn_rud100 btn_lager btn_fix _bdno _ico_ly"
+              >
+                <i class="ico _more_w"></i>
+                <span class="txt">더보기</span>
+              </button>
+            </div>
+            <div class="_col_r">
+              <button class="btn btn_praimary btn_rud30 btn_lager _bdno tp_next">
+                <span class="txt">NEXT</span>
+                <i class="ico _next01_w"></i>
+              </button>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+
+    <script src="../../assets/js/commjs.js"></script>
+    <script src="../../assets/js/modal.js"></script>
+    <script src="../../assets/js/popup.js"></script>
+    <script src="../../assets/js/loading.js"></script>
+    <script src="../../assets/js/dropDown.js"></script>
+  </body>
+</html>

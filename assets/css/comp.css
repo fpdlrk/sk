@@ -1,6 +1,6 @@
 @charset "UTF-8";
 ._comp {
-  min-height: 38px;
+  /* min-height: 38px; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -22,12 +22,12 @@
   flex-shrink: 0;
   width: 60%;
   height: 100%;
-  min-height: 38px;
+  /* min-height: 38px; */
   position: relative;
 }
 
 ._comp ._tit {
-  padding: 5px 0 5px 0;
+  padding: 5px 0 7px 0;
   display: block;
   font-size: 14px;
   color: var(--color05);
@@ -71,6 +71,10 @@
 /* .comp_select ._tit {
   flex: 0 0 auto;
 } */
+.comp_select ._selectOuter {
+  min-height: 38px;
+  position: relative;
+}
 .comp_select ._selectWrap {
   width: 100%;
   position: absolute;
@@ -385,6 +389,14 @@
   margin-left: auto;
 }
 
+.comp_basicList {
+  padding: 10px;
+  border-bottom: 1px solid var(--line01);
+}
+.comp_basicList ._item {
+  padding: 5px 0;
+}
+
 ._itemAddDelWrap {
 }
 .comp_itemAddDelWrap ._itemAddDelBody {
@@ -410,4 +422,20 @@
   width: 59%;
 }
 .comp_fluid ._item {
+}
+
+._cr_listWrap {
+}
+._cr_listWrap > ._cr_item {
+  padding: 5px 0;
+}
+._cr_listWrap > ._cr_item ._cr_itemChild {
+  padding: 5px 0 5px 22px;
+}
+._inp_color {
+}
+._inp_color .comm_input {
+  width: 100%;
+  padding: 0;
+  border: none;
 }

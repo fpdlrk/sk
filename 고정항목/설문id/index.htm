@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>설문 ID</title>
+    <link type="text/css" href="../../assets/css/import.css" rel="stylesheet" />
+    <link
+      type="text/css"
+      href="../../assets/css/simplebar.css"
+      rel="stylesheet"
+    />
+    <script src="../../assets/js/jquery-2.2.4.js"></script>
+    <script src="../../assets/js/jquery-ui.js"></script>
+    <script src="../../assets/js/simplebar.min.js"></script>
+  </head>
+  <body>
+    <div class="pageContentPreview">
+      <div class="pollSettingArea">
+        <!--S: 스타일 -->
+        <div class="mdu_pannel mdu_pannel_form scroll_area">
+          <div class="pannel_header">
+            <h2 class="tit">설문 ID</h2>
+            <div class="util">
+              <button class="btn _bdno _ico_ly">
+                <i class="ico _pannelRefresh"></i>
+                <span class="txt">리셋</span>
+              </button>
+              <button class="btn _bdno _ico_ly">
+                <i class="ico _pannelClose"></i>
+                <span class="txt">닫기</span>
+              </button>
+            </div>
+          </div>
+          <div class="pannel_body">
+            <div class="item_group">
+              <div class="item">
+                <div class="_comp comp_inputAndButton _wide">
+                  <span class="_tit">설문 ID 입력</span>
+                  <div class="_body _inputAndButtonWrap">
+                    <input
+                      type="text"
+                      class="comm_input"
+                      placeholder="ID를 입력하세요."
+                    />
+                    <button class="btn _header">
+                      <span class="_txt">중복확인</span>
+                    </button>
+                  </div>
+                  <p class="_sbt01 ar">
+                    영문, 숫자 조합으로 12글자 입력 가능합니다
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn _header" id="popAlert">
+            <span class="_txt">중복확인팝업</span>
+          </button>
+        </div>
+        <!--E: 스타일 -->
+      </div>
+      <div class="pollPreviewArea">
+        <div class="view_round _tp_style" style="width: 560px">
+          <div class="view_round_header">
+            <h2 class="tit">설문 ID 영역</h2>
+          </div>
+          <div class="view_round_body">
+            <div class="subject">설문제목 텍스트 영역</div>
+
+            <div class="comp_rangeSliderWrap">
+              <div class="_rangeSlider" id="sliderTarget">
+                <div class="_rangeSlider_handle" id="rangeSlider_handle"></div>
+              </div>
+              <script>
+                $(function () {
+                  var handle = $("#rangeSlider_handle");
+                  // console.log(handleRail);
+                  $("#sliderTarget").slider({
+                    create: function () {
+                      //handle.text($(this).slider("value"));
+                      handle.next().text($(this).slider("value"));
+                    },
+                    slide: function (event, ui) {
+                      //handle.text(ui.value);
+                      handle.css("width", ui.value + "%");
+                      handle.next().text(ui.value);
+                    },
+                  });
+                });
+              </script>
+            </div>
+
+            <div class="comp_textTyppingArea">
+              <h2 class="_tit" contenteditable="true">설문정보 텍스트 영역</h2>
+              <div class="_typping" contenteditable="true">
+                설문정보 내용 영역
+              </div>
+            </div>
+
+            <div class="comp_questArea _tp_full">
+              <h2 class="_tit" contenteditable="true">설문정보 텍스트 영역</h2>
+              <div class="_typping" contenteditable="true">
+                설문정보 내용 영역
+              </div>
+              <span class="_label _status _edit">편집중</span>
+              <div class="_actions">
+                <button class="btn _bdno _ico_ly">
+                  <i class="ico _questReplay_w"></i>
+                  <span class="txt">초기화</span>
+                </button>
+
+                <button class="btn _bdno _ico_ly">
+                  <i class="ico _questCopy_w"></i>
+                  <span class="txt">복사</span>
+                </button>
+
+                <button class="btn _bdno _ico_ly">
+                  <i class="ico _questDel_w"></i>
+                  <span class="txt">삭제</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="_extra_area">
+            <button class="btn _bdno _ico_ly wide">
+              <i class="ico _add"></i>
+              <span class="txt">추가</span>
+            </button>
+          </div>
+          <div class="view_round_btm">
+            <div class="_col_l">
+              <button
+                class="btn btn_praimary btn_rud100 btn_lager btn_fix _bdno _ico_ly"
+              >
+                <i class="ico _more_w"></i>
+                <span class="txt">더보기</span>
+              </button>
+            </div>
+            <div class="_col_r">
+              <button
+                class="btn btn_praimary btn_rud30 btn_lager _bdno tp_next"
+              >
+                <span class="txt">NEXT</span>
+                <i class="ico _next01_w"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../../assets/js/commjs.js"></script>
+    <script src="../../assets/js/modal.js"></script>
+    <script src="../../assets/js/popup.js"></script>
+    <script src="../../assets/js/loading.js"></script>
+    <script src="../../assets/js/dropDown.js"></script>
+
+    <script>
+      $("#popAlert").on("click", function () {
+        ModalOpen(
+          "firstPopup",
+          "안내",
+          "<span class='f_main'>KJCI3718UID09</span> 는 사용가능 ID입니다.",
+          "alert",
+          "",
+          okClickFnc,
+          {
+            //style: "font-size:60px;",
+            class: "ac",
+          }
+        );
+      });
+
+      let okClickFnc = (e) => {
+        ModalClose(e.target);
+        console.log("외부=okClickFnc----", e, e.target);
+      };
+    </script>
+  </body>
+</html>
