@@ -155,6 +155,13 @@
   flex-basis: 24%;
 }
 
+.comp_input {
+}
+.comp_textarea ._comp_inputWrap {
+  display: flex;
+  justify-content: space-between;
+}
+
 /* textarea형 */
 .comp_textarea {
 }
@@ -239,7 +246,8 @@
 }
 
 ._tp_style .comp_questArea ._typping {
-  min-height: 180px;
+  /* min-height: 180px;
+  padding: 10px 0; */
 }
 
 .comp_questArea {
@@ -429,13 +437,161 @@
 ._cr_listWrap > ._cr_item {
   padding: 5px 0;
 }
+._cr_listWrap > ._cr_item .ico:before {
+  background-image: url(../../assets/img/ico/d/ico_unChk_dis.svg);
+}
 ._cr_listWrap > ._cr_item ._cr_itemChild {
   padding: 5px 0 5px 22px;
 }
 ._inp_color {
 }
+
 ._inp_color .comm_input {
   width: 100%;
-  padding: 0;
-  border: none;
+  /* padding: 0; */
+  text-align: right;
+  /* border: none; */
+}
+
+.comp_answerAddWrap {
+}
+.comp_answerAddWrap ._answerAddItemOuter {
+}
+.comp_answerAddWrap ._answerAddItemOuter ._answerAddItem {
+  display: flex;
+}
+.comp_answerAddWrap ._answerAddItemOuter ._answerAddItem + ._answerAddItem {
+  margin-top: 5px;
+}
+.comp_answerAddWrap ._answerAddItemOuter ._answerAddItem ._handle {
+  width: 17px;
+  background-image: url(../../assets/img/ico/d/ico_handle.svg);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  font-size: 0;
+  background-color: var(--color06);
+  border: 1px solid var(--line01);
+  border-radius: 6px;
+}
+.comp_answerAddWrap ._answerAddItemOuter ._answerAddItem ._inp_wrap {
+  width: calc(100% - 80px);
+  margin: 0 0 0 4px;
+  display: flex;
+}
+.comp_answerAddWrap
+  ._answerAddItemOuter
+  ._answerAddItem
+  ._inp_wrap
+  .comm_input._tp_txt {
+  flex: 1;
+}
+.comp_answerAddWrap
+  ._answerAddItemOuter
+  ._answerAddItem
+  ._inp_wrap
+  .comm_input._tp_num {
+  width: 40px;
+  min-width: 40px;
+  margin: 0 0 0 5px;
+  display: none;
+}
+.comp_answerAddWrap
+  ._answerAddItemOuter
+  ._answerAddItem
+  ._inp_wrap
+  .comm_input._tp_num._active {
+  display: block;
+}
+.comp_answerAddWrap ._answerAddItemOuter ._answerAddItem ._btn_g {
+  display: flex;
+  margin-left: auto;
+  padding: 0 0 0 4px;
+}
+.comp_answerAddWrap ._answerAddItemOuter ._answerAddItem ._btn_g .btn {
+  padding: 0 4px;
+}
+.comp_answerAddWrap ._answerAddItemOuter ._answerAddItemPlaceholder {
+  height: 36px;
+  margin-bottom: 5px;
+  background-color: var(--color06);
+  border-radius: 6px;
+}
+
+._imgArea {
+  min-height: 180px;
+  margin: 10px 0 0 0;
+  background-color: var(--color07);
+  background-image: url(../../assets/img/ico/d/ico_noimage.svg);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+  overflow: hidden;
+}
+._imgArea ._img {
+}
+
+._answerListArea,
+._answerMultiListArea {
+  margin: 5px 0 0 0;
+}
+._answerListArea ._answerListItemOuter,
+._answerMultiListArea ._answerListItemOuter {
+}
+._answerListArea ._answerListItemOuter ._answerListItem,
+._answerMultiListArea ._answerListItemOuter ._answerListItem {
+  display: flex;
+  align-items: center;
+  padding: 7px 0;
+}
+._answerListArea ._answerListItemOuter ._answerListItemEtc div.comm_input,
+._answerMultiListArea ._answerListItemOuter ._answerListItemEtc div.comm_input {
+  background-color: var(--white);
+}
+._answerListArea ._answerListItemOuter ._answerListItem ._ico,
+._answerMultiListArea ._answerListItemOuter ._answerListItem ._ico {
+  width: 16px;
+  height: 16px;
+  margin: 0 5px 0 0;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 16px;
+}
+
+._answerListArea ._answerListItemOuter ._answerListItem ._ico {
+  background-image: url(../../assets/img/ico/d/ico_unRad.svg);
+}
+
+._answerMultiListArea ._answerListItemOuter ._answerListItem ._ico {
+  background-image: url(../../assets/img/ico/d/ico_unChk.svg);
+}
+
+._dropDownArea {
+  margin-top: 10px;
+  position: relative;
+}
+._dropDownArea ._dropDownHeader {
+  height: 50px;
+  background-color: var(--white);
+  border: 1px solid var(--line01);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+._dropDownArea ._dropDownHeader ._txt {
+  padding: 0 0 0 15px;
+}
+._dropDownArea ._dropDownHeader ._arrow {
+  width: 20px;
+  height: 20px;
+  background-image: url(../../assets/img/ico/d/arrow_drop_down.svg);
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+._dropDownArea ._dropDownBody {
+}
+._dropDownArea ._dropDownBody ._dropDownItem {
+  padding: 7px 0;
 }

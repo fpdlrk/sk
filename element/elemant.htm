@@ -96,6 +96,28 @@
       </div>
 
       <div class="rect_item">
+        <h2>input text 형</h2>
+        <div class="rect_body">
+          <!--S: input text 형 -->
+          <div class="_comp comp_input _wide">
+            <span class="_tit">설문제목</span>
+            <div class="_body">
+              <div class="_comp_inputWrap">
+                <input
+                  type="text"
+                  class="comm_input wide"
+                  placeholder="ID를 입력하세요."
+                />
+              </div>
+              <p class="_sbt01 ar">80글자 입력 가능합니다</p>
+            </div>
+          </div>
+          <!--E: input text 형 -->
+        </div>
+        <div class="rect_btm"></div>
+      </div>
+
+      <div class="rect_item">
         <h2>textarea 형</h2>
         <div class="rect_body">
           <!--S: textarea형 -->
@@ -571,14 +593,122 @@
       </div>
 
       <div class="rect_item">
-        <h2>subject</h2>
-        <div class="rect_body"></div>
+        <h2>컬러</h2>
+        <div class="rect_body">
+          <div class="_comp _colorPicker _wide">
+            <span class="_tit">배경컬러</span>
+            <div class="_body">
+              <div class="_inp_color">
+                <input
+                  onChange="update(this.jscolor, '#pr3')"
+                  onInput="update(this.jscolor, '#pr4')"
+                  value="FFFFFF"
+                  data-jscolor="{alpha:1}"
+                  class="comm_input"
+                />
+                <!-- <input
+                  type="color"
+                  class="comm_input"
+                  name=""
+                  id=""
+                  value="#659854"
+                /> -->
+                <script src="../../assets/js/jscolor.js"></script>
+                <script>
+                  jscolor.presets.default = {
+                    palette: [
+                      "#000000",
+                      "#7d7d7d",
+                      "#870014",
+                      "#ec1c23",
+                      "#ff7e26",
+                      "#fef100",
+                      "#22b14b",
+                      "#00a1e7",
+                      "#3f47cc",
+                      "#a349a4",
+                      "#ffffff",
+                      "#c3c3c3",
+                      "#b87957",
+                      "#feaec9",
+                      "#ffc80d",
+                      "#eee3af",
+                      "#b5e61d",
+                      "#99d9ea",
+                      "#7092be",
+                      "#c8bfe7",
+                    ],
+                    //paletteCols: 12,
+                    hideOnPaletteClick: true,
+                    //width: 271,
+                    //height: 151,
+                    //position: 'right',
+                    //previewPosition: 'right',
+                    //backgroundColor: 'rgba(51,51,51,1)', controlBorderColor: 'rgba(153,153,153,1)', buttonColor: 'rgba(240,240,240,1)',
+                  };
+                  function update(picker, selector) {
+                    document.querySelector(selector).style.background =
+                      picker.toBackground();
+                  }
+                  jscolor.trigger("input change");
+                </script>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="rect_btm"></div>
       </div>
 
       <div class="rect_item">
-        <h2>subject</h2>
-        <div class="rect_body"></div>
+        <h2>아이템 드래그</h2>
+        <div class="rect_body">
+          <div class="comp_answerAddWrap">
+            <div class="_answerAddItemOuter" id="answerAddItemOuter">
+              <div class="_answerAddItem">
+                <div class="_handle">드래그로 순서변경</div>
+                <input
+                  type="text"
+                  class="comm_input"
+                  placeholder="ID를 입력하세요1."
+                />
+                <div class="_btn_g">
+                  <div class="_col_l">
+                    <button class="btn _bdno _ico_ly">
+                      <i class="ico _addItem"></i>
+                      <span class="txt">추가</span>
+                    </button>
+                  </div>
+                  <div class="_col_r">
+                    <button class="btn _bdno _ico_ly">
+                      <i class="ico _delItem"></i>
+                      <span class="txt">삭제</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="_answerAddItem">
+                <div class="_handle">드래그로 순서변경</div>
+                <input type="text" class="comm_input" placeholder="기타" />
+              </div>
+            </div>
+          </div>
+
+          <script>
+            $("#answerAddItemOuter").sortable({
+              handle: "._handle",
+              axis: "y",
+              placeholder: "_answerAddItemPlaceholder",
+              start: function (event, ui) {
+                console.log(ui.item.html());
+                //ui.placeholder.html(ui.item.html());
+              },
+              stop: function (event, ui) {
+                console.log(ui.item.html());
+                //ui.placeholder.html(ui.item.html());
+              },
+            });
+          </script>
+        </div>
         <div class="rect_btm"></div>
       </div>
 
