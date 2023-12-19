@@ -599,9 +599,14 @@
             <span class="_tit">배경컬러</span>
             <div class="_body">
               <div class="_inp_color">
-                <input
+                <!-- <input
                   onChange="update(this.jscolor, '#pr3')"
                   onInput="update(this.jscolor, '#pr4')"
+                  value="FFFFFF"
+                  data-jscolor="{alpha:1}"
+                  class="comm_input"
+                /> -->
+                <input
                   value="FFFFFF"
                   data-jscolor="{alpha:1}"
                   class="comm_input"
@@ -646,10 +651,10 @@
                     //previewPosition: 'right',
                     //backgroundColor: 'rgba(51,51,51,1)', controlBorderColor: 'rgba(153,153,153,1)', buttonColor: 'rgba(240,240,240,1)',
                   };
-                  function update(picker, selector) {
-                    document.querySelector(selector).style.background =
-                      picker.toBackground();
-                  }
+                  // function update(picker, selector) {
+                  //   document.querySelector(selector).style.background =
+                  //     picker.toBackground();
+                  // }
                   jscolor.trigger("input change");
                 </script>
               </div>
@@ -666,11 +671,19 @@
             <div class="_answerAddItemOuter" id="answerAddItemOuter">
               <div class="_answerAddItem">
                 <div class="_handle">드래그로 순서변경</div>
-                <input
-                  type="text"
-                  class="comm_input"
-                  placeholder="ID를 입력하세요1."
-                />
+                <div class="_inp_wrap">
+                  <input
+                    type="text"
+                    class="comm_input _tp_txt"
+                    placeholder="ID를 입력하세요1."
+                  />
+                  <input
+                    type="text"
+                    class="comm_input _tp_num"
+                    placeholder=""
+                    value="1"
+                  />
+                </div>
                 <div class="_btn_g">
                   <div class="_col_l">
                     <button class="btn _bdno _ico_ly">
@@ -688,7 +701,33 @@
               </div>
               <div class="_answerAddItem">
                 <div class="_handle">드래그로 순서변경</div>
-                <input type="text" class="comm_input" placeholder="기타" />
+                <div class="_inp_wrap">
+                  <input
+                    type="text"
+                    class="comm_input _tp_txt"
+                    placeholder="ID를 입."
+                  />
+                  <input
+                    type="text"
+                    class="comm_input _tp_num"
+                    placeholder=""
+                    value="1"
+                  />
+                </div>
+                <div class="_btn_g">
+                  <div class="_col_l">
+                    <button class="btn _bdno _ico_ly">
+                      <i class="ico _addItem"></i>
+                      <span class="txt">추가</span>
+                    </button>
+                  </div>
+                  <div class="_col_r">
+                    <button class="btn _bdno _ico_ly">
+                      <i class="ico _delItem"></i>
+                      <span class="txt">삭제</span>
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -696,14 +735,21 @@
           <script>
             $("#answerAddItemOuter").sortable({
               handle: "._handle",
+              cursor: "move",
               axis: "y",
+              // connectWith: ".comp_answerAddWrap",
+              containment: ".comp_answerAddWrap", //(parent div)
               placeholder: "_answerAddItemPlaceholder",
               start: function (event, ui) {
-                console.log(ui.item.html());
+                //console.log(ui.item.html());
                 //ui.placeholder.html(ui.item.html());
               },
               stop: function (event, ui) {
-                console.log(ui.item.html());
+                //console.log(ui.item.html());
+                //ui.placeholder.html(ui.item.html());
+              },
+              update: function (event, ui) {
+                //console.log(ui.item.html());
                 //ui.placeholder.html(ui.item.html());
               },
             });

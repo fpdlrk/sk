@@ -49,17 +49,88 @@
               </div>
 
               <div class="item">
-                <div class="_comp _wide">
-                  <span class="_tit">진행율바</span>
+                <div class="_comp _colorPicker _wide">
+                  <span class="_tit">배경컬러</span>
                   <div class="_body">
                     <div class="_inp_color">
+                      <!-- <input
+                        onChange="update(this.jscolor, '#pr3')"
+                        onInput="update(this.jscolor, '#pr4')"
+                        value="FFFFFF"
+                        data-jscolor="{alpha:1}"
+                        class="comm_input"
+                      /> -->
                       <input
+                        value="FFFFFF"
+                        data-jscolor="{alpha:1}"
+                        class="comm_input jscolor"
+                        autocomplete="off"
+                        autocorrect="off"
+                        autocapitalize="off"
+                        spellcheck="false"
+                        data-current-color="#FFFFFF"
+                        style="
+                          background-image: linear-gradient(
+                              to right,
+                              rgb(255, 255, 255) 0%,
+                              rgb(255, 255, 255) 30px,
+                              rgba(0, 0, 0, 0) 31px,
+                              rgba(0, 0, 0, 0) 100%
+                            ),
+                            url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAQCAYAAAB3AH1ZAAAAAXNSR0IArs4c6QAAAFNJREFUSEtjnDlz5n8GPODs2bP4pBmMjY3xyuPSn5KSwrBt27bljKMOGA2B0RAY8BBIS0vDWw6Qm89hhQMu/U5OTgxLly5dzjjqgNEQGA2BgQ4BAPJuqnG97DVRAAAAAElFTkSuQmCC') !important;
+                          background-position: left top, left top !important;
+                          background-size: auto, 32px 16px !important;
+                          background-repeat: repeat-y, repeat-y !important;
+                          background-origin: padding-box, padding-box !important;
+                          padding-left: 40px !important;
+                        "
+                      />
+                      <!-- <input
                         type="color"
                         class="comm_input"
                         name=""
                         id=""
                         value="#659854"
-                      />
+                      /> -->
+                      <script src="../../assets/js/jscolor.js"></script>
+                      <script>
+                        jscolor.presets.default = {
+                          palette: [
+                            "#000000",
+                            "#7d7d7d",
+                            "#870014",
+                            "#ec1c23",
+                            "#ff7e26",
+                            "#fef100",
+                            "#22b14b",
+                            "#00a1e7",
+                            "#3f47cc",
+                            "#a349a4",
+                            "#ffffff",
+                            "#c3c3c3",
+                            "#b87957",
+                            "#feaec9",
+                            "#ffc80d",
+                            "#eee3af",
+                            "#b5e61d",
+                            "#99d9ea",
+                            "#7092be",
+                            "#c8bfe7",
+                          ],
+                          //paletteCols: 12,
+                          hideOnPaletteClick: true,
+                          //width: 271,
+                          //height: 151,
+                          //position: 'right',
+                          //previewPosition: 'right',
+                          //backgroundColor: 'rgba(51,51,51,1)', controlBorderColor: 'rgba(153,153,153,1)', buttonColor: 'rgba(240,240,240,1)',
+                        };
+                        // function update(picker, selector) {
+                        //   document.querySelector(selector).style.background =
+                        //     picker.toBackground();
+                        // }
+                        jscolor.trigger("input change");
+                      </script>
                     </div>
                   </div>
                 </div>

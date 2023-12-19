@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>미디어 한개</title>
+    <link type="text/css" href="../../assets/css/import.css" rel="stylesheet" />
+    <link
+      type="text/css"
+      href="../../assets/css/simplebar.css"
+      rel="stylesheet"
+    />
+    <script src="../../assets/js/jquery-2.2.4.js"></script>
+    <script src="../../assets/js/jquery-ui.js"></script>
+
+    <script src="../../assets/js/simplebar.min.js"></script>
+  </head>
+  <body>
+    <div class="pageContentPreview">
+      <div class="pollSettingArea">
+        <!--S: 스타일 -->
+        <div class="mdu_pannel mdu_pannel_form scroll_area">
+          <div class="pannel_header">
+            <h2 class="tit">미디어 한개</h2>
+            <div class="util">
+              <button class="btn _bdno _ico_ly">
+                <i class="ico _pannelRefresh"></i>
+                <span class="txt">리셋</span>
+              </button>
+              <button class="btn _bdno _ico_ly">
+                <i class="ico _pannelClose"></i>
+                <span class="txt">닫기</span>
+              </button>
+            </div>
+          </div>
+          <div class="pannel_body">
+            <div class="item_group">
+              <div class="item">
+                <div class="_comp comp_textarea _wide">
+                  <span class="_tit">질문입력</span>
+                  <div class="_body _comp_textareaWrap">
+                    <textarea
+                      class="comm_input"
+                      placeholder="에디터가 들어갑니다"
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="_comp comp_input _wide">
+                  <span class="_tit">설명입력</span>
+                  <div class="_body">
+                    <div class="_comp_inputWrap">
+                      <input
+                        type="text"
+                        class="comm_input wide"
+                        placeholder="ID를 입력하세요."
+                      />
+                    </div>
+                    <p class="_sbt01 ar">80글자 입력 가능합니다</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="_comp _wide">
+                  <span class="_tit">답변설정</span>
+                  <div class="_body">
+                    <div class="comp_answerAddWrap">
+                      <div class="_answerAddItemOuter" id="answerAddItemOuter">
+                        <div class="_answerAddItem _tpMedia">
+                          <div class="_handle">드래그로 순서변경</div>
+                          <div class="_inp_wrap">
+                            <div class="_image"></div>
+                            <div class="_filed">
+                              <div class="_filedInp">
+                                <input
+                                  type="text"
+                                  class="comm_input _tp_txt"
+                                  placeholder="ID를 입력하세요1."
+                                />
+                                <input
+                                  type="text"
+                                  class="comm_input _tp_num"
+                                  placeholder=""
+                                  value="1"
+                                />
+                              </div>
+
+                              <button
+                                class="btn _bdno btn_praimary wide"
+                                id="popAlert"
+                              >
+                                <span class="txt">이미지 삽입</span>
+                              </button>
+                            </div>
+                          </div>
+
+                          <div class="_btn_g">
+                            <div class="_col_l">
+                              <button class="btn _bdno _ico_ly">
+                                <i class="ico _addItem"></i>
+                                <span class="txt">추가</span>
+                              </button>
+                            </div>
+                            <div class="_col_r">
+                              <button class="btn _bdno _ico_ly">
+                                <i class="ico _delItem"></i>
+                                <span class="txt">삭제</span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <script>
+                      $("#answerAddItemOuter").sortable({
+                        handle: "._handle",
+                        axis: "y",
+                        placeholder: "_answerAddItemPlaceholder",
+                        start: function (event, ui) {
+                          console.log(ui.item.html());
+                          //ui.placeholder.html(ui.item.html());
+                        },
+                        stop: function (event, ui) {
+                          console.log(ui.item.html());
+                          //ui.placeholder.html(ui.item.html());
+                        },
+                      });
+                    </script>
+                  </div>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="_cr_listWrap">
+                  <div class="_cr_item">
+                    <span class="check_b_wrap">
+                      <input type="checkbox" class="chk" name="1" />
+                      <span class="ico"></span>
+                      <span>보기 무작위 배열</span>
+                    </span>
+                  </div>
+                  <div class="_cr_item">
+                    <span class="check_b_wrap">
+                      <input type="checkbox" class="chk" name="1" />
+                      <span class="ico"></span>
+                      <span>보기 점수배열</span>
+                    </span>
+                  </div>
+                  <div class="_cr_item">
+                    <span class="check_b_wrap">
+                      <input type="checkbox" class="chk" name="1" />
+                      <span class="ico"></span>
+                      <span>기타항목사용</span>
+                    </span>
+                    <div class="_cr_itemChild">
+                      <div class="_cr_listWrap">
+                        <div class="_cr_item">
+                          <span class="check_b_wrap">
+                            <input type="checkbox" class="chk" name="1" />
+                            <span class="ico"></span>
+                            <span>의견입력필수</span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="_comp comp_select">
+                  <span class="_tit">보기 이미지 채우기</span>
+                  <div class="_body">
+                    <div class="_selectOuter">
+                      <div class="_selectWrap">
+                        <button class="_header">
+                          <span class="_selectText">꽉채움</span>
+                        </button>
+                        <ul class="_list">
+                          <li><a class="_item _selected">꽉채움</a></li>
+                          <li><a class="_item">영역 내 맞춤</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="_comp comp_select">
+                  <span class="_tit">보기 최대 크기</span>
+                  <div class="_body">
+                    <div class="_selectOuter">
+                      <div class="_selectWrap">
+                        <button class="_header">
+                          <span class="_selectText">작게</span>
+                        </button>
+                        <ul class="_list">
+                          <li><a class="_item _selected">작게</a></li>
+                          <li><a class="_item">작게</a></li>
+                          <li><a class="_item">보통</a></li>
+                          <li><a class="_item">크게</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="_comp _wide">
+                  <span class="_tit">옵션</span>
+                  <div class="_body">
+                    <div class="_cr_listWrap">
+                      <div class="_cr_item">
+                        <span class="check_b_wrap">
+                          <input type="checkbox" class="chk" name="1" />
+                          <span class="ico"></span>
+                          <span>답변필수</span>
+                        </span>
+                      </div>
+                      <div class="_cr_item">
+                        <span class="check_b_wrap">
+                          <input type="checkbox" class="chk" name="1" />
+                          <span class="ico"></span>
+                          <span>결과비공개</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--E: 스타일 -->
+      </div>
+      <div class="pollPreviewArea">
+        <div class="view_round _tp_style" style="width: 560px">
+          <div class="view_round_header">
+            <h2 class="tit">설문 ID 영역</h2>
+          </div>
+          <div class="view_round_body">
+            <div class="subject">설문제목 텍스트 영역</div>
+
+            <div class="comp_rangeSliderWrap">
+              <div class="_rangeSlider" id="sliderTarget">
+                <div class="_rangeSlider_handle" id="rangeSlider_handle"></div>
+              </div>
+              <script>
+                $(function () {
+                  var handle = $("#rangeSlider_handle");
+                  // console.log(handleRail);
+                  $("#sliderTarget").slider({
+                    create: function () {
+                      //handle.text($(this).slider("value"));
+                      handle.next().text($(this).slider("value"));
+                    },
+                    slide: function (event, ui) {
+                      //handle.text(ui.value);
+                      handle.css("width", ui.value + "%");
+                      handle.next().text(ui.value);
+                    },
+                  });
+                });
+              </script>
+            </div>
+
+            <div class="comp_textTyppingArea">
+              <h2 class="_tit" contenteditable="true">설문정보 텍스트 영역</h2>
+              <div class="_typping" contenteditable="true">
+                설문정보 내용 영역
+              </div>
+            </div>
+
+            <div class="comp_questArea _tp_full">
+              <h2 class="_tit" contenteditable="true">설문정보 텍스트 영역</h2>
+
+              <!--S: 제목 영역 -->
+              <div class="_typping" contenteditable="true">
+                설문정보 내용 영역
+              </div>
+              <!--E: 제목 영역 -->
+
+              <!--S: 답변리스트 영역 -->
+              <div class="_answerListArea _tpMedia">
+                <div class="_answerListItemOuter">
+                  <div class="_answerListItem">
+                    <div class="_mediaImg"></div>
+                    <div class="_infoTxt">텍스트 영역 텍스트 영역</div>
+                    <span class="_ico"></span>
+                  </div>
+                </div>
+                <div class="_answerListItemOuter">
+                  <div class="_answerListItem">
+                    <div class="_mediaImg"></div>
+                    <div class="_infoTxt">텍스트 영역 텍스트 영역</div>
+                    <span class="_ico"></span>
+                  </div>
+                </div>
+                <div class="_answerListItemOuter">
+                  <div class="_answerListItem">
+                    <div class="_mediaImg"></div>
+                    <div class="_infoTxt">텍스트 영역 텍스트 영역</div>
+                    <span class="_ico"></span>
+                  </div>
+                </div>
+                <div class="_answerListItemOuter">
+                  <div class="_answerListItem">
+                    <div class="_mediaImg"></div>
+                    <div class="_infoTxt">텍스트 영역 텍스트 영역</div>
+                    <span class="_ico"></span>
+                  </div>
+                </div>
+              </div>
+              <!--E: 답변리스트 영역 -->
+
+              <span class="_label _status _edit">편집중</span>
+              <div class="_actions">
+                <button class="btn _bdno _ico_ly">
+                  <i class="ico _questReplay_w"></i>
+                  <span class="txt">초기화</span>
+                </button>
+
+                <button class="btn _bdno _ico_ly">
+                  <i class="ico _questCopy_w"></i>
+                  <span class="txt">복사</span>
+                </button>
+
+                <button class="btn _bdno _ico_ly">
+                  <i class="ico _questDel_w"></i>
+                  <span class="txt">삭제</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="_extra_area">
+            <button class="btn _bdno _ico_ly wide">
+              <i class="ico _add"></i>
+              <span class="txt">추가</span>
+            </button>
+          </div>
+          <div class="view_round_btm">
+            <div class="_col_l">
+              <button
+                class="btn btn_praimary btn_rud100 btn_lager btn_fix _bdno _ico_ly"
+              >
+                <i class="ico _more_w"></i>
+                <span class="txt">더보기</span>
+              </button>
+            </div>
+            <div class="_col_r">
+              <button
+                class="btn btn_praimary btn_rud30 btn_lager _bdno tp_next"
+              >
+                <span class="txt">NEXT</span>
+                <i class="ico _next01_w"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="pwChangePopup" class="commPopup tp_popup" style="width: 600px">
+      <div class="pop_header">
+        <h2 id="popTitle">비밀번호 변경</h2>
+      </div>
+      <div class="pop_body">
+        <div class="form_group">
+          <div class="form_group">
+            <label for="" class="tit">현재 비밀번호</label>
+            <div class="form_item">
+              <input
+                type="password"
+                class="comm_input tp_lg"
+                placeholder="Enter Name"
+              />
+            </div>
+          </div>
+          <div class="form_group">
+            <label for="" class="tit">새 비밀번호</label>
+            <div class="form_item">
+              <input
+                type="password"
+                class="comm_input tp_lg"
+                placeholder="Enter Company"
+              />
+            </div>
+          </div>
+          <div class="form_group">
+            <label for="" class="tit">새 비밀번호 확인</label>
+            <div class="form_item">
+              <input
+                type="password"
+                class="comm_input tp_lg"
+                placeholder="Enter Company"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="popInfoTxt">
+          <ul class="bullet_list">
+            <li>
+              비밀번호의 길이는 영문, 숫자 혼합하여 최소 8자리 이상 20자리
+              이하로 설정해야 합니다.
+            </li>
+            <li>
+              3자 이상의 연속되거나 반복된 문자, 숫자는 사용할 수 없습니다.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="popup_footer ar">
+        <button type="button" class="btn btn_small btnCancle">Cancel</button>
+        <button
+          type="button"
+          class="btn btn_small btn_purple btnOk"
+          id="btnSave"
+        >
+          Save
+        </button>
+      </div>
+    </div>
+
+    <button type="button" id="btn_pwChange" class="btn">비밀번호 변경</button>
+
+    <script src="../../assets/js/commjs.js"></script>
+    <script src="../../assets/js/modal.js"></script>
+    <script src="../../assets/js/popup.js"></script>
+    <script src="../../assets/js/loading.js"></script>
+    <script src="../../assets/js/dropDown.js"></script>
+    <script>
+      $("#btn_pwChange").on("click", function () {
+        let test = document.querySelector("#pwChangePopup");
+        let pop = test.open({
+          popId: "pwChangePopup",
+          headerTitle: "비밀번호 변경",
+          data: null,
+          width: 600,
+          height: null,
+          callBack: { fnOk: okClickFnc, fnCancle: cancleClickFnc },
+        });
+        setTimeout(function () {
+          //test.close();
+          //console.log(pop.init())
+        }, 500);
+      });
+
+      // let okClickFnc = (e) => {
+      //   PopupClose(e.target);
+      //   console.log("외부=okClickFnc----", e, e.target);
+      // };
+
+      let cancleClickFnc = (e) => {
+        PopupClose(e.target);
+        console.log("외부=cancleClickFnc====", e.target);
+      };
+    </script>
+
+    <script>
+      $("#popAlert").on("click", function () {
+        ModalOpen(
+          "firstPopup",
+          "이미지 삽입/수정",
+          "<span class='f_main'>KJCI3718UID09</span> 는 사용가능 ID입니다.",
+          "confirm",
+          okClickFnc,
+          okClickFnc,
+          {
+            //style: "font-size:60px;",
+            //class: "ac",
+          }
+        );
+      });
+
+      let okClickFnc = (e) => {
+        ModalClose(e.target);
+        console.log("외부=okClickFnc----", e, e.target);
+      };
+    </script>
+  </body>
+</html>

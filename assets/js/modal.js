@@ -28,7 +28,8 @@ const ModalOpen = function (
 
     open() {
       let html = "";
-      html += '<div id="' + this.popId + '" class="commPopup _tp_alert">';
+      html +=
+        '<div id="' + this.popId + '" class="commPopup _tp_' + this.type + '">';
       if (this.title != null && this.title != "") {
         html += '<div class="pop_header">';
         html += "<h2>" + this.title + "</h2>";
@@ -59,7 +60,7 @@ const ModalOpen = function (
           '">닫기</button>';
       } else {
         html +=
-          '<button type="button" class="btn btn_small btn_rud30 btn_praimary btnCancle" data-popId="' +
+          '<button type="button" class="btn btn_small btn_rud30 btn_color03 btnCancle" data-popId="' +
           this.popId +
           '">취소</button>';
         html +=

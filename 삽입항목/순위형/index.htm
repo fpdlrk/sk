@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>드롭다운</title>
+    <title>순위형</title>
     <link type="text/css" href="../../assets/css/import.css" rel="stylesheet" />
     <link
       type="text/css"
@@ -22,7 +22,7 @@
         <!--S: 스타일 -->
         <div class="mdu_pannel mdu_pannel_form scroll_area">
           <div class="pannel_header">
-            <h2 class="tit">드롭다운</h2>
+            <h2 class="tit">순위형</h2>
             <div class="util">
               <button class="btn _bdno _ico_ly">
                 <i class="ico _pannelRefresh"></i>
@@ -100,40 +100,73 @@
                             </div>
                           </div>
                         </div>
-                        <div class="_answerAddItem">
-                          <div class="_handle">드래그로 순서변경</div>
-                          <div class="_inp_wrap">
-                            <input
-                              type="text"
-                              class="comm_input _tp_txt"
-                              placeholder="ID를 입."
-                            />
-                            <input
-                              type="text"
-                              class="comm_input _tp_num"
-                              placeholder=""
-                              value="1"
-                            />
-                          </div>
-                          <div class="_btn_g">
-                            <div class="_col_l">
-                              <button class="btn _bdno _ico_ly">
-                                <i class="ico _addItem"></i>
-                                <span class="txt">추가</span>
+                      </div>
+                    </div>
+
+                    <script>
+                      $("#answerAddItemOuter").sortable({
+                        handle: "._handle",
+                        axis: "y",
+                        placeholder: "_answerAddItemPlaceholder",
+                        start: function (event, ui) {
+                          console.log(ui.item.html());
+                          //ui.placeholder.html(ui.item.html());
+                        },
+                        stop: function (event, ui) {
+                          console.log(ui.item.html());
+                          //ui.placeholder.html(ui.item.html());
+                        },
+                      });
+                    </script>
+                  </div>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="_comp comp_input _wide">
+                  <span class="_tit">순위 선택 가능 개수</span>
+                  <div class="_body">
+                    <div class="flex_box _fac">
+                      <div class="_comp comp_select _fjl mgb10">
+                        <span class="_tit">최소</span>
+                        <div class="_body">
+                          <div class="_selectOuter mgl5" style="width: 80px">
+                            <div class="_selectWrap">
+                              <button class="_header">
+                                <span class="_selectText">1</span>
                               </button>
+                              <ul class="_list">
+                                <li><a class="_item _selected">1</a></li>
+                                <li><a class="_item">Q1,Q2,Q3</a></li>
+                                <li><a class="_item">번호없음</a></li>
+                              </ul>
                             </div>
-                            <div class="_col_r">
-                              <button class="btn _bdno _ico_ly">
-                                <i class="ico _delItem"></i>
-                                <span class="txt">삭제</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="mgl15 mgr15 mgb10">~</div>
+
+                      <div class="_comp comp_select _fjl mgb10">
+                        <span class="_tit">최대</span>
+                        <div class="_body">
+                          <div class="_selectOuter mgl5" style="width: 100px">
+                            <div class="_selectWrap">
+                              <button class="_header">
+                                <span class="_selectText">무제한</span>
                               </button>
+                              <ul class="_list">
+                                <li><a class="_item _selected">1,2,3</a></li>
+                                <li><a class="_item">Q1,Q2,Q3</a></li>
+                                <li><a class="_item">번호없음</a></li>
+                              </ul>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
 
-                    <div class="_cr_listWrap mgt10">
+                    <div class="_cr_listWrap">
                       <div class="_cr_item">
                         <span class="check_b_wrap">
                           <input type="checkbox" class="chk" name="1" />
@@ -246,19 +279,25 @@
               </div>
               <!--E: 제목 영역 -->
 
-              <!--S: 드롭다운 영역 -->
-              <div class="_dropDownArea">
-                <div class="_dropDownHeader">
-                  <span class="_txt">답변 텍스트 영역</span
-                  ><span class="_arrow"></span>
+              <!--S: 답변리스트 영역 -->
+              <div class="_answerListArea">
+                <div class="_answerListItemOuter">
+                  <div class="_answerListItem">
+                    <span class="_ico"></span>
+                    <div class="_answer">답변 1</div>
+                  </div>
                 </div>
-                <div class="_dropDownBody">
-                  <div class="_dropDownItem">답변 텍스트 영역</div>
-                  <div class="_dropDownItem">답변 텍스트 영역</div>
-                  <div class="_dropDownItem">답변 텍스트 영역</div>
+                <div class="_answerListItemOuter">
+                  <div class="_answerListItem">
+                    <span class="_ico"></span>
+                    <div class="_answer">답변 2</div>
+                  </div>
+                  <div class="_answerListItemEtc">
+                    <div class="comm_input wide"></div>
+                  </div>
                 </div>
               </div>
-              <!--E: 드롭다운 영역 -->
+              <!--E: 답변리스트 영역 -->
 
               <span class="_label _status _edit">편집중</span>
               <div class="_actions">

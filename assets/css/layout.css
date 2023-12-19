@@ -934,7 +934,7 @@ header .top_util .group button._pgCreate {
   float: left;
   font-size: 16px;
   font-weight: 500;
-  color: #333;
+  color: var(--color01);
 }
 .commPopup .pop_body {
   padding: 20px;
@@ -1003,6 +1003,11 @@ header .top_util .group button._pgCreate {
 
 .commPopup._tp_alert {
   width: 360px;
+}
+.commPopup._tp_alert .popup_footer {
+}
+.commPopup._tp_confirm .popup_footer .btn_g {
+  justify-content: flex-end;
 }
 
 .commPopup.size_m {
