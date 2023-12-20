@@ -737,12 +737,12 @@
               handle: "._handle",
               cursor: "move",
               axis: "y",
-              // connectWith: ".comp_answerAddWrap",
               containment: ".comp_answerAddWrap", //(parent div)
               placeholder: "_answerAddItemPlaceholder",
               start: function (event, ui) {
-                //console.log(ui.item.html());
-                //ui.placeholder.html(ui.item.html());
+                let thisHeight = ui.item[0].style.height;
+                let placeholderDiv = ui.placeholder[0];
+                //placeholderDiv.style.height = thisHeight;
               },
               stop: function (event, ui) {
                 //console.log(ui.item.html());
@@ -759,8 +759,116 @@
       </div>
 
       <div class="rect_item">
-        <h2>subject</h2>
-        <div class="rect_body"></div>
+        <h2>미디어형</h2>
+        <div class="rect_body">
+          <div class="comp_answerAddWrap">
+            <div class="_answerAddItemOuter" id="answerAddItemOuter">
+              <div class="_answerAddItem _tpMedia">
+                <div class="_handle">드래그로 순서변경</div>
+                <div class="_inp_wrap">
+                  <div class="_image"></div>
+                  <div class="_filed">
+                    <div class="_filedInp">
+                      <input
+                        type="text"
+                        class="comm_input _tp_txt"
+                        placeholder="ID를 입력하세요1."
+                      />
+                      <input
+                        type="text"
+                        class="comm_input _tp_num"
+                        placeholder=""
+                        value="1"
+                      />
+                    </div>
+
+                    <button class="btn _bdno btn_praimary wide" id="popAlert">
+                      <span class="txt">이미지 삽입</span>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="_btn_g">
+                  <div class="_col_l">
+                    <button class="btn _bdno _ico_ly">
+                      <i class="ico _addItem"></i>
+                      <span class="txt">추가</span>
+                    </button>
+                  </div>
+                  <div class="_col_r">
+                    <button class="btn _bdno _ico_ly">
+                      <i class="ico _delItem"></i>
+                      <span class="txt">삭제</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="_answerAddItem _tpMedia">
+                <div class="_handle">드래그로 순서변경</div>
+                <div class="_inp_wrap">
+                  <div class="_image"></div>
+                  <div class="_filed">
+                    <div class="_filedInp">
+                      <input
+                        type="text"
+                        class="comm_input _tp_txt"
+                        placeholder="ID를 입력하세요1."
+                      />
+                      <input
+                        type="text"
+                        class="comm_input _tp_num"
+                        placeholder=""
+                        value="1"
+                      />
+                    </div>
+
+                    <button class="btn _bdno btn_praimary wide" id="popAlert">
+                      <span class="txt">이미지 삽입</span>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="_btn_g">
+                  <div class="_col_l">
+                    <button class="btn _bdno _ico_ly">
+                      <i class="ico _addItem"></i>
+                      <span class="txt">추가</span>
+                    </button>
+                  </div>
+                  <div class="_col_r">
+                    <button class="btn _bdno _ico_ly">
+                      <i class="ico _delItem"></i>
+                      <span class="txt">삭제</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script>
+            $("#answerAddItemOuter").sortable({
+              handle: "._handle",
+              cursor: "move",
+              axis: "y",
+              containment: ".comp_answerAddWrap", //(parent div)
+              placeholder: "_answerAddItemPlaceholder",
+              start: function (event, ui) {
+                let thisHeight = ui.item[0].style.height;
+                let placeholderDiv = ui.placeholder[0];
+                //placeholderDiv.style.height = thisHeight;
+              },
+              stop: function (event, ui) {
+                //console.log(ui.item.html());
+                //ui.placeholder.html(ui.item.html());
+              },
+              update: function (event, ui) {
+                //console.log(ui.item.html());
+                //ui.placeholder.html(ui.item.html());
+              },
+            });
+          </script>
+        </div>
         <div class="rect_btm"></div>
       </div>
 

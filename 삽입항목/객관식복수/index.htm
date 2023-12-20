@@ -106,14 +106,22 @@
                     <script>
                       $("#answerAddItemOuter").sortable({
                         handle: "._handle",
+                        cursor: "move",
                         axis: "y",
+                        // connectWith: ".comp_answerAddWrap",
+                        containment: ".comp_answerAddWrap", //(parent div)
                         placeholder: "_answerAddItemPlaceholder",
                         start: function (event, ui) {
-                          console.log(ui.item.html());
-                          //ui.placeholder.html(ui.item.html());
+                          let thisHeight = ui.item[0].style.height;
+                          let placeholderDiv = ui.placeholder[0];
+                          //placeholderDiv.style.height = thisHeight;
                         },
                         stop: function (event, ui) {
-                          console.log(ui.item.html());
+                          //console.log(ui.item.html());
+                          //ui.placeholder.html(ui.item.html());
+                        },
+                        update: function (event, ui) {
+                          //console.log(ui.item.html());
                           //ui.placeholder.html(ui.item.html());
                         },
                       });

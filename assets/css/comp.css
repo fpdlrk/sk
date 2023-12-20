@@ -8,6 +8,10 @@
   flex-wrap: wrap;
 }
 
+._columnGroup > ._comp + ._comp {
+  margin-top: 7px;
+}
+
 ._comp._wide {
   display: block !important;
 }
@@ -543,6 +547,12 @@
   background-color: var(--color06);
   border-radius: 6px;
 }
+.comp_answerAddWrap
+  ._answerAddItemOuter
+  ._tpMedia
+  + ._answerAddItemPlaceholder {
+  height: 76px;
+}
 
 ._imgArea {
   min-height: 180px;
@@ -667,4 +677,114 @@
 }
 ._dropDownArea ._dropDownBody ._dropDownItem {
   padding: 7px 15px;
+}
+
+.comp_rangeShape {
+  justify-content: flex-start;
+}
+.comp_rangeShape ._tit {
+  flex: 1;
+}
+
+.comp_rangeShape ._ico {
+  width: 36px;
+  height: 36px;
+  background-image: url(../../assets/img/ico/d/ico_range.svg);
+  background-position: 0% 50%;
+  background-repeat: no-repeat;
+  font-size: 0;
+}
+
+._answerRangeShape {
+}
+._answerRangeShapeItemOuter {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  justify-content: space-between;
+}
+._answerRangeShapeItemOuter:after {
+  height: 1px;
+  content: "";
+  display: block;
+  clear: both;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 15px;
+  background-color: var(--color03);
+}
+
+._answerRangeShapeItemOuter ._answerRangeShapeItem {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+._answerRangeShapeItemOuter ._answerRangeShapeItem + ._answerRangeShapeItem {
+  /* margin-left: 20px; */
+}
+._answerRangeShapeItemOuter ._answerRangeShapeItem ._num {
+}
+._answerRangeShapeItemOuter ._answerRangeShapeItem ._shape {
+  width: 32px;
+  height: 32px;
+  border: 2px solid var(--color03);
+  background-color: var(--white);
+  border-radius: 50%;
+}
+
+.comp_star {
+  justify-content: flex-start;
+}
+.comp_star ._tit {
+  flex: 1;
+}
+
+.comp_star ._ico {
+  width: 36px;
+  height: 36px;
+  background-image: url(../../assets/img/ico/d/ico_star.svg);
+  background-position: 0% 50%;
+  background-repeat: no-repeat;
+  font-size: 0;
+}
+
+._answerStar {
+}
+._answerStarItemOuter {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  justify-content: space-between;
+}
+._answerStarItemOuter:after {
+  height: 1px;
+  content: "";
+  display: block;
+  clear: both;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 15px;
+  background-color: var(--color03);
+}
+
+._answerStarItemOuter ._answerStarItem {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+._answerStarItemOuter ._answerStarItem + ._answerStarItem {
+  /* margin-left: 20px; */
+}
+._answerStarItemOuter ._answerStarItem ._num {
+}
+._answerStarItemOuter ._answerStarItem ._shape {
+  width: 32px;
+  height: 32px;
+  border: 2px solid var(--color03);
+  background-color: var(--white);
+  border-radius: 50%;
 }

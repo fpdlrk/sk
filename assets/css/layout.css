@@ -897,16 +897,13 @@ header .top_util .group button._pgCreate {
   visibility: hidden;
 }
 .commPopup.tp_popup .pop_header {
-  background: #333;
 }
 .commPopup.tp_popup .pop_header h2 {
-  color: #fff;
 }
 
 .commPopup.open {
   z-index: 1000;
   visibility: visible;
-  border: 1px solid #333;
 }
 .commPopup {
   width: 500px;

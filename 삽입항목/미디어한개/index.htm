@@ -113,20 +113,71 @@
                             </div>
                           </div>
                         </div>
+                        <div class="_answerAddItem _tpMedia">
+                          <div class="_handle">드래그로 순서변경</div>
+                          <div class="_inp_wrap">
+                            <div class="_image"></div>
+                            <div class="_filed">
+                              <div class="_filedInp">
+                                <input
+                                  type="text"
+                                  class="comm_input _tp_txt"
+                                  placeholder="ID를 입력하세요1."
+                                />
+                                <input
+                                  type="text"
+                                  class="comm_input _tp_num"
+                                  placeholder=""
+                                  value="1"
+                                />
+                              </div>
+
+                              <button
+                                class="btn _bdno btn_praimary wide"
+                                id="popAlert"
+                              >
+                                <span class="txt">이미지 삽입</span>
+                              </button>
+                            </div>
+                          </div>
+
+                          <div class="_btn_g">
+                            <div class="_col_l">
+                              <button class="btn _bdno _ico_ly">
+                                <i class="ico _addItem"></i>
+                                <span class="txt">추가</span>
+                              </button>
+                            </div>
+                            <div class="_col_r">
+                              <button class="btn _bdno _ico_ly">
+                                <i class="ico _delItem"></i>
+                                <span class="txt">삭제</span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
 
                     <script>
                       $("#answerAddItemOuter").sortable({
                         handle: "._handle",
+                        cursor: "move",
                         axis: "y",
+                        // connectWith: ".comp_answerAddWrap",
+                        containment: ".comp_answerAddWrap", //(parent div)
                         placeholder: "_answerAddItemPlaceholder",
                         start: function (event, ui) {
-                          console.log(ui.item.html());
-                          //ui.placeholder.html(ui.item.html());
+                          let thisHeight = ui.item[0].style.height;
+                          let placeholderDiv = ui.placeholder[0];
+                          //placeholderDiv.style.height = thisHeight;
                         },
                         stop: function (event, ui) {
-                          console.log(ui.item.html());
+                          //console.log(ui.item.html());
+                          //ui.placeholder.html(ui.item.html());
+                        },
+                        update: function (event, ui) {
+                          //console.log(ui.item.html());
                           //ui.placeholder.html(ui.item.html());
                         },
                       });
@@ -369,12 +420,12 @@
 
     <div id="pwChangePopup" class="commPopup tp_popup" style="width: 600px">
       <div class="pop_header">
-        <h2 id="popTitle">비밀번호 변경</h2>
+        <h2 id="popTitle">타이틀</h2>
       </div>
       <div class="pop_body">
         <div class="form_group">
           <div class="form_group">
-            <label for="" class="tit">현재 비밀번호</label>
+            <label for="" class="tit">현재 비밀번호xx</label>
             <div class="form_item">
               <input
                 type="password"
@@ -417,18 +468,26 @@
         </div>
       </div>
       <div class="popup_footer ar">
-        <button type="button" class="btn btn_small btnCancle">Cancel</button>
         <button
           type="button"
-          class="btn btn_small btn_purple btnOk"
+          class="btn btn_small btn_rud30 btn_color03 btnCancle"
+        >
+          취소
+        </button>
+        <button
+          type="button"
+          class="btn btn_small btn_rud30 btn_praimary btnOk"
           id="btnSave"
         >
-          Save
+          삽입
         </button>
       </div>
+      <button type="button" class="btn_close pop_close">
+        <span class="ico">닫기</span>
+      </button>
     </div>
 
-    <button type="button" id="btn_pwChange" class="btn">비밀번호 변경</button>
+    <button type="button" id="btn_pwChange" class="btn">비밀번호 변경ss</button>
 
     <script src="../../assets/js/commjs.js"></script>
     <script src="../../assets/js/modal.js"></script>
@@ -440,7 +499,7 @@
         let test = document.querySelector("#pwChangePopup");
         let pop = test.open({
           popId: "pwChangePopup",
-          headerTitle: "비밀번호 변경",
+          headerTitle: "이미지 삽입/수정",
           data: null,
           width: 600,
           height: null,
