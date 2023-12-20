@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>별점형</title>
+    <title>날짜형</title>
     <link type="text/css" href="../../assets/css/import.css" rel="stylesheet" />
     <link
       type="text/css"
@@ -22,7 +22,7 @@
         <!--S: 스타일 -->
         <div class="mdu_pannel mdu_pannel_form scroll_area">
           <div class="pannel_header">
-            <h2 class="tit">별점형</h2>
+            <h2 class="tit">날짜형</h2>
             <div class="util">
               <button class="btn _bdno _ico_ly">
                 <i class="ico _pannelRefresh"></i>
@@ -68,36 +68,42 @@
                 <div class="_comp _wide">
                   <span class="_tit">답변설정</span>
                   <div class="_body _columnGroup">
-                    <div class="_comp comp_star">
-                      <span class="_tit">별점모양</span>
-                      <div class="_body">
-                        <div class="_ico">별점모양</div>
-                      </div>
-                    </div>
-
                     <div class="_comp comp_select">
-                      <span class="_tit">별점단계</span>
+                      <span class="_tit">날짜정보</span>
                       <div class="_body">
                         <div class="_selectOuter">
                           <div class="_selectWrap">
                             <button class="_header">
-                              <span class="_selectText">1</span>
+                              <span class="_selectText">MM / DD / YYYY </span>
                             </button>
                             <ul class="_list">
-                              <li><a class="_item _selected">1</a></li>
-                              <li><a class="_item">2</a></li>
+                              <li><a class="_item _selected">꽉채움</a></li>
+                              <li><a class="_item">영역 내 맞춤</a></li>
                             </ul>
                           </div>
                         </div>
                       </div>
                     </div>
-
-                    <div class="_cr_item mgt15">
-                      <span class="check_b_wrap">
-                        <input type="checkbox" class="chk" name="1" />
-                        <span class="ico"></span>
-                        <span>점수표시</span>
-                      </span>
+                    <div class="_comp">
+                      <span class="_tit">시간정보</span>
+                      <div class="_body">
+                        <div class="_cr_listWrap _cols">
+                          <div class="_cr_item">
+                            <span class="radio_b_wrap">
+                              <input type="radio" class="chk" name="1" />
+                              <span class="ico"></span>
+                              <span>노출</span>
+                            </span>
+                          </div>
+                          <div class="_cr_item">
+                            <span class="radio_b_wrap">
+                              <input type="radio" class="chk" name="1" />
+                              <span class="ico"></span>
+                              <span>미노출</span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -179,25 +185,17 @@
               <!--E: 제목 영역 -->
 
               <!--S: 답변리스트 영역 -->
-              <div class="_answerStar">
-                <div class="_answerStarItemOuter">
-                  <div class="_answerStarItem">
-                    <div class="_star"></div>
-                  </div>
-                  <div class="_answerStarItem">
-                    <div class="_star"></div>
-                  </div>
-                  <div class="_answerStarItem">
-                    <div class="_star"></div>
-                  </div>
-                  <div class="_answerStarItem">
-                    <div class="_star"></div>
-                  </div>
-                  <div class="_answerStarItem">
-                    <div class="_star"></div>
-                  </div>
-                </div>
-                <div class="_score"><span class="_num">0</span>/5</div>
+              <div class="_typingAnswerArea">
+                <div class="_typingAnswerBody">답변을 입력하세요.</div>
+                <p>100글자 까지 입력 가능합니다</p>
+              </div>
+              <!--E: 답변리스트 영역 -->
+
+              <!--S: 답변리스트 영역 -->
+
+              <div class="_typingAnswerArea _short">
+                <div class="_typingAnswerBody">답변을 입력하세요.</div>
+                <p>20글자 까지 입력 가능합니다</p>
               </div>
               <!--E: 답변리스트 영역 -->
 
@@ -248,122 +246,24 @@
       </div>
     </div>
 
-    <div id="pwChangePopup" class="commPopup tp_popup" style="width: 600px">
-      <div class="pop_header">
-        <h2 id="popTitle">타이틀</h2>
-      </div>
-      <div class="pop_body">
-        <div class="form_group">
-          <div class="form_group">
-            <label for="" class="tit">현재 비밀번호xx</label>
-            <div class="form_item">
-              <input
-                type="password"
-                class="comm_input tp_lg"
-                placeholder="Enter Name"
-              />
-            </div>
-          </div>
-          <div class="form_group">
-            <label for="" class="tit">새 비밀번호</label>
-            <div class="form_item">
-              <input
-                type="password"
-                class="comm_input tp_lg"
-                placeholder="Enter Company"
-              />
-            </div>
-          </div>
-          <div class="form_group">
-            <label for="" class="tit">새 비밀번호 확인</label>
-            <div class="form_item">
-              <input
-                type="password"
-                class="comm_input tp_lg"
-                placeholder="Enter Company"
-              />
-            </div>
-          </div>
-        </div>
-        <div class="popInfoTxt">
-          <ul class="bullet_list">
-            <li>
-              비밀번호의 길이는 영문, 숫자 혼합하여 최소 8자리 이상 20자리
-              이하로 설정해야 합니다.
-            </li>
-            <li>
-              3자 이상의 연속되거나 반복된 문자, 숫자는 사용할 수 없습니다.
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="popup_footer ar">
-        <button
-          type="button"
-          class="btn btn_small btn_rud30 btn_color03 btnCancle"
-        >
-          취소
-        </button>
-        <button
-          type="button"
-          class="btn btn_small btn_rud30 btn_praimary btnOk"
-          id="btnSave"
-        >
-          삽입
-        </button>
-      </div>
-      <button type="button" class="btn_close pop_close">
-        <span class="ico">닫기</span>
-      </button>
-    </div>
-
-    <button type="button" id="btn_pwChange" class="btn">비밀번호 변경ss</button>
-
     <script src="../../assets/js/commjs.js"></script>
     <script src="../../assets/js/modal.js"></script>
     <script src="../../assets/js/popup.js"></script>
     <script src="../../assets/js/loading.js"></script>
     <script src="../../assets/js/dropDown.js"></script>
-    <script>
-      $("#btn_pwChange").on("click", function () {
-        let test = document.querySelector("#pwChangePopup");
-        let pop = test.open({
-          popId: "pwChangePopup",
-          headerTitle: "이미지 삽입/수정",
-          data: null,
-          width: 600,
-          height: null,
-          callBack: { fnOk: okClickFnc, fnCancle: cancleClickFnc },
-        });
-        setTimeout(function () {
-          //test.close();
-          //console.log(pop.init())
-        }, 500);
-      });
-
-      // let okClickFnc = (e) => {
-      //   PopupClose(e.target);
-      //   console.log("외부=okClickFnc----", e, e.target);
-      // };
-
-      let cancleClickFnc = (e) => {
-        PopupClose(e.target);
-        console.log("외부=cancleClickFnc====", e.target);
-      };
-    </script>
 
     <script>
       $("#popAlert").on("click", function () {
         ModalOpen(
           "firstPopup",
-          "이미지 삽입/수정",
+          "안내",
           "<span class='f_main'>KJCI3718UID09</span> 는 사용가능 ID입니다.",
-          "confirm",
-          okClickFnc,
+          "alert",
+          "",
           okClickFnc,
           {
             //style: "font-size:60px;",
-            //class: "ac",
+            class: "ac",
           }
         );
       });

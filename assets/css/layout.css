@@ -640,35 +640,23 @@ header .top_util .group button._pgCreate {
 }
 
 .radio_b_wrap span.ico:before {
-  width: 8px;
-  height: 8px;
-  position: absolute;
-  top: 3px;
-  left: 3px;
-  content: "";
-  display: inline-block;
-  clear: both;
-  /* background: #fff; */
-  border-radius: 50%;
-  transform: scale(0);
-  transition: 0.2s ease all;
+  background-image: url(../../assets/img/ico/d/ico_unRad.svg);
 }
 .check_b_wrap span.ico:before {
+  background-image: url(../../assets/img/ico/d/ico_unChk.svg);
+}
+.radio_b_wrap span.ico:before,
+.check_b_wrap span.ico:before {
+  width: 100%;
+  height: 100%;
   content: "";
   display: block;
   clear: both;
   position: absolute;
-  transition: 0.2s ease all;
-  /* transform-origin: top left; */
-}
-.check_b_wrap span.ico:before {
-  width: 100%;
-  height: 100%;
   top: 0px;
   left: 0px;
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-image: url(../../assets/img/ico/d/ico_unChk.svg);
   background-size: 100%;
 }
 
@@ -689,6 +677,10 @@ header .top_util .group button._pgCreate {
 }
 .check_b_wrap input[type="checkbox"]:checked + span.ico:before {
   background-image: url(../../assets/img/ico/d/ico_chk.svg);
+}
+
+.radio_b_wrap input[type="radio"]:checked + span.ico:before {
+  background-image: url(../../assets/img/ico/d/ico_rad.svg);
 }
 
 .radio_b_wrap span.ico {
