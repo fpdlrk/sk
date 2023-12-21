@@ -24,7 +24,8 @@ const LEFT_MENU_FUNC_ID = {
   DIVID: "divid", // 구분선
 };
 
-let leftHtml = `<div class="lnb_header">
+const CreateLeftMenu = (objId) => {
+  const Html = `<div class="lnb_header">
   <span class="txt">메뉴</span>
   <button class="btn _bdno _ico_ly _auto_h">
     <i class="ico _menuol"></i>
@@ -163,11 +164,9 @@ let leftHtml = `<div class="lnb_header">
     </ul>
   </div>
 </div>`;
-
-const CreateLeftMenu = (objId) => {
   const target = document.querySelector("#" + objId);
   target.innerHTML = "";
-  const outObj = (target.innerHTML = leftHtml);
+  const outObj = (target.innerHTML = Html);
   const toggleBtn = target.querySelectorAll("button.item_group_header");
   const pollAction = target.querySelectorAll("button.item");
   $("#" + objId + " .scrollbar-outer").scrollbar();

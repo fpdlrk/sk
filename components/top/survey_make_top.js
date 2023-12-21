@@ -1,4 +1,4 @@
-const TOP_MENU_FUNC_ID = {
+const TOP_AREA_FUNC_ID = {
   SURVEY_ID: "survey_id", // 설문ID
   SURVEY_SUBJECT: "survey_subject", // 설문제목
   PROGRESS_BAR: "progress_bar", // 진행률바
@@ -24,7 +24,8 @@ const TOP_MENU_FUNC_ID = {
   DIVID: "divid", // 구분선
 };
 
-let topHtml = `<div class="col_L">
+const topAreaMakeTop = (objId) => {
+  const Html = `<div class="col_L">
 <a href="#" class="logo">Tsurvey</a>
 <div class="next_prev">
   <button type="button" class="btn _bdno _ico_ly">
@@ -57,11 +58,9 @@ let topHtml = `<div class="col_L">
   <span class="txt">메뉴</span>
 </button>
 </div>`;
-
-const surveyMakeTop = (objId) => {
   const target = document.querySelector("#" + objId);
   target.innerHTML = "";
-  const outObj = (target.innerHTML = topHtml);
+  const outObj = (target.innerHTML = Html);
   const toggleBtn = target.querySelectorAll("button.item_group_header");
   const pollAction = target.querySelectorAll("button.item");
 
