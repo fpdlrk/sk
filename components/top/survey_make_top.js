@@ -1,28 +1,4 @@
-const TOP_AREA_FUNC_ID = {
-  SURVEY_ID: "survey_id", // 설문ID
-  SURVEY_SUBJECT: "survey_subject", // 설문제목
-  PROGRESS_BAR: "progress_bar", // 진행률바
-  BUTTON_SET: "button_set", // 버튼설정
-  CHOICE_ONE: "choice_one", // 객관식한개
-  CHOICE_MULTI: "choice_multi", // 객관식 복수
-  DROPDOWN: "dropdown", // 드롭다운
-  RANKING: "ranking", // 순위형
-  MEDIA_ONE: "media_one", // 미디어 한개
-  MEDIA_MULTI: "media_multi", // 미디어 복수
-  MEDIA_RANK: "media_rank", //미디어 순위형
-  SCALE: "scale", // 척도형
-  STAR: "star", // 별점형
-  GRID_ONE: "grid_one", // 격자형 한개
-  GRID_MULTI: "grid_multi", // 격자형 복수
-  GRID_RANK: "grid_rank", // 격자형 순위형
-  ADDRESS: "address", // 주소
-  DISCRIPTION_LONG: "discription_long", // 주관식 긴답변
-  DISCRIPTION_SHORT: "discription_short", //  주관식 짧은 답변
-  DETE_TYPE: "dete_type", // 날짜형
-  ADVER_TYPE_BANNER: "adver_type_banner", // 광고형 배너
-  NOTICE_TYPE_BANNER: "notice_type_banner", // 공지형 배너
-  DIVID: "divid", // 구분선
-};
+const TOP_AREA_FUNC_ID = {};
 
 const topAreaMakeTop = (objId) => {
   const Html = `<div class="col_L">
