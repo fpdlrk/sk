@@ -24,7 +24,7 @@ let screenInit = function () {
 };
 window.onresize = function () {
   screenInit();
-  console.log("@@@@@onresize");
+  // console.log("@@@@@onresize");
 };
 window.dispatchEvent(new Event("resize"));
 

@@ -1,7 +1,7 @@
-const dropDown= {
-    list : function(){
-        console.log('dsfsdf')
-    }
-}
+const dropDown = {
+  list: function () {
+    console.log("dsfsdf");
+  },
+};
 
-console.log('dsfsdf')
+// console.log('dsfsdf')

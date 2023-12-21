@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>레이아웃</title>
     <link type="text/css" href="../assets/css/import.css" rel="stylesheet" />
-    <!-- <link type="text/css" href="../assets/css/simplebar.css" rel="stylesheet" /> -->
     <script src="../assets/js/jquery-2.2.4.js"></script>
     <script src="../assets/js/jquery-ui.js"></script>
     <script src="../assets/js/scrollbar.js"></script>
@@ -44,107 +43,10 @@
       </div>
     </div>
 
-    <!--S: 팝업 -->
-    <div id="sharePopup" class="commPopup tp_popup sharePopup">
-      <div class="pop_header">
-        <h2 id="popTitle"></h2>
-      </div>
-      <div class="pop_body">
-        <div class="form_group">
-          <div class="form_group">
-            <div class="form_item">
-              <div class="flex_box">
-                <input
-                  type="text"
-                  class="comm_input tp_lg"
-                  placeholder="Email address or name"
-                />
-                <button type="button" class="btn btn_purple w100 mgl5" id="">
-                  Share
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="labelText">
-          You have <em class="f_bold">full access</em> to this workspace
-        </div>
-        <div class="labelText _warning">
-          You have <em class="f_bold">edit access</em> to this workspace
-        </div>
-
-        <p class="access_text">People with access this project</p>
-        <div class="workspace_box _sm">
-          <!-- 참여중인 workspace Area -->
-          <div class="item">
-            <div class="afa_area">
-              <div class="label_item">
-                <span class="FirstName_label comm_label">L</span>
-                <span class="labelFirstName"
-                  >서창호
-                  <em class="members">chseo@mindpro.co.kr</em>
-                </span>
-              </div>
-            </div>
-            <div class="btn_area">
-              <button type="button" class="btn btn_black btn_mini wide">
-                Member
-              </button>
-            </div>
-          </div>
-
-          <div class="item">
-            <div class="afa_area">
-              <div class="label_item">
-                <span class="FirstName_label comm_label">O</span>
-                <span class="labelFirstName"
-                  >주현후
-                  <em class="members">chseo@mindpro.co.kr</em>
-                </span>
-              </div>
-            </div>
-            <div class="btn_area">
-              <button type="button" class="btn btn_black btn_mini wide">
-                Member
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="popup_footer ar">
-        <button type="button" class="btn btn_small btnCancle">Cancel</button>
-        <button
-          type="button"
-          class="btn btn_small btn_purple"
-          data-id="workSpaceCreateStep2"
-        >
-          Continue
-        </button>
-      </div>
-    </div>
-    <!--E: 팝업 -->
-
     <script src="../assets/js/commjs.js"></script>
     <script src="../assets/js/modal.js"></script>
     <script src="../assets/js/popup.js"></script>
     <script src="../assets/js/loading.js"></script>
     <script src="../assets/js/dropDown.js"></script>
-
-    <script>
-      let btnShares = document.querySelectorAll('[data-id="btnShare"]'); // 버튼
-      for (let btnShare of btnShares) {
-        btnShare.addEventListener("click", function () {
-          let pop = document.querySelector("#sharePopup"); // 팝업 아이템
-          pop.open({
-            headerTitle: "Share project",
-            data: null,
-            width: 600,
-            height: null,
-            callBack: null,
-          });
-        });
-      }
-    </script>
   </body>
 </html>

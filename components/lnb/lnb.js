@@ -182,7 +182,6 @@ const CreateLeftMenu = (objId) => {
 function handleActionEvent(e) {
   e.preventDefault();
   let id = "";
-  // console.log(e, e.target.parentNode.nodeName == "BUTTON");
   if (e.target.parentNode.nodeName == "BUTTON") {
     id = e.target.parentNode.id;
   } else {
