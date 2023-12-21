@@ -110,6 +110,12 @@ header .top .col_R .user {
 }
 header .top .col_R .user .ico {
   width: 40px;
+  height: 100%;
+}
+header .top .col_R .user .ico {
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-image: url("../../assets/img/ico/d/ico_user.svg");
 }
 header .top .col_R .user,
 header .top .col_R .menu {
@@ -118,7 +124,7 @@ header .top .col_R .menu {
   justify-content: center;
 }
 
-header .top .fllow,
+/* header .top .fllow,
 header .top .fllow > span {
   display: flex;
   align-items: center;
@@ -178,6 +184,69 @@ header .top .fllow > span + span:after {
   transform: translateY(-50%);
 }
 header .top .fllow > span + span.active:after {
+  background-image: url("../../assets/img/ico/d/arrow_forward_active.svg");
+} */
+
+.fllow,
+.fllow > span {
+  display: flex;
+  align-items: center;
+  position: relative;
+  letter-spacing: -1px;
+}
+.fllow > span + span {
+  padding: 0 0 0 40px;
+}
+.fllow > span:before,
+.fllow > span + span:after {
+  width: 18px;
+  height: 18px;
+  content: "";
+  display: block;
+}
+.fllow > span:nth-child(1):before,
+.fllow > span:nth-child(2):before,
+.fllow > span:nth-child(3):before,
+.fllow > span:nth-child(4):before {
+  margin: 0 5px 0 0;
+  background-color: var(--color05);
+  font-size: 10px;
+  color: var(--white);
+  border-radius: 50%;
+  text-align: center;
+  padding: 0 2px 0 0;
+  line-height: 1.8;
+}
+.fllow > span:nth-child(1):before {
+  content: "1";
+}
+.fllow > span:nth-child(2):before {
+  content: "2";
+}
+.fllow > span:nth-child(3):before {
+  content: "3";
+}
+.fllow > span:nth-child(4):before {
+  content: "4";
+}
+.fllow > span.active {
+  color: var(--color01) !important;
+}
+.fllow > span.active:before {
+  background-color: var(--color01) !important;
+}
+
+.fllow > span + span:after {
+  width: 40px;
+  background-image: url("../../assets/img/ico/d/arrow_forward.svg");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.fllow > span + span.active:after {
   background-image: url("../../assets/img/ico/d/arrow_forward_active.svg");
 }
 header .top_util .group {

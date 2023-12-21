@@ -280,6 +280,9 @@ label.btn {
 .btn .ico._ic_pwShowHide:before {
   background-image: url("../../assets/img/ico/d/Ico_sh.svg");
 }
+.btn .ico._cloud:before {
+  background-image: url("../../assets/img/ico/d/ico_cloud.svg");
+}
 
 /* white icon */
 .btn .ico._questReplay_w:before {
