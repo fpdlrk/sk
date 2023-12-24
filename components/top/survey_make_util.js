@@ -3,67 +3,67 @@ const UTIL_AREA_FUNC_ID = {};
 const utilAreaMakeTop = (objId) => {
   const Html = `<div class="col_L">
 <div class="group">
-  <button class="btn _bdno _auto _pgCreate" id="pageCreate">
+  <button class="btn _bdno _auto _pgCreate" id="pageCreate" data-tooltip="설문만들기">
     <i class="ico _pageCreate"></i>
     <span class="txt">만들기</span>
   </button>
 </div>
 
 <div class="group">
-  <button class="btn _bdno _ico_ly">
+  <button class="btn _bdno _ico_ly" data-tooltip="스타일">
     <i class="ico _style"></i>
     <span class="txt">스타일</span>
   </button>
 
-  <button class="btn _bdno _ico_ly">
+  <button class="btn _bdno _ico_ly" data-tooltip="변수">
     <i class="ico _valid"></i>
     <span class="txt">변수</span>
   </button>
 
-  <button class="btn _bdno _ico_ly">
+  <button class="btn _bdno _ico_ly" data-tooltip="로직">
     <i class="ico _logic"></i>
     <span class="txt">로직</span>
   </button>
 
-  <button class="btn _bdno _ico_ly">
+  <button class="btn _bdno _ico_ly" data-tooltip="이력">
     <i class="ico _his"></i>
     <span class="txt">이력</span>
   </button>
 
-  <button class="btn _bdno _ico_ly">
+  <button class="btn _bdno _ico_ly" data-tooltip="설정">
     <i class="ico _setting"></i>
     <span class="txt">설정</span>
   </button>
 </div>
 
 <div class="group">
-  <button class="btn _bdno _ico_ly">
+  <button class="btn _bdno _ico_ly" data-tooltip="페이지 추가">
     <i class="ico _pageAdd"></i>
     <span class="txt">페이지 추가</span>
   </button>
 
-  <button class="btn _bdno _ico_ly">
+  <button class="btn _bdno _ico_ly" data-tooltip="페이지 복사">
     <i class="ico _pageCopy"></i>
     <span class="txt">페이지 복사</span>
   </button>
 
-  <button class="btn _bdno _ico_ly">
+  <button class="btn _bdno _ico_ly" data-tooltip="페이지 삭제">
     <i class="ico _pageDel"></i>
     <span class="txt">페이지 삭제</span>
   </button>
 </div>
 
 <div class="group pages_wrap">
-  <button class="btn _bdno tp_txt _auto">
+  <button class="btn _bdno tp_txt _auto" data-tooltip="소개글">
     <span class="txt">소개글</span>
   </button>
 
-  <button class="btn _bdno _ico_ly _pgFirst">
+  <button class="btn _bdno _ico_ly _pgFirst" data-tooltip="첫페이지">
     <i class="ico _pageFirst"></i>
     <span class="txt">처음으로</span>
   </button>
 
-  <button class="btn _bdno _ico_ly _pgPrev">
+  <button class="btn _bdno _ico_ly _pgPrev" data-tooltip="이전페이지">
     <i class="ico _pagePrev"></i>
     <span class="txt">이전페이지</span>
   </button>
@@ -74,23 +74,23 @@ const utilAreaMakeTop = (objId) => {
     </button>
   </div>
 
-  <button class="btn _bdno _ico_ly _pgNext">
+  <button class="btn _bdno _ico_ly _pgNext" data-tooltip="다음페이지">
     <i class="ico _pageNext"></i>
     <span class="txt">다음페이지</span>
   </button>
 
-  <button class="btn _bdno _ico_ly _pgLast">
+  <button class="btn _bdno _ico_ly _pgLast" data-tooltip="마지막 페이지">
     <i class="ico _pageLast"></i>
     <span class="txt">마지막 페이지</span>
   </button>
 
-  <button class="btn _bdno tp_txt _auto">
+  <button class="btn _bdno tp_txt _auto" data-tooltip="맺음말">
     <span class="txt">맺음말</span>
   </button>
 </div>
 </div>
 <div class="col_R">
-<button class="btn _bdno tp_txt _auto">
+<button class="btn _bdno tp_txt _auto" data-tooltip="미리보기" onclick="ABSFNCU()">
   <i class="ico _prevView"></i>
   <span class="txt">미리보기</span>
 </button>
@@ -98,20 +98,21 @@ const utilAreaMakeTop = (objId) => {
   const target = document.querySelector("#" + objId);
   target.innerHTML = "";
   const outObj = (target.innerHTML = Html);
-  const toggleBtn = target.querySelectorAll("button.item_group_header");
-  const pollAction = target.querySelectorAll("button.item");
-
-  $("#" + objId + " .scrollbar-outer").scrollbar();
-  toggleBtn.forEach((item) =>
-    item.addEventListener("click", handleToggleEvent)
-  );
-  pollAction.forEach((item) =>
-    item.addEventListener("click", handleActionEvent)
-  );
+  const btns = target.querySelectorAll("button.btn");
+  btns.forEach((item) => {
+    // console.log("item", [item], [item][0].attributes.onclick);
+    if (![item][0].attributes.onclick) {
+      item.addEventListener("click", (e) => {
+        makeUtilHandleActionEvent(e);
+      });
+    }
+    item.addEventListener("mouseenter", (e) => tooltip(e));
+    item.addEventListener("mouseleave", (e) => tooltip(e));
+  });
 };
 
 // 고정 - 삽입 항목의 메뉴 이벤트 등록
-function handleActionEvent(e) {
+function makeUtilHandleActionEvent(e) {
   e.preventDefault();
   let id = "";
   // console.log(e, e.target.parentNode.nodeName == "BUTTON");
@@ -135,18 +136,11 @@ function handleActionEvent(e) {
       break;
 
     default:
-      console.log("sldjfskldf");
+      console.log("기본로직@@@@", e);
       break;
   }
 }
 
-function handleToggleEvent(e) {
-  e.preventDefault();
-
-  if (e.target.nodeName == "SPAN") {
-    target = e.target.parentNode;
-  } else {
-    target = e.target;
-  }
-  [target][0].classList.toggle("active");
+function ABSFNCU() {
+  console.log("asdasd");
 }

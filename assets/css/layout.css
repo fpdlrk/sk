@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+._moveBox {
+  cursor: pointer;
+}
+
 .pageContentPreview {
   display: flex;
 }
@@ -19,8 +23,39 @@
   display: flex;
 }
 .contents {
-  padding: 40px;
+  /* padding: 40px; */
   flex: 1;
+  position: relative;
+  display: flex;
+}
+
+.contents > .cotegoryView {
+  height: 100%;
+  /* position: absolute;
+  left: 0;
+  top: 0; */
+}
+
+.contents > .cotegoryView > .scroll_area,
+.contents > .cotegoryView > .mdu_pannel {
+  height: 100%;
+}
+
+.contents > .cotegoryView > .scroll_area > .scrollbar-outer,
+.contents > .cotegoryView > .mdu_pannel > .scrollbar-outer {
+  height: calc(100% - 35px);
+}
+
+.contents > .contentArea {
+  flex: 1;
+  position: relative;
+  overflow: auto;
+}
+.contents > .contentArea .view_round {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /*///// header_area /////*/
@@ -358,6 +393,9 @@ header .top_util .group button._pgCreate {
   background-size: 16px;
 }
 
+.lnb_body .lnb_item_group .item._serveyInfo:before {
+  background-image: url("../../assets/img/ico/d/ico_info.svg");
+}
 .lnb_body .lnb_item_group .item._pollId:before {
   background-image: url("../../assets/img/ico/d/ico_pollId.svg");
 }
@@ -543,8 +581,8 @@ header .top_util .group button._pgCreate {
 .view_round .view_round_body {
   min-height: 250px;
 }
-.view_round .view_round_body .subject {
-  padding: 5px 0;
+.view_round .subject._privateTit {
+  padding: 5px 0 10px 0;
   font-size: 20px;
   color: var(--black1);
 }
@@ -1073,6 +1111,19 @@ header .top_util .group button._pgCreate {
 }
 .commPopup.size_s {
   width: 400px;
+}
+
+.comm_tooltip {
+  padding: 4px 10px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: var(--black1);
+  color: var(--white);
+  z-index: 20;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 100;
 }
 
 /*------이전 작성 CSS------------------------------------------------------------------------------------------*/

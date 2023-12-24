@@ -9,6 +9,13 @@
     <script src="../assets/js/jquery-2.2.4.js"></script>
     <script src="../assets/js/jquery-ui.js"></script>
     <script src="../assets/js/scrollbar.js"></script>
+
+    <script src="../../assets/js/jscolor.js"></script>
+    <link
+      rel="shortcut icon"
+      sizes="16x16"
+      href="../../assets/img/favicon.ico"
+    />
   </head>
   <body>
     <div class="wrap">
@@ -20,33 +27,48 @@
         <!--S: header의 상단 유틸메뉴 -->
         <div class="top_util" id="utilArea"></div>
         <!--E: header의 상단 유틸메뉴 -->
-
-        <script src="../components/top/survey_make_top.js"></script>
-        <script src="../components/top/survey_make_util.js"></script>
-        <script>
-          topAreaMakeTop("topArea");
-          utilAreaMakeTop("utilArea");
-        </script>
       </header>
       <div class="container">
         <!--S: 좌측메뉴 -->
         <div class="lnb_wrap" id="lnbWrap"></div>
-        <script src="../components/lnb/lnb.js"></script>
-        <script>
-          CreateLeftMenu("lnbWrap");
-        </script>
         <!--E: 좌측메뉴 -->
 
         <!--S: 컨텐츠 -->
-        <div class="contents"></div>
+        <div id="contentsBody" class="contents">
+          <div class="cotegoryView" id="cotegoryView"></div>
+          <div class="contentArea scrollbar-outer" id="contentArea"></div>
+        </div>
         <!--E: 컨텐츠 -->
       </div>
     </div>
+
+    <script src="../config/default.js"></script>
+
+    <script src="../components/top/survey_make_top.js"></script>
+    <script src="../components/top/survey_make_util.js"></script>
+    <script src="../components/lnb/lnb.js"></script>
+    <script src="../components/page/pageBase.js"></script>
+    <script src="../components/page/pages.js"></script>
+    <script src="../components/SURVEY_ID/survey_id_write.js"></script>
+    <script src="../components/SURVEY_SUBJECT/survey_subject_write.js"></script>
+    <script src="../components/PROGRESS_BAR/survey_progressBar.js"></script>
+    <script src="../components/SURVEY_INFO/survey_info.js"></script>
 
     <script src="../assets/js/commjs.js"></script>
     <script src="../assets/js/modal.js"></script>
     <script src="../assets/js/popup.js"></script>
     <script src="../assets/js/loading.js"></script>
     <script src="../assets/js/dropDown.js"></script>
+    <script>
+      topAreaMakeTop("topArea");
+      utilAreaMakeTop("utilArea");
+      CreateLeftMenu("lnbWrap");
+      pageBase.init("contentArea");
+      pages.init("viewBody");
+      $(window).on("resize", function () {
+        //$("#contentArea.scrollbar-outer").scrollbar();
+      });
+      $(window).trigger("resize");
+    </script>
   </body>
 </html>

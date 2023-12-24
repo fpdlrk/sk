@@ -6,6 +6,53 @@ const commjs = {
   },
 };
 
+function tooltip(e) {
+  let body = document.querySelector("body");
+  let tooltipWrap = document.createElement("p");
+  let tooltipBody = document.createElement("span");
+  let msg = e.target.dataset.tooltip;
+  if (msg == undefined || msg == "") return;
+  if (msg == undefined) {
+    msg = e.target.parentNode.dataset.tooltip;
+  }
+  let msgBody = document.createTextNode(msg);
+  let type = e.type;
+  tooltipWrap.classList.add("comm_tooltip");
+  tooltipWrap.appendChild(tooltipBody);
+  tooltipBody.appendChild(msgBody);
+  tooltipWrap.style.left = e.pageX + "px";
+  tooltipWrap.style.top = e.pageY - 25 + "px";
+  if (type == "mouseenter") {
+    body.appendChild(tooltipWrap);
+  } else if ("mouseleave") {
+    if (body.parentNode) {
+      body.removeChild(document.querySelector(".comm_tooltip"));
+      isMove = false;
+    }
+  }
+}
+
+let clickObj = document.querySelector("body");
+clickObj.addEventListener("click", objChk);
+function objChk(e) {
+  let obj = e.target;
+  let parent = obj.closest("#contentArea");
+  let header = obj.closest("header");
+  let view = obj.closest(".view_round");
+  if ((parent != null || header != null) && view == null) {
+    let cotegoryView = document.querySelector("#cotegoryView");
+    cotegoryView.removeChild(cotegoryView.querySelector(".mdu_pannel"));
+    isLeftMenuSelected = null;
+  }
+  // let parent = obj.parentNode;
+  // console.log("@@@@", e, obj, parent);
+}
+
+// function pannelClose() {
+//   let pannelCloseItem = document.querySelectorAll("._pannelClose");
+//   console.log(pannelCloseItem);
+// }
+
 $(".labelFirstName").each(function (i, v) {
   let str = $(v).text();
   $(v).prev().text(commjs.nameFirstAt(str));
@@ -18,7 +65,7 @@ let screenInit = function () {
   let contentH = winH - $("header").outerHeight();
   let lnbMinusEleSum = $(".lnb_header").outerHeight();
   let lnbH = contentH - lnbMinusEleSum;
-  $(".content_area").css({ height: contentH });
+  $("#contentArea").css({ height: contentH });
   $(".mdu_pannel_form").css({ height: contentH });
   $(".lnb_body").css({ height: lnbH });
 };

@@ -1,14 +1,20 @@
-const TOP_AREA_FUNC_ID = {};
+const TOP_AREA_FUNC_ID = {
+  AC_PREV: "btn_prev",
+  AC_NEXT: "btn_next",
+  IS_SAVE: false,
+  USER: "btn_user",
+  MENU: "btn_menu",
+};
 
 const topAreaMakeTop = (objId) => {
   const Html = `<div class="col_L">
 <a href="#" class="logo">Tsurvey</a>
 <div class="next_prev">
-  <button type="button" class="btn _bdno _ico_ly">
+  <button type="button" class="btn _bdno _ico_ly" id='btn_prev' data-tooltip="이전으로">
     <i class="ico _hisBack"></i>
     <span class="txt">이전</span>
   </button>
-  <button type="button" class="btn _bdno _ico_ly" disabled>
+  <button type="button" class="btn _bdno _ico_ly" id='btn_next' data-tooltip="다음으로" disabled>
     <i class="ico _hisFw"></i>
     <span class="txt">다음</span>
   </button>
@@ -29,7 +35,7 @@ const topAreaMakeTop = (objId) => {
   <span class="ico"></span>
   <span class="txt">사용자명</span>
 </div>
-<button class="btn _bdno _ico_ly menu">
+<button class="btn _bdno _ico_ly menu" id='btn_menu' data-tooltip="메뉴">
   <i class="ico _menu"></i>
   <span class="txt">메뉴</span>
 </button>
@@ -37,23 +43,18 @@ const topAreaMakeTop = (objId) => {
   const target = document.querySelector("#" + objId);
   target.innerHTML = "";
   const outObj = (target.innerHTML = Html);
-  const toggleBtn = target.querySelectorAll("button.item_group_header");
-  const pollAction = target.querySelectorAll("button.item");
-
-  $("#" + objId + " .scrollbar-outer").scrollbar();
-  toggleBtn.forEach((item) =>
-    item.addEventListener("click", handleToggleEvent)
-  );
-  pollAction.forEach((item) =>
-    item.addEventListener("click", handleActionEvent)
-  );
+  const btns = target.querySelectorAll("button.btn");
+  btns.forEach((item) => {
+    item.addEventListener("click", (e) => makeTopHandleActionEvent(e));
+    item.addEventListener("mouseenter", (e) => tooltip(e));
+    item.addEventListener("mouseleave", (e) => tooltip(e));
+  });
 };
 
 // 고정 - 삽입 항목의 메뉴 이벤트 등록
-function handleActionEvent(e) {
+function makeTopHandleActionEvent(e) {
   e.preventDefault();
   let id = "";
-  // console.log(e, e.target.parentNode.nodeName == "BUTTON");
   if (e.target.parentNode.nodeName == "BUTTON") {
     id = e.target.parentNode.id;
   } else {
@@ -65,21 +66,25 @@ function handleActionEvent(e) {
   // 해당 case에 로직구현
 
   switch (id) {
-    case LEFT_MENU_FUNC_ID.SURVEY_ID:
+    case TOP_AREA_FUNC_ID.AC_PREV:
+      console.log("-->", id);
+      break;
+
+    case TOP_AREA_FUNC_ID.AC_NEXT:
       console.log(id);
       break;
 
-    case LEFT_MENU_FUNC_ID.SURVEY_SUBJECT:
+    case TOP_AREA_FUNC_ID.MENU:
       console.log(id);
       break;
 
     default:
-      console.log("sldjfskldf");
+      console.log("기본로직@@@@");
       break;
   }
 }
 
-function handleToggleEvent(e) {
+function tophandleMenu(e) {
   e.preventDefault();
 
   if (e.target.nodeName == "SPAN") {
