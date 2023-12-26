@@ -1,11 +1,9 @@
 // const SURVEY_SUBJECT = surveyData.SURVEY_SUBJECT;
-
+let blindValue = false;
 const surveySubject = {
   datas: surveyData.SURVEY_SUBJECT,
-  initValue: [
-    { text: "첫 페이지만 보이기", isChecked: false },
-    { text: "첫 페이지만 보이기", isChecked: true },
-  ],
+  initValue: [{ code: "", text: "첫페이지만 보이기", isFirstPage: true }],
+  keyMapping: { code: "code", codeName: "text", ischk: "isFirstPage" },
   init: function (objId) {
     const Html = `<div class="mdu_pannel mdu_pannel_form scroll_area">
       <div class="pannel_header">
@@ -36,14 +34,14 @@ const surveySubject = {
               <p class="_sbt01 ar">80글자 입력 가능합니다</p>
             </div>
           </div>
-          ${test()}
-          ${test2()}
-          <div class="item">
+          ${
+            blindValue
+              ? `<div class="item">
             <div class="_comp _wide">
               <span class="_tit">옵션</span>
               <div class="_body">
                 <span class="check_b_wrap">
-                  <input type="checkbox" class="chk" name="1" ${
+                  <input type="checkbox" class="chk" name="compChk" ${
                     surveySubject.datas.isFirstPage ? "checked" : ""
                   } 
                   onchange='surveySubject.isFirstPage(event)'/>
@@ -52,9 +50,16 @@ const surveySubject = {
                 </span>
               </div>
             </div>
-          </div>
+          </div>`
+              : ""
+          }
           <div class="item">
-          ${checkBox.init("옵션", surveySubject.initValue, surveySubject)}
+          ${checkBox.init(
+            "옵션",
+            surveySubject,
+            surveySubject.initValue,
+            surveySubject.keyMapping
+          )}
           </item>
         </div>
       </div>
@@ -63,8 +68,15 @@ const surveySubject = {
     target.innerHTML = "";
     target.innerHTML = Html;
   },
-  parentDispatch: (e, key) => {
-    console.log("key@@@", key);
+  parentDispatch: (e) => {
+    let checked = e.target.checked;
+    let targetObj = document.getElementsByClassName("_privateTit");
+    if (checked) {
+      targetObj[0].classList.add("hidden");
+    } else {
+      targetObj[0].classList.remove("hidden");
+    }
+    surveySubject.datas.isFirstPage = checked;
   },
   pannelClose: (e) => {
     let cotegoryView = document.querySelector("#cotegoryView");

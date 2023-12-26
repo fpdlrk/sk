@@ -3,24 +3,24 @@
 const checkBox = {
   datas: surveyData.SURVEY_SUBJECT,
   props: {},
-  init: function (title, props, comp) {
-    checkBox.props.parent = comp;
-    console.log(props);
+  init: function (title, comp, initData, keyMapping) {
+    checkBox.props = comp;
+    // console.log("initData", initData);
     const Html = `<div class="_comp _wide">
-    <span class="_tit">옵션</span>
+    <span class="_tit">${title}</span>
     <div class="_body">
     <div class="_cr_listWrap">
-      ${props
+      ${initData
         .map(
           (item) =>
             `<div class="_cr_item">
             <span class="check_b_wrap">
-            <input type="checkbox" class="chk" name="1" ${
-              item.isChecked ? "checked" : ""
+            <input type="checkbox" class="chk" name="compChk" ${
+              item[keyMapping.ischk] ? "checked" : ""
             } 
             onchange='checkBox.onChange(event)'/>
               <span class="ico"></span>
-              <span>보기 무작위 배열</span>
+              <span>${item[keyMapping.codeName]}</span>
             </span>
           </div>
         </div>`
@@ -31,9 +31,9 @@ const checkBox = {
     return Html;
   },
   onChange: (e) => {
-    const parent = checkBox.props.parent;
-    parent.parentDispatch(e, "test");
-    console.log(checkBox.props.parent);
+    const parent = checkBox.props;
+    parent.parentDispatch(e);
+    // console.log(checkBox.props);
   },
 };
 
