@@ -1,4 +1,4 @@
-const currentPage = 0;
+const currentPage = 1;
 let isLeftMenuSelected = null; // LNB 고정항목 한버만 클릭하기위한 변수 설정창을 닫을 경우 다시 활설화
 const pollType = ["poll", "Survey", "Link banner", "AD"];
 
