@@ -17,6 +17,7 @@ const surveyProgress = {
         </button>
       </div>
     </div>
+    
     <div class="pannel_body">
       <div class="item_group">
         <div class="item">
@@ -26,7 +27,8 @@ const surveyProgress = {
               <span class="check_b_wrap">
                 <input type="checkbox" class="chk" name="1" ${
                   surveyProgress.datas.isUse ? "checked" : ""
-                } />
+                } 
+                onchange='surveyProgress.isUse(event)'/>
                 <span class="ico"></span>
                 <span>진행률 바 사용하기</span>
               </span>
@@ -82,9 +84,9 @@ const surveyProgress = {
   </div>`;
     const target = document.querySelector("#" + objId);
     target.innerHTML = "";
-    const outObj = (target.innerHTML = Html);
-    const toggleBtn = target.querySelectorAll("button.item_group_header");
-    const pollAction = target.querySelectorAll("button.item");
+    target.innerHTML = Html;
+    // const toggleBtn = target.querySelectorAll("button.item_group_header");
+    // const pollAction = target.querySelectorAll("button.item");
     // $("#" + objId + " .scrollbar-outer").scrollbar();
   },
   pannelClose: (e) => {
@@ -107,16 +109,27 @@ const surveyProgress = {
       }
     );
   },
-  okClickFnc: (e) => {
-    ModalClose(e.target);
-  },
-  onChange: (e) => {
-    surveySubject.datas.text = e.target.value;
-    surveyData.SURVEY_SUBJECT = {
-      ...surveyData.SURVEY_SUBJECT,
-      text: e.target.value,
-      isFirstPage: false,
-    };
-    console.log("surveyData.SURVEY_SUBJECT", surveyData.SURVEY_SUBJECT);
+  // okClickFnc: (e) => {
+  //   ModalClose(e.target);
+  // },
+  // onChange: (e) => {
+  //   surveyProgress.datas.text = e.target.value;
+  //   surveyData.SURVEY_SUBJECT = {
+  //     ...surveyData.SURVEY_SUBJECT,
+  //     text: e.target.value,
+  //     isFirstPage: false,
+  //   };
+  //   console.log("surveyData.SURVEY_SUBJECT", surveyData.SURVEY_SUBJECT);
+  // },
+  isUse: (e) => {
+    let checked = e.target.checked;
+    let targetObj = document.getElementsByClassName("comp_rangeSliderWrap");
+    if (checked) {
+      targetObj[0].classList.remove("hidden");
+    } else {
+      targetObj[0].classList.add("hidden");
+    }
+    surveyProgress.datas.isUse = checked;
+    console.log(e, targetObj, surveyProgress.datas.isUse);
   },
 };

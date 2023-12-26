@@ -6,10 +6,12 @@ const pageBase = {
       <h2 class="tit">${pageBase.datas.SURVEY_ID.text}</h2>
     </div>
     <div class="subject _privateTit ${
-      surveySubject.datas.isFirstPage ? "hidden" : ""
+      surveySubject.datas.isFirstPage ? (currentPage == 0 ? "" : "hidden") : ""
     } ">${pageBase.datas.SURVEY_SUBJECT.text}</div>
 
-    <div class="comp_rangeSliderWrap">
+    <div class="comp_rangeSliderWrap ${
+      surveyProgress.datas.isUse ? "" : "hidden"
+    }">
         <div class="_rangeSlider ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content" id="sliderTarget">
           <div class="_rangeSlider_handle" id="rangeSlider_handle" style="width: 33%;"></div>
         <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 33%;pointer-events: none;">0</span></div>

@@ -2,6 +2,10 @@
 
 const surveySubject = {
   datas: surveyData.SURVEY_SUBJECT,
+  initValue: [
+    { text: "첫 페이지만 보이기", isChecked: false },
+    { text: "첫 페이지만 보이기", isChecked: true },
+  ],
   init: function (objId) {
     const Html = `<div class="mdu_pannel mdu_pannel_form scroll_area">
       <div class="pannel_header">
@@ -32,6 +36,8 @@ const surveySubject = {
               <p class="_sbt01 ar">80글자 입력 가능합니다</p>
             </div>
           </div>
+          ${test()}
+          ${test2()}
           <div class="item">
             <div class="_comp _wide">
               <span class="_tit">옵션</span>
@@ -47,13 +53,18 @@ const surveySubject = {
               </div>
             </div>
           </div>
+          <div class="item">
+          ${checkBox.init("옵션", surveySubject.initValue, surveySubject)}
+          </item>
         </div>
       </div>
     </div>`;
     const target = document.querySelector("#" + objId);
     target.innerHTML = "";
-    const outObj = (target.innerHTML = Html);
-    // $("#" + objId + " .scrollbar-outer").scrollbar();
+    target.innerHTML = Html;
+  },
+  parentDispatch: (e, key) => {
+    console.log("key@@@", key);
   },
   pannelClose: (e) => {
     let cotegoryView = document.querySelector("#cotegoryView");
@@ -88,16 +99,6 @@ const surveySubject = {
     let headerTitle = document.querySelector("._privateTit");
     headerTitle.innerHTML = e.target.value;
   },
-  onChange: (e) => {
-    surveySubject.datas.text = e.target.value;
-    surveyData.SURVEY_SUBJECT = {
-      ...surveyData.SURVEY_SUBJECT,
-      text: e.target.value,
-      isFirstPage: false,
-    };
-    let headerTitle = document.querySelector("._privateTit");
-    headerTitle.innerHTML = e.target.value;
-  },
   isFirstPage: (e) => {
     let checked = e.target.checked;
     let targetObj = document.getElementsByClassName("_privateTit");
@@ -110,3 +111,17 @@ const surveySubject = {
     console.log(e, targetObj, targetObj.value);
   },
 };
+
+function test() {
+  let testHtml = "";
+  testHtml += '<button class="btn _bdno _ico_ly">';
+  testHtml += '<i class="ico _pannelClose"></i>';
+  testHtml += '<span class="txt">닫기</span>';
+  testHtml += "</button>";
+  return testHtml;
+}
+
+function test2() {
+  let testHtml = `<h2 class="tit">설문제목</h2>`;
+  return testHtml;
+}
