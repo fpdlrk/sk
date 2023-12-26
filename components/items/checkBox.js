@@ -39,3 +39,9 @@ const checkBox = {
 
 // onchange='${(event) =>
 //   surveySubject.parentDispatch(event, "test")}'/>
+// onchange='${(event) =>
+//   surveySubject.parentDispatch(event, "test")}'/>
+// onchange='${(event) =>
+//   surveySubject.parentDispatch(event, "test")}'/>
+// onchange='${(event) =>
+//   surveySubject.parentDispatch(event, "test")}'/>
