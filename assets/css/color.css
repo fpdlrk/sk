@@ -11,12 +11,14 @@
   --sub02: #df1384;
   --sub03: #fce0eb;
 
-  --bg: #e8efff;
+  --bg: #f6f9ff;
+  --bg2: #f6f9ff;
   --trans: transparent;
 
   --fntMain: #373f57;
   --fntTit01: #1a2217;
-  --fntTxt01: #3c4766;
+  --fntTxt02: #3c4766;
+  --fntTxt03: #7c8a9f;
 
   --color01: #373f57;
   --color01Over: #242d49;
@@ -26,6 +28,7 @@
   --color04: #e2e8f0;
   --color05: #7c8a9f;
   --color06: #f6f9ff;
+  --color06Over: #f6f9ff;
   --color07: #e8efff;
   --color08: #f6f9ff;
   --color09: #3617ce;

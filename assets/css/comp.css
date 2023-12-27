@@ -7,6 +7,9 @@
   position: relative;
   flex-wrap: wrap;
 }
+div[class^="_comp"] .btn {
+  border-radius: 6px;
+}
 
 ._columnGroup > ._comp + ._comp {
   margin-top: 7px;

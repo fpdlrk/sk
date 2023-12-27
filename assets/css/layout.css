@@ -818,9 +818,14 @@ header .top_util .group button._pgCreate {
 .form_group .tit {
   padding: 6px 0;
   display: block;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
   position: relative;
+  color: var(--fntTxt03);
+}
+.form_group .gp_tit {
+  padding: 0 0 20px 0;
+  font-size: 14px;
 }
 .form_group .comm_input {
   width: 100%;
@@ -866,6 +871,7 @@ header .top_util .group button._pgCreate {
 }
 .form_group.tp_inline {
   display: flex;
+  align-items: center;
 }
 .form_group.tp_inline .tit {
   flex-basis: 150px;
@@ -1027,7 +1033,6 @@ header .top_util .group button._pgCreate {
   clear: both;
 }
 .commPopup .pop_header h2 {
-  float: left;
   font-size: 16px;
   font-weight: 500;
   color: var(--color01);
@@ -1104,6 +1109,47 @@ header .top_util .group button._pgCreate {
 }
 .commPopup._tp_confirm .popup_footer .btn_g {
   justify-content: flex-end;
+}
+
+.commPopup._tp_confirm_info {
+  padding: 30px 0;
+}
+
+.commPopup._tp_confirm_info .pop_header {
+  border-bottom: none;
+  text-align: center;
+}
+
+.commPopup._tp_confirm_info .pop_header h2 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.commPopup._tp_confirm_info .pop_body ._msg {
+  padding: 10px 0 10px 0;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.commPopup._tp_confirm_info .pop_body ._s_txt {
+  font-size: 15px;
+  color: var(--fntTxt03);
+  text-align: center;
+}
+.commPopup._tp_confirm_info .popup_footer .btn_g {
+  padding: 15px 0 0 0;
+}
+.commPopup._tp_confirm_info .popup_footer .btn_g button {
+  min-width: 150px;
+}
+.commPopup._tp_confirm_info .btn_close {
+  right: 20px;
+  top: 20px;
+}
+
+.commPopup._tp_confirm_info .btn_close span.ico {
+  background-size: 25px;
 }
 
 .commPopup.size_m {

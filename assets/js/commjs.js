@@ -32,21 +32,19 @@ function tooltip(e) {
   }
 }
 
-let clickObj = document.querySelector("body");
-clickObj.addEventListener("click", objChk);
-function objChk(e) {
-  let obj = e.target;
-  let parent = obj.closest("#contentArea");
-  let header = obj.closest("header");
-  let view = obj.closest(".view_round");
-  if ((parent != null || header != null) && view == null) {
-    let cotegoryView = document.querySelector("#cotegoryView");
-    cotegoryView.removeChild(cotegoryView.querySelector(".mdu_pannel"));
-    isLeftMenuSelected = null;
-  }
-  // let parent = obj.parentNode;
-  // console.log("@@@@", e, obj, parent);
-}
+// let clickObj = document.querySelector("body");
+// clickObj.addEventListener("click", objChk);
+// function objChk(e) {
+//   let obj = e.target;
+//   let parent = obj.closest("#contentArea");
+//   let header = obj.closest("header");
+//   let view = obj.closest(".view_round");
+//   if ((parent != null || header != null) && view == null) {
+//     let cotegoryView = document.querySelector("#cotegoryView");
+//     cotegoryView.removeChild(cotegoryView.querySelector(".mdu_pannel"));
+//     isLeftMenuSelected = null;
+//   }
+// }
 
 // function pannelClose() {
 //   let pannelCloseItem = document.querySelectorAll("._pannelClose");

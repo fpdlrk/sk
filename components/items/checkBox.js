@@ -36,12 +36,3 @@ const checkBox = {
     // console.log(checkBox.props);
   },
 };
-
-// onchange='${(event) =>
-//   surveySubject.parentDispatch(event, "test")}'/>
-// onchange='${(event) =>
-//   surveySubject.parentDispatch(event, "test")}'/>
-// onchange='${(event) =>
-//   surveySubject.parentDispatch(event, "test")}'/>
-// onchange='${(event) =>
-//   surveySubject.parentDispatch(event, "test")}'/>

@@ -14,11 +14,11 @@ label.btn {
   justify-content: center;
   /* letter-spacing:-1px; */
   vertical-align: middle;
-  border-radius: 6px;
+  border-radius: 10px;
   text-align: center;
   font-size: 13px;
   line-height: 2.5;
-  color: #333;
+  color: var(--fntMain);
   font-weight: 500;
 }
 .btn:hover {
@@ -26,6 +26,9 @@ label.btn {
 }
 .btn._bdno {
   border: none;
+}
+.btn_rud10 {
+  border-radius: 10px;
 }
 .btn_rud30 {
   border-radius: 30px;
@@ -62,7 +65,7 @@ label.btn {
 .btn_lager {
   padding: 0 15px;
   height: 50px;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.5;
 }
 
@@ -83,6 +86,7 @@ label.btn {
 .btn_praimary {
   background: var(--main01);
   color: var(--white) !important;
+  border-color: var(--main01);
 }
 .btn_praimary:hover {
   background: var(--main01Over);
@@ -105,6 +109,16 @@ label.btn {
 .btn_color03:hover {
   background: var(--color03Over);
   border: 1px solid var(--color03Over);
+}
+
+.btn_color06 {
+  background: var(--color06);
+  border: 1px solid var(--color06);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+.btn_color06:hover {
+  background: var(--color06Over);
+  border: 1px solid var(--color06Over);
 }
 
 .btn_black {
