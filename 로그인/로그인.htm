@@ -72,74 +72,211 @@
     </div>
     <!--E: 로그인 -->
 
-    <div id="pwChangePopup" class="commPopup tp_popup" style="width: 600px">
+    <!--S: 회원가입 -->
+    <div class="only_box_wrap _tp_join tp_popup" id="joinPopup">
       <div class="pop_header">
-        <h2 id="popTitle">타이틀</h2>
+        <h2 id="popTitle">회원가입</h2>
+        <p class="_subjectAfterTxt">돈버는 설문에 오신 것을 환영합니다</p>
       </div>
       <div class="pop_body">
-        <div class="form_group">
-          <div class="form_group">
-            <label for="" class="tit">현재 비밀번호xx</label>
-            <div class="form_item">
-              <input
-                type="password"
-                class="comm_input tp_lg"
-                placeholder="Enter Name"
-              />
-            </div>
+        <div class="_agreeBox">
+          <p class="_txt">돈버는 설문의 모든 약관에 동의합니다.</p>
+          <div class="_chkWrap">
+            <span class="check_b_wrap">
+              <input type="checkbox" class="chk" name="1" />
+              <span class="ico"></span>
+              <span>이용약관 동의 필수</span>
+            </span>
           </div>
-          <div class="form_group">
-            <label for="" class="tit">새 비밀번호</label>
-            <div class="form_item">
-              <input
-                type="password"
-                class="comm_input tp_lg"
-                placeholder="Enter Company"
-              />
-            </div>
-          </div>
-          <div class="form_group">
-            <label for="" class="tit">새 비밀번호 확인</label>
-            <div class="form_item">
-              <input
-                type="password"
-                class="comm_input tp_lg"
-                placeholder="Enter Company"
-              />
-            </div>
+          <div class="_editableDiv _textareaWrap">
+            돈버는 설문 이용약관 내용돈버는 설문 이용약관 내용돈버는 설문
+            이용약관 내용돈버는 설문 이용약관 내용돈버는 설문 이용약관
+            내용돈버는 설문 이용약관 내용돈버는 설문 이용약관 내용돈버는 설문
+            이용약관 내용돈버는 설문 이용약관 내용돈버는 설문 이용약관
+            내용돈버는 설문 이용약관 내용
           </div>
         </div>
-        <div class="popInfoTxt">
-          <ul class="bullet_list">
-            <li>
-              비밀번호의 길이는 영문, 숫자 혼합하여 최소 8자리 이상 20자리
-              이하로 설정해야 합니다.
-            </li>
-            <li>
-              3자 이상의 연속되거나 반복된 문자, 숫자는 사용할 수 없습니다.
-            </li>
-          </ul>
+        <div class="form_group _form_wrap">
+          <h2 class="gp_tit">가입 필수 정보 입력</h2>
+          <div class="form_group tp_inline">
+            <h2 class="tit">가입구분</h2>
+            <div class="form_item flex_box _fac">
+              <div class="_chkWrap">
+                <span class="radio_b_wrap">
+                  <input type="radio" class="chk" name="1" />
+                  <span class="ico"></span>
+                  <span>어드민</span>
+                </span>
+              </div>
+              <div class="_chkWrap mgl15">
+                <span class="radio_b_wrap">
+                  <input type="radio" class="chk" name="1" />
+                  <span class="ico"></span>
+                  <span>파트너</span>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="form_group tp_inline">
+            <h2 class="tit">성명</h2>
+            <div class="form_item">
+              <input
+                type="password"
+                class="comm_input tp_lg"
+                placeholder="성명을 입력하세요"
+              />
+            </div>
+          </div>
+
+          <div class="form_group tp_inline">
+            <h2 class="tit">회사명</h2>
+            <div class="form_item">
+              <input
+                type="password"
+                class="comm_input tp_lg"
+                placeholder="회사명을 입력하세요"
+              />
+            </div>
+          </div>
+
+          <div class="form_group tp_inline">
+            <h2 class="tit">이메일</h2>
+            <div class="form_item">
+              <input
+                type="password"
+                class="comm_input tp_lg"
+                placeholder="이메일"
+              />
+            </div>
+          </div>
+
+          <div class="form_group tp_inline">
+            <h2 class="tit">비밀번호</h2>
+            <div class="form_item">
+              <input
+                type="password"
+                class="comm_input tp_lg"
+                placeholder="영문, 숫자 포함 10자리 "
+              />
+            </div>
+          </div>
+
+          <div class="form_group tp_inline">
+            <h2 class="tit">비밀번호 확인</h2>
+            <div class="form_item">
+              <input
+                type="password"
+                class="comm_input tp_lg"
+                placeholder="비밀번호 재입력"
+              />
+            </div>
+          </div>
         </div>
       </div>
-      <div class="popup_footer ar">
-        <button
-          type="button"
-          class="btn btn_small btn_rud30 btn_color03 btnCancle"
-        >
-          취소
-        </button>
-        <button
-          type="button"
-          class="btn btn_small btn_rud30 btn_praimary btnOk"
-          id="btnSave"
-        >
-          삽입
-        </button>
+      <div class="only_box_footer">
+        <div class="btn_g">
+          <button
+            type="button"
+            class="btn btn_lager btn_color06 btnCancle"
+            data-popid="firstPopup"
+          >
+            취소</button
+          ><button
+            type="button"
+            class="btn btn_lager btn_praimary btnOk"
+            data-popid="firstPopup"
+          >
+            회원가입
+          </button>
+        </div>
       </div>
       <button type="button" class="btn_close pop_close">
         <span class="ico">닫기</span>
       </button>
     </div>
+    <!--E: 회원가입  -->
+
+    <!--S: 비밀번호 변경 -->
+    <div
+      id="pwChangePopup"
+      class="only_box_wrap _tp_pwChange tp_popup"
+      style="width: 380px"
+    >
+      <div class="pop_header">
+        <h2 id="popTitle">비밀번호 변경</h2>
+        <p class="_subjectAfterTxt _tp01">
+          회원님의 소중한 개인 정보 보호를 위해서 주기적인 비밀번호 변경을
+          권장합니다
+        </p>
+        <p class="_subjectAfterTxt _tp_txt01">
+          현재 비밀번호와 변경하실 새 비밀번호를 입력해주세요. <br />(멤버십
+          카드 번호 10자리)
+        </p>
+      </div>
+      <div class="only_box_body">
+        <div class="form_group">
+          <div class="form_group">
+            <div class="form_item">
+              <input
+                type="password"
+                class="comm_input tp_lg"
+                placeholder="현재 비밀번호"
+              />
+            </div>
+          </div>
+
+          <div class="form_group">
+            <div class="form_item _tp_pwshowhide">
+              <input
+                type="password"
+                class="comm_input tp_lg"
+                placeholder="새 비밀번호"
+              />
+              <button class="btn _bdno _ico_ly _pwShowHide">
+                <i class="ico _ic_pwShowHide"></i
+                ><span class="txt">비번 표시여부</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="form_group">
+            <div class="form_item _tp_pwshowhide">
+              <input
+                type="password"
+                class="comm_input tp_lg"
+                placeholder="새 비밀번호 확인"
+              />
+              <button class="btn _bdno _ico_ly _pwShowHide">
+                <i class="ico _ic_pwShowHide"></i
+                ><span class="txt">비번 표시여부</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="only_box_footer">
+        <div class="btn_g">
+          <button
+            type="button"
+            class="btn btn_lager btn_color06 btnCancle"
+            data-popid="firstPopup"
+          >
+            다음에 변경</button
+          ><button
+            type="button"
+            class="btn btn_lager btn_praimary btnOk"
+            data-popid="firstPopup"
+          >
+            변경하기
+          </button>
+        </div>
+      </div>
+      <button type="button" class="btn_close pop_close">
+        <span class="ico">닫기</span>
+      </button>
+    </div>
+    <!--E : 비밀번호 변경  -->
 
     <script src="../assets/js/commjs.js"></script>
     <script src="../assets/js/modal.js"></script>
@@ -152,17 +289,22 @@
         let test = document.querySelector("#pwChangePopup");
         let pop = test.open({
           popId: "pwChangePopup",
-          headerTitle: "이미지 삽입/수정",
+          headerTitle: "비밀번호 변경",
           data: null,
-          width: 600,
+          width: 380,
           height: null,
-          callBack: { fnOk: "", fnCancle: cancleClickFnc },
+          callBack: { fnOk: "testFunc", fnCancle: cancleClickFnc },
         });
         setTimeout(function () {
           //test.close();
           //console.log(pop.init())
         }, 500);
       });
+
+      function testFunc(id) {
+        console.log("@@@@@@@@@@", id);
+        document.querySelector("#" + id).close();
+      }
 
       // let okClickFnc = (e) => {
       //   PopupClose(e.target);

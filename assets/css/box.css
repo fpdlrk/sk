@@ -1,6 +1,17 @@
 @charset "UTF-8";
 
 /* 회원가입-비번 화면 공통 박스 */
+
+.only_box_wrap.tp_popup {
+  z-index: -1;
+  visibility: hidden;
+}
+
+.only_box_wrap.open {
+  z-index: 1000;
+  visibility: visible;
+}
+
 .only_box_wrap {
   width: 500px;
   padding: 60px 60px 20px 60px;
@@ -36,14 +47,14 @@
   cursor: pointer;
 }
 
-.only_box_wrap .only_box_header {
+.only_box_wrap .pop_header {
   text-align: center;
 }
-.only_box_wrap .only_box_header > h2 {
+.only_box_wrap .pop_header > h2 {
   font-size: 20px;
   color: var(--fntMain);
 }
-.only_box_wrap .only_box_header > h2 + p {
+.only_box_wrap .pop_header > h2 + p {
   padding: 10px 0 0 0;
   font-size: 15px;
   color: var(--fntTxt02);
@@ -71,11 +82,11 @@
   color: var(--fntTxt03);
 }
 
-.only_box_wrap .only_box_body {
+.only_box_wrap .pop_body {
   padding: 40px 0 30px 0;
 }
 
-.only_box_wrap .only_box_body > h2 {
+.only_box_wrap .pop_body > h2 {
 }
 
 .only_box_wrap .only_box_footer {
@@ -100,6 +111,15 @@
   content: "";
   display: block;
   clear: both;
+}
+
+.only_box_wrap .btn_close {
+  right: 20px;
+  top: 20px;
+}
+
+.only_box_wrap .btn_close span.ico {
+  background-size: 25px;
 }
 
 .only_box_wrap ._subjectAfterTxt {

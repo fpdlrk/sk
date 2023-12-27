@@ -12,11 +12,12 @@ const PopupOpen = function (opts, el) {
 
   el.classList.add("open");
   el.style.width = opts.width + "px";
-  el.querySelector(".pop_body").style.height = opts.height + "px";
+  if (opts.height != null && opts.height != "") {
+    el.querySelector(".pop_body").style.height = opts.height + "px";
+  }
   maskDiv.classList.add("mask_wrap");
   self.el = el;
   self.opts = opts;
-  console.log(opts);
 };
 
 PopupOpen.prototype = (function () {
@@ -27,14 +28,18 @@ PopupOpen.prototype = (function () {
   function _initEvt(self) {
     let mask = document.querySelector(".mask_wrap");
     let { el, opts } = self;
-    console.log("11", el);
-    console.log("22", opts);
+    // console.log("11", el);
+    // console.log("22", opts);
 
     self.el.querySelector(".btnOk").onclick = function () {
-      if (opts.callBack.fnOk) {
+      if (typeof opts.callBack.fnOk == "string") {
+        window[opts.callBack.fnOk](opts.popId);
+      } else if (typeof opts.callBack.fnOk == "function") {
+        //
+      } else {
+        self.el.classList.remove("open");
+        document.body.removeChild(mask);
       }
-      self.el.classList.remove("open");
-      document.body.removeChild(mask);
     };
 
     self.el.querySelector(".btnCancle").onclick = function () {
