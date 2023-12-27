@@ -15,7 +15,7 @@ const PopupOpen = function (opts, el) {
   if (opts.height != null && opts.height != "") {
     el.querySelector(".pop_body").style.height = opts.height + "px";
   }
-  maskDiv.classList.add("mask_wrap");
+  maskDiv.classList.add("mask_wrap", "mask_" + opts.popId + "");
   self.el = el;
   self.opts = opts;
 };
@@ -26,28 +26,32 @@ PopupOpen.prototype = (function () {
   }
 
   function _initEvt(self) {
-    let mask = document.querySelector(".mask_wrap");
     let { el, opts } = self;
-    // console.log("11", el);
-    // console.log("22", opts);
+    let mask = document.querySelector(".mask_" + opts.popId + "");
 
-    self.el.querySelector(".btnOk").onclick = function () {
-      if (typeof opts.callBack.fnOk == "string") {
-        window[opts.callBack.fnOk](opts.popId);
-      } else if (typeof opts.callBack.fnOk == "function") {
-        //
-      } else {
+    if (self.el.querySelector(".btnOk")) {
+      self.el.querySelector(".btnOk").onclick = function () {
+        console.log(document.querySelector(".mask_wrap"));
+        if (typeof opts.callBack.fnOk == "string") {
+          window[opts.callBack.fnOk](opts.popId);
+        } else if (typeof opts.callBack.fnOk == "function") {
+          opts.callBack.fnOk(opts.popId);
+          console.log(typeof opts.callBack.fnOk);
+        } else {
+          self.el.classList.remove("open");
+          document.body.removeChild(mask);
+        }
+      };
+    }
+
+    if (self.el.querySelector(".btnCancle")) {
+      self.el.querySelector(".btnCancle").onclick = function () {
+        if (opts.callBack.fnCancle) {
+        }
         self.el.classList.remove("open");
         document.body.removeChild(mask);
-      }
-    };
-
-    self.el.querySelector(".btnCancle").onclick = function () {
-      if (opts.callBack.fnCancle) {
-      }
-      self.el.classList.remove("open");
-      document.body.removeChild(mask);
-    };
+      };
+    }
   }
 
   return {
@@ -77,7 +81,8 @@ Element.prototype.open = function (setting) {
 };
 
 Element.prototype.close = function () {
-  let mask = document.querySelector(".mask_wrap");
+  let mask = document.querySelector(".mask_" + this.id + "");
   document.getElementById(this.id).classList.remove("open");
   document.body.removeChild(mask);
+  console.log(666);
 };

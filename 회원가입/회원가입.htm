@@ -124,13 +124,76 @@
           ><button
             type="button"
             class="btn btn_lager btn_praimary btnOk"
-            data-popid="firstPopup"
+            id="btn_pop01"
           >
             회원가입
           </button>
         </div>
       </div>
     </div>
+
+    <!--S: 회원가입 완료 -->
+    <div id="Popup01" class="commPopup tp_popup _tp_confirm_info">
+      <div class="pop_header"><h2 id="popTitle">ㅍ</h2></div>
+      <div class="pop_body">
+        <p class="_msg">돈버는 설문 가입하신 것을 환영합니다.</p>
+        <p class="_s_txt">SKT 승인 후 이용해주세요.</p>
+      </div>
+      <div class="popup_footer">
+        <div class="btn_g">
+          <button
+            type="button"
+            class="btn btn_lager btn_rud10 btn_color06 btnCancle"
+            data-popid="firstPopup"
+          >
+            취소</button
+          ><button
+            type="button"
+            class="btn btn_lager btn_rud10 btn_praimary btnOk"
+          >
+            확인
+          </button>
+        </div>
+      </div>
+      <button type="button" class="btn_close pop_close">
+        <span class="ico">닫기</span>
+      </button>
+    </div>
+    <!--E: 회원가입 완료 -->
+
+    <script>
+      $("#btn_pop01 ").on("click", function (e) {
+        e.preventDefault();
+        let test = document.querySelector("#Popup01");
+        let pop = test.open({
+          popId: "Popup01",
+          headerTitle: "회원가입 완료",
+          data: null,
+          width: 680,
+          height: null,
+          callBack: { fnOk: "testFunc", fnCancle: cancleClickFnc },
+        });
+        setTimeout(function () {
+          //test.close();
+          //console.log(pop.init())
+        }, 500);
+      });
+
+      function testFunc(id) {
+        console.log("@@@@@@@@@@", id);
+        document.querySelector("#" + id).close();
+      }
+
+      // let okClickFnc = (e) => {
+      //   PopupClose(e.target);
+      //   console.log("외부=okClickFnc----", e, e.target);
+      // };
+
+      let cancleClickFnc = (e) => {
+        PopupClose(e.target);
+        console.log("외부=cancleClickFnc====", e.target);
+      };
+    </script>
 
     <script src="../assets/js/commjs.js"></script>
     <script src="../assets/js/modal.js"></script>

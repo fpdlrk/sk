@@ -12,10 +12,11 @@
     <script src="../assets/js/simplebar.min.js"></script>
   </head>
   <body>
+    <button type="button" class="btn" id="btn_pwChange">비밀번호 변경</button>
     <!--S: 로그인 -->
     <div class="login_wrap">
       <div class="login_body">
-        <h2 class="mgb50">
+        <h2 class="mgt20 mgb20">
           <span>돈버는 설문</span>
         </h2>
 
@@ -51,7 +52,7 @@
             </span>
           </div>
 
-          <button type="button" class="btn btn_color01 btn_lager wide mgt20">
+          <button type="button" class="btn btn_praimary btn_lager wide mgt20">
             로그인
           </button>
           <div class="login_btm">
@@ -59,13 +60,13 @@
               <a href="#" id="btn_join">회원가입</a>
             </p>
             <p class="mem_join_link">
-              <a href="#" id="btn_pwChange">비밀번호 찾기</a>
+              <a href="#" id="btn_pwFind">비밀번호 찾기</a>
             </p>
           </div>
 
           <div class="login_copyrihgt">
-            <p class="txt_sk">SKT Survey</p>
-            <p>SKT Survey Service @ 2024</p>
+            <p class="txt_sk">에스케이텔레콤㈜</p>
+            <p>COPYRIGHT © SK TELECOM CO., LTD. ALL RIGHTS RESERVED.</p>
           </div>
         </div>
       </div>
@@ -185,7 +186,7 @@
           ><button
             type="button"
             class="btn btn_lager btn_praimary btnOk"
-            data-popid="firstPopup"
+            data-popid="btn_pop01"
           >
             회원가입
           </button>
@@ -278,22 +279,215 @@
     </div>
     <!--E : 비밀번호 변경  -->
 
+    <!--S: 비밀번호 찾기 -->
+    <div
+      id="pwFindPopup"
+      class="only_box_wrap _tp_pwChange tp_popup"
+      style="width: 380px"
+    >
+      <div class="pop_header">
+        <h2 id="popTitle">비밀번호 변경</h2>
+        <p class="_subjectAfterTxt _tp01">
+          가입하신 경우 회원정보에 등록된 <br />이메일을 인증해 주세요.
+        </p>
+        <p class="_subjectAfterTxt _tp_txt01">
+          아이디(이메일)을 입력후 비밀번호 찾기하세요.
+        </p>
+      </div>
+      <div class="only_box_body">
+        <div class="form_group">
+          <div class="form_group">
+            <div class="form_item flex_box _fac _fjb">
+              <input
+                type="password"
+                class="comm_input tp_lg"
+                placeholder="아이디(이메일)"
+              />
+              <button
+                type="button"
+                class="btn btn_lager btn_color03 mgl5"
+                style="width: 100px"
+                id="btn_find"
+              >
+                찾기
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="only_box_footer">
+        <div class="btn_g">
+          <button
+            type="button"
+            class="btn btn_lager btn_color06 btnCancle"
+            data-popid="firstPopup"
+          >
+            취소
+          </button>
+        </div>
+      </div>
+      <button type="button" class="btn_close pop_close">
+        <span class="ico">닫기</span>
+      </button>
+    </div>
+    <!--E : 비밀번호 찾기  -->
+
+    <!--S: 회원가입 완료 -->
+    <div id="Popup01" class="commPopup tp_popup _tp_confirm_info">
+      <div class="pop_header"><h2 id="popTitle">ㅍ</h2></div>
+      <div class="pop_body">
+        <p class="_msg">돈버는 설문 가입하신 것을 환영합니다.</p>
+        <p class="_s_txt">SKT 승인 후 이용해주세요.</p>
+      </div>
+      <div class="popup_footer">
+        <div class="btn_g">
+          <button
+            type="button"
+            class="btn btn_lager btn_rud10 btn_color06 btnCancle"
+            data-popid="firstPopup"
+          >
+            취소</button
+          ><button
+            type="button"
+            class="btn btn_lager btn_rud10 btn_praimary btnOk"
+            data-popid="firstPopup"
+          >
+            확인
+          </button>
+        </div>
+      </div>
+      <button type="button" class="btn_close pop_close">
+        <span class="ico">닫기</span>
+      </button>
+    </div>
+    <!--E: 회원가입 완료 -->
+
     <script src="../assets/js/commjs.js"></script>
     <script src="../assets/js/modal.js"></script>
     <script src="../assets/js/popup.js"></script>
     <script src="../assets/js/loading.js"></script>
     <script src="../assets/js/dropDown.js"></script>
     <script>
+      $("#btn_pwFind").on("click", function (e) {
+        e.preventDefault();
+        let popElement = document.querySelector("#pwFindPopup");
+        let pop = popElement.open({
+          popId: "pwFindPopup",
+          headerTitle: "비밀번호 찾기",
+          data: null,
+          width: 380,
+          height: null,
+          callBack: { fnOk: "", fnCancle: "" },
+        });
+        setTimeout(function () {
+          //test.close();
+        }, 500);
+      });
+
+      $("#btn_find").on("click", function (e) {
+        fn_loading();
+        setTimeout(function () {
+          fn_loadingEnd();
+          ModalOpen(
+            "firstPopup",
+            "안내",
+            "가입하신 이메일정보가 맞지 않습니다.<br />이메일을 확인해주세요!",
+            "confirm",
+            "", // 취소버튼 함수정의
+            "", // 확인버튼 함수정의
+            {
+              //style: "font-size:60px;",
+              class: "ac",
+            }
+          );
+          // document.querySelec tor("#" + id).close();
+        }, 2000);
+      });
+
       $("#btn_pwChange").on("click", function (e) {
         e.preventDefault();
-        let test = document.querySelector("#pwChangePopup");
-        let pop = test.open({
+        let popElement = document.querySelector("#pwChangePopup");
+        let pop = popElement.open({
           popId: "pwChangePopup",
           headerTitle: "비밀번호 변경",
           data: null,
           width: 380,
           height: null,
-          callBack: { fnOk: "testFunc", fnCancle: cancleClickFnc },
+          callBack: { fnOk: "fn_callBack", fnCancle: cancleClickFnc },
+        });
+        setTimeout(function () {
+          //test.close();
+        }, 500);
+      });
+
+      function fn_callBack(id) {
+        switch (id) {
+          case "pwChangePopup":
+            fn_loading();
+            setTimeout(function () {
+              fn_loadingEnd();
+              ModalOpen(
+                "firstPopup",
+                "안내",
+                "비밀번호 변경이 완료되었습니다.",
+                "alert",
+                "", // 취소버튼 함수정의
+                "", // 확인버튼 함수정의
+                {
+                  //style: "font-size:60px;",
+                  class: "ac",
+                }
+              );
+              document.querySelector("#" + id).close();
+            }, 2000);
+            break;
+        }
+      }
+
+      $("#btn_join ").on("click", function (e) {
+        e.preventDefault();
+        let popElement = document.querySelector("#joinPopup");
+        let pop = popElement.open({
+          popId: "joinPopup",
+          headerTitle: "회원가입",
+          data: null,
+          width: 680,
+          height: null,
+          callBack: { fnOk: joinComplete, fnCancle: cancleClickFnc },
+        });
+        setTimeout(function () {
+          //test.close();
+          //console.log(pop.init())
+        }, 500);
+      });
+
+      let joinComplete = (id) => {
+        fn_loading();
+        setTimeout(() => {
+          fn_loadingEnd();
+          let popElement = document.querySelector("#Popup01");
+          let popup = popElement.open({
+            popId: "Popup01",
+            headerTitle: "회원가입 완료",
+            data: null,
+            width: 680,
+            height: null,
+            callBack: { fnOk: "", fnCancle: cancleClickFnc },
+          });
+          document.querySelector("#" + id).close();
+        }, 2000);
+      };
+
+      $("#btn_pop01 ").on("click", function (e) {
+        e.preventDefault();
+        let popElement = document.querySelector("#Popup01");
+        let pop = popElement.open({
+          popId: "Popup01",
+          headerTitle: "회원가입 완료",
+          data: null,
+          width: 680,
+          height: null,
+          callBack: { fnOk: "", fnCancle: cancleClickFnc },
         });
         setTimeout(function () {
           //test.close();
@@ -306,10 +500,10 @@
         document.querySelector("#" + id).close();
       }
 
-      // let okClickFnc = (e) => {
-      //   PopupClose(e.target);
-      //   console.log("외부=okClickFnc----", e, e.target);
-      // };
+      let okClickFnc = (e) => {
+        PopupClose(e.target);
+        console.log("외부=okClickFnc----", e, e.target);
+      };
 
       let cancleClickFnc = (e) => {
         PopupClose(e.target);

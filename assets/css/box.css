@@ -99,7 +99,7 @@
 }
 .only_box_wrap .only_box_footer .btn_g {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 .only_box_wrap .only_box_footer .btn_g button {
   min-width: 150px;
@@ -147,7 +147,7 @@
   border-radius: 30px;
 }
 .only_box_wrap._tp_pwChange .only_box_body {
-  padding: 10px 0 10px 0;
+  padding: 10px 0 60px 0;
 }
 .only_box_wrap._tp_pwChange ._subjectAfterTxt {
   font-size: 14px;
@@ -158,5 +158,5 @@
   text-align: left;
 }
 .only_box_wrap._tp_pwChange ._subjectAfterTxt._tp01 {
-  padding: 60px 0;
+  padding: 70px 0;
 }

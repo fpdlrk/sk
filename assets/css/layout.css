@@ -82,6 +82,17 @@ header .top .logo {
   display: block;
 }
 
+header .top .logo2 {
+  width: 87px;
+  height: 100%;
+  background-image: url("../../assets/img/logo2.svg");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  font-size: 0;
+  line-height: 0;
+  display: block;
+}
+
 header .top,
 header .top_util {
   height: 44px;
@@ -284,6 +295,32 @@ header .top .fllow > span + span.active:after {
 .fllow > span + span.active:after {
   background-image: url("../../assets/img/ico/d/arrow_forward_active.svg");
 }
+
+.fllow._type02 > span {
+  display: flex;
+}
+.fllow._type02 > span + span {
+  padding: 0 0 0 20px;
+}
+.fllow._type02 > span:before,
+.fllow._type02 > span:after {
+  display: none;
+}
+
+.fllow._type02 > span > em {
+  width: 18px;
+  height: 18px;
+  display: block;
+  margin: 0 0px 0 10px;
+  background-color: var(--color05);
+  font-size: 10px;
+  color: var(--white);
+  border-radius: 50%;
+  text-align: center;
+  padding: 0 2px 0 0;
+  line-height: 1.8;
+}
+
 header .top_util .group {
   padding: 0 10px;
   display: flex;
@@ -324,6 +361,16 @@ header .top_util .group button._pgLast {
 
 header .top_util .group button._pgCreate {
   padding: 0 3px;
+}
+
+header .top_util._tp02 {
+  justify-content: center;
+}
+
+header .top_util._tp02 > .col_L {
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
 /*///// lnb /////*/
@@ -647,17 +694,17 @@ header .top_util .group button._pgCreate {
   margin: -5% 0 0 0;
   border-radius: 30px;
   border: 1px solid #e6e6e6;
-  background-color: var(--main01);
+  background-color: var(--white);
   box-shadow: 0px 7px 23px rgba(0, 0, 0, 0.05);
 }
 .login_wrap .login_body > h2 > span {
-  width: 155px;
+  width: 100%;
   height: 147px;
   margin: 0 auto;
   display: block;
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-image: url(../../assets/img/ico/w/ci_txt.svg);
+  background-image: url(../../assets/img/ico/d/ci_txt.svg);
   font-size: 0;
 }
 
@@ -667,8 +714,8 @@ header .top_util .group button._pgCreate {
 }
 .login_wrap .login_body .id_saveWrap .check_b_wrap {
   font-family: "Inter", sans-serif;
-  font-size: 11px;
-  color: var(--color11);
+  font-size: 12px;
+  /* color: var(--color11); */
 }
 
 .login_wrap .login_body .btn_login {
@@ -688,13 +735,13 @@ header .top_util .group button._pgCreate {
 }
 .login_wrap .mem_join_link > a {
   font-size: 12px;
-  color: var(--color11);
+  /* color: var(--color11); */
   font-weight: 400;
 }
 
 .login_wrap .login_copyrihgt {
   padding: 60px 0 0 0;
-  color: var(--white);
+  /* color: var(--white); */
   font-size: 10px;
   text-align: center;
 }
