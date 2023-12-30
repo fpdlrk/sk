@@ -6,11 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ELEMENT</title>
     <link type="text/css" href="../assets/css/import.css" rel="stylesheet" />
-    <link
-      rel="shortcut icon"
-      sizes="16x16"
-      href="../../assets/img/favicon.ico"
-    />
+    <link rel="shortcut icon" sizes="16x16" href="../../assets/img/favicon.ico" />
     <script src="../assets/js/jquery-3.7.1.min.js"></script>
     <script src="../assets/js/jquery-ui.js"></script>
     <script src="../assets/js/scrollbar.js"></script>
@@ -46,247 +42,6 @@
   <body>
     <div class="rect_wrap">
       <div class="rect_item">
-        <h2>회원가입 완료 팝업</h2>
-        <div class="rect_body">
-          <button type="button" class="btn" id="btn_pop01">OPEN</button>
-
-          <div id="Popup01" class="commPopup tp_popup _tp_confirm_info">
-            <div class="pop_header"><h2 id="popTitle">ㅍ</h2></div>
-            <div class="pop_body">
-              <p class="_msg">돈버는 설문 가입하신 것을 환영합니다.</p>
-              <p class="_s_txt">SKT 승인 후 이용해주세요.</p>
-            </div>
-            <div class="popup_footer">
-              <div class="btn_g">
-                <button
-                  type="button"
-                  class="btn btn_lager btn_rud10 btn_color06 btnCancle"
-                  data-popid="firstPopup"
-                >
-                  취소</button
-                ><button
-                  type="button"
-                  class="btn btn_lager btn_rud10 btn_praimary btnOk"
-                  data-popid="firstPopup"
-                >
-                  확인
-                </button>
-              </div>
-            </div>
-            <button type="button" class="btn_close pop_close">
-              <span class="ico">닫기</span>
-            </button>
-          </div>
-          <script>
-            $("#btn_pop01 ").on("click", function (e) {
-              e.preventDefault();
-              let test = document.querySelector("#Popup01");
-              let pop = test.open({
-                popId: "Popup01",
-                headerTitle: "회원가입 완료",
-                data: null,
-                width: 680,
-                height: null,
-                callBack: { fnOk: "testFunc", fnCancle: cancleClickFnc },
-              });
-              setTimeout(function () {
-                //test.close();
-                //console.log(pop.init())
-              }, 500);
-            });
-            function testFunc(id) {
-              console.log("@@@@@@@@@@", id);
-              document.querySelector("#" + id).close();
-            }
-
-            let okClickFnc = (e) => {
-              PopupClose(e.target);
-              console.log("외부=okClickFnc----", e, e.target);
-            };
-
-            let cancleClickFnc = (e) => {
-              PopupClose(e.target);
-              console.log("외부=cancleClickFnc====", e.target);
-            };
-          </script>
-        </div>
-        <div class="rect_btm"></div>
-      </div>
-
-      <div class="rect_item">
-        <h2>팝업타입</h2>
-        <div class="rect_body">
-          <button type="button" class="btn">OPEN</button>
-        </div>
-        <div class="rect_btm"></div>
-      </div>
-
-      <div class="rect_item">
-        <h2>팝업타입</h2>
-        <div class="rect_body">
-          <button type="button" class="btn">OPEN</button>
-        </div>
-        <div class="rect_btm"></div>
-      </div>
-
-      <div class="rect_item wide">
-        <h2>상단타입_01</h2>
-        <div class="rect_body">
-          <header>
-            <!--S: header의 상단 -->
-            <div class="top">
-              <div class="col_L">
-                <a href="#" class="logo">Tsurvey</a>
-                <div class="next_prev">
-                  <button type="button" class="btn _bdno _ico_ly">
-                    <i class="ico _hisBack"></i>
-                    <span class="txt">이전</span>
-                  </button>
-                  <button type="button" class="btn _bdno _ico_ly" disabled>
-                    <i class="ico _hisFw"></i>
-                    <span class="txt">다음</span>
-                  </button>
-                </div>
-                <div class="btn _bdno">
-                  <i class="ico _cloud"></i>
-                  <span class="txt">저장됨</span>
-                </div>
-              </div>
-              <div class="col_C fllow">
-                <span class="active">설문편집</span>
-                <span class="active">답변수집</span>
-                <span>결과확인</span>
-                <span>답변보상</span>
-              </div>
-              <div class="col_R">
-                <div class="user">
-                  <span class="ico"></span>
-                  <span class="txt">사용자명</span>
-                </div>
-                <button class="btn _bdno _ico_ly menu">
-                  <i class="ico _menu"></i>
-                  <span class="txt">메뉴</span>
-                </button>
-              </div>
-            </div>
-            <!--E: header의 상단 -->
-
-            <!--S: header의 상단 유틸메뉴 -->
-            <div class="top_util">
-              <div class="col_L">
-                <div class="group">
-                  <button class="btn _bdno _auto _pgCreate" id="pageCreate">
-                    <i class="ico _pageCreate"></i>
-                    <span class="txt">만들기</span>
-                  </button>
-                </div>
-
-                <div class="group">
-                  <button class="btn _bdno _ico_ly">
-                    <i class="ico _style"></i>
-                    <span class="txt">스타일</span>
-                  </button>
-
-                  <button class="btn _bdno _ico_ly">
-                    <i class="ico _valid"></i>
-                    <span class="txt">변수</span>
-                  </button>
-
-                  <button class="btn _bdno _ico_ly">
-                    <i class="ico _logic"></i>
-                    <span class="txt">로직</span>
-                  </button>
-
-                  <button class="btn _bdno _ico_ly">
-                    <i class="ico _his"></i>
-                    <span class="txt">이력</span>
-                  </button>
-
-                  <button class="btn _bdno _ico_ly">
-                    <i class="ico _setting"></i>
-                    <span class="txt">설정</span>
-                  </button>
-                </div>
-
-                <div class="group">
-                  <button class="btn _bdno _ico_ly">
-                    <i class="ico _pageAdd"></i>
-                    <span class="txt">페이지 추가</span>
-                  </button>
-
-                  <button class="btn _bdno _ico_ly">
-                    <i class="ico _pageCopy"></i>
-                    <span class="txt">페이지 복사</span>
-                  </button>
-
-                  <button class="btn _bdno _ico_ly">
-                    <i class="ico _pageDel"></i>
-                    <span class="txt">페이지 삭제</span>
-                  </button>
-                </div>
-
-                <div class="group pages_wrap">
-                  <button class="btn _bdno tp_txt _auto">
-                    <span class="txt">소개글</span>
-                  </button>
-
-                  <button class="btn _bdno _ico_ly _pgFirst">
-                    <i class="ico _pageFirst"></i>
-                    <span class="txt">처음으로</span>
-                  </button>
-
-                  <button class="btn _bdno _ico_ly _pgPrev">
-                    <i class="ico _pagePrev"></i>
-                    <span class="txt">이전페이지</span>
-                  </button>
-
-                  <div class="pages">
-                    <button class="btn _bdno">
-                      <span class="txt">P1</span>
-                    </button>
-                  </div>
-
-                  <button class="btn _bdno _ico_ly _pgNext">
-                    <i class="ico _pageNext"></i>
-                    <span class="txt">다음페이지</span>
-                  </button>
-
-                  <button class="btn _bdno _ico_ly _pgLast">
-                    <i class="ico _pageLast"></i>
-                    <span class="txt">마지막 페이지</span>
-                  </button>
-
-                  <button class="btn _bdno tp_txt _auto">
-                    <span class="txt">맺음말</span>
-                  </button>
-                </div>
-              </div>
-              <div class="col_R">
-                <button class="btn _bdno tp_txt _auto">
-                  <i class="ico _prevView"></i>
-                  <span class="txt">미리보기</span>
-                </button>
-              </div>
-            </div>
-            <!--E: header의 상단 유틸메뉴 -->
-          </header>
-        </div>
-        <div class="rect_btm"></div>
-      </div>
-
-      <div class="rect_item wide">
-        <h2>상단타입_01</h2>
-        <div class="rect_body"></div>
-        <div class="rect_btm"></div>
-      </div>
-
-      <div class="rect_item wide">
-        <h2>상단타입_01</h2>
-        <div class="rect_body"></div>
-        <div class="rect_btm"></div>
-      </div>
-
-      <div class="rect_item">
         <h2>selectBox 형</h2>
         <div class="rect_body">
           <!--S: selectBox형 -->
@@ -319,11 +74,7 @@
           <div class="_comp comp_inputAndButton _wide">
             <span class="_tit">설문 ID 입력</span>
             <div class="_body _inputAndButtonWrap">
-              <input
-                type="text"
-                class="comm_input"
-                placeholder="ID를 입력하세요."
-              />
+              <input type="text" class="comm_input" placeholder="ID를 입력하세요." />
               <button class="btn _header">
                 <span class="_txt">중복확인</span>
               </button>
@@ -345,11 +96,7 @@
             <span class="_tit">설문제목</span>
             <div class="_body">
               <div class="_comp_inputWrap">
-                <input
-                  type="text"
-                  class="comm_input wide"
-                  placeholder="ID를 입력하세요."
-                />
+                <input type="text" class="comm_input wide" placeholder="ID를 입력하세요." />
               </div>
               <p class="_sbt01 ar">80글자 입력 가능합니다</p>
             </div>
@@ -366,10 +113,7 @@
           <div class="_comp comp_textarea _wide">
             <span class="_tit">설문제목</span>
             <div class="_body _comp_textareaWrap">
-              <textarea
-                class="comm_input"
-                placeholder="내용을 입력하세요."
-              ></textarea>
+              <textarea class="comm_input" placeholder="내용을 입력하세요."></textarea>
             </div>
             <p class="_sbt01 ar">80글자 입력 가능합니다</p>
           </div>
@@ -415,9 +159,7 @@
           <!--S: 단순 텍스트 입력형 -->
           <div class="comp_textTyppingArea">
             <h2 class="_tit" contenteditable="true">설문정보 텍스트 영역</h2>
-            <div class="_typping" contenteditable="true">
-              설문정보 내용 영역
-            </div>
+            <div class="_typping" contenteditable="true">설문정보 내용 영역</div>
           </div>
           <!--E: 단순 텍스트 입력형 -->
         </div>
@@ -430,9 +172,7 @@
           <!--S: 상태/액션이 있는 텍스트 입력형 -->
           <div class="comp_questArea">
             <h2 class="_tit" contenteditable="true">설문정보 텍스트 영역</h2>
-            <div class="_typping" contenteditable="true">
-              설문정보 내용 영역
-            </div>
+            <div class="_typping" contenteditable="true">설문정보 내용 영역</div>
             <span class="_label _status _edit">편집중</span>
             <div class="_actions">
               <button class="btn _bdno _ico_ly">
@@ -848,11 +588,7 @@
                   data-jscolor="{alpha:1}"
                   class="comm_input"
                 /> -->
-                <input
-                  value="FFFFFF"
-                  data-jscolor="{alpha:1}"
-                  class="comm_input"
-                />
+                <input value="FFFFFF" data-jscolor="{alpha:1}" class="comm_input" />
                 <!-- <input
                   type="color"
                   class="comm_input"
@@ -914,17 +650,8 @@
               <div class="_answerAddItem">
                 <div class="_handle">드래그로 순서변경</div>
                 <div class="_inp_wrap">
-                  <input
-                    type="text"
-                    class="comm_input _tp_txt"
-                    placeholder="ID를 입력하세요1."
-                  />
-                  <input
-                    type="text"
-                    class="comm_input _tp_num"
-                    placeholder=""
-                    value="1"
-                  />
+                  <input type="text" class="comm_input _tp_txt" placeholder="ID를 입력하세요1." />
+                  <input type="text" class="comm_input _tp_num" placeholder="" value="1" />
                 </div>
                 <div class="_btn_g">
                   <div class="_col_l">
@@ -944,17 +671,8 @@
               <div class="_answerAddItem">
                 <div class="_handle">드래그로 순서변경</div>
                 <div class="_inp_wrap">
-                  <input
-                    type="text"
-                    class="comm_input _tp_txt"
-                    placeholder="ID를ddd 입."
-                  />
-                  <input
-                    type="text"
-                    class="comm_input _tp_num"
-                    placeholder=""
-                    value="1"
-                  />
+                  <input type="text" class="comm_input _tp_txt" placeholder="ID를ddd 입." />
+                  <input type="text" class="comm_input _tp_num" placeholder="" value="1" />
                 </div>
                 <div class="_btn_g">
                   <div class="_col_l">
@@ -974,17 +692,8 @@
               <div class="_answerAddItem">
                 <div class="_handle">드래그로 순서변경</div>
                 <div class="_inp_wrap">
-                  <input
-                    type="text"
-                    class="comm_input _tp_txt"
-                    placeholder="ID를ddd 입."
-                  />
-                  <input
-                    type="text"
-                    class="comm_input _tp_num"
-                    placeholder=""
-                    value="1"
-                  />
+                  <input type="text" class="comm_input _tp_txt" placeholder="ID를ddd 입." />
+                  <input type="text" class="comm_input _tp_num" placeholder="" value="1" />
                 </div>
                 <div class="_btn_g">
                   <div class="_col_l">
@@ -1004,17 +713,8 @@
               <div class="_answerAddItem">
                 <div class="_handle">드래그로 순서변경</div>
                 <div class="_inp_wrap">
-                  <input
-                    type="text"
-                    class="comm_input _tp_txt"
-                    placeholder="ID를ddd 입."
-                  />
-                  <input
-                    type="text"
-                    class="comm_input _tp_num"
-                    placeholder=""
-                    value="1"
-                  />
+                  <input type="text" class="comm_input _tp_txt" placeholder="ID를ddd 입." />
+                  <input type="text" class="comm_input _tp_num" placeholder="" value="1" />
                 </div>
                 <div class="_btn_g">
                   <div class="_col_l">
@@ -1034,17 +734,8 @@
               <div class="_answerAddItem">
                 <div class="_handle">드래그로 순서변경</div>
                 <div class="_inp_wrap">
-                  <input
-                    type="text"
-                    class="comm_input _tp_txt"
-                    placeholder="ID를ddd 입."
-                  />
-                  <input
-                    type="text"
-                    class="comm_input _tp_num"
-                    placeholder=""
-                    value="1"
-                  />
+                  <input type="text" class="comm_input _tp_txt" placeholder="ID를ddd 입." />
+                  <input type="text" class="comm_input _tp_num" placeholder="" value="1" />
                 </div>
                 <div class="_btn_g">
                   <div class="_col_l">
@@ -1083,41 +774,21 @@
                 let placeholderDiv = ui.placeholder[0];
                 //placeholderDiv.style.height = thisHeight;
                 itemMoveChang.push(ui.item.index());
-                console.log(
-                  "@@@start",
-                  event,
-                  ui,
-                  ui.item.index(),
-                  itemMoveChang
-                );
+                console.log("@@@start", event, ui, ui.item.index(), itemMoveChang);
               },
               stop: function (event, ui) {
                 //console.log(ui.item.html());
                 //ui.placeholder.html(ui.item.html());
                 itemMoveChang = [];
                 // switchValues(itemObj, itemMoveChang[0], itemMoveChang[1]);
-                console.log(
-                  "@@@stop",
-                  event,
-                  ui,
-                  ui.item.index(),
-                  itemMoveChang,
-                  itemObj
-                );
+                console.log("@@@stop", event, ui, ui.item.index(), itemMoveChang, itemObj);
               },
               update: function (event, ui) {
                 //console.log(ui.item.html());
                 //ui.placeholder.html(ui.item.html());
                 itemMoveChang.push(ui.item.index());
                 switchValues(itemObj, itemMoveChang[0], itemMoveChang[1]);
-                console.log(
-                  "@@@update",
-                  event,
-                  ui,
-                  ui.item.index(),
-                  itemMoveChang,
-                  itemObj
-                );
+                console.log("@@@update", event, ui, ui.item.index(), itemMoveChang, itemObj);
               },
             });
           </script>
@@ -1136,17 +807,8 @@
                   <div class="_image"></div>
                   <div class="_filed">
                     <div class="_filedInp">
-                      <input
-                        type="text"
-                        class="comm_input _tp_txt"
-                        placeholder="ID를 입력하세요1."
-                      />
-                      <input
-                        type="text"
-                        class="comm_input _tp_num"
-                        placeholder=""
-                        value="1"
-                      />
+                      <input type="text" class="comm_input _tp_txt" placeholder="ID를 입력하세요1." />
+                      <input type="text" class="comm_input _tp_num" placeholder="" value="1" />
                     </div>
 
                     <button class="btn _bdno btn_praimary wide" id="popAlert">
@@ -1176,17 +838,8 @@
                   <div class="_image"></div>
                   <div class="_filed">
                     <div class="_filedInp">
-                      <input
-                        type="text"
-                        class="comm_input _tp_txt"
-                        placeholder="ID를 입력하세요1."
-                      />
-                      <input
-                        type="text"
-                        class="comm_input _tp_num"
-                        placeholder=""
-                        value="1"
-                      />
+                      <input type="text" class="comm_input _tp_txt" placeholder="ID를 입력하세요1." />
+                      <input type="text" class="comm_input _tp_num" placeholder="" value="1" />
                     </div>
 
                     <button class="btn _bdno btn_praimary wide" id="popAlert">

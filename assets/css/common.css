@@ -10,7 +10,63 @@
   bottom: 5px;
   background: #333;
 }
+._numLabel {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  right: -5px;
+  top: -1px;
+  border-radius: 50%;
+  background-color: var(--main01);
+  color: var(--white);
+  z-index: 10;
+  font-size: 11px;
+  line-height: 2;
+}
 
+._sp_line {
+  width: 1px;
+  height: 24px;
+  margin: 0 10px;
+  content: "";
+  display: block;
+  background-color: var(--line01);
+}
+
+._badge {
+  width: 22px;
+  height: 20px;
+  display: block;
+  color: var(--white);
+  text-align: center;
+  border-radius: 4px;
+}
+
+._badge._P {
+  background-color: var(--bagge01);
+}
+._badge._S {
+  background-color: var(--bagge02);
+}
+._badge._L {
+  background-color: var(--bagge03);
+}
+._badge._A {
+  background-color: var(--bagge04);
+}
+
+.badgeGroup > ul,
+.badgeGroup > ul > li {
+  display: flex;
+  font-size: 11px;
+  align-items: center;
+}
+.badgeGroup > ul li + li {
+  margin: 0 0 0 15px;
+}
+.badgeGroup > ul > li ._badge {
+  margin: 0 5px 0 0;
+}
 ._label {
   padding: 5px 10px;
   font-size: 12px;

@@ -26,11 +26,37 @@
           </div>
           <div class="col_C fllow">
             <span class="active">설문편집</span>
-            <span class="active">답변수집</span>
+            <span class="active">응답수집</span>
             <span>결과확인</span>
-            <span>답변보상</span>
           </div>
           <div class="col_R">
+            <button
+              class="btn _bdno _auto _pgCreate"
+              id="pageCreate"
+              data-tooltip="새 설문 만들기"
+            >
+              <i class="ico _pageCreate"></i>
+              <span class="txt">새 설문 만들기</span>
+            </button>
+            <span class="_sp_line"></span>
+            <button
+              class="btn _bdno _auto _ico_ly"
+              id=""
+              data-tooltip="내 설문"
+            >
+              <i class="ico _pollPaper"></i>
+              <span class="txt">내 설문</span>
+              <em class="_numLabel">10</em>
+            </button>
+            <button
+              class="btn _bdno _auto _ico_ly"
+              id="pageCreate"
+              data-tooltip="알림"
+            >
+              <i class="ico _myAlram"></i>
+              <span class="txt">알림</span>
+              <em class="_numLabel">10</em>
+            </button>
             <div class="user">
               <span class="ico"></span>
               <span class="txt">사용자명</span>
@@ -50,15 +76,9 @@
         <!--S: header의 상단 유틸메뉴 -->
         <div class="top_util" id="utilArea">
           <div class="col_L">
-            <div class="group">
-              <button
-                class="btn _bdno _auto _pgCreate"
-                id="pageCreate"
-                data-tooltip="설문만들기"
-              >
-                <i class="ico _pageCreate"></i>
-                <span class="txt">만들기</span>
-              </button>
+            <div class="group _plooInfoFild">
+              <p>설문 ID</p>
+              <p>설문 텍스트 영역</p>
             </div>
 
             <div class="group">
@@ -67,10 +87,10 @@
                 <span class="txt">스타일</span>
               </button>
 
-              <button class="btn _bdno _ico_ly" data-tooltip="변수">
+              <!-- <button class="btn _bdno _ico_ly" data-tooltip="변수">
                 <i class="ico _valid"></i>
                 <span class="txt">변수</span>
-              </button>
+              </button> -->
 
               <button class="btn _bdno _ico_ly" data-tooltip="로직">
                 <i class="ico _logic"></i>
@@ -82,10 +102,10 @@
                 <span class="txt">이력</span>
               </button>
 
-              <button class="btn _bdno _ico_ly" data-tooltip="설정">
+              <!-- <button class="btn _bdno _ico_ly" data-tooltip="설정">
                 <i class="ico _setting"></i>
                 <span class="txt">설정</span>
-              </button>
+              </button> -->
             </div>
 
             <div class="group">
@@ -127,8 +147,20 @@
               </button>
 
               <div class="pages">
-                <button class="btn _bdno">
+                <button class="btn _bdno _active">
                   <span class="txt">P1</span>
+                </button>
+                <button class="btn _bdno">
+                  <span class="txt">P2</span>
+                </button>
+                <button class="btn _bdno">
+                  <span class="txt">P3</span>
+                </button>
+                <button class="btn _bdno">
+                  <span class="txt">P4</span>
+                </button>
+                <button class="btn _bdno">
+                  <span class="txt">P5</span>
                 </button>
               </div>
 
@@ -167,7 +199,7 @@
         <div class="lnb_wrap" id="lnbWrap">
           <div class="lnb_header">
             <span class="txt">메뉴</span>
-            <button class="btn _bdno _ico_ly _auto_h" data-tooltip="이전으로">
+            <button class="btn _bdno _ico_ly _auto_h" data-tooltip="메뉴설정">
               <i class="ico _menuol"></i>
               <span class="txt">메뉴설정</span>
             </button>
@@ -178,6 +210,33 @@
                 <span class="txt">고정항목</span>
               </button>
               <ul>
+                <li>
+                  <button
+                    class="item _setting"
+                    id="survey_banner"
+                    data-tooltip="기본설정"
+                  >
+                    <span class="txt">기본설정</span>
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="item _pollBanner"
+                    id="survey_banner"
+                    data-tooltip="배너"
+                  >
+                    <span class="txt">배너</span>
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="item _pollIntro"
+                    id="survey_intro"
+                    data-tooltip="인트로"
+                  >
+                    <span class="txt">인트로</span>
+                  </button>
+                </li>
                 <li>
                   <button
                     class="item _pollId"
@@ -205,7 +264,7 @@
                     <span class="txt">진행률 바</span>
                   </button>
                 </li>
-                <li>
+                <!-- <li>
                   <button
                     class="item _btnSet"
                     id="button_set"
@@ -213,7 +272,7 @@
                   >
                     <span class="txt">버튼설정</span>
                   </button>
-                </li>
+                </li> -->
               </ul>
             </div>
 
@@ -224,11 +283,11 @@
               <ul>
                 <li>
                   <button
-                    class="item _serveyInfo"
-                    id="servey_info"
-                    data-tooltip="정보"
+                    class="item _serveyIntro"
+                    id="servey_intro2"
+                    data-tooltip="소개글"
                   >
-                    <span class="txt">정보</span>
+                    <span class="txt">소개글</span>
                   </button>
                 </li>
                 <li>
@@ -400,6 +459,15 @@
                     data-tooltip="구분선"
                   >
                     <span class="txt">구분선</span>
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="item _serveyEnd"
+                    id="divid_type"
+                    data-tooltip="맺음말"
+                  >
+                    <span class="txt">맺음말</span>
                   </button>
                 </li>
               </ul>

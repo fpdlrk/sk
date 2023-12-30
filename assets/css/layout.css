@@ -23,10 +23,14 @@
   display: flex;
 }
 .contents {
-  /* padding: 40px; */
   flex: 1;
   position: relative;
   display: flex;
+}
+
+.contents._ly_wide {
+  /* flex: none; */
+  display: block;
 }
 
 .contents > .cotegoryView {
@@ -326,6 +330,14 @@ header .top_util .group {
   display: flex;
   align-items: center;
 }
+
+header .top_util .group._plooInfoFild {
+  width: 350px;
+  display: flex;
+}
+header .top_util .group._plooInfoFild p:first-child {
+  width: 110px;
+}
 header .top_util .group + .group {
   border-left: 1px solid var(--line01);
 }
@@ -340,10 +352,14 @@ header .top_util .group.pages_wrap .pages > button {
   width: 28px;
   height: 28px;
   padding: 0 0;
-  background-color: var(--main01);
-  color: var(--white);
+  background-color: var(--white);
+  color: var(--fntMain);
   border-radius: 8px;
   font-size: 14px;
+}
+header .top_util .group.pages_wrap .pages > button._active {
+  background-color: var(--main01);
+  color: var(--white);
 }
 
 header .top_util .group button {
@@ -361,6 +377,10 @@ header .top_util .group button._pgLast {
 
 header .top_util .group button._pgCreate {
   padding: 0 3px;
+}
+
+header .top > .col_R > button + button {
+  margin: 0 10px 0 10px;
 }
 
 header .top_util._tp02 {
@@ -525,6 +545,15 @@ header .top_util._tp02 > .col_L {
 .lnb_body .lnb_item_group .item._serveyEnd:before {
   background-image: url("../../assets/img/ico/d/ico_end.svg");
 }
+.lnb_body .lnb_item_group .item._setting:before {
+  background-image: url("../../assets/img/ico/d/brightness_7.svg");
+}
+.lnb_body .lnb_item_group .item._serveyIntro:before {
+  background-image: url("../../assets/img/ico/d/ico_start.svg");
+}
+.lnb_body .lnb_item_group .item._serveyEnd:before {
+  background-image: url("../../assets/img/ico/d/ico_end.svg");
+}
 
 .lnb_body .lnb_item_group .item:hover,
 .lnb_body .lnb_item_group .item.active {
@@ -582,6 +611,13 @@ header .top_util._tp02 > .col_L {
   line-height: 1;
   position: relative;
 }
+.mdu_pannel .pannel_body .item_group .item_group_header + .item {
+  display: none;
+}
+
+.mdu_pannel .pannel_body .item_group .item_group_header._active + .item {
+  display: block;
+}
 
 .mdu_pannel .pannel_body .item_group .item_group_header._ico:after {
   width: 24px;
@@ -591,13 +627,17 @@ header .top_util._tp02 > .col_L {
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-image: url("../../assets/img/ico/d/chevron_right.svg");
+  transition: transform 0.3s;
+}
+.mdu_pannel .pannel_body .item_group .item_group_header._active._ico:after {
+  transform: rotate(90deg);
 }
 .mdu_pannel .pannel_body .item_group .item_group_header._icoNew:after {
   background-image: url("../../assets/img/ico/d/add_circle_outline.svg");
 }
 
 .mdu_pannel .pannel_body .item_group .item {
-  padding: 10px 15px 0px 15px;
+  padding: 10px 15px 10px 15px;
 }
 
 .mdu_pannel .pannel_body .item_group > .info_txt {
@@ -1229,6 +1269,136 @@ header .top_util._tp02 > .col_L {
   border-radius: 4px;
   font-size: 12px;
   font-weight: 100;
+}
+
+.top_seatch_area {
+  padding: 20px 0;
+  justify-content: space-between;
+}
+.top_seatch_area > div > ul > .item + .item {
+  margin: 0 0 0 10px;
+}
+.top_seatch_area,
+.top_seatch_area .col_L,
+.top_seatch_area .col_R,
+.top_seatch_area .col_L > ul,
+.top_seatch_area .col_R > ul {
+  display: flex;
+  align-items: center;
+}
+
+.top_seatch_area .comm_input,
+.top_seatch_area .comp_select ._selectWrap {
+  background-color: var(--white);
+}
+
+.top_seatch_area .comm_input,
+.top_seatch_area .comp_select ._selectWrap,
+.top_seatch_area div[class^="_comp"] .btn {
+  border-radius: 10px;
+}
+
+.mainContents {
+  width: 1280px;
+  margin: 0 auto;
+}
+
+.poll_list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.poll_list > .item {
+  width: 49%;
+  margin: 0 0 20px 0;
+}
+.poll_list > .item:nth-child(2n) {
+  margin-left: 2%;
+}
+
+.poll_list ._nodata {
+  width: 100%;
+  height: 200px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.poll_list ._nodata > p {
+}
+.poll_list ._nodata > p > span {
+  padding: 0 0 10px 0;
+  display: block;
+  font-size: 16px;
+}
+.poll_list ._nodata:before {
+  width: 54px;
+  height: 54px;
+  margin: 0 20px 0 0;
+  content: "";
+  display: block;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-image: url("../../assets/img/ico/d/ico_nodata.svg");
+}
+
+.listBtmArea {
+  text-align: center;
+}
+
+.new_poll_select ul {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+.new_poll_select ul li > .radio_b_wrap {
+  width: 150px;
+  height: 150px;
+  color: var(--white);
+  flex-direction: column;
+  background-color: var(--color06);
+  justify-content: center;
+  border-radius: 30px;
+  overflow: hidden;
+}
+.new_poll_select ul li > button:hover {
+  background-color: var(--color09);
+}
+.new_poll_select ul li > p {
+  padding: 10px 0 0 0;
+  font-size: 16px;
+}
+.new_poll_select ul li > .radio_b_wrap span.ico {
+  width: 150px;
+  height: 150px;
+  margin: 0;
+  border-radius: 0;
+}
+.new_poll_select ul li > .radio_b_wrap span.ico:before {
+  background-size: auto;
+}
+.new_poll_select ul li > .radio_b_wrap :checked + span.ico {
+  background-color: var(--color09);
+}
+
+.new_poll_select ul li > .radio_b_wrap span.ico._startPoll1:before {
+  background-image: url("../../assets/img/ico/d/ico__startPoll1.svg");
+}
+.new_poll_select ul li > .radio_b_wrap span.ico._startPoll2:before {
+  background-image: url("../../assets/img/ico/d/ico__startPoll2.svg");
+}
+.new_poll_select ul li > .radio_b_wrap span.ico._startPoll3:before {
+  background-image: url("../../assets/img/ico/d/ico__startPoll3.svg");
+}
+
+.new_poll_select ul li > .radio_b_wrap :checked + span.ico._startPoll1:before {
+  background-image: url("../../assets/img/ico/w/ico__startPoll1_w.svg");
+}
+.new_poll_select ul li > .radio_b_wrap :checked + span.ico._startPoll2:before {
+  background-image: url("../../assets/img/ico/w/ico__startPoll2_w.svg");
+}
+.new_poll_select ul li > .radio_b_wrap :checked + span.ico._startPoll3:before {
+  background-image: url("../../assets/img/ico/w/ico__startPoll3_w.svg");
 }
 
 /*------이전 작성 CSS------------------------------------------------------------------------------------------*/

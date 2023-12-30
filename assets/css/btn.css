@@ -323,3 +323,6 @@ label.btn {
 .btn .ico._next01_w:before {
   background-image: url("../../assets/img/ico/w/ico_next01.svg");
 }
+.btn .ico._action_w:before {
+  background-image: url("../../assets/img/ico/w/ico_action.svg");
+}

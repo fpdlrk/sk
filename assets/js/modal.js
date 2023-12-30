@@ -104,6 +104,19 @@ const ModalOpen = function (
       return this;
     }
 
+    alertInfo() {
+      document
+        .querySelector("#" + this.popId + " .btnOk")
+        .addEventListener("click", this.okCallBack);
+      document
+        .querySelector("#" + this.popId + " .btnCancle")
+        .addEventListener("click", this.cancleCallBack);
+      document
+        .querySelector("#" + this.popId + " .btn_close")
+        .addEventListener("click", this.cancle);
+      return this;
+    }
+
     cancle() {
       $(this).closest(".commPopup").next(".mask_wrap").remove();
       $(this).closest(".commPopup").remove();

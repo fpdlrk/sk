@@ -31,7 +31,6 @@ PopupOpen.prototype = (function () {
 
     if (self.el.querySelector(".btnOk")) {
       self.el.querySelector(".btnOk").onclick = function () {
-        console.log(document.querySelector(".mask_wrap"));
         if (typeof opts.callBack.fnOk == "string") {
           window[opts.callBack.fnOk](opts.popId);
         } else if (typeof opts.callBack.fnOk == "function") {

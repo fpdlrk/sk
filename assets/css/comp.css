@@ -11,6 +11,10 @@ div[class^="_comp"] .btn {
   border-radius: 6px;
 }
 
+._f1 {
+  flex: 1 !important;
+}
+
 ._columnGroup > ._comp + ._comp {
   margin-top: 7px;
 }
@@ -18,10 +22,22 @@ div[class^="_comp"] .btn {
 ._comp._wide {
   display: block !important;
 }
+._inline {
+  display: flex !important;
+}
 ._comp._wide > ._body {
   width: 100%;
 }
 
+._comp._block {
+  display: block !important;
+}
+._comp._block > ._body {
+  min-width: 150px;
+}
+._comp._lager > ._body > ._selectOuter {
+  min-height: 50px;
+}
 ._comp ._fix9 {
   flex: 0.9;
 }
@@ -84,6 +100,7 @@ div[class^="_comp"] .btn {
 }
 .comp_select ._selectWrap {
   width: 100%;
+  min-height: inherit;
   position: absolute;
   right: 0;
   top: 0;
@@ -92,12 +109,15 @@ div[class^="_comp"] .btn {
   border-radius: 6px;
   z-index: 100;
 }
+.comp_select ._selectWrap._active {
+  z-index: 110;
+}
 .comp_select ._selectWrap._left {
   left: 0;
 }
 .comp_select ._selectWrap > ._header {
   width: 100%;
-  height: inherit;
+  min-height: inherit;
   padding: 5px 10px;
   display: flex;
   justify-content: space-between;
@@ -124,22 +144,34 @@ div[class^="_comp"] .btn {
 }
 .comp_select ._selectWrap > ._list {
   width: 100%;
+  padding: 0 0 10px 0;
   /* position: absolute; */
   /* left: 0; */
   display: none;
   /* background-color: var(--white); */
 }
-.comp_select ._selectWrap._active > ._list {
+.comp_select ._selectWrap > ._header._active + ._list {
   display: block;
 }
 .comp_select ._selectWrap > ._list ._item {
-  padding: 2px 10px;
+  padding: 4px 10px;
   display: block;
   cursor: pointer;
 }
 .comp_select ._selectWrap > ._list ._item:hover,
 .comp_select ._selectWrap > ._list ._item:focus {
   background-color: var(--color07);
+}
+
+._fromto {
+}
+._fromto > div:first-child,
+._fromto > div:last-child {
+  width: 45%;
+}
+._fromto > div:first-child > ._body,
+._fromto > div:last-child > ._body {
+  flex: 1;
 }
 
 .comp_select ._selectWrap > ._list ._item._selected {
@@ -154,12 +186,15 @@ div[class^="_comp"] .btn {
 .comp_inputAndButton ._inputAndButtonWrap {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .comp_inputAndButton ._inputAndButtonWrap .comm_input {
-  flex-basis: 75%;
+  /* flex-basis: 75%; */
+  flex: 0.98;
 }
 .comp_inputAndButton ._inputAndButtonWrap .btn {
   flex-basis: 24%;
+  /* flex-basis: auto; */
 }
 
 .comp_input {
@@ -368,40 +403,21 @@ div[class^="_comp"] .btn {
   background-color: var(--color08);
   border: 1px solid var(--line01);
 }
-.comp_itemList
-  > ._item._inAction._logic
-  .setting_preView_wrap
-  .item_list
-  .item {
+.comp_itemList > ._item._inAction._logic .setting_preView_wrap .item_list .item {
   padding: 5px 10px;
   display: flex;
   font-size: 13px;
   color: var(--color05);
   font-weight: 400;
 }
-.comp_itemList
-  > ._item._inAction._logic
-  .setting_preView_wrap
-  .item_list
-  .item
-  h2 {
+.comp_itemList > ._item._inAction._logic .setting_preView_wrap .item_list .item h2 {
   width: 50px;
   font-size: 13px;
 }
-.comp_itemList
-  > ._item._inAction._logic
-  .setting_preView_wrap
-  .item_list
-  .item
-  + .item {
+.comp_itemList > ._item._inAction._logic .setting_preView_wrap .item_list .item + .item {
   border-top: 1px solid var(--line01);
 }
-.comp_itemList
-  > ._item._inAction._logic
-  .setting_preView_wrap
-  .item_list
-  .item
-  .end {
+.comp_itemList > ._item._inAction._logic .setting_preView_wrap .item_list .item .end {
   margin-left: auto;
 }
 
@@ -516,39 +532,23 @@ div[class^="_comp"] .btn {
   margin: 0 0 0 4px;
   display: flex;
 }
-.comp_answerAddWrap
-  ._answerAddItemOuter
-  ._answerAddItem
-  ._inp_wrap
-  .comm_input._tp_txt {
+.comp_answerAddWrap ._answerAddItemOuter ._answerAddItem ._inp_wrap .comm_input._tp_txt {
   flex: 1;
 }
-.comp_answerAddWrap
-  ._answerAddItemOuter
-  ._answerAddItem
-  ._inp_wrap
-  .comm_input._tp_num {
+.comp_answerAddWrap ._answerAddItemOuter ._answerAddItem ._inp_wrap .comm_input._tp_num {
   width: 40px;
   min-width: 40px;
   margin: 0 0 0 5px;
   display: none;
 }
-.comp_answerAddWrap
-  ._answerAddItemOuter
-  ._answerAddItem
-  ._inp_wrap
-  .comm_input._tp_score {
+.comp_answerAddWrap ._answerAddItemOuter ._answerAddItem ._inp_wrap .comm_input._tp_score {
   width: 40px;
   min-width: 40px;
   padding: 0 5px;
   margin: 0 0 0 5px;
   text-align: center;
 }
-.comp_answerAddWrap
-  ._answerAddItemOuter
-  ._answerAddItem
-  ._inp_wrap
-  .comm_input._tp_num._active {
+.comp_answerAddWrap ._answerAddItemOuter ._answerAddItem ._inp_wrap .comm_input._tp_num._active {
   display: block;
 }
 .comp_answerAddWrap ._answerAddItemOuter ._answerAddItem ._btn_g {
@@ -565,10 +565,7 @@ div[class^="_comp"] .btn {
   background-color: var(--color06);
   border-radius: 6px;
 }
-.comp_answerAddWrap
-  ._answerAddItemOuter
-  ._tpMedia
-  + ._answerAddItemPlaceholder {
+.comp_answerAddWrap ._answerAddItemOuter ._tpMedia + ._answerAddItemPlaceholder {
   height: 76px;
 }
 
@@ -870,4 +867,131 @@ div[class^="_comp"] .btn {
   font-size: 12px;
   color: var(--color05);
   text-align: right;
+}
+
+._card {
+  padding: 10px;
+  border: 1px solid var(--line01);
+  background-color: var(--white);
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+}
+._card ._tag {
+  padding: 7px 0 0 0;
+}
+
+._card ._card_L {
+}
+._card ._card_R {
+}
+
+._card ._imgAreaWrap {
+  height: 150px;
+  min-height: 150px;
+  position: relative;
+}
+._card ._imgAreaWrap ._imgArea {
+  min-height: inherit;
+  margin: 0;
+}
+._card ._imgAreaWrap ._badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+._card ._cntArea {
+}
+._card ._cntArea ._subTxt {
+  padding: 0 0 15px 0;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--fntTxt03);
+}
+._card ._cntArea ._subTxt h3 {
+  font-size: 13px;
+  font-weight: 400;
+}
+._card ._cntArea ._tit {
+  padding: 0 0 20px 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+._card ._cntArea ._status {
+}
+
+._card ._cntArea > ul {
+  padding: 15px 0 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--fntTxt03);
+}
+
+._card ._cntArea > ul > li {
+  display: flex;
+  margin-right: 30px;
+}
+._card ._cntArea > ul > li + li {
+  margin-top: 7px;
+}
+._card ._cntArea > ul > li._wd,
+._card ._cntArea > ul > li:last-child {
+  margin-right: 0px;
+}
+._card ._cntArea > ul > li._wd {
+  width: 100%;
+}
+._card ._cntArea > ul > li ._sTit {
+  width: 90px;
+  color: var(--fntMain);
+  font-weight: 500;
+}
+
+._card ._actionArea {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+._card ._actionArea ._action {
+  width: 32px;
+  height: 32px;
+  background-color: var(--main01);
+  border-radius: 50%;
+}
+._card ._actionArea ._actionBody {
+  width: 100px;
+  padding: 15px;
+  background-color: var(--color06);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  left: 50%;
+  top: 40px;
+  transform: translateX(-50%);
+  z-index: 5;
+  display: none;
+}
+._card ._actionArea .btn.active + ._actionBody {
+  display: block;
+}
+._card ._actionArea ._actionBody button {
+  color: var(--fntTxt03);
+}
+._card ._actionArea ._actionBody button.selected {
+  color: var(--fntMain);
+}
+
+._card._x2 {
+  display: flex;
+}
+._card._x2 ._card_L {
+  width: 220px;
+}
+._card._x2 ._card_R {
+  padding: 10px;
+  flex: 1;
 }
