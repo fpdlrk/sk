@@ -72,9 +72,9 @@ header .col_R {
 }
 
 header .top .logo {
-  width: 87px;
+  width: 180px;
   height: 100%;
-  background-image: url("../../assets/img/logo.svg");
+  background-image: url("../../assets/img/logo2.svg");
   background-position: 50% 50%;
   background-repeat: no-repeat;
   font-size: 0;
@@ -83,7 +83,7 @@ header .top .logo {
 }
 
 header .top .logo2 {
-  width: 87px;
+  width: 150px;
   height: 100%;
   background-image: url("../../assets/img/logo2.svg");
   background-position: 50% 50%;
@@ -512,6 +512,18 @@ header .top_util._tp02 > .col_L {
 }
 .lnb_body .lnb_item_group .item._lineForm:before {
   background-image: url("../../assets/img/ico/d/ico_lineForm.svg");
+}
+.lnb_body .lnb_item_group .item._pollBanner:before {
+  background-image: url("../../assets/img/ico/d/ico_banner.svg");
+}
+.lnb_body .lnb_item_group .item._pollIntro:before {
+  background-image: url("../../assets/img/ico/d/ico_intro.svg");
+}
+.lnb_body .lnb_item_group .item._serveyStart:before {
+  background-image: url("../../assets/img/ico/d/ico_start.svg");
+}
+.lnb_body .lnb_item_group .item._serveyEnd:before {
+  background-image: url("../../assets/img/ico/d/ico_end.svg");
 }
 
 .lnb_body .lnb_item_group .item:hover,

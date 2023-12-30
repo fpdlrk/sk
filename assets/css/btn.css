@@ -194,7 +194,7 @@ label.btn {
   line-height: 0;
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-size: 100%;
+  /* background-size: 100%; */
 }
 .btn .ico._ic_lager:before {
   width: 30px;
@@ -296,6 +296,15 @@ label.btn {
 }
 .btn .ico._cloud:before {
   background-image: url("../../assets/img/ico/d/ico_cloud.svg");
+}
+.btn .ico._pollBanner:before {
+  background-image: url("../../assets/img/ico/d/ico_banner.svg");
+}
+.btn .ico._pollPaper:before {
+  background-image: url("../../assets/img/ico/d/ico_paper.svg");
+}
+.btn .ico._myAlram:before {
+  background-image: url("../../assets/img/ico/d/ico_alram.svg");
 }
 
 /* white icon */
