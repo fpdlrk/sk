@@ -1302,7 +1302,7 @@
                             <div class="resultItem">고용 내 직업</div>
                           </div>
                         </div>
-                        <button class="btn _header btn_primary">
+                        <button class="btn _header btn_primary" id="btn_pop01">
                           <span class="_txt">검색</span>
                         </button>
                       </div>
@@ -1312,7 +1312,7 @@
                   <!--// 검색 -->
 
                   <!-- 검색 시 팝업 -->
-                  <div class="_targetPop" style="display: none">
+                  <div class="_targetPop" id="Popup01" style="display: none">
                     <div class="_targetSettingWrap">
                       <div class="_SettingWrapHeader">
                         <h2 class="tit">대상 지정 옵션</h2>
@@ -1391,6 +1391,12 @@
                       </div>
                     </div>
                   </div>
+                  <script>
+                    $("#btn_pop01").on("click", function (e) {
+                      e.preventDefault();
+                      $("#Popup01").css("display", "flex");
+                    });
+                  </script>
                   <!--// 검색 시 팝업 -->
 
                   <!-- 최고 인기 -->
