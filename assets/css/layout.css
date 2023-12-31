@@ -678,7 +678,7 @@ header .top_util._tp02 > .col_L {
   color: var(--black1);
 }
 .view_round .view_round_body {
-  min-height: 250px;
+  /* min-height: 250px; */
 }
 .view_round .subject._privateTit {
   padding: 5px 0 10px 0;

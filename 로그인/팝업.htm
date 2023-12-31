@@ -12,55 +12,9 @@
     <script src="../assets/js/simplebar.min.js"></script>
   </head>
   <body>
-    <!--S: 로그인 -->
-    <div class="login_wrap">
-      <div class="login_body">
-        <h2 class="mgt20 mgb20">
-          <span>돈버는 설문</span>
-        </h2>
-
-        <div class="form_group">
-          <div class="form_group">
-            <div class="form_item">
-              <input type="text" class="comm_input tp_lg" placeholder="아이디를 입력하세요" />
-            </div>
-          </div>
-          <div class="form_group">
-            <div class="form_item _tp_pwshowhide">
-              <input type="password" class="comm_input tp_lg" placeholder="비밀번호를 입력하세요" />
-              <button class="btn _bdno _ico_ly _pwShowHide"><i class="ico _ic_pwShowHide"></i><span class="txt">비번 표시여부</span></button>
-            </div>
-          </div>
-
-          <div class="id_saveWrap">
-            <span class="check_b_wrap">
-              <input type="checkbox" class="chk" name="1" />
-              <span class="ico"></span>
-              <span>아이디 저장</span>
-            </span>
-          </div>
-
-          <button type="button" class="btn btn_primary btn_lager wide mgt20">로그인</button>
-          <div class="login_btm">
-            <p class="mem_join_link">
-              <a href="#" id="btn_join">회원가입</a>
-            </p>
-            <p class="mem_join_link">
-              <a href="#" id="btn_pwFind">비밀번호 찾기</a>
-            </p>
-            <p class="mem_join_link">
-              <a href="#" id="btn_pwChange">비밀번호 변경</a>
-            </p>
-          </div>
-
-          <div class="login_copyrihgt">
-            <p class="txt_sk">에스케이텔레콤㈜</p>
-            <p>COPYRIGHT © SK TELECOM CO., LTD. ALL RIGHTS RESERVED.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--E: 로그인 -->
+    <button type="button" class="btn" id="btn_join">회원가입</button>
+    <button type="button" class="btn" id="btn_pwFind">비밀번호 찾기</button>
+    <button type="button" class="btn" id="btn_pwChange">비밀번호 변경</button>
 
     <!--S: 회원가입 -->
     <div class="only_box_wrap _tp_join tp_popup" id="joinPopup">
@@ -247,6 +201,7 @@
     <script src="../assets/js/popup.js"></script>
     <script src="../assets/js/loading.js"></script>
     <script src="../assets/js/dropDown.js"></script>
+
     <script>
       $("#btn_pwFind").on("click", function (e) {
         e.preventDefault();
