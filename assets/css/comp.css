@@ -1218,6 +1218,28 @@ div[class^="_comp"] .btn {
   border-radius: 6px;
 }
 
+._groupCheck ._serachWrap {
+  position: relative;
+  margin: 0 5px;
+}
+._groupCheck ._serachWrap ._searchResultBody {
+  width: 100%;
+  padding: 10px 0;
+  position: absolute;
+  top: 37px;
+  left: 0;
+  background-color: var(--white);
+  border: 1px solid var(--line01);
+  border-radius: 6px;
+  z-index: 5;
+}
+._groupCheck ._serachWrap ._searchResultBody .resultItem {
+  padding: 5px 10px;
+}
+._groupCheck ._serachWrap ._searchResultBody .resultItem:hover {
+  background-color: var(--color06);
+}
+
 ._targetPop {
   width: 100%;
   height: 100%;
