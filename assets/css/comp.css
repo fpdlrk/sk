@@ -279,6 +279,23 @@ div[class^="_comp"] .btn {
   outline: 0 !important;
 }
 
+.comp_rangeSliderWrap._tp01 {
+  height: 130px;
+}
+.comp_rangeSliderWrap._tp01 ._rangeSlider_handle + .ui-slider-handle {
+  width: 26px !important;
+  height: 26px !important;
+}
+
+.comp_rangeSliderWrap._tp01 .sld_header {
+  padding: 25px 0 0 0;
+  display: flex;
+  font-size: 16px;
+}
+.comp_rangeSliderWrap._tp01 .sld_header > div {
+  width: 50%;
+  text-align: center;
+}
 .comp_textTyppingArea {
   background-color: var(--color07);
   border-radius: 20px;
@@ -1064,6 +1081,7 @@ div[class^="_comp"] .btn {
 }
 
 ._setGroup {
+  height: calc(100% - 40px);
 }
 ._setGroup ._setGroupHeader {
   padding: 0 0 10px 0;
@@ -1104,6 +1122,10 @@ div[class^="_comp"] .btn {
   border-bottom: 1px solid var(--line01);
 }
 
+._setGroup ._setGroupBody ._groupItem > ._groupItemBody._previewBody > ._item + ._item {
+  margin-top: 5px;
+}
+
 ._setGroup ._setGroupBody ._groupItem > ._groupItemBody ._item {
   font-weight: 400;
 }
@@ -1133,15 +1155,81 @@ div[class^="_comp"] .btn {
 ._setGroupBody ._groupCheck {
   margin: 0 -10px 5px -10px;
 }
+._setGroupBody ._groupCheck > ._tit {
+  padding: 0 0 5px 0;
+  font-size: 14px;
+  font-weight: 500;
+}
 ._setGroupBody ._groupCheck + ._groupCheck {
   padding: 10px 0 0 0;
   border-top: 1px solid var(--line01);
+}
+._setGroupBody ._groupCheck._tpSearch {
+  padding: 0 0 10px 0;
+  border-bottom: 1px solid var(--line01);
+}
+._setGroupBody ._groupCheck._tpSearch ~ ._groupCheck {
+  border-top: none;
+}
+
+._setGroupBody ._groupCheck._tpSearch .comm_input,
+._setGroupBody ._groupCheck._tpSearch ._selectWrap {
+  height: 36px;
+  background-color: var(--white);
+}
+._setGroupBody ._groupCheck._tpSearch .btn {
+  flex-basis: 100px;
+}
+
+._setGroup ._setGroupHeader + ._setGroupBody._noborder ._groupCheck + ._groupCheck {
+  border-top: none;
 }
 ._groupCheck ul {
   display: flex;
   flex-wrap: wrap;
 }
+._groupCheck ul.selectCity._tpBlock {
+  display: block;
+}
+
 ._groupCheck ul li {
   width: 25%;
   margin: 0 0 5px 0;
+}
+._groupCheck ul._2x li {
+  width: 50%;
+}
+._groupCheck ul._2x li:last-child ._cusChk {
+  margin: 0;
+}
+
+._groupCheck .selectCity._tpAge li {
+  width: 12.5%;
+  margin: 0 5px 5px 0;
+}
+._groupCheck .selectCity._tpAge li .comm_input {
+  text-align: center;
+}
+._groupCheck .selectCity._tpAge li .comm_input,
+._groupCheck .selectCity._tpAge li .btn {
+  min-width: auto;
+  height: 40px;
+  background-color: var(--white);
+  border-radius: 6px;
+}
+
+._targetPop {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+._targetPop ._targetSettingWrap {
+  width: 950px;
 }

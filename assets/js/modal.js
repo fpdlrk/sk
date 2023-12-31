@@ -1,22 +1,6 @@
-const ModalOpen = function (
-  popId,
-  title,
-  msg,
-  type,
-  okFnc,
-  cancleFnc,
-  ...rest
-) {
+const ModalOpen = function (popId, title, msg, type, okFnc, cancleFnc, ...rest) {
   class Modal {
-    constructor(
-      popId,
-      title,
-      msg,
-      type,
-      okCallBack,
-      cancleCallBack,
-      { ...rest }
-    ) {
+    constructor(popId, title, msg, type, okCallBack, cancleCallBack, { ...rest }) {
       this.popId = popId;
       this.title = title;
       this.msg = msg;
@@ -28,8 +12,7 @@ const ModalOpen = function (
 
     open() {
       let html = "";
-      html +=
-        '<div id="' + this.popId + '" class="commPopup _tp_' + this.type + '">';
+      html += '<div id="' + this.popId + '" class="commPopup _tp_' + this.type + '">';
       if (this.title != null && this.title != "") {
         html += '<div class="pop_header">';
         html += "<h2>" + this.title + "</h2>";
@@ -54,25 +37,15 @@ const ModalOpen = function (
       html += '<div class="btn_g">';
 
       if (this.type == "alert") {
-        html +=
-          '<button type="button" class="btn btn_small btn_rud30 btn_praimary btnCancle" data-popId="' +
-          this.popId +
-          '">닫기</button>';
+        html += '<button type="button" class="btn btn_small btn_rud30 btn_primary btnCancle" data-popId="' + this.popId + '">닫기</button>';
       } else {
-        html +=
-          '<button type="button" class="btn btn_small btn_rud30 btn_color03 btnCancle" data-popId="' +
-          this.popId +
-          '">취소</button>';
-        html +=
-          '<button type="button" class="btn btn_small btn_rud30 btn_praimary btnOk" data-popId="' +
-          this.popId +
-          '">확인</button>';
+        html += '<button type="button" class="btn btn_small btn_rud30 btn_color03 btnCancle" data-popId="' + this.popId + '">취소</button>';
+        html += '<button type="button" class="btn btn_small btn_rud30 btn_primary btnOk" data-popId="' + this.popId + '">확인</button>';
       }
 
       html += "</div>";
       html += "</div>";
-      html +=
-        '<button type="button" class="btn_close pop_close"><span class="ico">닫기</span></button>';
+      html += '<button type="button" class="btn_close pop_close"><span class="ico">닫기</span></button>';
       html += "</div>";
 
       $("body").append(html);
@@ -81,39 +54,23 @@ const ModalOpen = function (
     }
 
     alert() {
-      document
-        .querySelector("#" + this.popId + " .btnCancle")
-        .addEventListener("click", this.cancleCallBack);
-      document
-        .querySelector("#" + this.popId + " .btn_close")
-        .addEventListener("click", this.cancle);
+      document.querySelector("#" + this.popId + " .btnCancle").addEventListener("click", this.cancleCallBack);
+      document.querySelector("#" + this.popId + " .btn_close").addEventListener("click", this.cancle);
       //   console.log(this);
       return this;
     }
 
     confirm() {
-      document
-        .querySelector("#" + this.popId + " .btnOk")
-        .addEventListener("click", this.okCallBack);
-      document
-        .querySelector("#" + this.popId + " .btnCancle")
-        .addEventListener("click", this.cancleCallBack);
-      document
-        .querySelector("#" + this.popId + " .btn_close")
-        .addEventListener("click", this.cancle);
+      document.querySelector("#" + this.popId + " .btnOk").addEventListener("click", this.okCallBack);
+      document.querySelector("#" + this.popId + " .btnCancle").addEventListener("click", this.cancleCallBack);
+      document.querySelector("#" + this.popId + " .btn_close").addEventListener("click", this.cancle);
       return this;
     }
 
     alertInfo() {
-      document
-        .querySelector("#" + this.popId + " .btnOk")
-        .addEventListener("click", this.okCallBack);
-      document
-        .querySelector("#" + this.popId + " .btnCancle")
-        .addEventListener("click", this.cancleCallBack);
-      document
-        .querySelector("#" + this.popId + " .btn_close")
-        .addEventListener("click", this.cancle);
+      document.querySelector("#" + this.popId + " .btnOk").addEventListener("click", this.okCallBack);
+      document.querySelector("#" + this.popId + " .btnCancle").addEventListener("click", this.cancleCallBack);
+      document.querySelector("#" + this.popId + " .btn_close").addEventListener("click", this.cancle);
       return this;
     }
 

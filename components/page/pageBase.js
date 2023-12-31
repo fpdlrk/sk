@@ -5,13 +5,11 @@ const pageBase = {
     <div class="view_round_header">
       <h2 class="tit">${pageBase.datas.SURVEY_ID.text}</h2>
     </div>
-    <div class="subject _privateTit ${
-      surveySubject.datas.isFirstPage ? (currentPage == 0 ? "" : "hidden") : ""
-    } ">${pageBase.datas.SURVEY_SUBJECT.text}</div>
+    <div class="subject _privateTit ${surveySubject.datas.isFirstPage ? (currentPage == 0 ? "" : "hidden") : ""} ">${
+      pageBase.datas.SURVEY_SUBJECT.text
+    }</div>
 
-    <div class="comp_rangeSliderWrap ${
-      surveyProgress.datas.isUse ? "" : "hidden"
-    }">
+    <div class="comp_rangeSliderWrap ${surveyProgress.datas.isUse ? "" : "hidden"}">
         <div class="_rangeSlider ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content" id="sliderTarget">
           <div class="_rangeSlider_handle" id="rangeSlider_handle" style="width: 33%;"></div>
         <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 33%;pointer-events: none;">0</span></div>
@@ -31,14 +29,14 @@ const pageBase = {
     <div class="view_round_btm">
       <div class="_col_l">
         <button
-          class="btn btn_praimary btn_rud100 btn_lager btn_fix _bdno _ico_ly"
+          class="btn btn_primary btn_rud100 btn_lager btn_fix _bdno _ico_ly"
         >
           <i class="ico _more_w"></i>
           <span class="txt">더보기</span>
         </button>
       </div>
       <div class="_col_r">
-        <button class="btn btn_praimary btn_rud30 btn_lager _bdno tp_next">
+        <button class="btn btn_primary btn_rud30 btn_lager _bdno tp_next">
           <span class="txt">NEXT</span>
           <i class="ico _next01_w"></i>
         </button>

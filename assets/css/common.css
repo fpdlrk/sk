@@ -480,6 +480,9 @@
   margin-bottom: 80px !important;
 }
 
+.mgl_auto {
+  margin-left: auto !important;
+}
 .mgl3 {
   margin-left: 3px !important;
 }

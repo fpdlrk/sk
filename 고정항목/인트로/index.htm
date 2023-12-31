@@ -6,11 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>인트로</title>
     <link type="text/css" href="../../assets/css/import.css" rel="stylesheet" />
-    <link
-      type="text/css"
-      href="../../assets/css/simplebar.css"
-      rel="stylesheet"
-    />
+    <link type="text/css" href="../../assets/css/simplebar.css" rel="stylesheet" />
     <script src="../../assets/js/jquery-2.2.4.js"></script>
     <script src="../../assets/js/jquery-ui.js"></script>
     <script src="../../assets/js/simplebar.min.js"></script>
@@ -39,10 +35,7 @@
                 <div class="_comp comp_textarea _wide">
                   <span class="_tit">설문 태그</span>
                   <div class="_body _comp_textareaWrap">
-                    <textarea
-                      class="comm_input"
-                      placeholder="에디터가 들어갈자리"
-                    ></textarea>
+                    <textarea class="comm_input" placeholder="에디터가 들어갈자리"></textarea>
                   </div>
                 </div>
               </div>
@@ -51,10 +44,7 @@
                 <div class="_comp comp_textarea _wide">
                   <span class="_tit">인트루 내용</span>
                   <div class="_body _comp_textareaWrap">
-                    <textarea
-                      class="comm_input"
-                      placeholder="에디터가 들어갈자리"
-                    ></textarea>
+                    <textarea class="comm_input" placeholder="에디터가 들어갈자리"></textarea>
                   </div>
                 </div>
               </div>
@@ -70,17 +60,10 @@
                             <div class="_image"></div>
                             <div class="_filed">
                               <div class="_filedInp">
-                                <input
-                                  type="text"
-                                  class="comm_input _tp_txt"
-                                  placeholder="ID를 입력하세요1."
-                                />
+                                <input type="text" class="comm_input _tp_txt" placeholder="ID를 입력하세요1." />
                               </div>
 
-                              <button
-                                class="btn _bdno btn_praimary wide"
-                                id="popAlert"
-                              >
+                              <button class="btn _bdno btn_primary wide" id="popAlert">
                                 <span class="txt">이미지 삽입</span>
                               </button>
                             </div>
@@ -217,16 +200,12 @@
 
             <div class="comp_textTyppingArea">
               <h2 class="_tit" contenteditable="true">설문정보 텍스트 영역</h2>
-              <div class="_typping" contenteditable="true">
-                설문정보 내용 영역
-              </div>
+              <div class="_typping" contenteditable="true">설문정보 내용 영역</div>
             </div>
 
             <div class="comp_questArea _tp_full">
               <h2 class="_tit" contenteditable="true">설문정보 텍스트 영역</h2>
-              <div class="_typping" contenteditable="true">
-                설문정보 내용 영역
-              </div>
+              <div class="_typping" contenteditable="true">설문정보 내용 영역</div>
               <span class="_label _status _edit">편집중</span>
               <div class="_actions">
                 <button class="btn _bdno _ico_ly">
@@ -254,17 +233,13 @@
           </div>
           <div class="view_round_btm">
             <div class="_col_l">
-              <button
-                class="btn btn_praimary btn_rud100 btn_lager btn_fix _bdno _ico_ly"
-              >
+              <button class="btn btn_primary btn_rud100 btn_lager btn_fix _bdno _ico_ly">
                 <i class="ico _more_w"></i>
                 <span class="txt">더보기</span>
               </button>
             </div>
             <div class="_col_r">
-              <button
-                class="btn btn_praimary btn_rud30 btn_lager _bdno tp_next"
-              >
+              <button class="btn btn_primary btn_rud30 btn_lager _bdno tp_next">
                 <span class="txt">NEXT</span>
                 <i class="ico _next01_w"></i>
               </button>
@@ -282,18 +257,10 @@
 
     <script>
       $("#popAlert").on("click", function () {
-        ModalOpen(
-          "firstPopup",
-          "안내",
-          "<span class='f_main'>KJCI3718UID09</span> 는 사용가능 ID입니다.",
-          "alert",
-          "",
-          okClickFnc,
-          {
-            //style: "font-size:60px;",
-            class: "ac",
-          }
-        );
+        ModalOpen("firstPopup", "안내", "<span class='f_main'>KJCI3718UID09</span> 는 사용가능 ID입니다.", "alert", "", okClickFnc, {
+          //style: "font-size:60px;",
+          class: "ac",
+        });
       });
 
       let okClickFnc = (e) => {

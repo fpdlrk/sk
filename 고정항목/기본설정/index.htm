@@ -861,7 +861,7 @@
                         <span class="txt">삭제</span>
                       </button>
                     </h2>
-                    <div class="_groupItemBody">
+                    <div class="_groupItemBody _previewBody">
                       <div class="_item _itemInline">
                         <span class="_txt">서울시</span>
                         <input type="text" class="comm_input _tp_txt" placeholder="" />
@@ -901,7 +901,7 @@
         </div>
         <!--// 지정한 타켓 -->
 
-        <!-- 대상 지정 옵션 -->
+        <!-- 대상 지정 옵션 (지역 선택) -->
         <div class="_targetSettingWrap">
           <div class="_SettingWrapHeader">
             <h2 class="tit">대상 지정 옵션</h2>
@@ -984,9 +984,13 @@
                         <span class="txt">삭제</span>
                       </button>
                     </h2>
-                    <div class="_groupItemBody">
+                    <div class="_groupItemBody _previewBody">
                       <div class="_item _itemInline">
                         <span class="_txt">서울시</span>
+                        <input type="text" class="comm_input _tp_txt" placeholder="" />
+                      </div>
+                      <div class="_item _itemInline">
+                        <span class="_txt">종로구</span>
                         <input type="text" class="comm_input _tp_txt" placeholder="" />
                       </div>
                     </div>
@@ -998,10 +1002,479 @@
                   <!--// 지역 대상 -->
                 </div>
               </div>
+              <div class="btm_area">
+                <button class="btn btn_primary wide btn_rud6">
+                  <span class="txt">완료</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
-        <!--// 대상 지정 옵션 -->
+        <!--// 대상 지정 옵션 (지역 선택) -->
+
+        <!-- 대상 지정 옵션 (성별 선택) -->
+        <div class="_targetSettingWrap">
+          <div class="_SettingWrapHeader">
+            <h2 class="tit">대상 지정 옵션</h2>
+            <div class="util">
+              <button class="btn _bdno _ico_ly">
+                <i class="ico _pannelRefresh"></i>
+                <span class="txt">리셋</span>
+              </button>
+              <button class="btn _bdno _ico_ly">
+                <i class="ico _pannelClose"></i>
+                <span class="txt">닫기</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="_SettingWrapBody scrollbar-outer">
+            <div class="col_L">
+              <div class="_setGroup">
+                <div class="_setGroupHeader _btit">
+                  <h2>성별 선택</h2>
+                  <button class="btn btn_small btn_rud6">
+                    <span class="txt">전체</span>
+                  </button>
+                </div>
+                <div class="_setGroupBody _noborder">
+                  <!-- 성별선택 -->
+                  <div class="_groupCheck">
+                    <ul class="selectCity _2x">
+                      <li>
+                        <span class="check_b_wrap _cusChk">
+                          <input type="checkbox" class="chk" name="1" />
+                          <span class="ico"></span>
+                          <span class="txt">남자</span>
+                        </span>
+                      </li>
+                      <li>
+                        <span class="check_b_wrap _cusChk">
+                          <input type="checkbox" class="chk" name="1" />
+                          <span class="ico"></span>
+                          <span class="txt">여자</span>
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                  <!--// 성별선택 -->
+                  <div class="_groupCheck">
+                    <div class="_comp">
+                      <span class="_tit">성별 균형 조정</span>
+                      <div class="_body _inline" style="width: 70%">
+                        <span class="radio_b_wrap">
+                          <input type="radio" class="chk" name="1" />
+                          <span class="ico"></span>
+                          <span>사용자 정의</span>
+                        </span>
+
+                        <span class="radio_b_wrap mgl30">
+                          <input type="radio" class="chk" name="1" />
+                          <span class="ico"></span>
+                          <span>없음</span>
+                        </span>
+                        <div class="mgl_auto">최소 50개의 응답이 필요</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="_groupCheck">
+                    <!--S: Slider 형 -->
+                    <div class="comp_rangeSliderWrap _tp01">
+                      <div class="sld_header">
+                        <div class="colL">남자 <span class="val1">60</span>%</div>
+                        <div class="colR">여자 <span class="val2">60</span>%</div>
+                      </div>
+                      <div class="_rangeSlider" id="sliderTarget">
+                        <div class="_rangeSlider_handle" id="rangeSlider_handle"></div>
+                      </div>
+                      <script>
+                        $(function () {
+                          var handle = $("#rangeSlider_handle");
+                          var val1 = $(".sld_header .val1");
+                          var val2 = $(".sld_header .val2");
+                          // console.log(handleRail);
+                          $("#sliderTarget").slider({
+                            create: function () {
+                              //handle.text($(this).slider("value"));
+                              //handle.next().text($(this).slider("value"));
+                              val1.text($(this).slider("value"));
+                            },
+                            slide: function (event, ui) {
+                              //handle.text(ui.value);
+                              handle.css("width", ui.value + "%");
+                              // handle.next().text(ui.value);
+                              val1.text(ui.value);
+                              val2.text(100 - ui.value);
+                            },
+                          });
+                        });
+                      </script>
+                    </div>
+                    <!--E: Slider 형 -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col_R">
+              <div class="_setGroup">
+                <!-- <div class="_setGroupHeader _noline">지역 대상</div> -->
+                <div class="_setGroupBody">
+                  <!-- 성별 대상 -->
+                  <div class="_groupItem">
+                    <h2>
+                      <span class="_tit">성별 대상</span>
+                      <button class="btn _bdno _ico_ly">
+                        <i class="ico _close"></i>
+                        <span class="txt">삭제</span>
+                      </button>
+                    </h2>
+                    <div class="_groupItemBody _previewBody">
+                      <div class="_item _itemInline">
+                        <span class="_txt">남자</span>
+                        <input type="text" class="comm_input _tp_txt" placeholder="" />
+                      </div>
+                      <div class="_item _itemInline">
+                        <span class="_txt">여자</span>
+                        <input type="text" class="comm_input _tp_txt" placeholder="" />
+                      </div>
+                    </div>
+                    <div class="_groupItemTotal">
+                      <div class="_item _colL"></div>
+                      <div class="_item _colR">총 100%</div>
+                    </div>
+                  </div>
+                  <!--// 성별 대상 -->
+                </div>
+              </div>
+              <div class="btm_area">
+                <button class="btn btn_primary wide btn_rud6">
+                  <span class="txt">완료</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--// 대상 지정 옵션 (성별 선택) -->
+
+        <!-- 대상 지정 옵션 (연령 선택) -->
+        <div class="_targetSettingWrap">
+          <div class="_SettingWrapHeader">
+            <h2 class="tit">대상 지정 옵션</h2>
+            <div class="util">
+              <button class="btn _bdno _ico_ly">
+                <i class="ico _pannelRefresh"></i>
+                <span class="txt">리셋</span>
+              </button>
+              <button class="btn _bdno _ico_ly">
+                <i class="ico _pannelClose"></i>
+                <span class="txt">닫기</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="_SettingWrapBody scrollbar-outer">
+            <div class="col_L">
+              <div class="_setGroup">
+                <div class="_setGroupHeader _btit">
+                  <h2>연령 선택</h2>
+                  <button class="btn btn_small btn_rud6">
+                    <span class="txt">전체</span>
+                  </button>
+                </div>
+                <div class="_setGroupBody _noborder">
+                  <!-- 연령선택 -->
+                  <div class="_groupCheck">
+                    <ul class="selectCity _tpAge">
+                      <li>
+                        <input type="text" class="comm_input wide" value="10" />
+                      </li>
+                      <li>
+                        <input type="text" class="comm_input wide" value="20" />
+                      </li>
+                      <li>
+                        <button class="btn wide _targetAdd">
+                          <span class="_txt">추가</span>
+                          <span class="ico"></span>
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
+                  <!--// 연령선택 -->
+                </div>
+              </div>
+            </div>
+            <div class="col_R">
+              <div class="_setGroup">
+                <!-- <div class="_setGroupHeader _noline">지역 대상</div> -->
+                <div class="_setGroupBody">
+                  <!-- 성별 대상 -->
+                  <div class="_groupItem">
+                    <h2>
+                      <span class="_tit">성별 대상</span>
+                      <button class="btn _bdno _ico_ly">
+                        <i class="ico _close"></i>
+                        <span class="txt">삭제</span>
+                      </button>
+                    </h2>
+                    <div class="_groupItemBody _previewBody">
+                      <div class="_item _itemInline">
+                        <span class="_txt">10</span>
+                        <input type="text" class="comm_input _tp_txt" placeholder="" />
+                      </div>
+                      <div class="_item _itemInline">
+                        <span class="_txt">20</span>
+                        <input type="text" class="comm_input _tp_txt" placeholder="" />
+                      </div>
+                    </div>
+                    <div class="_groupItemTotal">
+                      <div class="_item _colL"></div>
+                      <div class="_item _colR">총 100%</div>
+                    </div>
+                  </div>
+                  <!--// 성별 대상 -->
+                </div>
+              </div>
+              <div class="btm_area">
+                <button class="btn btn_primary wide btn_rud6">
+                  <span class="txt">완료</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--// 대상 지정 옵션 (연령 선택) -->
+
+        <!-- 대상 지정 옵션 (기준추가) -->
+        <div class="_targetSettingWrap">
+          <div class="_SettingWrapHeader">
+            <h2 class="tit">대상 지정 옵션</h2>
+            <div class="util">
+              <button class="btn _bdno _ico_ly">
+                <i class="ico _pannelRefresh"></i>
+                <span class="txt">리셋</span>
+              </button>
+              <button class="btn _bdno _ico_ly">
+                <i class="ico _pannelClose"></i>
+                <span class="txt">닫기</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="_SettingWrapBody scrollbar-outer">
+            <div class="col_L">
+              <div class="_setGroup">
+                <div class="_setGroupHeader _btit">
+                  <h2>기준추가</h2>
+                  <button class="btn btn_small btn_rud6">
+                    <span class="txt">전체</span>
+                  </button>
+                </div>
+                <div class="_setGroupBody" id="cityList">
+                  <!-- 검색 -->
+                  <div class="_groupCheck _tpSearch">
+                    <div class="_comp comp_inputAndButton _wide">
+                      <div class="_body _inputAndButtonWrap">
+                        <div class="_comp comp_select" style="width: 150px">
+                          <div class="_body wide">
+                            <div class="_selectOuter">
+                              <div class="_selectWrap">
+                                <button class="_header">
+                                  <span class="_selectText">1,2,3</span>
+                                </button>
+                                <ul class="_list">
+                                  <li><a class="_item _selected">1,2,3</a></li>
+                                  <li><a class="_item">Q1,Q2,Q3</a></li>
+                                  <li><a class="_item">번호없음</a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <input type="text" class="comm_input" placeholder="검색어를 입력하세요." />
+                        <button class="btn _header btn_primary">
+                          <span class="_txt">검색</span>
+                        </button>
+                      </div>
+                      <p class="ar">검색을 클릭시 팝업 노출</p>
+                    </div>
+                  </div>
+                  <!--// 검색 -->
+
+                  <!-- 검색 시 -->
+
+                  <div class="_targetPop">
+                    <div class="_targetSettingWrap">
+                      <div class="_SettingWrapHeader">
+                        <h2 class="tit">대상 지정 옵션</h2>
+                        <div class="util">
+                          <button class="btn _bdno _ico_ly">
+                            <i class="ico _pannelRefresh"></i>
+                            <span class="txt">리셋</span>
+                          </button>
+                          <button class="btn _bdno _ico_ly">
+                            <i class="ico _pannelClose"></i>
+                            <span class="txt">닫기</span>
+                          </button>
+                        </div>
+                      </div>
+
+                      <div class="_SettingWrapBody scrollbar-outer">
+                        <div class="col_L">
+                          <div class="_setGroup">
+                            <div class="_setGroupHeader _btit">
+                              <h2>교육 일반</h2>
+                              <p class="_sleText"><span class="txt">7</span>개 옵션</p>
+                            </div>
+                            <div class="_setGroupBody _noborder">
+                              <!-- 연령선택 -->
+                              <div class="_groupCheck">
+                                <ul class="selectCity _tpBlock _tpPraimary">
+                                  <li>
+                                    <span class="check_b_wrap">
+                                      <input type="checkbox" class="chk" name="1" />
+                                      <span class="ico"></span>
+                                      <span class="txt">모든 옵션</span>
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <span class="check_b_wrap">
+                                      <input type="checkbox" class="chk" name="1" />
+                                      <span class="ico"></span>
+                                      <span class="txt">모든 옵션</span>
+                                    </span>
+                                  </li>
+                                </ul>
+                              </div>
+                              <!--// 연령선택 -->
+                            </div>
+                          </div>
+                          <div class="btm_area">
+                            <button class="btn btn_color03 btn_rud6">
+                              <span class="txt">닫기</span>
+                            </button>
+                          </div>
+                        </div>
+                        <div class="col_R">
+                          <div class="_setGroup">
+                            <!-- <div class="_setGroupHeader _noline">지역 대상</div> -->
+                            <div class="_setGroupBody">
+                              <!-- 성별 대상 -->
+                              <div class="_groupItem">
+                                <h2>
+                                  <span class="_tit">고용</span>
+                                  <button class="btn _bdno _ico_ly">
+                                    <i class="ico _close"></i>
+                                    <span class="txt">삭제</span>
+                                  </button>
+                                </h2>
+                                <div class="_groupItemBody _previewBody">업계 도매, 접대/관광, 미디어/엔터테인먼트, 교육, 통신/정보</div>
+                              </div>
+                              <!--// 성별 대상 -->
+                            </div>
+                          </div>
+                          <div class="btm_area">
+                            <button class="btn btn_primary wide btn_rud6">
+                              <span class="txt">완료</span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--// 검색 시 -->
+
+                  <!-- 최고 인기 -->
+                  <div class="_groupCheck">
+                    <h2 class="_tit">최고 인기</h2>
+                    <ul class="selectCity" id="cityArea">
+                      <li>
+                        <span class="check_b_wrap _cusChk">
+                          <input type="checkbox" class="chk" name="1" />
+                          <span class="ico"></span>
+                          <span class="txt">서울시</span>
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                  <!--// 최고 인기 -->
+
+                  <!-- 고용 -->
+                  <div class="_groupCheck">
+                    <h2 class="_tit">고용</h2>
+                    <ul class="_dataBody" id="guArea">
+                      <li>
+                        <span class="check_b_wrap _cusChk">
+                          <input type="checkbox" class="chk" name="1" />
+                          <span class="ico"></span>
+                          <span class="txt">서울시</span>
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                  <!--// 고용 -->
+
+                  <!-- 언터테이먼트 -->
+                  <div class="_groupCheck">
+                    <h2 class="_tit">언터테이먼트</h2>
+                    <ul class="_dataBody" id="dongArea">
+                      <li>
+                        <span class="check_b_wrap _cusChk">
+                          <input type="checkbox" class="chk" name="1" />
+                          <span class="ico"></span>
+                          <span class="txt">서울시</span>
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                  <!--// 언터테이먼트 -->
+                </div>
+              </div>
+            </div>
+            <div class="col_R">
+              <div class="_setGroup">
+                <!-- <div class="_setGroupHeader _noline">지역 대상</div> -->
+                <div class="_setGroupBody">
+                  <!-- 최고 인기 -->
+                  <div class="_groupItem">
+                    <h2>
+                      <span class="_tit">최고 인기</span>
+                      <button class="btn _bdno _ico_ly">
+                        <i class="ico _close"></i>
+                        <span class="txt">삭제</span>
+                      </button>
+                    </h2>
+                    <div class="_groupItemBody _previewBody">
+                      <div class="_item _itemInline">결혼 상태 독신, 동거, 기혼, 별거, 이혼, 사별</div>
+                    </div>
+                  </div>
+                  <!--// 최고 인기 -->
+
+                  <!-- 고용 -->
+                  <div class="_groupItem">
+                    <h2>
+                      <span class="_tit">고용</span>
+                      <button class="btn _bdno _ico_ly">
+                        <i class="ico _close"></i>
+                        <span class="txt">삭제</span>
+                      </button>
+                    </h2>
+                    <div class="_groupItemBody _previewBody">
+                      <div class="_item _itemInline">업계 도매, 접대/관광, 미디어/엔터테인먼트, 교육, 통신/정보</div>
+                    </div>
+                  </div>
+                  <!--// 고용 -->
+                </div>
+              </div>
+              <div class="btm_area">
+                <button class="btn btn_primary wide btn_rud6">
+                  <span class="txt">완료</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--// 대상 지정 옵션 (기준추가) -->
       </div>
     </div>
 

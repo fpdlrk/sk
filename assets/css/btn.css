@@ -86,12 +86,12 @@ label.btn {
 .btn_trans:hover {
   background: #eee;
 }
-.btn_praimary {
+.btn_primary {
   background: var(--main01);
   color: var(--white) !important;
   border-color: var(--main01);
 }
-.btn_praimary:hover {
+.btn_primary:hover {
   background: var(--main01Over);
 }
 .btn_color01 {
