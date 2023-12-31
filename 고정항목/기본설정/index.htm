@@ -12,193 +12,432 @@
     <script src="../../assets/js/simplebar.min.js"></script>
   </head>
   <body>
-    <!--S: 스타일 -->
-    <div class="mdu_pannel mdu_pannel_form scroll_area">
-      <div class="pannel_header">
-        <h2 class="tit">설정</h2>
-        <div class="util">
-          <button class="btn _bdno _ico_ly">
-            <i class="ico _pannelRefresh"></i>
-            <span class="txt">리셋</span>
-          </button>
-          <button class="btn _bdno _ico_ly">
-            <i class="ico _pannelClose"></i>
-            <span class="txt">닫기</span>
-          </button>
-        </div>
-      </div>
-      <div class="pannel_body">
-        <div class="item_group">
-          <button class="item_group_header _ico">타켓설정</button>
-          <div class="item">
-            <div class="_comp comp_select">
-              <span class="_tit">번호형식</span>
-              <div class="_body">
-                <div class="_selectOuter">
-                  <div class="_selectWrap">
-                    <button class="_header">
-                      <span class="_selectText">1,2,3</span>
-                    </button>
-                    <ul class="_list">
-                      <li><a class="_item _selected">1,2,3</a></li>
-                      <li><a class="_item">Q1,Q2,Q3</a></li>
-                      <li><a class="_item">번호없음</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+    <div id="contentsBody" class="contents">
+      <div class="cotegoryView" id="cotegoryView">
+        <!--S: 스타일 -->
+        <div class="mdu_pannel mdu_pannel_form scroll_area">
+          <div class="pannel_header">
+            <h2 class="tit">설정</h2>
+            <div class="util">
+              <button class="btn _bdno _ico_ly">
+                <i class="ico _pannelRefresh"></i>
+                <span class="txt">리셋</span>
+              </button>
+              <button class="btn _bdno _ico_ly">
+                <i class="ico _pannelClose"></i>
+                <span class="txt">닫기</span>
+              </button>
             </div>
           </div>
-          <button class="item_group_header _ico _active" data-tooltip="작성한 설문에 대해 인원설정을 할 수 있습니다.">인원설정</button>
-          <div class="item">
-            <div class="info_txt mgb10">작성한 설문에 대해 인원설정을 할 수 있습니다.</div>
-            <div class="_comp comp_input _wide">
-              <span class="_tit">전체 응답자 수</span>
-              <div class="_body">
-                <div class="flex_box _fac _fjb _fromto">
-                  <div class="_comp comp_select _fjl mgb10">
-                    <span class="_tit">최소</span>
-                    <div class="_body">
-                      <div class="_selectOuter mgl5">
-                        <div class="_selectWrap">
-                          <button class="_header">
-                            <span class="_selectText">1</span>
-                          </button>
-                          <ul class="_list">
-                            <li><a class="_item _selected">1</a></li>
-                            <li><a class="_item">Q1,Q2,Q3</a></li>
-                            <li><a class="_item">번호없음</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="mgl15 mgr15 mgb10">~</div>
-
-                  <div class="_comp comp_select _fjl mgb10">
-                    <span class="_tit">최대</span>
-                    <div class="_body">
-                      <div class="_selectOuter mgl5">
-                        <div class="_selectWrap">
-                          <button class="_header">
-                            <span class="_selectText">무제한</span>
-                          </button>
-                          <ul class="_list">
-                            <li><a class="_item _selected">1,2,3</a></li>
-                            <li><a class="_item">Q1,Q2,Q3</a></li>
-                            <li><a class="_item">번호없음</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="_comp comp_inputAndButton">
-                  <span class="_tit">하루 응답자 수</span>
-                  <div class="_body _inputAndButtonWrap f_14">
-                    <input type="text" class="comm_input mgr10 f_14 ar" placeholder="" value="100,000" />
-                    명
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <button
-            class="item_group_header _ico _active"
-            data-tooltip="작성한 설문에 대해 설문 기간 설정을 할 수 있습니다.<br /> 종료일 지정이 없을 경우 무제한으로 기간 설정"
-          >
-            기간설정
-          </button>
-          <div class="item">
-            <div class="info_txt mgb10">작성한 설문에 대해 설문 기간 설정을 할 수 있습니다. 종료일 지정이 없을 경우 무제한으로 기간 설정</div>
-            <div class="_comp comp_input _wide mgt10">
-              <span class="_tit">설문 기간</span>
-              <div class="_comp comp_input">
-                <span class="_tit">시작일</span>
-                <div class="_body" style="width: 80%">
-                  <div class="flex_box _fac _fjr">
-                    <div class="_comp comp_select _fjl mgb10 _clickerable" style="width: 34%" id="year">
-                      <div class="_body wide">
-                        <div class="_selectOuter">
-                          <div class="_selectWrap">
-                            <button class="_header">2023</button>
-                            <ul class="_list">
-                              <li><a class="_item _selected" id="0">2023</a></li>
-                              <li><a class="_item" id="1">2022</a></li>
-                              <li><a class="_item" id="2">2021</a></li>
-                            </ul>
-                          </div>
-                        </div>
+          <div class="pannel_body">
+            <div class="item_group">
+              <button class="item_group_header _ico _active">타켓설정</button>
+              <div class="item">
+                <div class="info_txt mgb10">설문조사를 진행하려는 대상을 결정할 수 있습니다.</div>
+                <div class="_comp _wide">
+                  <span class="_tit">대상</span>
+                  <div class="_body">
+                    <div class="_comp">
+                      <span class="_tit">지역</span>
+                      <div class="_body _inline" style="width: 75%">
+                        <button class="btn wide _targetAdd">
+                          <span class="_txt">지역 추가</span>
+                          <span class="ico"></span>
+                        </button>
                       </div>
                     </div>
 
-                    <div class="_comp comp_select _fjl mgb10 _clickerable" style="width: 34%" id="month">
-                      <div class="_body wide">
-                        <div class="_selectOuter mgl5">
-                          <div class="_selectWrap">
-                            <button class="_header">10</button>
-                            <ul class="_list">
-                              <li><a class="_item" id="0">12</a></li>
-                              <li><a class="_item" id="1">11</a></li>
-                              <li><a class="_item _selected" id="2">10</a></li>
-                            </ul>
-                          </div>
-                        </div>
+                    <div class="_comp mgt5">
+                      <span class="_tit">성별</span>
+                      <div class="_body _inline" style="width: 75%">
+                        <button class="btn wide _targetAdd">
+                          <span class="_txt">성별 추가</span>
+                          <span class="ico"></span>
+                        </button>
                       </div>
                     </div>
 
-                    <div class="_comp comp_select _fjl mgb10 _clickerable" style="width: 34%" id="date">
-                      <div class="_body wide">
-                        <div class="_selectOuter mgl5">
-                          <div class="_selectWrap">
-                            <button class="_header">27</button>
-                            <ul class="_list">
-                              <li><a class="_item _selected" id="0">27</a></li>
-                              <li><a class="_item" id="1">28</a></li>
-                              <li><a class="_item" id="2">29</a></li>
-                            </ul>
-                          </div>
-                        </div>
+                    <div class="_comp mgt5">
+                      <span class="_tit">연령</span>
+                      <div class="_body _inline" style="width: 75%">
+                        <button class="btn wide _targetAdd">
+                          <span class="_txt">연령 추가</span>
+                          <span class="ico"></span>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="_comp mgt5">
+                      <span class="_tit">기준추가</span>
+                      <div class="_body _inline" style="width: 75%">
+                        <button class="btn wide _targetAdd">
+                          <span class="_txt">기준 추가</span>
+                          <span class="ico"></span>
+                        </button>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
+              <button class="item_group_header _ico _active" data-tooltip="작성한 설문에 대해 인원설정을 할 수 있습니다.">인원설정</button>
+              <div class="item">
+                <div class="info_txt mgb10">작성한 설문에 대해 인원설정을 할 수 있습니다.</div>
+                <div class="_comp comp_input _wide">
+                  <span class="_tit">전체 응답자 수</span>
+                  <div class="_body">
+                    <div class="flex_box _fac _fjb _fromto">
+                      <div class="_comp comp_select _fjl mgb10">
+                        <span class="_tit">최소</span>
+                        <div class="_body">
+                          <div class="_selectOuter mgl5">
+                            <div class="_selectWrap">
+                              <button class="_header">
+                                <span class="_selectText">1</span>
+                              </button>
+                              <ul class="_list">
+                                <li><a class="_item _selected">1</a></li>
+                                <li><a class="_item">Q1,Q2,Q3</a></li>
+                                <li><a class="_item">번호없음</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
 
-              <div class="_comp comp_input">
-                <span class="_tit">시작시간</span>
-                <div class="_body" style="width: 80%">
-                  <div class="flex_box _fac _fjr">
-                    <div class="_comp comp_select _fjl mgb10" style="width: 34%">
-                      <div class="_body wide">
-                        <div class="_selectOuter mgl5">
-                          <div class="_selectWrap">
-                            <button class="_header">
-                              <span class="_selectText">12</span>
-                            </button>
-                            <ul class="_list">
-                              <li><a class="_item _selected">1,2,3</a></li>
-                              <li><a class="_item">Q1,Q2,Q3</a></li>
-                              <li><a class="_item">번호없음</a></li>
-                            </ul>
+                      <div class="mgl15 mgr15 mgb10">~</div>
+
+                      <div class="_comp comp_select _fjl mgb10">
+                        <span class="_tit">최대</span>
+                        <div class="_body">
+                          <div class="_selectOuter mgl5">
+                            <div class="_selectWrap">
+                              <button class="_header">
+                                <span class="_selectText">무제한</span>
+                              </button>
+                              <ul class="_list">
+                                <li><a class="_item _selected">1,2,3</a></li>
+                                <li><a class="_item">Q1,Q2,Q3</a></li>
+                                <li><a class="_item">번호없음</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="_comp comp_inputAndButton">
+                      <span class="_tit">하루 응답자 수</span>
+                      <div class="_body _inputAndButtonWrap f_14">
+                        <input type="text" class="comm_input mgr10 f_14 ar" placeholder="" value="100,000" />
+                        명
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button
+                class="item_group_header _ico _active"
+                data-tooltip="작성한 설문에 대해 설문 기간 설정을 할 수 있습니다.<br /> 종료일 지정이 없을 경우 무제한으로 기간 설정"
+              >
+                기간설정
+              </button>
+              <div class="item">
+                <div class="info_txt mgb10">작성한 설문에 대해 설문 기간 설정을 할 수 있습니다. 종료일 지정이 없을 경우 무제한으로 기간 설정</div>
+                <div class="_comp comp_input _wide mgt10">
+                  <span class="_tit">설문 기간</span>
+                  <div class="_comp comp_input">
+                    <span class="_tit">시작일</span>
+                    <div class="_body" style="width: 80%">
+                      <div class="flex_box _fac _fjr">
+                        <div class="_comp comp_select _fjl mgb10 _clickerable" style="width: 34%" id="year">
+                          <div class="_body wide">
+                            <div class="_selectOuter">
+                              <div class="_selectWrap">
+                                <button class="_header">2023</button>
+                                <ul class="_list">
+                                  <li><a class="_item _selected" id="0">2023</a></li>
+                                  <li><a class="_item" id="1">2022</a></li>
+                                  <li><a class="_item" id="2">2021</a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="_comp comp_select _fjl mgb10 _clickerable" style="width: 34%" id="month">
+                          <div class="_body wide">
+                            <div class="_selectOuter mgl5">
+                              <div class="_selectWrap">
+                                <button class="_header">10</button>
+                                <ul class="_list">
+                                  <li><a class="_item" id="0">12</a></li>
+                                  <li><a class="_item" id="1">11</a></li>
+                                  <li><a class="_item _selected" id="2">10</a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="_comp comp_select _fjl mgb10 _clickerable" style="width: 34%" id="date">
+                          <div class="_body wide">
+                            <div class="_selectOuter mgl5">
+                              <div class="_selectWrap">
+                                <button class="_header">27</button>
+                                <ul class="_list">
+                                  <li><a class="_item _selected" id="0">27</a></li>
+                                  <li><a class="_item" id="1">28</a></li>
+                                  <li><a class="_item" id="2">29</a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="_comp comp_input">
+                    <span class="_tit">시작시간</span>
+                    <div class="_body" style="width: 80%">
+                      <div class="flex_box _fac _fjr">
+                        <div class="_comp comp_select _fjl mgb10" style="width: 34%">
+                          <div class="_body wide">
+                            <div class="_selectOuter mgl5">
+                              <div class="_selectWrap">
+                                <button class="_header">
+                                  <span class="_selectText">12</span>
+                                </button>
+                                <ul class="_list">
+                                  <li><a class="_item _selected">1,2,3</a></li>
+                                  <li><a class="_item">Q1,Q2,Q3</a></li>
+                                  <li><a class="_item">번호없음</a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="_comp comp_select _fjl mgb10" style="width: 34%">
+                          <div class="_body wide">
+                            <div class="_selectOuter mgl5">
+                              <div class="_selectWrap">
+                                <button class="_header">
+                                  <span class="_selectText">19</span>
+                                </button>
+                                <ul class="_list">
+                                  <li><a class="_item _selected">1,2,3</a></li>
+                                  <li><a class="_item">Q1,Q2,Q3</a></li>
+                                  <li><a class="_item">번호없음</a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="_comp _wide mgt10">
+                  <div class="_body">
+                    <div class="_cr_listWrap">
+                      <div class="_cr_item">
+                        <span class="check_b_wrap">
+                          <input type="checkbox" class="chk" name="1" />
+                          <span class="ico"></span>
+                          <span>종료일 체크</span>
+                        </span>
+                        <div class="_cr_itemChild pdl0">
+                          <div class="_comp comp_input">
+                            <span class="_tit">종료일</span>
+                            <div class="_body" style="width: 80%">
+                              <div class="flex_box _fac _fjr">
+                                <div class="_comp comp_select _fjl mgb10 _clickerable" style="width: 34%" id="year">
+                                  <div class="_body wide">
+                                    <div class="_selectOuter">
+                                      <div class="_selectWrap">
+                                        <button class="_header">2023</button>
+                                        <ul class="_list">
+                                          <li><a class="_item _selected" id="0">2023</a></li>
+                                          <li><a class="_item" id="1">2022</a></li>
+                                          <li><a class="_item" id="2">2021</a></li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="_comp comp_select _fjl mgb10 _clickerable" style="width: 34%" id="month">
+                                  <div class="_body wide">
+                                    <div class="_selectOuter mgl5">
+                                      <div class="_selectWrap">
+                                        <button class="_header">10</button>
+                                        <ul class="_list">
+                                          <li><a class="_item" id="0">12</a></li>
+                                          <li><a class="_item" id="1">11</a></li>
+                                          <li><a class="_item _selected" id="2">10</a></li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="_comp comp_select _fjl mgb10 _clickerable" style="width: 34%" id="date">
+                                  <div class="_body wide">
+                                    <div class="_selectOuter mgl5">
+                                      <div class="_selectWrap">
+                                        <button class="_header">27</button>
+                                        <ul class="_list">
+                                          <li><a class="_item _selected" id="0">27</a></li>
+                                          <li><a class="_item" id="1">28</a></li>
+                                          <li><a class="_item" id="2">29</a></li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="_comp comp_input">
+                            <span class="_tit">종료시간</span>
+                            <div class="_body" style="width: 80%">
+                              <div class="flex_box _fac _fjr">
+                                <div class="_comp comp_select _fjl mgb10" style="width: 34%">
+                                  <div class="_body wide">
+                                    <div class="_selectOuter mgl5">
+                                      <div class="_selectWrap">
+                                        <button class="_header">
+                                          <span class="_selectText">12</span>
+                                        </button>
+                                        <ul class="_list">
+                                          <li><a class="_item _selected">1,2,3</a></li>
+                                          <li><a class="_item">Q1,Q2,Q3</a></li>
+                                          <li><a class="_item">번호없음</a></li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="_comp comp_select _fjl mgb10" style="width: 34%">
+                                  <div class="_body wide">
+                                    <div class="_selectOuter mgl5">
+                                      <div class="_selectWrap">
+                                        <button class="_header">
+                                          <span class="_selectText">19</span>
+                                        </button>
+                                        <ul class="_list">
+                                          <li><a class="_item _selected">1,2,3</a></li>
+                                          <li><a class="_item">Q1,Q2,Q3</a></li>
+                                          <li><a class="_item">번호없음</a></li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="_cr_item flex_box _fac _fjb">
+                        <span class="check_b_wrap">
+                          <input type="checkbox" class="chk" name="1" />
+                          <span class="ico"></span>
+                          <span>답변수로 설문 종료</span>
+                        </span>
+                        <input type="text" class="comm_input ar" placeholder="" value="100" style="width: 100px" />
+                      </div>
+                      <div class="_cr_item">
+                        <span class="check_b_wrap">
+                          <input type="checkbox" class="chk" name="1" />
+                          <span class="ico"></span>
+                          <span>설문 일시 중지</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="item_group_header _ico _active" data-tooltip="성한 설문에 대해 보상여부를 설정을 할 수 있습니다.">보상설정</button>
+              <div class="item">
+                <div class="info_txt mgb10">작성한 설문에 대해 보상여부를 설정을 할 수 있습니다.</div>
+                <div class="_comp _wide">
+                  <span class="_tit">보상 설정</span>
+                  <div class="_body">
+                    <div class="_comp">
+                      <span class="_tit">보상 여부</span>
+                      <div class="_body _inline">
+                        <span class="radio_b_wrap">
+                          <input type="radio" class="chk" name="1" />
+                          <span class="ico"></span>
+                          <span>보상</span>
+                        </span>
+
+                        <span class="radio_b_wrap mgl30">
+                          <input type="radio" class="chk" name="1" />
+                          <span class="ico"></span>
+                          <span>미보상</span>
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="_comp _wide mgt10">
+                      <span class="_tit">보상 방식</span>
+                      <div class="_body">
+                        <div class="_cr_listWrap">
+                          <div class="_cr_item">
+                            <span class="check_b_wrap">
+                              <input type="checkbox" class="chk" name="1" />
+                              <span class="ico"></span>
+                              <span>T포인트</span>
+                            </span>
+                          </div>
+                          <div class="_cr_item">
+                            <span class="check_b_wrap">
+                              <input type="checkbox" class="chk" name="1" />
+                              <span class="ico"></span>
+                              <span>커스텀 보상</span>
+                            </span>
                           </div>
                         </div>
                       </div>
                     </div>
 
-                    <div class="_comp comp_select _fjl mgb10" style="width: 34%">
-                      <div class="_body wide">
-                        <div class="_selectOuter mgl5">
-                          <div class="_selectWrap">
-                            <button class="_header">
-                              <span class="_selectText">19</span>
-                            </button>
-                            <ul class="_list">
-                              <li><a class="_item _selected">1,2,3</a></li>
-                              <li><a class="_item">Q1,Q2,Q3</a></li>
-                              <li><a class="_item">번호없음</a></li>
-                            </ul>
+                    <div class="_comp _wide mgt10">
+                      <span class="_tit">T포인트</span>
+                      <div class="_body">
+                        <div class="_comp comp_inputAndButton">
+                          <span class="_tit">설문 완료 시 보상</span>
+                          <div class="_body _inputAndButtonWrap f_14">
+                            <input type="text" class="comm_input mgr10 f_14 ar" placeholder="" value="1000" />
+                            P
+                          </div>
+                        </div>
+                        <div class="_comp comp_inputAndButton mgt10">
+                          <span class="_tit">설문 참여 시 보상</span>
+                          <div class="_body _inputAndButtonWrap f_14">
+                            <input type="text" class="comm_input mgr10 f_14 ar" placeholder="" value="1000" />
+                            P
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="_comp _wide mgt10">
+                      <span class="_tit">설문 중간에 나가기 설정</span>
+                      <div class="_body">
+                        <div class="_cr_listWrap">
+                          <div class="_cr_item">
+                            <span class="check_b_wrap">
+                              <input type="checkbox" class="chk" name="1" />
+                              <span class="ico"></span>
+                              <span>나가기 설정</span>
+                            </span>
+                            <div class="_cr_itemChild pdl0">
+                              <input type="text" class="comm_input wide" placeholder="ID를 입력하세요." />
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -206,30 +445,117 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="_comp _wide mgt10">
-              <div class="_body">
-                <div class="_cr_listWrap">
-                  <div class="_cr_item">
-                    <span class="check_b_wrap">
-                      <input type="checkbox" class="chk" name="1" />
-                      <span class="ico"></span>
-                      <span>종료일 체크</span>
-                    </span>
-                    <div class="_cr_itemChild pdl0">
+              <button class="item_group_header _ico _active" data-tooltip="작성한 설문에 대해 공개여부를 설정을 할 수 있습니다.">공개설정</button>
+              <div class="item">
+                <div class="info_txt mgb10">작성한 설문에 대해 공개여부를 설정을 할 수 있습니다.</div>
+                <div class="_comp _wide">
+                  <span class="_tit">공개 설정</span>
+                  <div class="_body">
+                    <div class="_comp">
+                      <span class="_tit">설문 참여 여부</span>
+                      <div class="_body _inline">
+                        <span class="radio_b_wrap">
+                          <input type="radio" class="chk" name="1" />
+                          <span class="ico"></span>
+                          <span>공개</span>
+                        </span>
+
+                        <span class="radio_b_wrap mgl30">
+                          <input type="radio" class="chk" name="1" />
+                          <span class="ico"></span>
+                          <span>미공개</span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="_comp">
+                      <span class="_tit">결과 확인 여부</span>
+                      <div class="_body _inline">
+                        <span class="radio_b_wrap">
+                          <input type="radio" class="chk" name="1" />
+                          <span class="ico"></span>
+                          <span>공개</span>
+                        </span>
+
+                        <span class="radio_b_wrap mgl30">
+                          <input type="radio" class="chk" name="1" />
+                          <span class="ico"></span>
+                          <span>미공개</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="item_group_header _ico _active" data-tooltip="작성한 설문에 대해 테스트설정을 할 수 있습니다.">테스트설정</button>
+              <div class="item">
+                <div class="info_txt mgb10">작성한 설문에 대해 테스트설정을 할 수 있습니다.</div>
+                <div class="_comp _wide">
+                  <span class="_tit">테스터 설정</span>
+                  <div class="_body">
+                    <div class="_cr_listWrap">
+                      <div class="_cr_item">
+                        <span class="check_b_wrap">
+                          <input type="checkbox" class="chk" name="1" />
+                          <span class="ico"></span>
+                          <span>테스터 전체 </span>
+                        </span>
+                        <div class="_cr_itemChild">
+                          <div class="_cr_listWrap">
+                            <div class="_cr_item">
+                              <span class="check_b_wrap">
+                                <input type="checkbox" class="chk" name="1" />
+                                <span class="ico"></span>
+                                <span>매니저</span>
+                              </span>
+                            </div>
+                            <div class="_cr_item">
+                              <span class="check_b_wrap">
+                                <input type="checkbox" class="chk" name="1" />
+                                <span class="ico"></span>
+                                <span>에디터</span>
+                              </span>
+                            </div>
+                            <div class="_cr_item">
+                              <span class="check_b_wrap">
+                                <input type="checkbox" class="chk" name="1" />
+                                <span class="ico"></span>
+                                <span>클라이언트</span>
+                              </span>
+                            </div>
+                            <div class="_cr_item">
+                              <span class="check_b_wrap">
+                                <input type="checkbox" class="chk" name="1" />
+                                <span class="ico"></span>
+                                <span>어드민</span>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="_comp comp_textarea _wide">
+                      <div class="_body _comp_textareaWrap">
+                        <textarea class="comm_input" placeholder="멥버쉽카드를 입력하세요."></textarea>
+                      </div>
+                    </div>
+
+                    <div class="_comp comp_input _wide mgt20">
+                      <span class="_tit">테스트 기간</span>
                       <div class="_comp comp_input">
-                        <span class="_tit">종료일</span>
+                        <span class="_tit">시작일</span>
                         <div class="_body" style="width: 80%">
                           <div class="flex_box _fac _fjr">
                             <div class="_comp comp_select _fjl mgb10 _clickerable" style="width: 34%" id="year">
                               <div class="_body wide">
                                 <div class="_selectOuter">
                                   <div class="_selectWrap">
-                                    <button class="_header">2023</button>
+                                    <button class="_header">
+                                      <span class="_selectText">2023</span>
+                                    </button>
                                     <ul class="_list">
-                                      <li><a class="_item _selected" id="0">2023</a></li>
-                                      <li><a class="_item" id="1">2022</a></li>
-                                      <li><a class="_item" id="2">2021</a></li>
+                                      <li><a class="_item _selected">1</a></li>
+                                      <li><a class="_item">Q1,Q2,Q3</a></li>
+                                      <li><a class="_item">번호없음</a></li>
                                     </ul>
                                   </div>
                                 </div>
@@ -240,11 +566,13 @@
                               <div class="_body wide">
                                 <div class="_selectOuter mgl5">
                                   <div class="_selectWrap">
-                                    <button class="_header">10</button>
+                                    <button class="_header">
+                                      <span class="_selectText">12</span>
+                                    </button>
                                     <ul class="_list">
-                                      <li><a class="_item" id="0">12</a></li>
-                                      <li><a class="_item" id="1">11</a></li>
-                                      <li><a class="_item _selected" id="2">10</a></li>
+                                      <li><a class="_item _selected">1,2,3</a></li>
+                                      <li><a class="_item">Q1,Q2,Q3</a></li>
+                                      <li><a class="_item">번호없음</a></li>
                                     </ul>
                                   </div>
                                 </div>
@@ -255,11 +583,13 @@
                               <div class="_body wide">
                                 <div class="_selectOuter mgl5">
                                   <div class="_selectWrap">
-                                    <button class="_header">27</button>
+                                    <button class="_header">
+                                      <span class="_selectText">19</span>
+                                    </button>
                                     <ul class="_list">
-                                      <li><a class="_item _selected" id="0">27</a></li>
-                                      <li><a class="_item" id="1">28</a></li>
-                                      <li><a class="_item" id="2">29</a></li>
+                                      <li><a class="_item _selected">1,2,3</a></li>
+                                      <li><a class="_item">Q1,Q2,Q3</a></li>
+                                      <li><a class="_item">번호없음</a></li>
                                     </ul>
                                   </div>
                                 </div>
@@ -270,9 +600,26 @@
                       </div>
 
                       <div class="_comp comp_input">
-                        <span class="_tit">종료시간</span>
+                        <span class="_tit">종료일</span>
                         <div class="_body" style="width: 80%">
                           <div class="flex_box _fac _fjr">
+                            <div class="_comp comp_select _fjl mgb10" style="width: 34%">
+                              <div class="_body wide">
+                                <div class="_selectOuter">
+                                  <div class="_selectWrap">
+                                    <button class="_header">
+                                      <span class="_selectText">2023</span>
+                                    </button>
+                                    <ul class="_list">
+                                      <li><a class="_item _selected">1</a></li>
+                                      <li><a class="_item">Q1,Q2,Q3</a></li>
+                                      <li><a class="_item">번호없음</a></li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
                             <div class="_comp comp_select _fjl mgb10" style="width: 34%">
                               <div class="_body wide">
                                 <div class="_selectOuter mgl5">
@@ -309,368 +656,354 @@
                           </div>
                         </div>
                       </div>
+
+                      <div class="info_txt mgt10">테스트 시작일과 종료일은 00시 기준입니다.</div>
                     </div>
-                  </div>
-                  <div class="_cr_item flex_box _fac _fjb">
-                    <span class="check_b_wrap">
-                      <input type="checkbox" class="chk" name="1" />
-                      <span class="ico"></span>
-                      <span>답변수로 설문 종료</span>
-                    </span>
-                    <input type="text" class="comm_input ar" placeholder="" value="100" style="width: 100px" />
-                  </div>
-                  <div class="_cr_item">
-                    <span class="check_b_wrap">
-                      <input type="checkbox" class="chk" name="1" />
-                      <span class="ico"></span>
-                      <span>설문 일시 중지</span>
-                    </span>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <button class="item_group_header _ico _active" data-tooltip="성한 설문에 대해 보상여부를 설정을 할 수 있습니다.">보상설정</button>
-          <div class="item">
-            <div class="info_txt mgb10">작성한 설문에 대해 보상여부를 설정을 할 수 있습니다.</div>
-            <div class="_comp _wide">
-              <span class="_tit">보상 설정</span>
-              <div class="_body">
-                <div class="_comp">
-                  <span class="_tit">보상 여부</span>
-                  <div class="_body _inline">
-                    <span class="radio_b_wrap">
-                      <input type="radio" class="chk" name="1" />
-                      <span class="ico"></span>
-                      <span>보상</span>
-                    </span>
-
-                    <span class="radio_b_wrap mgl30">
-                      <input type="radio" class="chk" name="1" />
-                      <span class="ico"></span>
-                      <span>미보상</span>
-                    </span>
-                  </div>
+              <button
+                class="item_group_header _ico _active"
+                data-tooltip="작성한 설문 공유설정은 SNS를 선택하여 설정 하실 수 있습니다.<br />
+      SNS는 페이스북, 트위터, 인스타, 네이버블로그, 카카오톡, URL로
+      공유합니다."
+              >
+                공유설정
+              </button>
+              <div class="item">
+                <div class="info_txt mgb10">
+                  작성한 설문 공유설정은 SNS를 선택하여 설정 하실 수 있습니다.<br />
+                  SNS는 페이스북, 트위터, 인스타, 네이버블로그, 카카오톡, URL로 공유합니다.
                 </div>
-
-                <div class="_comp _wide mgt10">
-                  <span class="_tit">보상 방식</span>
+                <div class="_comp _wide">
+                  <span class="_tit">SNS 공유 설정</span>
                   <div class="_body">
-                    <div class="_cr_listWrap">
-                      <div class="_cr_item">
-                        <span class="check_b_wrap">
-                          <input type="checkbox" class="chk" name="1" />
+                    <div class="_comp">
+                      <span class="_tit">SNS 공유 여부</span>
+                      <div class="_body _inline">
+                        <span class="radio_b_wrap">
+                          <input type="radio" class="chk" name="1" />
                           <span class="ico"></span>
-                          <span>T포인트</span>
+                          <span>공유</span>
                         </span>
-                      </div>
-                      <div class="_cr_item">
-                        <span class="check_b_wrap">
-                          <input type="checkbox" class="chk" name="1" />
+
+                        <span class="radio_b_wrap mgl30">
+                          <input type="radio" class="chk" name="1" />
                           <span class="ico"></span>
-                          <span>커스텀 보상</span>
+                          <span>미공유</span>
                         </span>
                       </div>
                     </div>
-                  </div>
-                </div>
-
-                <div class="_comp _wide mgt10">
-                  <span class="_tit">T포인트</span>
-                  <div class="_body">
-                    <div class="_comp comp_inputAndButton">
-                      <span class="_tit">설문 완료 시 보상</span>
-                      <div class="_body _inputAndButtonWrap f_14">
-                        <input type="text" class="comm_input mgr10 f_14 ar" placeholder="" value="1000" />
-                        P
-                      </div>
-                    </div>
-                    <div class="_comp comp_inputAndButton mgt10">
-                      <span class="_tit">설문 참여 시 보상</span>
-                      <div class="_body _inputAndButtonWrap f_14">
-                        <input type="text" class="comm_input mgr10 f_14 ar" placeholder="" value="1000" />
-                        P
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="_comp _wide mgt10">
-                  <span class="_tit">설문 중간에 나가기 설정</span>
-                  <div class="_body">
-                    <div class="_cr_listWrap">
-                      <div class="_cr_item">
-                        <span class="check_b_wrap">
-                          <input type="checkbox" class="chk" name="1" />
-                          <span class="ico"></span>
-                          <span>나가기 설정</span>
-                        </span>
-                        <div class="_cr_itemChild pdl0">
-                          <input type="text" class="comm_input wide" placeholder="ID를 입력하세요." />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <button class="item_group_header _ico _active" data-tooltip="작성한 설문에 대해 공개여부를 설정을 할 수 있습니다.">공개설정</button>
-          <div class="item">
-            <div class="info_txt mgb10">작성한 설문에 대해 공개여부를 설정을 할 수 있습니다.</div>
-            <div class="_comp _wide">
-              <span class="_tit">공개 설정</span>
-              <div class="_body">
-                <div class="_comp">
-                  <span class="_tit">설문 참여 여부</span>
-                  <div class="_body _inline">
-                    <span class="radio_b_wrap">
-                      <input type="radio" class="chk" name="1" />
-                      <span class="ico"></span>
-                      <span>공개</span>
-                    </span>
-
-                    <span class="radio_b_wrap mgl30">
-                      <input type="radio" class="chk" name="1" />
-                      <span class="ico"></span>
-                      <span>미공개</span>
-                    </span>
-                  </div>
-                </div>
-                <div class="_comp">
-                  <span class="_tit">결과 확인 여부</span>
-                  <div class="_body _inline">
-                    <span class="radio_b_wrap">
-                      <input type="radio" class="chk" name="1" />
-                      <span class="ico"></span>
-                      <span>공개</span>
-                    </span>
-
-                    <span class="radio_b_wrap mgl30">
-                      <input type="radio" class="chk" name="1" />
-                      <span class="ico"></span>
-                      <span>미공개</span>
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <button class="item_group_header _ico _active" data-tooltip="작성한 설문에 대해 테스트설정을 할 수 있습니다.">테스트설정</button>
-          <div class="item">
-            <div class="info_txt mgb10">작성한 설문에 대해 테스트설정을 할 수 있습니다.</div>
-            <div class="_comp _wide">
-              <span class="_tit">테스터 설정</span>
-              <div class="_body">
-                <div class="_cr_listWrap">
-                  <div class="_cr_item">
-                    <span class="check_b_wrap">
-                      <input type="checkbox" class="chk" name="1" />
-                      <span class="ico"></span>
-                      <span>테스터 전체 </span>
-                    </span>
-                    <div class="_cr_itemChild">
-                      <div class="_cr_listWrap">
-                        <div class="_cr_item">
-                          <span class="check_b_wrap">
-                            <input type="checkbox" class="chk" name="1" />
-                            <span class="ico"></span>
-                            <span>매니저</span>
-                          </span>
-                        </div>
-                        <div class="_cr_item">
-                          <span class="check_b_wrap">
-                            <input type="checkbox" class="chk" name="1" />
-                            <span class="ico"></span>
-                            <span>에디터</span>
-                          </span>
-                        </div>
-                        <div class="_cr_item">
-                          <span class="check_b_wrap">
-                            <input type="checkbox" class="chk" name="1" />
-                            <span class="ico"></span>
-                            <span>클라이언트</span>
-                          </span>
-                        </div>
-                        <div class="_cr_item">
-                          <span class="check_b_wrap">
-                            <input type="checkbox" class="chk" name="1" />
-                            <span class="ico"></span>
-                            <span>어드민</span>
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="_comp comp_textarea _wide">
-                  <div class="_body _comp_textareaWrap">
-                    <textarea class="comm_input" placeholder="멥버쉽카드를 입력하세요."></textarea>
-                  </div>
-                </div>
-
-                <div class="_comp comp_input _wide mgt20">
-                  <span class="_tit">테스트 기간</span>
-                  <div class="_comp comp_input">
-                    <span class="_tit">시작일</span>
-                    <div class="_body" style="width: 80%">
-                      <div class="flex_box _fac _fjr">
-                        <div class="_comp comp_select _fjl mgb10 _clickerable" style="width: 34%" id="year">
-                          <div class="_body wide">
-                            <div class="_selectOuter">
-                              <div class="_selectWrap">
-                                <button class="_header">
-                                  <span class="_selectText">2023</span>
-                                </button>
-                                <ul class="_list">
-                                  <li><a class="_item _selected">1</a></li>
-                                  <li><a class="_item">Q1,Q2,Q3</a></li>
-                                  <li><a class="_item">번호없음</a></li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="_comp comp_select _fjl mgb10 _clickerable" style="width: 34%" id="month">
-                          <div class="_body wide">
-                            <div class="_selectOuter mgl5">
-                              <div class="_selectWrap">
-                                <button class="_header">
-                                  <span class="_selectText">12</span>
-                                </button>
-                                <ul class="_list">
-                                  <li><a class="_item _selected">1,2,3</a></li>
-                                  <li><a class="_item">Q1,Q2,Q3</a></li>
-                                  <li><a class="_item">번호없음</a></li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="_comp comp_select _fjl mgb10 _clickerable" style="width: 34%" id="date">
-                          <div class="_body wide">
-                            <div class="_selectOuter mgl5">
-                              <div class="_selectWrap">
-                                <button class="_header">
-                                  <span class="_selectText">19</span>
-                                </button>
-                                <ul class="_list">
-                                  <li><a class="_item _selected">1,2,3</a></li>
-                                  <li><a class="_item">Q1,Q2,Q3</a></li>
-                                  <li><a class="_item">번호없음</a></li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="_comp comp_input">
-                    <span class="_tit">종료일</span>
-                    <div class="_body" style="width: 80%">
-                      <div class="flex_box _fac _fjr">
-                        <div class="_comp comp_select _fjl mgb10" style="width: 34%">
-                          <div class="_body wide">
-                            <div class="_selectOuter">
-                              <div class="_selectWrap">
-                                <button class="_header">
-                                  <span class="_selectText">2023</span>
-                                </button>
-                                <ul class="_list">
-                                  <li><a class="_item _selected">1</a></li>
-                                  <li><a class="_item">Q1,Q2,Q3</a></li>
-                                  <li><a class="_item">번호없음</a></li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="_comp comp_select _fjl mgb10" style="width: 34%">
-                          <div class="_body wide">
-                            <div class="_selectOuter mgl5">
-                              <div class="_selectWrap">
-                                <button class="_header">
-                                  <span class="_selectText">12</span>
-                                </button>
-                                <ul class="_list">
-                                  <li><a class="_item _selected">1,2,3</a></li>
-                                  <li><a class="_item">Q1,Q2,Q3</a></li>
-                                  <li><a class="_item">번호없음</a></li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="_comp comp_select _fjl mgb10" style="width: 34%">
-                          <div class="_body wide">
-                            <div class="_selectOuter mgl5">
-                              <div class="_selectWrap">
-                                <button class="_header">
-                                  <span class="_selectText">19</span>
-                                </button>
-                                <ul class="_list">
-                                  <li><a class="_item _selected">1,2,3</a></li>
-                                  <li><a class="_item">Q1,Q2,Q3</a></li>
-                                  <li><a class="_item">번호없음</a></li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="info_txt mgt10">테스트 시작일과 종료일은 00시 기준입니다.</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <button
-            class="item_group_header _ico _active"
-            data-tooltip="작성한 설문 공유설정은 SNS를 선택하여 설정 하실 수 있습니다.<br />
-          SNS는 페이스북, 트위터, 인스타, 네이버블로그, 카카오톡, URL로
-          공유합니다."
-          >
-            공유설정
-          </button>
-          <div class="item">
-            <div class="info_txt mgb10">
-              작성한 설문 공유설정은 SNS를 선택하여 설정 하실 수 있습니다.<br />
-              SNS는 페이스북, 트위터, 인스타, 네이버블로그, 카카오톡, URL로 공유합니다.
-            </div>
-            <div class="_comp _wide">
-              <span class="_tit">SNS 공유 설정</span>
-              <div class="_body">
-                <div class="_comp">
-                  <span class="_tit">SNS 공유 여부</span>
-                  <div class="_body _inline">
-                    <span class="radio_b_wrap">
-                      <input type="radio" class="chk" name="1" />
-                      <span class="ico"></span>
-                      <span>공유</span>
-                    </span>
-
-                    <span class="radio_b_wrap mgl30">
-                      <input type="radio" class="chk" name="1" />
-                      <span class="ico"></span>
-                      <span>미공유</span>
-                    </span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        <!--E: 스타일 -->
+      </div>
+      <div class="contentArea scrollbar-outer" id="">
+        <!-- 지정한 타켓 -->
+        <div class="_targetSettingWrap">
+          <div class="_SettingWrapHeader">
+            <h2 class="tit">지정한 타켓</h2>
+            <div class="util">
+              <button class="btn _bdno _ico_ly">
+                <i class="ico _pannelRefresh"></i>
+                <span class="txt">리셋</span>
+              </button>
+              <button class="btn _bdno _ico_ly">
+                <i class="ico _pannelClose"></i>
+                <span class="txt">닫기</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="_SettingWrapBody scrollbar-outer">
+            <div class="col_L">
+              <div class="_setGroup">
+                <div class="_setGroupHeader _btit"><h2>대상</h2></div>
+                <div class="_setGroupBody">
+                  <!-- 지역 대상 -->
+                  <div class="_groupItem">
+                    <h2>
+                      <span class="_tit">지역 대상</span>
+                      <button class="btn _bdno _ico_ly">
+                        <i class="ico _close"></i>
+                        <span class="txt">삭제</span>
+                      </button>
+                    </h2>
+                    <div class="_groupItemBody">
+                      <div class="_item">
+                        <ul>
+                          <li><span>서울시</span></li>
+                          <li><span>종로구 (전체)</span></li>
+                          <li><span>사직동, 삼청동, 부암동</span></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <!--// 지역 대상 -->
+
+                  <!-- 성별 대상 -->
+                  <div class="_groupItem">
+                    <h2>
+                      <span class="_tit">성별 대상</span>
+                      <button class="btn _bdno _ico_ly">
+                        <i class="ico _close"></i>
+                        <span class="txt">삭제</span>
+                      </button>
+                    </h2>
+                    <div class="_groupItemBody">
+                      <div class="_item">
+                        <ul>
+                          <li><span>남자</span></li>
+                          <li><span>여자</span></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <!--// 성별 대상 -->
+
+                  <!-- 연령 대상 -->
+                  <div class="_groupItem">
+                    <h2>
+                      <span class="_tit">연령 대상</span>
+                      <button class="btn _bdno _ico_ly">
+                        <i class="ico _close"></i>
+                        <span class="txt">삭제</span>
+                      </button>
+                    </h2>
+                    <div class="_groupItemBody">
+                      <div class="_item">
+                        <ul>
+                          <li><span>21, 22, 23, 24, 25, 26, 27, 28</span></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <!--// 연령 대상 -->
+
+                  <!-- 대상 인원 -->
+                  <div class="_groupItem">
+                    <h2>
+                      <span class="_tit">대상 인원</span>
+                      <button class="btn _bdno _ico_ly">
+                        <i class="ico _close"></i>
+                        <span class="txt">삭제</span>
+                      </button>
+                    </h2>
+                    <div class="_groupItemBody">
+                      <div class="_item">
+                        <ul>
+                          <li><span>21, 남자, 사직동, 종로구, 서울시 </span><span>30명</span></li>
+                          <li><span>21, 남자, 사직동, 종로구, 서울시 </span><span>30명</span></li>
+                          <li><span>21, 남자, 사직동, 종로구, 서울시 </span><span>30명</span></li>
+                          <li><span>21, 남자, 사직동, 종로구, 서울시 </span><span>30명</span></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <!--// 대상 인원 -->
+
+                  <!-- 최고인기 -->
+                  <div class="_groupItem">
+                    <h2>
+                      <span class="_tit">최고인기</span>
+                      <button class="btn _bdno _ico_ly">
+                        <i class="ico _close"></i>
+                        <span class="txt">삭제</span>
+                      </button>
+                    </h2>
+                    <div class="_groupItemBody">
+                      <div class="_item">
+                        <ul>
+                          <li><span>결혼 상태</span></li>
+                          <li><span>독신, 동거, 기혼, 별거, 이혼, 사별</span></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <!--// 최고인기 -->
+
+                  <!-- 고용 -->
+                  <div class="_groupItem">
+                    <h2>
+                      <span class="_tit">고용</span>
+                      <button class="btn _bdno _ico_ly">
+                        <i class="ico _close"></i>
+                        <span class="txt">삭제</span>
+                      </button>
+                    </h2>
+                    <div class="_groupItemBody">
+                      <div class="_item">
+                        <ul>
+                          <li><span>업계 </span></li>
+                          <li><span>도매, 접대/관광, 미디어/엔터테인먼트, 교육, 통신/정보</span></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <!--// 고용 -->
+                </div>
+              </div>
+            </div>
+            <div class="col_R">
+              <div class="_setGroup">
+                <!-- <div class="_setGroupHeader _noline">지역 대상</div> -->
+                <div class="_setGroupBody">
+                  <!-- 지역 대상 -->
+                  <div class="_groupItem">
+                    <h2>
+                      <span class="_tit">지역 대상</span>
+                      <button class="btn _bdno _ico_ly">
+                        <i class="ico _close"></i>
+                        <span class="txt">삭제</span>
+                      </button>
+                    </h2>
+                    <div class="_groupItemBody">
+                      <div class="_item _itemInline">
+                        <span class="_txt">서울시</span>
+                        <input type="text" class="comm_input _tp_txt" placeholder="" />
+                      </div>
+                    </div>
+                    <div class="_groupItemTotal">
+                      <div class="_item _colL"></div>
+                      <div class="_item _colR">총 100%</div>
+                    </div>
+                  </div>
+                  <!--// 지역 대상 -->
+                  <!-- 성별 대상 -->
+                  <div class="_groupItem">
+                    <h2>
+                      <span class="_tit">성별 대상</span>
+                      <button class="btn _bdno _ico_ly">
+                        <i class="ico _close"></i>
+                        <span class="txt">삭제</span>
+                      </button>
+                    </h2>
+                    <div class="_groupItemBody">
+                      <div class="_item _itemInline">
+                        <span class="_txt">서울시</span>
+                        <input type="text" class="comm_input _tp_txt" placeholder="" />
+                      </div>
+                    </div>
+                    <div class="_groupItemTotal">
+                      <div class="_item _colL"></div>
+                      <div class="_item _colR">총 100%</div>
+                    </div>
+                  </div>
+                  <!--// 성별 대상 -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--// 지정한 타켓 -->
+
+        <!-- 대상 지정 옵션 -->
+        <div class="_targetSettingWrap">
+          <div class="_SettingWrapHeader">
+            <h2 class="tit">대상 지정 옵션</h2>
+            <div class="util">
+              <button class="btn _bdno _ico_ly">
+                <i class="ico _pannelRefresh"></i>
+                <span class="txt">리셋</span>
+              </button>
+              <button class="btn _bdno _ico_ly">
+                <i class="ico _pannelClose"></i>
+                <span class="txt">닫기</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="_SettingWrapBody scrollbar-outer">
+            <div class="col_L">
+              <div class="_setGroup">
+                <div class="_setGroupHeader _btit">
+                  <h2>지역 선택</h2>
+                  <button class="btn btn_small btn_rud6">
+                    <span class="txt">전체</span>
+                  </button>
+                </div>
+                <div class="_setGroupBody" id="cityList">
+                  <!-- 시도선택 -->
+                  <div class="_groupCheck">
+                    <ul class="selectCity" id="cityArea">
+                      <li>
+                        <span class="check_b_wrap _cusChk">
+                          <input type="checkbox" class="chk" name="1" />
+                          <span class="ico"></span>
+                          <span class="txt">서울시</span>
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                  <!--// 시도선택 -->
+
+                  <!-- 구/군선택 -->
+                  <div class="_groupCheck">
+                    <ul class="_dataBody" id="guArea">
+                      <li>
+                        <span class="check_b_wrap _cusChk">
+                          <input type="checkbox" class="chk" name="1" />
+                          <span class="ico"></span>
+                          <span class="txt">서울시</span>
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                  <!--// 구/군선택 -->
+
+                  <!-- 읍/면/동선택 -->
+                  <div class="_groupCheck">
+                    <ul class="_dataBody" id="dongArea">
+                      <li>
+                        <span class="check_b_wrap _cusChk">
+                          <input type="checkbox" class="chk" name="1" />
+                          <span class="ico"></span>
+                          <span class="txt">서울시</span>
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                  <!--// 읍/면/동선택 -->
+                </div>
+              </div>
+            </div>
+            <div class="col_R">
+              <div class="_setGroup">
+                <!-- <div class="_setGroupHeader _noline">지역 대상</div> -->
+                <div class="_setGroupBody">
+                  <!-- 지역 대상 -->
+                  <div class="_groupItem">
+                    <h2>
+                      <span class="_tit">지역 대상</span>
+                      <button class="btn _bdno _ico_ly">
+                        <i class="ico _close"></i>
+                        <span class="txt">삭제</span>
+                      </button>
+                    </h2>
+                    <div class="_groupItemBody">
+                      <div class="_item _itemInline">
+                        <span class="_txt">서울시</span>
+                        <input type="text" class="comm_input _tp_txt" placeholder="" />
+                      </div>
+                    </div>
+                    <div class="_groupItemTotal">
+                      <div class="_item _colL"></div>
+                      <div class="_item _colR">총 100%</div>
+                    </div>
+                  </div>
+                  <!--// 지역 대상 -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--// 대상 지정 옵션 -->
       </div>
     </div>
-    <!--E: 스타일 -->
 
     <script src="../../assets/js/commjs.js"></script>
     <script src="../../assets/js/modal.js"></script>
@@ -697,9 +1030,53 @@
         { code: "29", text: "29" },
       ];
 
-      const year = selectBox("year", dataSet1, "0");
-      const month = selectBox("month", dataSet2, "2");
-      const date = selectBox("date", dataSet3, "0");
+      const year = selectBox({
+        targetId: "year",
+        datas: dataSet1,
+        slectItem: "0",
+      });
+      const month = selectBox({
+        targetId: "month",
+        datas: dataSet2,
+        slectItem: "2",
+      });
+      const date = selectBox({
+        targetId: "date",
+        datas: dataSet3,
+        slectItem: "2",
+      });
+
+      // 지역선택
+
+      const citys = {
+        city: [
+          { cityCode: "001", text: "서울" },
+          { cityCode: "002", text: "대전" },
+          { cityCode: "003", text: "대구" },
+          { cityCode: "004", text: "부산" },
+        ],
+        gu: [
+          { cityCode: "001", guCode: "00101", text: "종로구" },
+          { cityCode: "001", guCode: "00102", text: "성북구" },
+          { cityCode: "001", guCode: "00103", text: "강남구" },
+          { cityCode: "001", guCode: "00104", text: "서초구" },
+          { cityCode: "002", guCode: "00201", text: "중구" },
+          { cityCode: "003", guCode: "00301", text: "달산구" },
+          { cityCode: "004", guCode: "00401", text: "해운대구" },
+        ],
+        dong: [
+          { cityCode: "001", guCode: "00101", dongCode: "0010101", text: "다산동" },
+          { cityCode: "002", guCode: "00201", dongCode: "0020101", text: "대전어느동" },
+          { cityCode: "003", guCode: "00301", dongCode: "0030101", text: "달산구 어느동" },
+          { cityCode: "004", guCode: "00401", dongCode: "0040101", text: "해운대구 어느동" },
+        ],
+      };
+
+      const setCitys = setCityList({
+        targetId: "cityList",
+        datas: citys,
+        slectCity: [],
+      });
     </script>
   </body>
 </html>

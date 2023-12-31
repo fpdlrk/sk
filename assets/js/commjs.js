@@ -150,31 +150,37 @@ $("body").on("click", function (e) {
  * @param {String 숫자형태} selId
  * @returns
  */
-function selectBox(objId, datas, selId) {
-  let selectbox = SelectBox.make(objId, datas, selId);
-  selectbox.setItem(selId);
+
+function selectBox(settings) {
+  let selectbox = new SelectBox();
+  selectbox.make(settings);
   return selectbox;
 }
-const SelectBox = {
-  selItem: 0,
-  selData: {},
-  targetId: "",
-  data: {},
-  make: function (objId, datas, selId) {
-    let selectItems = document.querySelector("#" + objId);
+
+function SelectBox() {
+  this.id = null;
+  this.datas = null;
+  this.selectId = null;
+  this.selItem = null;
+  this.selData = null;
+  this.make = function (settings) {
+    let selectItems = document.querySelector("#" + settings.targetId);
     let lists = selectItems.querySelector("._list");
     let header = selectItems.querySelector("._header");
     let itemHtml = "";
-    SelectBox.targetId = objId;
-    SelectBox.data = datas;
-    SelectBox.selItem = selId;
-    lists.innerHTML = "";
-    datas.forEach((item, idx) => {
-      itemHtml +=
-        '<li><a class="_item" id="' + idx + '">' + item.text + "</a></li>";
-    });
-    lists.insertAdjacentHTML("afterbegin", itemHtml);
+    this.id = settings.targetId;
+    this.datas = settings.datas || [];
+    this.selectId = settings.slectItem;
+    if (this.datas != null && this.datas != "") {
+      lists.innerHTML = "";
+      this.datas.forEach((item, idx) => {
+        itemHtml += '<li><a class="_item" id="' + idx + '">' + item.text + "</a></li>";
+      });
+      lists.insertAdjacentHTML("afterbegin", itemHtml);
+    }
+
     let item = lists.querySelectorAll("._item");
+    this.setItem(this.selectId);
     let handleItem = (e) => {
       item.forEach((item) => {
         item.classList.remove("_selected");
@@ -182,15 +188,12 @@ const SelectBox = {
       e.target.classList.add("_selected");
       header.innerText = e.target.innerText;
       header.classList.remove("_active");
-      SelectBox.selItem = e.target.id;
-      SelectBox.selData = SelectBox.data[SelectBox.selItem];
+      this.selItem = e.target.id;
+      this.selData = this.datas[this.selItem];
     };
 
     let handleHeader = (e) => {
-      $("._clickerable")
-        .find("._selectWrap")
-        .find("._header")
-        .removeClass("_active");
+      $("._clickerable").find("._selectWrap").find("._header").removeClass("_active");
 
       let target = e.target;
       if (e.target.nodeName == "SPAN") {
@@ -212,25 +215,109 @@ const SelectBox = {
       item.addEventListener("click", handleItem);
     });
     header.addEventListener("click", handleHeader);
-    return this;
-  },
-  setItem: (idx) => {
-    let selectItems = document.querySelector("#" + SelectBox.targetId);
+  };
+  this.setItem = function (idx) {
+    let selectItems = document.querySelector("#" + this.id);
     let lists = selectItems.querySelectorAll("._list li");
     let li = lists[idx];
     let header = selectItems.querySelector("._header");
     lists.forEach((item) => {
-      item.firstChild.classList.remove("_selected");
+      item.firstElementChild.classList.remove("_selected");
     });
-    li.firstChild.classList.add("_selected");
+    li.firstElementChild.classList.add("_selected");
     header.innerHTML = li.firstChild.innerText;
-    SelectBox.selData = SelectBox.data[idx];
-    SelectBox.selItem = idx;
-  },
-  getItem: () => {
-    return SelectBox.selItem;
-  },
-  getData: () => {
-    return SelectBox.selData;
-  },
-};
+    this.selData = this.datas[idx];
+    this.selItem = idx;
+  };
+  this.getIndex = function () {
+    return this.selItem;
+  };
+  this.getId = function () {
+    return this.id;
+  };
+  this.getItem = function () {
+    return this.selData;
+  };
+  this.getData = function () {
+    return this.datas;
+  };
+}
+
+//시도선택;
+function setCityList(settings) {
+  let setCitysList = new setCityListCreate();
+  setCitysList.make(settings);
+  return setCitysList;
+}
+
+function setCityListCreate() {
+  this.id = null;
+  this.datas = null;
+  this.selectId = null;
+  this.selItem = null;
+  this.selData = null;
+  this.dataCity = null;
+  this.dataGu = null;
+  this.dataDong = null;
+
+  this.make = function (settings) {
+    this.id = settings.targetId;
+    this.selectId = settings.slectCity;
+    this.selItem = null;
+    this.selData = null;
+    this.datas = settings.datas;
+    this.dataCity = settings.datas.city;
+    this.dataGu = settings.datas.gu;
+    this.dataDong = settings.datas.dong;
+    //let target = document.querySelector("#" + this.id);
+    let target = $("#" + this.id);
+    let cityArea = target.find("#cityArea");
+    let guArea = target.find("#guArea");
+    let dongArea = target.find("#dongArea");
+    let htmls = "";
+
+    console.log(this.dataCity);
+
+    cityArea.empty();
+    guArea.empty();
+    dongArea.empty();
+
+    this.dataCity.forEach((item) => {
+      htmls += "<li>";
+      htmls += '<span class="check_b_wrap _cusChk">';
+      htmls += '<input type="checkbox" class="chk" name="1" data-type="city" />';
+      htmls += '<span class="ico"></span>';
+      htmls += '<span class="txt">' + item.text + "</span>";
+      htmls += "</span>";
+      htmls += "</li>";
+    });
+    cityArea.append(htmls);
+    htmls = "";
+
+    this.dataGu.forEach((item) => {
+      htmls += "<li>";
+      htmls += '<span class="check_b_wrap _cusChk">';
+      htmls += '<input type="checkbox" class="chk" name="1" data-type="gu" />';
+      htmls += '<span class="ico"></span>';
+      htmls += '<span class="txt">' + item.text + "</span>";
+      htmls += "</span>";
+      htmls += "</li>";
+    });
+    guArea.append(htmls);
+    htmls = "";
+
+    this.dataDong.forEach((item) => {
+      htmls += "<li>";
+      htmls += '<span class="check_b_wrap _cusChk">';
+      htmls += '<input type="checkbox" class="chk" name="1" data-type="dong" />';
+      htmls += '<span class="ico"></span>';
+      htmls += '<span class="txt">' + item.text + "</span>";
+      htmls += "</span>";
+      htmls += "</li>";
+    });
+    dongArea.append(htmls);
+    htmls = "";
+
+    console.log(target);
+  };
+}

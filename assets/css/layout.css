@@ -896,6 +896,57 @@ header .top_util._tp02 > .col_L {
   transform: scale(1);
 }
 
+.check_b_wrap._cusChk,
+.radio_b_wrap._cusChk {
+  height: 40px;
+  background-color: var(--white);
+  border: 1px solid var(--line01);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.check_b_wrap._cusChk span.ico,
+.radio_b_wrap._cusChk span.ico {
+  width: 100%;
+  height: 100%;
+  position: static;
+  margin: 0;
+}
+.check_b_wrap._cusChk span.txt,
+.radio_b_wrap._cusChk span.txt {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.check_b_wrap._cusChk span.ico:before,
+.radio_b_wrap._cusChk span.ico:before {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  right: 10px;
+  left: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  background-image: url(../../assets/img/ico/d/ico_plus.svg);
+  background-size: auto;
+}
+.check_b_wrap._cusChk input[type="checkbox"]:checked + span.ico,
+.radio_b_wrap._cusChk input[type="checkbox"]:checked + span.ico {
+  background: var(--main01);
+}
+
+.check_b_wrap._cusChk input[type="checkbox"]:checked ~ span,
+.radio_b_wrap._cusChk input[type="checkbox"]:checked ~ span {
+  color: var(--white);
+}
+
+.check_b_wrap._cusChk input[type="checkbox"]:checked + span.ico:before,
+.radio_b_wrap._cusChk input[type="checkbox"]:checked + span.ico:before {
+  background-image: url(../../assets/img/ico/w/ico_cusChk.svg);
+}
+
 /*///// 폼요소 /////*/
 .form_group_block {
   display: flex;
@@ -1044,8 +1095,7 @@ header .top_util._tp02 > .col_L {
   height: 36px;
   padding: 0 0px 0 15px;
   vertical-align: middle;
-  background: #fff url("../../assets/img/select_arrow_down.png") no-repeat
-    calc(100% - 15px) 50%;
+  background: #fff url("../../assets/img/select_arrow_down.png") no-repeat calc(100% - 15px) 50%;
   background-size: 10px;
 }
 .comm_select:focus,
@@ -1401,7 +1451,18 @@ header .top_util._tp02 > .col_L {
   background-image: url("../../assets/img/ico/w/ico__startPoll3_w.svg");
 }
 
-/*------이전 작성 CSS------------------------------------------------------------------------------------------*/
+/*------이전 작성 CSS------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------*/
 
 .members_wrap {
   display: flex;

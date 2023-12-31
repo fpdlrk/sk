@@ -27,6 +27,9 @@ label.btn {
 .btn._bdno {
   border: none;
 }
+.btn_rud6 {
+  border-radius: 6px;
+}
 .btn_rud10 {
   border-radius: 10px;
 }
