@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>정보</title>
+    <title>소개글</title>
     <link type="text/css" href="../../assets/css/import.css" rel="stylesheet" />
     <link type="text/css" href="../../assets/css/simplebar.css" rel="stylesheet" />
     <script src="../../assets/js/jquery-2.2.4.js"></script>
@@ -13,12 +13,11 @@
     <script src="../../assets/js/simplebar.min.js"></script>
   </head>
   <body>
-    <div class="pageContentPreview">
-      <div class="pollSettingArea">
-        <!--S: 스타일 -->
+    <div id="contentsBody" class="contents">
+      <div class="cotegoryView" id="cotegoryView">
         <div class="mdu_pannel mdu_pannel_form scroll_area">
           <div class="pannel_header">
-            <h2 class="tit">정보</h2>
+            <h2 class="tit">소개글</h2>
             <div class="util">
               <button class="btn _bdno _ico_ly">
                 <i class="ico _pannelRefresh"></i>
@@ -34,7 +33,7 @@
             <div class="item_group">
               <div class="item">
                 <div class="_comp comp_textarea _wide">
-                  <span class="_tit">정보제목</span>
+                  <span class="_tit">소개글 제목</span>
                   <div class="_body _comp_textareaWrap">
                     <textarea class="comm_input" placeholder="에디터가 들어갑니다"></textarea>
                   </div>
@@ -43,11 +42,36 @@
 
               <div class="item">
                 <div class="_comp comp_textarea _wide">
-                  <span class="_tit">정보내용</span>
+                  <span class="_tit">소개글 내용</span>
                   <div class="_body _comp_textareaWrap">
                     <textarea class="comm_input" placeholder="에디터가 들어갑니다"></textarea>
                   </div>
                   <p class="_sbt01 ar">80글자 입력 가능합니다</p>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="_comp _wide">
+                  <span class="_tit">소개 이미지</span>
+                  <div class="_body">
+                    <div class="comp_answerAddWrap">
+                      <div class="_answerAddItemOuter">
+                        <div class="_answerAddItem _tpMedia">
+                          <div class="_inp_wrap _f1">
+                            <div class="_image"></div>
+                            <div class="_filed">
+                              <div class="_filedInp">
+                                <input type="text" class="comm_input _tp_txt" placeholder="내용을 입력하세요." />
+                              </div>
+                              <button class="btn _bdno btn_primary wide">
+                                <span class="txt">이미지 삽입</span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -119,9 +143,8 @@
         <span class="_txt">중복확인팝업</span>
       </button> -->
         </div>
-        <!--E: 스타일 -->
       </div>
-      <div class="pollPreviewArea">
+      <div class="contentArea scrollbar-outer">
         <div class="view_round _tp_style" style="width: 560px">
           <div class="view_round_header">
             <h2 class="tit">설문 ID 영역</h2>
@@ -153,13 +176,23 @@
             </div>
 
             <div class="comp_textTyppingArea">
-              <h2 class="_tit" contenteditable="true">설문정보 텍스트 영역</h2>
-              <div class="_typping" contenteditable="true">설문정보 내용 영역</div>
+              <h2 class="_tit">설문정보 텍스트 영역</h2>
+              <div class="_typping">설문정보 내용 영역</div>
             </div>
 
             <div class="comp_questArea _tp_full">
-              <h2 class="_tit" contenteditable="true">설문정보 텍스트 영역</h2>
-              <div class="_typping" contenteditable="true">설문정보 내용 영역</div>
+              <!--S: 제목 영역 -->
+              <h2 class="_tit">설문정보 텍스트 영역</h2>
+              <!--E: 제목 영역 -->
+
+              <!--S: 내용 영역 -->
+              <div class="_typping">설문정보 내용 영역</div>
+              <!--E: 내용 영역 -->
+
+              <!--S: 이미지 영역 -->
+              <div class="_imgArea"></div>
+              <!--E: 이미지 영역 -->
+
               <span class="_label _status _edit">편집중</span>
               <div class="_actions">
                 <button class="btn _bdno _ico_ly">
