@@ -881,11 +881,13 @@ header .top_util._tp02 > .col_L {
   border: 1px solid #006bff;
   background: #006bff;
 }
-.check_b_wrap input[type="checkbox"]:checked + span.ico:before {
+.check_b_wrap input[type="checkbox"]:checked + span.ico:before,
+.check_b_wrap span.ico._chked:before {
   background-image: url(../../assets/img/ico/d/ico_chk.svg);
 }
 
-.radio_b_wrap input[type="radio"]:checked + span.ico:before {
+.radio_b_wrap input[type="radio"]:checked + span.ico:before,
+.radio_b_wrap span.ico._chked:before {
   background-image: url(../../assets/img/ico/d/ico_rad.svg);
 }
 

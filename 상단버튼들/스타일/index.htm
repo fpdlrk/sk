@@ -64,64 +64,85 @@
             <h2 class="tit">설문 ID 영역</h2>
           </div>
           <div class="view_round_body">
-            <div class="subject">설문제목 텍스트 영역</div>
+            <div class="pollSubject">설문제목 텍스트 영역</div>
 
-            <div class="comp_rangeSliderWrap">
-              <div class="_rangeSlider" id="sliderTarget">
-                <div class="_rangeSlider_handle" id="rangeSlider_handle"></div>
-              </div>
-              <script>
-                $(function () {
-                  var handle = $("#rangeSlider_handle");
-                  // console.log(handleRail);
-                  $("#sliderTarget").slider({
-                    create: function () {
-                      //handle.text($(this).slider("value"));
-                      handle.next().text($(this).slider("value"));
-                    },
-                    slide: function (event, ui) {
-                      //handle.text(ui.value);
-                      handle.css("width", ui.value + "%");
-                      handle.next().text(ui.value);
-                    },
+            <div class="comp_outer">
+              <div class="comp_rangeSliderWrap">
+                <div class="_rangeSliderOuter">
+                  <div class="_rangeSlider" id="sliderTarget">
+                    <div class="_rangeSlider_handle" id="rangeSlider_handle"></div>
+                  </div>
+                </div>
+                <script>
+                  $(function () {
+                    var handle = $("#rangeSlider_handle");
+                    // console.log(handleRail);
+                    $("#sliderTarget").slider({
+                      create: function () {
+                        //handle.text($(this).slider("value"));
+                        handle.next().text($(this).slider("value"));
+                      },
+                      slide: function (event, ui) {
+                        //handle.text(ui.value);
+                        handle.css("width", ui.value + "%");
+                        handle.next().text(ui.value);
+                      },
+                    });
                   });
-                });
-              </script>
+                </script>
+              </div>
+              <div class="_extra_area">
+                <button class="btn _bdno _ico_ly wide">
+                  <i class="ico _add"></i>
+                  <span class="txt">추가</span>
+                </button>
+              </div>
             </div>
 
-            <div class="comp_textTyppingArea">
-              <h2 class="_tit" contenteditable="true">설문정보 텍스트 영역</h2>
-              <div class="_typping" contenteditable="true">설문정보 내용 영역</div>
+            <div class="comp_outer">
+              <div class="comp_textTyppingArea">
+                <h2 class="_tit">설문정보 텍스트 영역</h2>
+                <div class="_typping">설문정보 내용 영역</div>
+              </div>
+              <div class="_extra_area">
+                <button class="btn _bdno _ico_ly wide">
+                  <i class="ico _add"></i>
+                  <span class="txt">추가</span>
+                </button>
+              </div>
             </div>
 
-            <div class="comp_questArea _tp_full">
-              <h2 class="_tit" contenteditable="true">설문정보 텍스트 영역</h2>
-              <div class="_typping" contenteditable="true">설문정보 내용 영역</div>
-              <span class="_label _status _edit">편집중</span>
-              <div class="_actions">
-                <button class="btn _bdno _ico_ly">
-                  <i class="ico _questReplay_w"></i>
-                  <span class="txt">초기화</span>
-                </button>
+            <div class="comp_outer">
+              <div class="comp_questArea _tp_full">
+                <h2 class="_tit">설문정보 텍스트 영역</h2>
+                <div class="_typping">설문정보 내용 영역</div>
+                <span class="_label _status _edit">편집중</span>
+                <div class="_actions">
+                  <button class="btn _bdno _ico_ly">
+                    <i class="ico _questReplay_w"></i>
+                    <span class="txt">초기화</span>
+                  </button>
 
-                <button class="btn _bdno _ico_ly">
-                  <i class="ico _questCopy_w"></i>
-                  <span class="txt">복사</span>
-                </button>
+                  <button class="btn _bdno _ico_ly">
+                    <i class="ico _questCopy_w"></i>
+                    <span class="txt">복사</span>
+                  </button>
 
-                <button class="btn _bdno _ico_ly">
-                  <i class="ico _questDel_w"></i>
-                  <span class="txt">삭제</span>
+                  <button class="btn _bdno _ico_ly">
+                    <i class="ico _questDel_w"></i>
+                    <span class="txt">삭제</span>
+                  </button>
+                </div>
+              </div>
+              <div class="_extra_area">
+                <button class="btn _bdno _ico_ly wide">
+                  <i class="ico _add"></i>
+                  <span class="txt">추가</span>
                 </button>
               </div>
             </div>
           </div>
-          <div class="_extra_area">
-            <button class="btn _bdno _ico_ly wide">
-              <i class="ico _add"></i>
-              <span class="txt">추가</span>
-            </button>
-          </div>
+
           <div class="view_round_btm">
             <div class="_col_l">
               <button class="btn btn_primary btn_rud100 btn_lager btn_fix _bdno _ico_ly">

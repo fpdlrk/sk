@@ -88,10 +88,10 @@
 }
 
 .scroll_area {
-  overflow: auto;
+  overflow: auto !important;
 }
 .hd {
-  overflow: hidden;
+  overflow: hidden !important;
 }
 .wide {
   width: 100% !important;
@@ -100,7 +100,10 @@
   flex: 0 0 100% !important;
 }
 .flex_box {
-  display: flex;
+  display: flex !important;
+}
+._fn {
+  flex: none !important;
 }
 ._fjl {
   justify-content: left;
@@ -188,10 +191,16 @@
 ._auto {
   width: auto !important;
 }
+._minauto {
+  min-width: auto !important;
+}
 ._auto_h {
   height: auto !important;
 }
-.h .w100 {
+.h100p {
+  height: 100% !important;
+}
+.w100 {
   width: 100px !important;
 }
 .w200 {

@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>주관식 짧은답</title>
+    <link type="text/css" href="../../assets/css/import.css" rel="stylesheet" />
+    <link type="text/css" href="../../assets/css/simplebar.css" rel="stylesheet" />
+    <script src="../../assets/js/jquery-2.2.4.js"></script>
+    <script src="../../assets/js/jquery-ui.js"></script>
+
+    <script src="../../assets/js/simplebar.min.js"></script>
+  </head>
+  <body>
+    <div id="contentsBody" class="contents">
+      <div class="cotegoryView">
+        <div class="mdu_pannel mdu_pannel_form scroll_area">
+          <div class="pannel_header">
+            <h2 class="tit">주관식 짧은답</h2>
+            <div class="util">
+              <button class="btn _bdno _ico_ly">
+                <i class="ico _pannelRefresh"></i>
+                <span class="txt">리셋</span>
+              </button>
+              <button class="btn _bdno _ico_ly">
+                <i class="ico _pannelClose"></i>
+                <span class="txt">닫기</span>
+              </button>
+            </div>
+          </div>
+          <div class="pannel_body">
+            <div class="item_group">
+              <div class="item">
+                <div class="_comp comp_textarea _wide">
+                  <span class="_tit">질문입력</span>
+                  <div class="_body _comp_textareaWrap">
+                    <textarea class="comm_input" placeholder="에디터가 들어갑니다"></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="_comp _wide">
+                  <span class="_tit">이미지</span>
+                  <div class="_body">
+                    <div class="comp_answerAddWrap">
+                      <div class="_answerAddItemOuter">
+                        <div class="_answerAddItem _tpMedia">
+                          <div class="_inp_wrap _f1">
+                            <div class="_image"></div>
+                            <div class="_filed">
+                              <div class="_filedInp">
+                                <input type="text" class="comm_input _tp_txt" placeholder="내용을 입력하세요." />
+                              </div>
+                              <button class="btn _bdno btn_primary wide">
+                                <span class="txt">이미지 삽입</span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="_comp _wide">
+                  <span class="_tit">답변설정</span>
+                  <div class="_body">
+                    <div class="_comp comp_select">
+                      <span class="_tit">입력칸 크기</span>
+                      <div class="_body">
+                        <div class="_selectOuter">
+                          <div class="_selectWrap">
+                            <button class="_header">
+                              <span class="_selectText">작게</span>
+                            </button>
+                            <ul class="_list">
+                              <li><a class="_item _selected">꽉채움</a></li>
+                              <li><a class="_item">영역 내 맞춤</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="_comp comp_input _wide">
+                  <span class="_tit">글자수 제한</span>
+                  <div class="_body">
+                    <div class="flex_box _fac _fromto">
+                      <div class="_comp comp_select _fjl">
+                        <span class="_tit">최소</span>
+                        <div class="_body">
+                          <div class="_selectOuter">
+                            <div class="_selectWrap">
+                              <button class="_header">
+                                <span class="_selectText">1</span>
+                              </button>
+                              <ul class="_list">
+                                <li><a class="_item _selected">1</a></li>
+                                <li><a class="_item">Q1,Q2,Q3</a></li>
+                                <li><a class="_item">번호없음</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="_space">~</div>
+
+                      <div class="_comp comp_select _fjl">
+                        <span class="_tit">최대</span>
+                        <div class="_body">
+                          <div class="_selectOuter">
+                            <div class="_selectWrap">
+                              <button class="_header">
+                                <span class="_selectText">무제한</span>
+                              </button>
+                              <ul class="_list">
+                                <li><a class="_item _selected">1,2,3</a></li>
+                                <li><a class="_item">Q1,Q2,Q3</a></li>
+                                <li><a class="_item">번호없음</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="_comp comp_input _wide">
+                  <span class="_tit">숫자형</span>
+                  <div class="_body">
+                    <div class="flex_box _fac _fromto">
+                      <div class="_comp comp_select _fjl">
+                        <span class="_tit">최소</span>
+                        <div class="_body">
+                          <div class="_selectOuter">
+                            <div class="_selectWrap">
+                              <button class="_header">
+                                <span class="_selectText">1</span>
+                              </button>
+                              <ul class="_list">
+                                <li><a class="_item _selected">1</a></li>
+                                <li><a class="_item">Q1,Q2,Q3</a></li>
+                                <li><a class="_item">번호없음</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="_space">~</div>
+
+                      <div class="_comp comp_select _fjl">
+                        <span class="_tit">최대</span>
+                        <div class="_body">
+                          <div class="_selectOuter">
+                            <div class="_selectWrap">
+                              <button class="_header">
+                                <span class="_selectText">무제한</span>
+                              </button>
+                              <ul class="_list">
+                                <li><a class="_item _selected">1,2,3</a></li>
+                                <li><a class="_item">Q1,Q2,Q3</a></li>
+                                <li><a class="_item">번호없음</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="_comp comp_input _wide">
+                  <span class="_tit">숫자형 2개</span>
+                  <div class="_body">
+                    <div class="flex_box _fac _fromto">
+                      <div class="_comp comp_select _fjl">
+                        <div class="_body flex_box">
+                          <div class="_selectOuter mgl5 _f1">
+                            <div class="_selectWrap">
+                              <button class="_header">
+                                <span class="_selectText">1</span>
+                              </button>
+                              <ul class="_list">
+                                <li><a class="_item _selected">1</a></li>
+                                <li><a class="_item">Q1,Q2,Q3</a></li>
+                                <li><a class="_item">번호없음</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                          <input
+                            type="text"
+                            class="comm_input _minauto mgl5 pda10 ac _disabled01"
+                            value="박"
+                            placeholder=""
+                            style="width: 50px; height: 40px"
+                            disabled
+                          />
+                        </div>
+                      </div>
+
+                      <div class="_space">~</div>
+
+                      <div class="_comp comp_select _fjl">
+                        <div class="_body flex_box">
+                          <div class="_selectOuter _f1">
+                            <div class="_selectWrap">
+                              <button class="_header">
+                                <span class="_selectText">1</span>
+                              </button>
+                              <ul class="_list">
+                                <li><a class="_item _selected">1</a></li>
+                                <li><a class="_item">Q1,Q2,Q3</a></li>
+                                <li><a class="_item">번호없음</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                          <input
+                            type="text"
+                            class="comm_input _minauto mgl5 pda10 ac _disabled01"
+                            value="일"
+                            placeholder=""
+                            style="width: 50px; height: 40px"
+                            disabled
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="_comp comp_input _wide">
+                  <span class="_tit">이메일형</span>
+                  <div class="_body">
+                    <div class="flex_box _fac _fromto">
+                      <div class="_comp comp_select _fjl" style="width: 60%">
+                        <div class="_body flex_box">
+                          <input type="text" class="comm_input wide _minauto pda10 _disabled01" value="" placeholder="" style="height: 40px" />
+                        </div>
+                      </div>
+
+                      <div class="_space">@</div>
+
+                      <div class="_comp comp_select _fjl">
+                        <div class="_body flex_box">
+                          <div class="_selectOuter _f1">
+                            <div class="_selectWrap">
+                              <button class="_header">
+                                <span class="_selectText">전체</span>
+                              </button>
+                              <ul class="_list">
+                                <li><a class="_item _selected">1</a></li>
+                                <li><a class="_item">Q1,Q2,Q3</a></li>
+                                <li><a class="_item">번호없음</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="_comp comp_input _wide">
+                  <span class="_tit">전화번호</span>
+                  <div class="_body">
+                    <div class="flex_box _fac _fromto">
+                      <div class="_comp comp_select _fjl">
+                        <div class="_body flex_box">
+                          <div class="_selectOuter _f1">
+                            <div class="_selectWrap">
+                              <button class="_header">
+                                <span class="_selectText">010</span>
+                              </button>
+                              <ul class="_list">
+                                <li><a class="_item _selected">1</a></li>
+                                <li><a class="_item">Q1,Q2,Q3</a></li>
+                                <li><a class="_item">번호없음</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="_space">-</div>
+
+                      <div class="_comp comp_select _fjl" style="width: 80%">
+                        <div class="_body flex_box">
+                          <input type="text" class="comm_input wide _minauto pda10" value="" placeholder="" style="height: 40px" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="_comp comp_input _wide">
+                  <span class="_tit">Prefix postfix</span>
+                  <div class="_body">
+                    <div class="flex_box _fac _fromto">
+                      <div class="_comp comp_select _fjl">
+                        <div class="_body flex_box">
+                          <div class="_selectOuter _f1">
+                            <div class="_selectWrap">
+                              <button class="_header">
+                                <span class="_selectText">만</span>
+                              </button>
+                              <ul class="_list">
+                                <li><a class="_item _selected">1</a></li>
+                                <li><a class="_item">Q1,Q2,Q3</a></li>
+                                <li><a class="_item">번호없음</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="_comp comp_select _fjl mgl5" style="width: 80%">
+                        <div class="_body flex_box">
+                          <input type="text" class="comm_input wide _minauto pda10" value="" placeholder="" style="height: 40px" />
+                          <input
+                            type="text"
+                            class="comm_input _minauto mgl5 ac pda10 _disabled01"
+                            value="세"
+                            placeholder=""
+                            disabled
+                            style="width: 50px; height: 40px"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="_comp _wide">
+                  <span class="_tit">옵션</span>
+                  <div class="_body">
+                    <div class="_cr_listWrap">
+                      <div class="_cr_item">
+                        <span class="check_b_wrap">
+                          <input type="checkbox" class="chk" name="1" />
+                          <span class="ico"></span>
+                          <span>답변필수</span>
+                        </span>
+                      </div>
+                      <div class="_cr_item">
+                        <span class="check_b_wrap">
+                          <input type="checkbox" class="chk" name="1" />
+                          <span class="ico"></span>
+                          <span>결과비공개</span>
+                        </span>
+                      </div>
+                      <div class="_cr_item">
+                        <span class="check_b_wrap">
+                          <input type="checkbox" class="chk" name="1" />
+                          <span class="ico"></span>
+                          <span>질문키 값</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contentArea scrollbar-outer">
+        <div class="view_round _tp_style" style="width: 560px">
+          <div class="view_round_header">
+            <h2 class="tit">설문 ID 영역</h2>
+          </div>
+          <div class="view_round_body">
+            <div class="pollSubject">설문제목 텍스트 영역</div>
+
+            <div class="comp_outer">
+              <div class="comp_rangeSliderWrap">
+                <div class="_rangeSliderOuter">
+                  <div class="_rangeSlider" id="sliderTarget">
+                    <div class="_rangeSlider_handle" id="rangeSlider_handle"></div>
+                  </div>
+                </div>
+                <script>
+                  $(function () {
+                    var handle = $("#rangeSlider_handle");
+                    // console.log(handleRail);
+                    $("#sliderTarget").slider({
+                      create: function () {
+                        //handle.text($(this).slider("value"));
+                        handle.next().text($(this).slider("value"));
+                      },
+                      slide: function (event, ui) {
+                        //handle.text(ui.value);
+                        handle.css("width", ui.value + "%");
+                        handle.next().text(ui.value);
+                      },
+                    });
+                  });
+                </script>
+                <div class="_extra_area">
+                  <button class="btn _bdno _ico_ly wide">
+                    <i class="ico _add"></i>
+                    <span class="txt">추가</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="comp_outer">
+              <div class="comp_textTyppingArea">
+                <h2 class="_tit">설문정보 텍스트 영역</h2>
+                <div class="_typping">설문정보 내용 영역</div>
+              </div>
+              <div class="_extra_area">
+                <button class="btn _bdno _ico_ly wide">
+                  <i class="ico _add"></i>
+                  <span class="txt">추가</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="comp_outer">
+              <div class="comp_questArea _tp_full">
+                <h2 class="_tit">설문정보 텍스트 영역</h2>
+
+                <!--S: 답변리스트 영역 -->
+                <div class="_typingAnswerArea _short">
+                  <div class="_typingAnswerBody">답변을 입력하세요.</div>
+                  <p>20글자 까지 입력 가능합니다</p>
+                </div>
+                <!--E: 답변리스트 영역 -->
+
+                <!--S: 숫자형 -->
+                <div class="_typingAnswerArea _short">
+                  <div class="_types _Number">
+                    <div class="_item">
+                      <div class="_typingAnswerBody">숫자를 입력하세요.</div>
+                    </div>
+                    <div class="_item">
+                      <div class="_typingAnswerBody">숫자를 입력하세요.</div>
+                    </div>
+                  </div>
+                </div>
+                <!--E: 숫자형 -->
+
+                <!--S: 숫자형 2개 -->
+                <div class="_typingAnswerArea _short">
+                  <div class="_types _Number">
+                    <div class="_item">
+                      <div class="_typingAnswerBody">숫자를 입력하세요.</div>
+                      <span>박</span>
+                    </div>
+                    <div class="_item">
+                      <div class="_typingAnswerBody">숫자를 입력하세요.</div>
+                      <span>일</span>
+                    </div>
+                  </div>
+                </div>
+                <!--E: 숫자형 2개 -->
+
+                <!--S: 이메일형 -->
+                <div class="_typingAnswerArea _short">
+                  <div class="_types">
+                    <div class="_item">
+                      <div class="_typingAnswerBody">이메일 입력하세요.</div>
+                      <span>박</span>
+                      <div class="_dropDownArea">
+                        <div class="_dropDownHeader"><span class="_txt">직접입력</span><span class="_arrow"></span></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--E: 이메일형 -->
+
+                <!--S: 전화번호 -->
+                <div class="_typingAnswerArea _short">
+                  <div class="_types">
+                    <div class="_item">
+                      <div class="_dropDownArea">
+                        <div class="_dropDownHeader"><span class="_txt">010</span><span class="_arrow"></span></div>
+                      </div>
+                      <span>-</span>
+                      <div class="_typingAnswerBody">0000</div>
+                      <span>-</span>
+                      <div class="_typingAnswerBody">0000</div>
+                    </div>
+                  </div>
+                </div>
+                <!--E: 전화번호 -->
+
+                <!--S: Prefix postfix -->
+                <div class="_typingAnswerArea _short">
+                  <div class="_types">
+                    <div class="_item">
+                      <span>만</span>
+                      <div class="_typingAnswerBody _fn w100">00</div>
+                      <span>세</span>
+                    </div>
+                  </div>
+                </div>
+                <!--E: Prefix postfix -->
+
+                <span class="_label _status _edit">편집중</span>
+                <div class="_actions">
+                  <button class="btn _bdno _ico_ly">
+                    <i class="ico _questReplay_w"></i>
+                    <span class="txt">초기화</span>
+                  </button>
+
+                  <button class="btn _bdno _ico_ly">
+                    <i class="ico _questCopy_w"></i>
+                    <span class="txt">복사</span>
+                  </button>
+
+                  <button class="btn _bdno _ico_ly">
+                    <i class="ico _questDel_w"></i>
+                    <span class="txt">삭제</span>
+                  </button>
+                </div>
+              </div>
+              <div class="_extra_area">
+                <button class="btn _bdno _ico_ly wide">
+                  <i class="ico _add"></i>
+                  <span class="txt">추가</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="view_round_btm">
+            <div class="_col_l">
+              <button class="btn btn_primary btn_rud100 btn_lager btn_fix _bdno _ico_ly">
+                <i class="ico _more_w"></i>
+                <span class="txt">더보기</span>
+              </button>
+            </div>
+            <div class="_col_r">
+              <button class="btn btn_primary btn_rud30 btn_lager _bdno tp_next">
+                <span class="txt">NEXT</span>
+                <i class="ico _next01_w"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../../assets/js/commjs.js"></script>
+    <script src="../../assets/js/modal.js"></script>
+    <script src="../../assets/js/popup.js"></script>
+    <script src="../../assets/js/loading.js"></script>
+    <script src="../../assets/js/dropDown.js"></script>
+
+    <script>
+      $("#popAlert").on("click", function () {
+        ModalOpen("firstPopup", "안내", "<span class='f_main'>KJCI3718UID09</span> 는 사용가능 ID입니다.", "alert", "", okClickFnc, {
+          //style: "font-size:60px;",
+          class: "ac",
+        });
+      });
+
+      let okClickFnc = (e) => {
+        ModalClose(e.target);
+        console.log("외부=okClickFnc----", e, e.target);
+      };
+    </script>
+  </body>
+</html>

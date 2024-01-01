@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>주관식 긴답변</title>
+    <title>구분선</title>
     <link type="text/css" href="../../assets/css/import.css" rel="stylesheet" />
     <link type="text/css" href="../../assets/css/simplebar.css" rel="stylesheet" />
     <script src="../../assets/js/jquery-2.2.4.js"></script>
@@ -17,7 +17,7 @@
       <div class="cotegoryView">
         <div class="mdu_pannel mdu_pannel_form scroll_area">
           <div class="pannel_header">
-            <h2 class="tit">주관식 긴답변</h2>
+            <h2 class="tit">구분선</h2>
             <div class="util">
               <button class="btn _bdno _ico_ly">
                 <i class="ico _pannelRefresh"></i>
@@ -32,106 +32,13 @@
           <div class="pannel_body">
             <div class="item_group">
               <div class="item">
-                <div class="_comp comp_textarea _wide">
-                  <span class="_tit">질문입력</span>
-                  <div class="_body _comp_textareaWrap">
-                    <textarea class="comm_input" placeholder="에디터가 들어갑니다"></textarea>
-                  </div>
-                </div>
-              </div>
-
-              <div class="item">
-                <div class="_comp _wide">
-                  <span class="_tit">이미지</span>
-                  <div class="_body">
-                    <div class="comp_answerAddWrap">
-                      <div class="_answerAddItemOuter">
-                        <div class="_answerAddItem _tpMedia">
-                          <div class="_inp_wrap _f1">
-                            <div class="_image"></div>
-                            <div class="_filed">
-                              <div class="_filedInp">
-                                <input type="text" class="comm_input _tp_txt" placeholder="내용을 입력하세요." />
-                              </div>
-                              <button class="btn _bdno btn_primary wide">
-                                <span class="txt">이미지 삽입</span>
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="item">
-                <div class="_comp _wide">
-                  <span class="_tit">답변설정</span>
-                  <div class="_body">
-                    <div class="_comp comp_select">
-                      <span class="_tit">입력칸 크기</span>
-                      <div class="_body">
-                        <div class="_selectOuter">
-                          <div class="_selectWrap">
-                            <button class="_header">
-                              <span class="_selectText">작게</span>
-                            </button>
-                            <ul class="_list">
-                              <li><a class="_item _selected">꽉채움</a></li>
-                              <li><a class="_item">영역 내 맞춤</a></li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="item">
-                <div class="_comp comp_input _wide">
-                  <span class="_tit">글자수 제한</span>
-                  <div class="_body">
-                    <div class="flex_box _fac _fromto">
-                      <div class="_comp comp_select _fjl b10">
-                        <span class="_tit">최소</span>
-                        <div class="_body">
-                          <div class="_selectOuter">
-                            <div class="_selectWrap">
-                              <button class="_header">
-                                <span class="_selectText">1</span>
-                              </button>
-                              <ul class="_list">
-                                <li><a class="_item _selected">1</a></li>
-                                <li><a class="_item">Q1,Q2,Q3</a></li>
-                                <li><a class="_item">번호없음</a></li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="_space">~</div>
-
-                      <div class="_comp comp_select _fjl">
-                        <span class="_tit">최대</span>
-                        <div class="_body">
-                          <div class="_selectOuter">
-                            <div class="_selectWrap">
-                              <button class="_header">
-                                <span class="_selectText">무제한</span>
-                              </button>
-                              <ul class="_list">
-                                <li><a class="_item _selected">1,2,3</a></li>
-                                <li><a class="_item">Q1,Q2,Q3</a></li>
-                                <li><a class="_item">번호없음</a></li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                <div class="_comp comp_inputAndButton _wide">
+                  <span class="_tit">구분선 선택</span>
+                  <div class="_body _inputAndButtonWrap">
+                    <div class="_guLine"></div>
+                    <button class="btn">
+                      <span class="_txt">선택</span>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -145,21 +52,7 @@
                         <span class="check_b_wrap">
                           <input type="checkbox" class="chk" name="1" />
                           <span class="ico"></span>
-                          <span>답변필수</span>
-                        </span>
-                      </div>
-                      <div class="_cr_item">
-                        <span class="check_b_wrap">
-                          <input type="checkbox" class="chk" name="1" />
-                          <span class="ico"></span>
-                          <span>결과비공개</span>
-                        </span>
-                      </div>
-                      <div class="_cr_item">
-                        <span class="check_b_wrap">
-                          <input type="checkbox" class="chk" name="1" />
-                          <span class="ico"></span>
-                          <span>질문키 값</span>
+                          <span>항목숨기기</span>
                         </span>
                       </div>
                     </div>
@@ -168,6 +61,10 @@
               </div>
             </div>
           </div>
+
+          <!-- <button class="btn _header" id="popAlert">
+        <span class="_txt">중복확인팝업</span>
+      </button> -->
         </div>
       </div>
       <div class="contentArea scrollbar-outer">
@@ -226,14 +123,11 @@
 
             <div class="comp_outer">
               <div class="comp_questArea _tp_full">
-                <h2 class="_tit">설문정보 텍스트 영역</h2>
-
-                <!--S: 답변리스트 영역 -->
-                <div class="_typingAnswerArea">
-                  <div class="_typingAnswerBody">답변을 입력하세요.</div>
-                  <p>100글자 까지 입력 가능합니다</p>
+                <!--S: 구분선 영역 -->
+                <div class="comp_guLineArea">
+                  <div class="comp_guLineBody"></div>
                 </div>
-                <!--E: 답변리스트 영역 -->
+                <!--E: 구분선 영역 -->
 
                 <span class="_label _status _edit">편집중</span>
                 <div class="_actions">
@@ -261,6 +155,7 @@
               </div>
             </div>
           </div>
+
           <div class="view_round_btm">
             <div class="_col_l">
               <button class="btn btn_primary btn_rud100 btn_lager btn_fix _bdno _ico_ly">

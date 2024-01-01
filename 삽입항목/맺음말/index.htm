@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>주관식 긴답변</title>
+    <title>맺음말</title>
     <link type="text/css" href="../../assets/css/import.css" rel="stylesheet" />
     <link type="text/css" href="../../assets/css/simplebar.css" rel="stylesheet" />
     <script src="../../assets/js/jquery-2.2.4.js"></script>
@@ -17,7 +17,7 @@
       <div class="cotegoryView">
         <div class="mdu_pannel mdu_pannel_form scroll_area">
           <div class="pannel_header">
-            <h2 class="tit">주관식 긴답변</h2>
+            <h2 class="tit">맺음말</h2>
             <div class="util">
               <button class="btn _bdno _ico_ly">
                 <i class="ico _pannelRefresh"></i>
@@ -33,7 +33,7 @@
             <div class="item_group">
               <div class="item">
                 <div class="_comp comp_textarea _wide">
-                  <span class="_tit">질문입력</span>
+                  <span class="_tit">맺음말제목</span>
                   <div class="_body _comp_textareaWrap">
                     <textarea class="comm_input" placeholder="에디터가 들어갑니다"></textarea>
                   </div>
@@ -41,8 +41,18 @@
               </div>
 
               <div class="item">
+                <div class="_comp comp_textarea _wide">
+                  <span class="_tit">맺음말내용</span>
+                  <div class="_body _comp_textareaWrap">
+                    <textarea class="comm_input" placeholder="에디터가 들어갑니다"></textarea>
+                  </div>
+                  <p class="_sbt01 ar">80글자 입력 가능합니다</p>
+                </div>
+              </div>
+
+              <div class="item">
                 <div class="_comp _wide">
-                  <span class="_tit">이미지</span>
+                  <span class="_tit">맺음말 이미지</span>
                   <div class="_body">
                     <div class="comp_answerAddWrap">
                       <div class="_answerAddItemOuter">
@@ -66,108 +76,107 @@
               </div>
 
               <div class="item">
-                <div class="_comp _wide">
-                  <span class="_tit">답변설정</span>
+                <div class="_comp _colorPicker _wide">
+                  <span class="_tit">배경컬러</span>
                   <div class="_body">
-                    <div class="_comp comp_select">
-                      <span class="_tit">입력칸 크기</span>
-                      <div class="_body">
-                        <div class="_selectOuter">
-                          <div class="_selectWrap">
-                            <button class="_header">
-                              <span class="_selectText">작게</span>
-                            </button>
-                            <ul class="_list">
-                              <li><a class="_item _selected">꽉채움</a></li>
-                              <li><a class="_item">영역 내 맞춤</a></li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
+                    <div class="_inp_color">
+                      <!-- <input
+                        onChange="update(this.jscolor, '#pr3')"
+                        onInput="update(this.jscolor, '#pr4')"
+                        value="FFFFFF"
+                        data-jscolor="{alpha:1}"
+                        class="comm_input"
+                      /> -->
+                      <input
+                        value="FFFFFF"
+                        data-jscolor="{alpha:1}"
+                        class="comm_input jscolor"
+                        autocomplete="off"
+                        autocorrect="off"
+                        autocapitalize="off"
+                        spellcheck="false"
+                        data-current-color="#FFFFFF"
+                        style="
+                          background-image: linear-gradient(
+                              to right,
+                              rgb(255, 255, 255) 0%,
+                              rgb(255, 255, 255) 30px,
+                              rgba(0, 0, 0, 0) 31px,
+                              rgba(0, 0, 0, 0) 100%
+                            ),
+                            url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAQCAYAAAB3AH1ZAAAAAXNSR0IArs4c6QAAAFNJREFUSEtjnDlz5n8GPODs2bP4pBmMjY3xyuPSn5KSwrBt27bljKMOGA2B0RAY8BBIS0vDWw6Qm89hhQMu/U5OTgxLly5dzjjqgNEQGA2BgQ4BAPJuqnG97DVRAAAAAElFTkSuQmCC') !important;
+                          background-position: left top, left top !important;
+                          background-size: auto, 32px 16px !important;
+                          background-repeat: repeat-y, repeat-y !important;
+                          background-origin: padding-box, padding-box !important;
+                          padding-left: 40px !important;
+                        "
+                      />
+                      <!-- <input
+                        type="color"
+                        class="comm_input"
+                        name=""
+                        id=""
+                        value="#659854"
+                      /> -->
+                      <script src="../../assets/js/jscolor.js"></script>
+                      <script>
+                        jscolor.presets.default = {
+                          palette: [
+                            "#000000",
+                            "#7d7d7d",
+                            "#870014",
+                            "#ec1c23",
+                            "#ff7e26",
+                            "#fef100",
+                            "#22b14b",
+                            "#00a1e7",
+                            "#3f47cc",
+                            "#a349a4",
+                            "#ffffff",
+                            "#c3c3c3",
+                            "#b87957",
+                            "#feaec9",
+                            "#ffc80d",
+                            "#eee3af",
+                            "#b5e61d",
+                            "#99d9ea",
+                            "#7092be",
+                            "#c8bfe7",
+                          ],
+                          //paletteCols: 12,
+                          hideOnPaletteClick: true,
+                          //width: 271,
+                          //height: 151,
+                          //position: 'right',
+                          //previewPosition: 'right',
+                          //backgroundColor: 'rgba(51,51,51,1)', controlBorderColor: 'rgba(153,153,153,1)', buttonColor: 'rgba(240,240,240,1)',
+                        };
+                        // function update(picker, selector) {
+                        //   document.querySelector(selector).style.background =
+                        //     picker.toBackground();
+                        // }
+                        jscolor.trigger("input change");
+                      </script>
                     </div>
                   </div>
                 </div>
               </div>
 
               <div class="item">
-                <div class="_comp comp_input _wide">
-                  <span class="_tit">글자수 제한</span>
-                  <div class="_body">
-                    <div class="flex_box _fac _fromto">
-                      <div class="_comp comp_select _fjl b10">
-                        <span class="_tit">최소</span>
-                        <div class="_body">
-                          <div class="_selectOuter">
-                            <div class="_selectWrap">
-                              <button class="_header">
-                                <span class="_selectText">1</span>
-                              </button>
-                              <ul class="_list">
-                                <li><a class="_item _selected">1</a></li>
-                                <li><a class="_item">Q1,Q2,Q3</a></li>
-                                <li><a class="_item">번호없음</a></li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="_space">~</div>
-
-                      <div class="_comp comp_select _fjl">
-                        <span class="_tit">최대</span>
-                        <div class="_body">
-                          <div class="_selectOuter">
-                            <div class="_selectWrap">
-                              <button class="_header">
-                                <span class="_selectText">무제한</span>
-                              </button>
-                              <ul class="_list">
-                                <li><a class="_item _selected">1,2,3</a></li>
-                                <li><a class="_item">Q1,Q2,Q3</a></li>
-                                <li><a class="_item">번호없음</a></li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="item">
-                <div class="_comp _wide">
-                  <span class="_tit">옵션</span>
-                  <div class="_body">
-                    <div class="_cr_listWrap">
-                      <div class="_cr_item">
-                        <span class="check_b_wrap">
-                          <input type="checkbox" class="chk" name="1" />
-                          <span class="ico"></span>
-                          <span>답변필수</span>
-                        </span>
-                      </div>
-                      <div class="_cr_item">
-                        <span class="check_b_wrap">
-                          <input type="checkbox" class="chk" name="1" />
-                          <span class="ico"></span>
-                          <span>결과비공개</span>
-                        </span>
-                      </div>
-                      <div class="_cr_item">
-                        <span class="check_b_wrap">
-                          <input type="checkbox" class="chk" name="1" />
-                          <span class="ico"></span>
-                          <span>질문키 값</span>
-                        </span>
-                      </div>
-                    </div>
+                <div class="_comp comp_inputAndButton _wide">
+                  <span class="_tit">외부 링크 URL</span>
+                  <div class="_body _inputAndButtonWrap">
+                    <input type="text" class="comm_input" placeholder="URL" />
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
+          <!-- <button class="btn _header" id="popAlert">
+        <span class="_txt">중복확인팝업</span>
+      </button> -->
         </div>
       </div>
       <div class="contentArea scrollbar-outer">
@@ -176,7 +185,7 @@
             <h2 class="tit">설문 ID 영역</h2>
           </div>
           <div class="view_round_body">
-            <div class="pollSubject">설문제목 텍스트 영역</div>
+            <div class="pollSubject">맺음말 제목 텍스트 영역</div>
 
             <div class="comp_outer">
               <div class="comp_rangeSliderWrap">
@@ -212,28 +221,23 @@
             </div>
 
             <div class="comp_outer">
-              <div class="comp_textTyppingArea">
-                <h2 class="_tit">설문정보 텍스트 영역</h2>
-                <div class="_typping">설문정보 내용 영역</div>
-              </div>
-              <div class="_extra_area">
-                <button class="btn _bdno _ico_ly wide">
-                  <i class="ico _add"></i>
-                  <span class="txt">추가</span>
-                </button>
-              </div>
-            </div>
-
-            <div class="comp_outer">
               <div class="comp_questArea _tp_full">
-                <h2 class="_tit">설문정보 텍스트 영역</h2>
+                <!--S: 제목 영역 -->
+                <h2 class="_tit">맺음말 텍스트 영역</h2>
+                <!--E: 제목 영역 -->
 
-                <!--S: 답변리스트 영역 -->
-                <div class="_typingAnswerArea">
-                  <div class="_typingAnswerBody">답변을 입력하세요.</div>
-                  <p>100글자 까지 입력 가능합니다</p>
+                <!--S: 내용 영역 -->
+                <div class="_questContent">
+                  고객님, 안녕하세요 SK 텔레콤에서 ‘자동차’에 대한 설문조사를 안내드립니다. <br />
+                  전체 7문항의 짧은 설문입니다. 잠시 시간을 내어 고객님의<br />
+                  소중한 의견을 들려주세요. 참여하신 고객님께서는 T멤버십 제휴사에서 <br />
+                  현금처럼 사용하실 수 있는 포인트를 드립니다.
                 </div>
-                <!--E: 답변리스트 영역 -->
+                <!--E: 내용 영역 -->
+
+                <!--S: 이미지 영역 -->
+                <div class="_imgArea"></div>
+                <!--E: 이미지 영역 -->
 
                 <span class="_label _status _edit">편집중</span>
                 <div class="_actions">
@@ -261,6 +265,7 @@
               </div>
             </div>
           </div>
+
           <div class="view_round_btm">
             <div class="_col_l">
               <button class="btn btn_primary btn_rud100 btn_lager btn_fix _bdno _ico_ly">

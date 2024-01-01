@@ -13,9 +13,8 @@
     <script src="../../assets/js/simplebar.min.js"></script>
   </head>
   <body>
-    <div class="pageContentPreview">
-      <div class="pollSettingArea">
-        <!--S: 스타일 -->
+    <div id="contentsBody" class="contents">
+      <div class="cotegoryView">
         <div class="mdu_pannel mdu_pannel_form scroll_area">
           <div class="pannel_header">
             <h2 class="tit">날짜형</h2>
@@ -38,17 +37,31 @@
                   <div class="_body _comp_textareaWrap">
                     <textarea class="comm_input" placeholder="에디터가 들어갑니다"></textarea>
                   </div>
+                  <p class="_sbt01 ar">80글자 입력 가능합니다</p>
                 </div>
               </div>
 
               <div class="item">
-                <div class="_comp comp_input _wide">
-                  <span class="_tit">설명입력</span>
+                <div class="_comp _wide">
+                  <span class="_tit">이미지</span>
                   <div class="_body">
-                    <div class="_comp_inputWrap">
-                      <input type="text" class="comm_input wide" placeholder="ID를 입력하세요." />
+                    <div class="comp_answerAddWrap">
+                      <div class="_answerAddItemOuter">
+                        <div class="_answerAddItem _tpMedia">
+                          <div class="_inp_wrap _f1">
+                            <div class="_image"></div>
+                            <div class="_filed">
+                              <div class="_filedInp">
+                                <input type="text" class="comm_input _tp_txt" placeholder="내용을 입력하세요." />
+                              </div>
+                              <button class="btn _bdno btn_primary wide">
+                                <span class="txt">이미지 삽입</span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <p class="_sbt01 ar">80글자 입력 가능합니다</p>
                   </div>
                 </div>
               </div>
@@ -117,6 +130,13 @@
                           <span>결과비공개</span>
                         </span>
                       </div>
+                      <div class="_cr_item">
+                        <span class="check_b_wrap">
+                          <input type="checkbox" class="chk" name="1" />
+                          <span class="ico"></span>
+                          <span>질문키 값</span>
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -124,90 +144,110 @@
             </div>
           </div>
         </div>
-        <!--E: 스타일 -->
       </div>
-      <div class="pollPreviewArea">
+      <div class="contentArea scrollbar-outer">
         <div class="view_round _tp_style" style="width: 560px">
           <div class="view_round_header">
             <h2 class="tit">설문 ID 영역</h2>
           </div>
           <div class="view_round_body">
-            <div class="subject">설문제목 텍스트 영역</div>
+            <div class="pollSubject">설문제목 텍스트 영역</div>
 
-            <div class="comp_rangeSliderWrap">
-              <div class="_rangeSlider" id="sliderTarget">
-                <div class="_rangeSlider_handle" id="rangeSlider_handle"></div>
-              </div>
-              <script>
-                $(function () {
-                  var handle = $("#rangeSlider_handle");
-                  // console.log(handleRail);
-                  $("#sliderTarget").slider({
-                    create: function () {
-                      //handle.text($(this).slider("value"));
-                      handle.next().text($(this).slider("value"));
-                    },
-                    slide: function (event, ui) {
-                      //handle.text(ui.value);
-                      handle.css("width", ui.value + "%");
-                      handle.next().text(ui.value);
-                    },
+            <div class="comp_outer">
+              <div class="comp_rangeSliderWrap">
+                <div class="_rangeSliderOuter">
+                  <div class="_rangeSlider" id="sliderTarget">
+                    <div class="_rangeSlider_handle" id="rangeSlider_handle"></div>
+                  </div>
+                </div>
+                <script>
+                  $(function () {
+                    var handle = $("#rangeSlider_handle");
+                    // console.log(handleRail);
+                    $("#sliderTarget").slider({
+                      create: function () {
+                        //handle.text($(this).slider("value"));
+                        handle.next().text($(this).slider("value"));
+                      },
+                      slide: function (event, ui) {
+                        //handle.text(ui.value);
+                        handle.css("width", ui.value + "%");
+                        handle.next().text(ui.value);
+                      },
+                    });
                   });
-                });
-              </script>
+                </script>
+                <div class="_extra_area">
+                  <button class="btn _bdno _ico_ly wide">
+                    <i class="ico _add"></i>
+                    <span class="txt">추가</span>
+                  </button>
+                </div>
+              </div>
             </div>
 
-            <div class="comp_textTyppingArea">
-              <h2 class="_tit" contenteditable="true">설문정보 텍스트 영역</h2>
-              <div class="_typping" contenteditable="true">설문정보 내용 영역</div>
-            </div>
-
-            <div class="comp_questArea _tp_full">
-              <h2 class="_tit" contenteditable="true">설문정보 텍스트 영역</h2>
-
-              <!--S: 제목 영역 -->
-              <div class="_typping" contenteditable="true">설문정보 내용 영역</div>
-              <!--E: 제목 영역 -->
-
-              <!--S: 답변리스트 영역 -->
-              <div class="_typingAnswerArea">
-                <div class="_typingAnswerBody">답변을 입력하세요.</div>
-                <p>100글자 까지 입력 가능합니다</p>
+            <div class="comp_outer">
+              <div class="comp_textTyppingArea">
+                <h2 class="_tit">설문정보 텍스트 영역</h2>
+                <div class="_typping">설문정보 내용 영역</div>
               </div>
-              <!--E: 답변리스트 영역 -->
-
-              <!--S: 답변리스트 영역 -->
-
-              <div class="_typingAnswerArea _short">
-                <div class="_typingAnswerBody">답변을 입력하세요.</div>
-                <p>20글자 까지 입력 가능합니다</p>
-              </div>
-              <!--E: 답변리스트 영역 -->
-
-              <span class="_label _status _edit">편집중</span>
-              <div class="_actions">
-                <button class="btn _bdno _ico_ly">
-                  <i class="ico _questReplay_w"></i>
-                  <span class="txt">초기화</span>
-                </button>
-
-                <button class="btn _bdno _ico_ly">
-                  <i class="ico _questCopy_w"></i>
-                  <span class="txt">복사</span>
-                </button>
-
-                <button class="btn _bdno _ico_ly">
-                  <i class="ico _questDel_w"></i>
-                  <span class="txt">삭제</span>
+              <div class="_extra_area">
+                <button class="btn _bdno _ico_ly wide">
+                  <i class="ico _add"></i>
+                  <span class="txt">추가</span>
                 </button>
               </div>
             </div>
-          </div>
-          <div class="_extra_area">
-            <button class="btn _bdno _ico_ly wide">
-              <i class="ico _add"></i>
-              <span class="txt">추가</span>
-            </button>
+
+            <div class="comp_outer">
+              <div class="comp_questArea _tp_full">
+                <h2 class="_tit">설문정보 텍스트 영역</h2>
+
+                <!--S: 전화번호 -->
+                <div class="_typingAnswerArea _short">
+                  <div class="_types">
+                    <div class="_item">
+                      <div class="_dropDownArea">
+                        <div class="_dropDownHeader"><span class="_txt">2023</span><span class="_arrow"></span></div>
+                      </div>
+                      <span></span>
+                      <div class="_dropDownArea">
+                        <div class="_dropDownHeader"><span class="_txt">12</span><span class="_arrow"></span></div>
+                      </div>
+                      <span></span>
+                      <div class="_dropDownArea">
+                        <div class="_dropDownHeader"><span class="_txt">31</span><span class="_arrow"></span></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--E: 전화번호 -->
+
+                <span class="_label _status _edit">편집중</span>
+                <div class="_actions">
+                  <button class="btn _bdno _ico_ly">
+                    <i class="ico _questReplay_w"></i>
+                    <span class="txt">초기화</span>
+                  </button>
+
+                  <button class="btn _bdno _ico_ly">
+                    <i class="ico _questCopy_w"></i>
+                    <span class="txt">복사</span>
+                  </button>
+
+                  <button class="btn _bdno _ico_ly">
+                    <i class="ico _questDel_w"></i>
+                    <span class="txt">삭제</span>
+                  </button>
+                </div>
+              </div>
+              <div class="_extra_area">
+                <button class="btn _bdno _ico_ly wide">
+                  <i class="ico _add"></i>
+                  <span class="txt">추가</span>
+                </button>
+              </div>
+            </div>
           </div>
           <div class="view_round_btm">
             <div class="_col_l">

@@ -173,64 +173,56 @@
             <h2 class="tit">설문 ID 영역</h2>
           </div>
           <div class="view_round_body">
-            <div class="subject">설문제목 텍스트 영역</div>
+            <div class="comp_outer">
+              <div class="comp_questArea _tp_full">
+                <!--S: 상단 정보 영역 -->
+                <div class="_questInfoArea _tpTop">
+                  <p class="_stxt">Quick Survey (총 7문항)</p>
+                  <p class="_tit">설문제목 노출</p>
+                  <p class="_dateRange">2023년 11월 23 ~ 2023년 12월 23일 설문기간 노출</p>
+                </div>
+                <!--E: 상단 정보 영역 -->
 
-            <div class="comp_rangeSliderWrap">
-              <div class="_rangeSlider" id="sliderTarget">
-                <div class="_rangeSlider_handle" id="rangeSlider_handle"></div>
+                <!--S: 이미지 영역 -->
+                <div class="_imgArea"></div>
+                <!--E: 이미지 영역 -->
+
+                <!--S: 내용 영역 -->
+                <div class="_questContent">
+                  고객님, 안녕하세요 SK 텔레콤에서 ‘자동차’에 대한 설문조사를 안내드립니다. <br />
+                  전체 7문항의 짧은 설문입니다. 잠시 시간을 내어 고객님의<br />
+                  소중한 의견을 들려주세요. 참여하신 고객님께서는 T멤버십 제휴사에서 <br />
+                  현금처럼 사용하실 수 있는 포인트를 드립니다.
+                </div>
+                <!--E: 내용 영역 -->
+
+                <span class="_label _status _edit">편집중</span>
+                <div class="_actions">
+                  <button class="btn _bdno _ico_ly">
+                    <i class="ico _questReplay_w"></i>
+                    <span class="txt">초기화</span>
+                  </button>
+
+                  <button class="btn _bdno _ico_ly">
+                    <i class="ico _questCopy_w"></i>
+                    <span class="txt">복사</span>
+                  </button>
+
+                  <button class="btn _bdno _ico_ly">
+                    <i class="ico _questDel_w"></i>
+                    <span class="txt">삭제</span>
+                  </button>
+                </div>
               </div>
-              <script>
-                $(function () {
-                  var handle = $("#rangeSlider_handle");
-                  // console.log(handleRail);
-                  $("#sliderTarget").slider({
-                    create: function () {
-                      //handle.text($(this).slider("value"));
-                      handle.next().text($(this).slider("value"));
-                    },
-                    slide: function (event, ui) {
-                      //handle.text(ui.value);
-                      handle.css("width", ui.value + "%");
-                      handle.next().text(ui.value);
-                    },
-                  });
-                });
-              </script>
-            </div>
-
-            <div class="comp_textTyppingArea">
-              <h2 class="_tit" contenteditable="true">설문정보 텍스트 영역</h2>
-              <div class="_typping" contenteditable="true">설문정보 내용 영역</div>
-            </div>
-
-            <div class="comp_questArea _tp_full">
-              <h2 class="_tit" contenteditable="true">설문정보 텍스트 영역</h2>
-              <div class="_typping" contenteditable="true">설문정보 내용 영역</div>
-              <span class="_label _status _edit">편집중</span>
-              <div class="_actions">
-                <button class="btn _bdno _ico_ly">
-                  <i class="ico _questReplay_w"></i>
-                  <span class="txt">초기화</span>
-                </button>
-
-                <button class="btn _bdno _ico_ly">
-                  <i class="ico _questCopy_w"></i>
-                  <span class="txt">복사</span>
-                </button>
-
-                <button class="btn _bdno _ico_ly">
-                  <i class="ico _questDel_w"></i>
-                  <span class="txt">삭제</span>
+              <div class="_extra_area">
+                <button class="btn _bdno _ico_ly wide">
+                  <i class="ico _add"></i>
+                  <span class="txt">추가</span>
                 </button>
               </div>
             </div>
           </div>
-          <div class="_extra_area">
-            <button class="btn _bdno _ico_ly wide">
-              <i class="ico _add"></i>
-              <span class="txt">추가</span>
-            </button>
-          </div>
+
           <div class="view_round_btm">
             <div class="_col_l">
               <button class="btn btn_primary btn_rud100 btn_lager btn_fix _bdno _ico_ly">

@@ -13,9 +13,8 @@
     <script src="../../assets/js/simplebar.min.js"></script>
   </head>
   <body>
-    <div class="pageContentPreview">
-      <div class="pollSettingArea">
-        <!--S: 스타일 -->
+    <div id="contentsBody" class="contents">
+      <div class="cotegoryView">
         <div class="mdu_pannel mdu_pannel_form scroll_area">
           <div class="pannel_header">
             <h2 class="tit">미디어 복수</h2>
@@ -37,18 +36,6 @@
                   <span class="_tit">질문입력</span>
                   <div class="_body _comp_textareaWrap">
                     <textarea class="comm_input" placeholder="에디터가 들어갑니다"></textarea>
-                  </div>
-                </div>
-              </div>
-
-              <div class="item">
-                <div class="_comp comp_input _wide">
-                  <span class="_tit">설명입력</span>
-                  <div class="_body">
-                    <div class="_comp_inputWrap">
-                      <input type="text" class="comm_input wide" placeholder="ID를 입력하세요." />
-                    </div>
-                    <p class="_sbt01 ar">80글자 입력 가능합니다</p>
                   </div>
                 </div>
               </div>
@@ -125,25 +112,40 @@
                     </div>
 
                     <script>
+                      let itemMoveChang = [];
+                      let itemObj = [1, 2, 3, 4, 5];
+
+                      function switchValues(arr, index1, index2) {
+                        [arr[index1], arr[index2]] = [arr[index2], arr[index1]];
+                      }
+
                       $("#answerAddItemOuter").sortable({
                         handle: "._handle",
                         cursor: "move",
                         axis: "y",
-                        // connectWith: ".comp_answerAddWrap",
-                        containment: ".comp_answerAddWrap", //(parent div)
+                        //containment: ".comp_answerAddWrap",
+                        containment: "parent",
                         placeholder: "_answerAddItemPlaceholder",
                         start: function (event, ui) {
                           let thisHeight = ui.item[0].style.height;
                           let placeholderDiv = ui.placeholder[0];
                           //placeholderDiv.style.height = thisHeight;
+                          itemMoveChang.push(ui.item.index());
+                          console.log("@@@start", event, ui, ui.item.index(), itemMoveChang);
                         },
                         stop: function (event, ui) {
                           //console.log(ui.item.html());
                           //ui.placeholder.html(ui.item.html());
+                          itemMoveChang = [];
+                          // switchValues(itemObj, itemMoveChang[0], itemMoveChang[1]);
+                          console.log("@@@stop", event, ui, ui.item.index(), itemMoveChang, itemObj);
                         },
                         update: function (event, ui) {
                           //console.log(ui.item.html());
                           //ui.placeholder.html(ui.item.html());
+                          itemMoveChang.push(ui.item.index());
+                          switchValues(itemObj, itemMoveChang[0], itemMoveChang[1]);
+                          console.log("@@@update", event, ui, ui.item.index(), itemMoveChang, itemObj);
                         },
                       });
                     </script>
@@ -156,10 +158,10 @@
                   <span class="_tit">복수 선택 가능 개수</span>
                   <div class="_body">
                     <div class="flex_box _fac _fromto">
-                      <div class="_comp comp_select _fjl mgb10">
+                      <div class="_comp comp_select _fjl">
                         <span class="_tit">최소</span>
                         <div class="_body">
-                          <div class="_selectOuter mgl5">
+                          <div class="_selectOuter">
                             <div class="_selectWrap">
                               <button class="_header">
                                 <span class="_selectText">1</span>
@@ -174,12 +176,12 @@
                         </div>
                       </div>
 
-                      <div class="mgl15 mgr15 mgb10">~</div>
+                      <div class="_space">~</div>
 
-                      <div class="_comp comp_select _fjl mgb10">
+                      <div class="_comp comp_select _fjl">
                         <span class="_tit">최대</span>
                         <div class="_body">
-                          <div class="_selectOuter mgl5">
+                          <div class="_selectOuter">
                             <div class="_selectWrap">
                               <button class="_header">
                                 <span class="_selectText">무제한</span>
@@ -301,109 +303,129 @@
             </div>
           </div>
         </div>
-        <!--E: 스타일 -->
       </div>
-      <div class="pollPreviewArea">
+      <div class="contentArea scrollbar-outer">
         <div class="view_round _tp_style" style="width: 560px">
           <div class="view_round_header">
             <h2 class="tit">설문 ID 영역</h2>
           </div>
           <div class="view_round_body">
-            <div class="subject">설문제목 텍스트 영역</div>
+            <div class="pollSubject">설문제목 텍스트 영역</div>
 
-            <div class="comp_rangeSliderWrap">
-              <div class="_rangeSlider" id="sliderTarget">
-                <div class="_rangeSlider_handle" id="rangeSlider_handle"></div>
-              </div>
-              <script>
-                $(function () {
-                  var handle = $("#rangeSlider_handle");
-                  // console.log(handleRail);
-                  $("#sliderTarget").slider({
-                    create: function () {
-                      //handle.text($(this).slider("value"));
-                      handle.next().text($(this).slider("value"));
-                    },
-                    slide: function (event, ui) {
-                      //handle.text(ui.value);
-                      handle.css("width", ui.value + "%");
-                      handle.next().text(ui.value);
-                    },
+            <div class="comp_outer">
+              <div class="comp_rangeSliderWrap">
+                <div class="_rangeSliderOuter">
+                  <div class="_rangeSlider" id="sliderTarget">
+                    <div class="_rangeSlider_handle" id="rangeSlider_handle"></div>
+                  </div>
+                </div>
+                <script>
+                  $(function () {
+                    var handle = $("#rangeSlider_handle");
+                    // console.log(handleRail);
+                    $("#sliderTarget").slider({
+                      create: function () {
+                        //handle.text($(this).slider("value"));
+                        handle.next().text($(this).slider("value"));
+                      },
+                      slide: function (event, ui) {
+                        //handle.text(ui.value);
+                        handle.css("width", ui.value + "%");
+                        handle.next().text(ui.value);
+                      },
+                    });
                   });
-                });
-              </script>
-            </div>
-
-            <div class="comp_textTyppingArea">
-              <h2 class="_tit" contenteditable="true">설문정보 텍스트 영역</h2>
-              <div class="_typping" contenteditable="true">설문정보 내용 영역</div>
-            </div>
-
-            <div class="comp_questArea _tp_full">
-              <h2 class="_tit" contenteditable="true">설문정보 텍스트 영역</h2>
-
-              <!--S: 제목 영역 -->
-              <div class="_typping" contenteditable="true">설문정보 내용 영역</div>
-              <!--E: 제목 영역 -->
-
-              <!--S: 답변리스트 영역 -->
-              <div class="_answerListArea _tpMedia">
-                <div class="_answerListItemOuter">
-                  <div class="_answerListItem">
-                    <div class="_mediaImg"></div>
-                    <div class="_infoTxt">텍스트 영역 텍스트 영역</div>
-                    <span class="_ico"></span>
-                  </div>
-                </div>
-                <div class="_answerListItemOuter">
-                  <div class="_answerListItem">
-                    <div class="_mediaImg"></div>
-                    <div class="_infoTxt">텍스트 영역 텍스트 영역</div>
-                    <span class="_ico"></span>
-                  </div>
-                </div>
-                <div class="_answerListItemOuter">
-                  <div class="_answerListItem">
-                    <div class="_mediaImg"></div>
-                    <div class="_infoTxt">텍스트 영역 텍스트 영역</div>
-                    <span class="_ico"></span>
-                  </div>
-                </div>
-                <div class="_answerListItemOuter">
-                  <div class="_answerListItem">
-                    <div class="_mediaImg"></div>
-                    <div class="_infoTxt">텍스트 영역 텍스트 영역</div>
-                    <span class="_ico"></span>
-                  </div>
+                </script>
+                <div class="_extra_area">
+                  <button class="btn _bdno _ico_ly wide">
+                    <i class="ico _add"></i>
+                    <span class="txt">추가</span>
+                  </button>
                 </div>
               </div>
-              <!--E: 답변리스트 영역 -->
+            </div>
 
-              <span class="_label _status _edit">편집중</span>
-              <div class="_actions">
-                <button class="btn _bdno _ico_ly">
-                  <i class="ico _questReplay_w"></i>
-                  <span class="txt">초기화</span>
-                </button>
-
-                <button class="btn _bdno _ico_ly">
-                  <i class="ico _questCopy_w"></i>
-                  <span class="txt">복사</span>
-                </button>
-
-                <button class="btn _bdno _ico_ly">
-                  <i class="ico _questDel_w"></i>
-                  <span class="txt">삭제</span>
+            <div class="comp_outer">
+              <div class="comp_textTyppingArea">
+                <h2 class="_tit">설문정보 텍스트 영역</h2>
+                <div class="_typping">설문정보 내용 영역</div>
+              </div>
+              <div class="_extra_area">
+                <button class="btn _bdno _ico_ly wide">
+                  <i class="ico _add"></i>
+                  <span class="txt">추가</span>
                 </button>
               </div>
             </div>
+
+            <div class="comp_outer">
+              <div class="comp_questArea _tp_full">
+                <h2 class="_tit">설문정보 텍스트 영역</h2>
+
+                <!--S: 제목 영역 -->
+                <div class="_typping">설문정보 내용 영역</div>
+                <!--E: 제목 영역 -->
+
+                <!--S: 답변리스트 영역 -->
+                <div class="_answerMultiListArea _tpMedia">
+                  <div class="_answerListItemOuter">
+                    <div class="_answerListItem">
+                      <div class="_mediaImg"></div>
+                      <div class="_infoTxt">텍스트 영역 텍스트 영역</div>
+                      <span class="_ico"></span>
+                    </div>
+                  </div>
+                  <div class="_answerListItemOuter">
+                    <div class="_answerListItem">
+                      <div class="_mediaImg"></div>
+                      <div class="_infoTxt">텍스트 영역 텍스트 영역</div>
+                      <span class="_ico"></span>
+                    </div>
+                  </div>
+                  <div class="_answerListItemOuter">
+                    <div class="_answerListItem">
+                      <div class="_mediaImg"></div>
+                      <div class="_infoTxt">텍스트 영역 텍스트 영역</div>
+                      <span class="_ico"></span>
+                    </div>
+                  </div>
+                  <div class="_answerListItemOuter">
+                    <div class="_answerListItem">
+                      <div class="_mediaImg"></div>
+                      <div class="_infoTxt">텍스트 영역 텍스트 영역</div>
+                      <span class="_ico"></span>
+                    </div>
+                  </div>
+                </div>
+                <!--E: 답변리스트 영역 -->
+
+                <span class="_label _status _edit">편집중</span>
+                <div class="_actions">
+                  <button class="btn _bdno _ico_ly">
+                    <i class="ico _questReplay_w"></i>
+                    <span class="txt">초기화</span>
+                  </button>
+
+                  <button class="btn _bdno _ico_ly">
+                    <i class="ico _questCopy_w"></i>
+                    <span class="txt">복사</span>
+                  </button>
+
+                  <button class="btn _bdno _ico_ly">
+                    <i class="ico _questDel_w"></i>
+                    <span class="txt">삭제</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="_extra_area">
+              <button class="btn _bdno _ico_ly wide">
+                <i class="ico _add"></i>
+                <span class="txt">추가</span>
+              </button>
+            </div>
           </div>
-          <div class="_extra_area">
-            <button class="btn _bdno _ico_ly wide">
-              <i class="ico _add"></i>
-              <span class="txt">추가</span>
-            </button>
-          </div>
+
           <div class="view_round_btm">
             <div class="_col_l">
               <button class="btn btn_primary btn_rud100 btn_lager btn_fix _bdno _ico_ly">
