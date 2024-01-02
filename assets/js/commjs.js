@@ -1,10 +1,45 @@
-const commjs = {
-  // workspace의 라벨로 쓰기위해 앞 첫글자를 가져온다.
-  nameFirstAt: function (firstAt) {
-    let findFirstStr = firstAt.charAt(0);
-    return findFirstStr;
-  },
-};
+$("._inp_color").each(function (i, v) {
+  jscolor.presets.default = {
+    palette: [
+      "#000000",
+      "#7d7d7d",
+      "#870014",
+      "#ec1c23",
+      "#ff7e26",
+      "#fef100",
+      "#22b14b",
+      "#00a1e7",
+      "#3f47cc",
+      "#a349a4",
+      "#ffffff",
+      "#c3c3c3",
+      "#b87957",
+      "#feaec9",
+      "#ffc80d",
+      "#eee3af",
+      "#b5e61d",
+      "#99d9ea",
+      "#7092be",
+      "#c8bfe7",
+    ],
+    //paletteCols: 12,
+    hideOnPaletteClick: true,
+    //width: 271,
+    //height: 151,
+    //position: 'right',
+    //previewPosition: 'right',
+    //backgroundColor: "rgba(51,51,51,1)",
+    // controlBorderColor: 'rgba(153,153,153,1)',
+    // buttonColor: 'rgba(240,240,240,1)',
+  };
+
+  jscolor.trigger("input change");
+});
+
+function jscolorUpdate(picker, selector) {
+  // console.log(picker, selector, picker.targetElement.parentElement);
+  $(picker.targetElement.parentElement).find("input").css("background", picker.toBackground());
+}
 
 $("[data-tooltip]").on("mouseenter", function (e) {
   //let msg = $(this).attr("data-tooltip");
@@ -84,53 +119,8 @@ let screenInit = function () {
 };
 window.onresize = function () {
   screenInit();
-  // console.log("@@@@@onresize");
 };
 window.dispatchEvent(new Event("resize"));
-
-// const lnbWrap = document.querySelector(".lnb");
-// const lnbItem = lnbWrap.querySelectorAll(".item");
-/**
- * LNB 하위 메뉴 감추기
- * items : 감추고자 하는 element
- * idx : 감추고자 하는 item index
- */
-const fnLnbItemShowHide = function (items, idx) {
-  switch (typeof items) {
-    case "object":
-      items.forEach((element, index) => {
-        if (index != idx) {
-          //element.classList.add('hide');
-        }
-      });
-      break;
-    case "String":
-      console.log("String");
-      break;
-  }
-};
-
-const toggleItem = document.querySelectorAll(".item .toggle");
-// 1뎁스 열림/닫힘 클릭이벤트
-const fnLnbItemClickToggle = function () {
-  let parent = this.parentElement;
-  //let item = this.previousElementSibling;
-  let hasClass = parent.classList.contains("hide");
-  if (hasClass) {
-    parent.classList.remove("hide");
-  } else {
-    parent.classList.add("hide");
-  }
-};
-
-const toggleEvtLoop = function (items) {
-  items.forEach((item, index) => {
-    item.onclick = fnLnbItemClickToggle;
-  });
-};
-
-// toggleEvtLoop(toggleItem);
-// fnLnbItemShowHide(lnbItem, 0);
 
 $("body").on("click", function (e) {
   let $this = e.target;
@@ -141,6 +131,28 @@ $("body").on("click", function (e) {
     $("._actionArea .actions").removeClass("active");
   }
 });
+
+// function scrollArea() {
+//   $("._userPreviewBody").scrollbar();
+// }
+
+// function scrollTargetArea(targetObj) {
+//   targetObj.scrollbar();
+// }
+// scrollTargetArea($("._userPreviewBody"));
+
+function userPreviewBodyArea() {
+  // let contentHeight = $(window).height() - $("header").height();
+  let contentHeight = $(window).height() - 88;
+  let topH = $("._pages_wrap").height();
+  let userPreviewBtm = $("._userPreviewBtm").height();
+  let scrollArea = contentHeight - (topH + userPreviewBtm);
+  $("._userPreviewArea").height(contentHeight);
+  $("._userPreviewBody").height(scrollArea);
+  console.log(contentHeight, topH, userPreviewBtm, scrollArea, $(window).height(), $("header").height());
+  $("._userPreviewBody").scrollbar();
+}
+userPreviewBodyArea();
 
 // 셀렉트박스 스크립트
 /**

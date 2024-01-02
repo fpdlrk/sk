@@ -34,7 +34,8 @@
 }
 
 .contents > .cotegoryView {
-  height: 100%;
+  height: inherit;
+  /* height: 100%; */
   /* position: absolute;
   left: 0;
   top: 0; */
