@@ -59,18 +59,10 @@ const surveyInfo = {
   },
   pannelReset: () => {},
   modalAlert: () => {
-    return ModalOpen(
-      "firstPopup",
-      "안내",
-      "<span class='f_main'>KJCI3718UID09</span> 는 사용가능 ID입니다.",
-      "alert",
-      "",
-      surveyInfo.okClickFnc,
-      {
-        //style: "font-size:60px;",
-        class: "ac",
-      }
-    );
+    return ModalOpen("firstPopup", "안내", "<span class='f_main'>KJCI3718UID09</span> 는 사용가능 ID입니다.", "alert", "", surveyInfo.okClickFnc, {
+      //style: "font-size:60px;",
+      class: "ac",
+    });
   },
   okClickFnc: (e) => {
     ModalClose(e.target);

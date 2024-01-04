@@ -1,4 +1,4 @@
-// const SURVEY_SUBJECT = surveyData.SURVEY_SUBJECT;
+const SURVEY_SUBJECT = surveyData.SURVEY_SUBJECT;
 let blindValue = false;
 const surveySubject = {
   datas: surveyData.SURVEY_SUBJECT,
@@ -41,9 +41,7 @@ const surveySubject = {
               <span class="_tit">옵션</span>
               <div class="_body">
                 <span class="check_b_wrap">
-                  <input type="checkbox" class="chk" name="compChk" ${
-                    surveySubject.datas.isFirstPage ? "checked" : ""
-                  } 
+                  <input type="checkbox" class="chk" name="compChk" ${surveySubject.datas.isFirstPage ? "checked" : ""} 
                   onchange='surveySubject.isFirstPage(event)'/>
                   <span class="ico"></span>
                   <span>첫페이지만 보이기</span>
@@ -54,12 +52,7 @@ const surveySubject = {
               : ""
           }
           <div class="item">
-          ${checkBox.init(
-            "옵션",
-            surveySubject,
-            surveySubject.initValue,
-            surveySubject.keyMapping
-          )}
+          ${checkBox.init("옵션", surveySubject, surveySubject.initValue, surveySubject.keyMapping)}
           </item>
         </div>
       </div>
@@ -85,18 +78,10 @@ const surveySubject = {
   },
   pannelReset: () => {},
   modalAlert: () => {
-    return ModalOpen(
-      "firstPopup",
-      "안내",
-      "<span class='f_main'>KJCI3718UID09</span> 는 사용가능 ID입니다.",
-      "alert",
-      "",
-      surveySubject.okClickFnc,
-      {
-        //style: "font-size:60px;",
-        class: "ac",
-      }
-    );
+    return ModalOpen("firstPopup", "안내", "<span class='f_main'>KJCI3718UID09</span> 는 사용가능 ID입니다.", "alert", "", surveySubject.okClickFnc, {
+      //style: "font-size:60px;",
+      class: "ac",
+    });
   },
   okClickFnc: (e) => {
     ModalClose(e.target);

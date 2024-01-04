@@ -3,10 +3,10 @@ const pageBase = {
   init: function (objId) {
     const Html = `<div class="view_round _tp_style" style="width: 560px">
     <div class="view_round_header">
-      <h2 class="tit">${pageBase.datas.SURVEY_ID.text}</h2>
+      <h2 class="tit">${this.datas.SURVEY_ID.text}</h2>
     </div>
-    <div class="subject _privateTit ${surveySubject.datas.isFirstPage ? (currentPage == 0 ? "" : "hidden") : ""} ">${
-      pageBase.datas.SURVEY_SUBJECT.text
+    <div class="subject _privateTit ${surveySubject.datas.isFirstPage ? (this.datas.currentPage == 0 ? "" : "hidden") : ""} ">${
+      this.datas.SURVEY_SUBJECT.text
     }</div>
 
     <div class="comp_rangeSliderWrap ${surveyProgress.datas.isUse ? "" : "hidden"}">
@@ -46,6 +46,5 @@ const pageBase = {
     const target = document.querySelector("#" + objId);
     target.innerHTML = "";
     const outObj = (target.innerHTML = Html);
-    // $("#contentArea.scrollbar-outer").scrollbar();
   },
 };

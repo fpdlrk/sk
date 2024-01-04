@@ -1,30 +1,3 @@
-const LEFT_MENU_FUNC_ID = {
-  SURVEY_ID: "survey_id", // 설문ID
-  SURVEY_SUBJECT: "survey_subject", // 설문제목
-  PROGRESS_BAR: "progress_bar", // 진행률바
-  BUTTON_SET: "button_set", // 버튼설정
-  SURVEY_INFO: "servey_info", // 정보
-  CHOICE_ONE: "choice_one", // 객관식한개
-  CHOICE_MULTI: "choice_multi", // 객관식 복수
-  DROPDOWN_TYPE: "dropdown", // 드롭다운
-  RANKING_TYPE: "ranking", // 순위형
-  MEDIA_ONE: "media_one", // 미디어 한개
-  MEDIA_MULTI: "media_multi", // 미디어 복수
-  MEDIA_RANK: "media_rank", //미디어 순위형
-  SCALE_TYPE: "scale", // 척도형
-  STAR_TYPE: "star", // 별점형
-  GRID_ONE: "grid_one", // 격자형 한개
-  GRID_MULTI: "grid_multi", // 격자형 복수
-  GRID_RANK: "grid_rank", // 격자형 순위형
-  ADDRESS_TYPE: "address", // 주소
-  DISCRIPTION_LONG: "discription_long", // 주관식 긴답변
-  DISCRIPTION_SHORT: "discription_short", //  주관식 짧은 답변
-  DETE_TYPE: "dete_type", // 날짜형
-  ADVER_TYPE_BANNER: "adver_type_banner", // 광고형 배너
-  NOTICE_TYPE_BANNER: "notice_type_banner", // 공지형 배너
-  DIVID_TYPE: "divid", // 구분선
-};
-
 // const data = [
 //   {name : '', level : 1, }
 // ];
@@ -198,6 +171,7 @@ const CreateLeftMenu = (objId) => {
 function handleActionEvent(e) {
   e.preventDefault();
   let id = "";
+  let nameId = "id";
   const contents = "cotegoryView";
   if (e.target.parentNode.nodeName == "BUTTON") {
     id = e.target.parentNode.id;
@@ -212,31 +186,31 @@ function handleActionEvent(e) {
   // 해당 case에 로직구현
 
   switch (id) {
-    case LEFT_MENU_FUNC_ID.SURVEY_ID:
+    case LEFT_MENU_FUNC_ID.SURVEY_ID[nameId]:
       // 같은버튼 여러번 클릭시 한번만 호출
       if (!oneImpleProc(id)) return;
       surveyId.init(contents);
-
       break;
 
-    case LEFT_MENU_FUNC_ID.SURVEY_SUBJECT:
+    case LEFT_MENU_FUNC_ID.SURVEY_SUBJECT[nameId]:
       // 같은버튼 여러번 클릭시 한번만 호출
       if (!oneImpleProc(id)) return;
       surveySubject.init(contents);
       break;
 
-    case LEFT_MENU_FUNC_ID.PROGRESS_BAR:
+    case LEFT_MENU_FUNC_ID.PROGRESS_BAR[nameId]:
       // 같은버튼 여러번 클릭시 한번만 호출
       if (!oneImpleProc(id)) return;
       surveyProgress.init(contents);
       break;
 
-    case LEFT_MENU_FUNC_ID.SURVEY_INFO:
+    case LEFT_MENU_FUNC_ID.SURVEY_INFO[nameId]:
       const itemValue = {
         type: "info222222",
         subject: "1_안내제목!!!",
         content: "1버는설문 콘텐츠!!!",
       };
+      // surveyInfo.init(itemValue);
       surveyInfo.addItem(itemValue);
       break;
 

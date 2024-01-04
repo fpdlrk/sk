@@ -41,12 +41,12 @@ function jscolorUpdate(picker, selector) {
   $(picker.targetElement.parentElement).find("input").css("background", picker.toBackground());
 }
 
-$(document).on("mouseenter", "[data-tooltip]", function (e) {
+$("[data-tooltip]").on("mouseenter", function (e) {
   //let msg = $(this).attr("data-tooltip");
   tooltip(e);
 });
 
-$(document).on("mouseleave", "[data-tooltip]", function (e) {
+$("[data-tooltip]").on("mouseleave", function (e) {
   $(".comm_tooltip").remove();
 });
 
