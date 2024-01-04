@@ -5,25 +5,31 @@
 const CreateLeftMenu = (objId) => {
   const Html = `<div class="lnb_header">
   <span class="txt">메뉴</span>
-  <button class="btn _bdno _ico_ly _auto_h" data-tooltip="이전으로">
+  <button class="btn _bdno _ico_ly _auto_h" data-tooltip="메뉴설정">
     <i class="ico _menuol"></i>
     <span class="txt">메뉴설정</span>
   </button>
 </div>
 <div class="lnb_body scrollbar-outer">
   <div class="lnb_item_group">
-    <button class="item_group_header" data-role='toggle'>
+    <button class="item_group_header" data-role="toggle">
       <span class="txt">고정항목</span>
     </button>
     <ul>
       <li>
-        <button class="item _pollId" id="survey_id" data-tooltip="설문 ID">
-          <span class="txt">설문 ID</span>
+        <button class="item _setting" id="survey_default" data-tooltip="기본설정">
+          <span class="txt">기본설정</span>
+        </button>
+      </li>
+      
+      <li>
+        <button class="item _pollId" id="survey_id" data-tooltip="설문 ID/제목">
+          <span class="txt">설문 ID/제목</span>
         </button>
       </li>
       <li>
-        <button class="item _pollSubject" id="survey_subject" data-tooltip="설문제목">
-          <span class="txt">설문제목</span>
+        <button class="item _pollSubject" id="survey_banner" data-tooltip="목록배너">
+          <span class="txt">목록배너</span>
         </button>
       </li>
       <li>
@@ -31,22 +37,26 @@ const CreateLeftMenu = (objId) => {
           <span class="txt">진행률 바</span>
         </button>
       </li>
-      <li>
-        <button class="item _btnSet" id="button_set" data-tooltip="버튼설정">
+      <!-- <li>
+        <button
+          class="item _btnSet"
+          id="button_set"
+          data-tooltip="버튼설정"
+        >
           <span class="txt">버튼설정</span>
         </button>
-      </li>
+      </li> -->
     </ul>
   </div>
 
   <div class="lnb_item_group">
-    <button class="item_group_header" data-role='toggle'>
+    <button class="item_group_header" data-role="toggle">
       <span class="txt">삽입항목</span>
     </button>
     <ul>
       <li>
-        <button class="item _serveyInfo" id="servey_info" data-tooltip="정보">
-          <span class="txt">정보</span>
+        <button class="item _serveyIntro" id="servey_intro2" data-tooltip="소개글">
+          <span class="txt">소개글</span>
         </button>
       </li>
       <li>
@@ -135,13 +145,18 @@ const CreateLeftMenu = (objId) => {
         </button>
       </li>
       <li>
-        <button class="item _notiForm" id="notice_type_banner" data-tooltip="공지형 배너">
-          <span class="txt">공지형 배너</span>
+        <button class="item _notiForm" id="panel_set" data-tooltip="패널설정">
+          <span class="txt">패널설정</span>
         </button>
       </li>
       <li>
         <button class="item _lineForm" id="divid_type" data-tooltip="구분선">
           <span class="txt">구분선</span>
+        </button>
+      </li>
+      <li>
+        <button class="item _serveyEnd" id="divid_type" data-tooltip="맺음말">
+          <span class="txt">맺음말</span>
         </button>
       </li>
     </ul>
@@ -186,25 +201,24 @@ function handleActionEvent(e) {
   // 해당 case에 로직구현
 
   switch (id) {
+    // 기본설정
+    case LEFT_MENU_FUNC_ID.SURVEY_DEFAULT[nameId]:
+      //if (!oneImpleProc(id)) return; // 같은버튼 여러번 클릭시 한번만 호출
+      surveyDefault.init(contents);
+      break;
+
+    // 설문 ID/제목
     case LEFT_MENU_FUNC_ID.SURVEY_ID[nameId]:
-      // 같은버튼 여러번 클릭시 한번만 호출
-      if (!oneImpleProc(id)) return;
+      //if (!oneImpleProc(id)) return; // 같은버튼 여러번 클릭시 한번만 호출
       surveyId.init(contents);
       break;
 
-    case LEFT_MENU_FUNC_ID.SURVEY_SUBJECT[nameId]:
-      // 같은버튼 여러번 클릭시 한번만 호출
-      if (!oneImpleProc(id)) return;
-      surveySubject.init(contents);
-      break;
-
-    case LEFT_MENU_FUNC_ID.PROGRESS_BAR[nameId]:
-      // 같은버튼 여러번 클릭시 한번만 호출
-      if (!oneImpleProc(id)) return;
+    case LEFT_MENU_FUNC_ID.SURVEY_PROGRESS_BAR[nameId]:
+      //if (!oneImpleProc(id)) return; // 같은버튼 여러번 클릭시 한번만 호출
       surveyProgress.init(contents);
       break;
 
-    case LEFT_MENU_FUNC_ID.SURVEY_INFO[nameId]:
+    case LEFT_MENU_FUNC_ID.SURVEY_SURVEY_INTRO[nameId]:
       const itemValue = {
         type: "info222222",
         subject: "1_안내제목!!!",

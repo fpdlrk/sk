@@ -165,7 +165,7 @@
       <div class="container">
         <!--S: 좌측메뉴 -->
         <div class="lnb_wrap" id="lnbWrap">
-          <div class="lnb_header">
+          <!-- <div class="lnb_header">
             <span class="txt">메뉴</span>
             <button class="btn _bdno _ico_ly _auto_h" data-tooltip="메뉴설정">
               <i class="ico _menuol"></i>
@@ -208,15 +208,6 @@
                     <span class="txt">진행률 바</span>
                   </button>
                 </li>
-                <!-- <li>
-                  <button
-                    class="item _btnSet"
-                    id="button_set"
-                    data-tooltip="버튼설정"
-                  >
-                    <span class="txt">버튼설정</span>
-                  </button>
-                </li> -->
               </ul>
             </div>
 
@@ -332,7 +323,7 @@
                 </li>
               </ul>
             </div>
-          </div>
+          </div> -->
         </div>
         <!--E: 좌측메뉴 -->
 
@@ -429,10 +420,10 @@
     <script src="../components/lnb/lnb.js"></script>
     <script src="../components/page/pageBase.js"></script>
     <script src="../components/page/pages.js"></script>
-    <script src="../components/fixed/SURVEY_ID/survey_id_write.js"></script>
-    <script src="../components/fixed/SURVEY_SUBJECT/survey_subject_write.js"></script>
-    <script src="../components/fixed/PROGRESS_BAR/survey_progressBar.js"></script>
-    <script src="../components/fixed/SURVEY_INFO/survey_info.js"></script>
+    <script src="../components/fixed/survey_id_write.js"></script>
+    <script src="../components/fixed/survey_default.js"></script>
+    <script src="../components/fixed/survey_progressBar.js"></script>
+    <script src="../components/fixed/survey_info.js"></script>
     <script src="../components/elements/checkBox.js"></script>
 
     <script src="../assets/js/commjs.js"></script>
@@ -446,6 +437,21 @@
       CreateLeftMenu("lnbWrap");
       pageBase.init("contentArea");
       pages.init("viewBody");
+
+      function pannelAction(e) {
+        let target = e.target;
+        let status = $(target).closest(".btn").attr("data-type");
+        switch (status) {
+          case "refresh":
+            console.log(status);
+            break;
+
+          case "close":
+            $(target).closest("#cotegoryView").empty();
+            console.log(status);
+            break;
+        }
+      }
 
       $(window).on("resize", function () {
         $("#lnbWrap .scrollbar-outer").scrollbar();

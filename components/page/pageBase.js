@@ -5,7 +5,7 @@ const pageBase = {
     <div class="view_round_header">
       <h2 class="tit">${this.datas.SURVEY_ID.text}</h2>
     </div>
-    <div class="subject _privateTit ${surveySubject.datas.isFirstPage ? (this.datas.currentPage == 0 ? "" : "hidden") : ""} ">${
+    <div class="subject _privateTit ${this.datas.isFirstPage ? (this.datas.currentPage == 0 ? "" : "hidden") : ""} ">${
       this.datas.SURVEY_SUBJECT.text
     }</div>
 

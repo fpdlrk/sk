@@ -7,27 +7,25 @@ const surveyProgress = {
     <div class="pannel_header">
       <h2 class="tit">진행율바</h2>
       <div class="util">
-        <button class="btn _bdno _ico_ly" onclick='surveyProgress.pannelReset(event)'>
+        <button class="btn _bdno _ico_ly" onclick='pannelAction(event)' data-type="refresh">
           <i class="ico _pannelRefresh"></i>
           <span class="txt">리셋</span>
         </button>
-        <button class="btn _bdno _ico_ly" onclick='surveyProgress.pannelClose(event)'>
+        <button class="btn _bdno _ico_ly" onclick='pannelAction(event)' data-type="close">
           <i class="ico _pannelClose"></i>
           <span class="txt">닫기</span>
         </button>
       </div>
     </div>
     
-    <div class="pannel_body">
+    <div class="pannel_body scrollbar-outer">
       <div class="item_group">
         <div class="item">
           <div class="_comp _wide">
             <span class="_tit">진행율바</span>
             <div class="_body">
               <span class="check_b_wrap">
-                <input type="checkbox" class="chk" name="1" ${
-                  surveyProgress.datas.isUse ? "checked" : ""
-                } 
+                <input type="checkbox" class="chk" name="1" ${this.datas.isUse ? "checked" : ""} 
                 onchange='surveyProgress.isUse(event)'/>
                 <span class="ico"></span>
                 <span>진행률 바 사용하기</span>
@@ -96,18 +94,10 @@ const surveyProgress = {
   },
   pannelReset: () => {},
   modalAlert: () => {
-    return ModalOpen(
-      "firstPopup",
-      "안내",
-      "<span class='f_main'>KJCI3718UID09</span> 는 사용가능 ID입니다.",
-      "alert",
-      "",
-      surveySubject.okClickFnc,
-      {
-        //style: "font-size:60px;",
-        class: "ac",
-      }
-    );
+    return ModalOpen("firstPopup", "안내", "<span class='f_main'>KJCI3718UID09</span> 는 사용가능 ID입니다.", "alert", "", surveySubject.okClickFnc, {
+      //style: "font-size:60px;",
+      class: "ac",
+    });
   },
   // okClickFnc: (e) => {
   //   ModalClose(e.target);
@@ -129,7 +119,6 @@ const surveyProgress = {
     } else {
       targetObj[0].classList.add("hidden");
     }
-    surveyProgress.datas.isUse = checked;
-    console.log(e, targetObj, surveyProgress.datas.isUse);
+    surveyProgress.datas.isUse = { ...surveyProgress.datas.isUse, checked };
   },
 };
